@@ -1,0 +1,254 @@
+{
+    "sourceFile": "traitement.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 59,
+            "patches": [
+                {
+                    "date": 1671634111113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671636064581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,21 @@\n <?php\n+ \n+ session_start();\n \n+ \n \n+//check do the person logged in\n+if($_SESSION['name']==NULL){\n+    //haven't log in\n+    echo \"You haven't log in\";\n+}else{\n+    //Logged in\n+    echo \"Successfully log in!\";\n+}\n\\ No newline at end of file\n+\n+\n+\n try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-\n-\n-    if(isset($_POST['submit'])) {\n-        // Variables\n-        $user_id = $_POST['user_id'];\n-        $content = $_POST['content'];\n-        \n"
+                },
+                {
+                    "date": 1671636098321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \n  \n \n //check do the person logged in\n-if($_SESSION['name']==NULL){\n+if($_SESSION['user']==NULL){\n     //haven't log in\n     echo \"You haven't log in\";\n }else{\n     //Logged in\n@@ -17,5 +17,5 @@\n \n try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n-    }\n\\ No newline at end of file\n+    }\n"
+                },
+                {
+                    "date": 1671636355754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,12 @@\n <?php\n  \n  session_start();\n \n- \n-\n //check do the person logged in\n if($_SESSION['user']==NULL){\n     //haven't log in\n-    echo \"You haven't log in\";\n+    header('location:./../view/hello.phtml  ');\n }else{\n     //Logged in\n     echo \"Successfully log in!\";\n }\n"
+                },
+                {
+                    "date": 1671636384751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n \n //check do the person logged in\n if($_SESSION['user']==NULL){\n     //haven't log in\n-    header('location:./../view/hello.phtml  ');\n+ \n }else{\n     //Logged in\n-    echo \"Successfully log in!\";\n+  header('location:./../view/hello.phtml  ');\n }\n \n \n \n"
+                },
+                {
+                    "date": 1671636396221,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     //haven't log in\n  \n }else{\n     //Logged in\n-  header('location:./../view/hello.phtml  ');\n+  header('location:./view/hello.phtml  ');\n }\n \n \n \n"
+                },
+                {
+                    "date": 1671636426786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     //haven't log in\n  \n }else{\n     //Logged in\n-  header('location:./view/hello.phtml  ');\n+  header('location:train/view/hello.phtml  ');\n }\n \n \n \n"
+                },
+                {
+                    "date": 1671636458254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     //haven't log in\n  \n }else{\n     //Logged in\n-  header('location:train/view/hello.phtml  ');\n+  header('location:./view/hello.phtml');\n }\n \n \n \n"
+                },
+                {
+                    "date": 1671636574877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  session_start();\n \n //check do the person logged in\n if($_SESSION['user']==NULL){\n-    //haven't log in\n+    header('location:connection.php')\n  \n }else{\n     //Logged in\n   header('location:./view/hello.phtml');\n"
+                },
+                {
+                    "date": 1671636592597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  session_start();\n \n //check do the person logged in\n if($_SESSION['user']==NULL){\n-    header('location:connection.php')\n+    header('location:connection.php');\n  \n }else{\n     //Logged in\n   header('location:./view/hello.phtml');\n"
+                },
+                {
+                    "date": 1671636638622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n  session_start();\n \n //check do the person logged in\n if($_SESSION['user']==NULL){\n-    header('location:connection.php');\n+    header('location:view/connection.phtml');\n  \n }else{\n     //Logged in\n   header('location:./view/hello.phtml');\n"
+                },
+                {
+                    "date": 1671637973783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,12 @@\n  \n  session_start();\n \n //check do the person logged in\n-if($_SESSION['user']==NULL){\n+if ($_SESSION['user'] == NULL) {\n     header('location:view/connection.phtml');\n- \n-}else{\n-    //Logged in\n-  header('location:./view/hello.phtml');\n+    exit();\n+\n }\n \n \n \n"
+                },
+                {
+                    "date": 1671644025087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,4 +14,9 @@\n try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n+\n+  if(isset($_POST['submit'])) {\n+\n+    $content=$_POST['content'];\n+\n"
+                },
+                {
+                    "date": 1671644112814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,12 @@\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n \n-  if(isset($_POST['submit'])) {\n+if (isset($_POST['submit'])) {\n \n-    $content=$_POST['content'];\n+    $content = $_POST['content'];\n \n+\n+    $sql = \"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\";\n+\n+}\n"
+                },
+                {
+                    "date": 1671644183271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,7 @@\n \n     $content = $_POST['content'];\n \n \n-    $sql = \"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\";\n+    $sql = \"INSERT INTO `messages`( `content`, ) VALUES ('$content')\";\n \n }\n"
+                },
+                {
+                    "date": 1671644448516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n- \n- session_start();\n \n+session_start();\n+\n //check do the person logged in\n if ($_SESSION['user'] == NULL) {\n     header('location:view/connection.phtml');\n     exit();\n@@ -11,16 +11,20 @@\n \n \n \n try {\n-      $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    } catch (Exception $e) {\n-    }\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+} catch (Exception $e) {\n+}\n \n if (isset($_POST['submit'])) {\n \n     $content = $_POST['content'];\n \n \n     $sql = \"INSERT INTO `messages`( `content`, ) VALUES ('$content')\";\n+    $stmt = $db->prepare($sql);\n+    $stmt->bindParam(':content', $content);\n \n-}\n+\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671644476263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n \n     $sql = \"INSERT INTO `messages`( `content`, ) VALUES ('$content')\";\n     $stmt = $db->prepare($sql);\n     $stmt->bindParam(':content', $content);\n+    $stmt->execute();\n \n \n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671644563546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n     $content = $_POST['content'];\n \n \n-    $sql = \"INSERT INTO `messages`( `content`, ) VALUES ('$content')\";\n+    $sql = \"INSERT INTO 'messages'( 'content', ) VALUES ('$content')\";\n     $stmt = $db->prepare($sql);\n     $stmt->bindParam(':content', $content);\n     $stmt->execute();\n \n"
+                },
+                {
+                    "date": 1671644603327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n     $content = $_POST['content'];\n \n \n-    $sql = \"INSERT INTO 'messages'( 'content', ) VALUES ('$content')\";\n+    $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n     $stmt = $db->prepare($sql);\n     $stmt->bindParam(':content', $content);\n     $stmt->execute();\n \n"
+                },
+                {
+                    "date": 1671644679758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n <?php\n-\n session_start();\n-\n //check do the person logged in\n if ($_SESSION['user'] == NULL) {\n     header('location:view/connection.phtml');\n     exit();\n"
+                },
+                {
+                    "date": 1671644742174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,7 @@\n     $content = $_POST['content'];\n \n \n     $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n-    $stmt = $db->prepare($sql);\n-    $stmt->bindParam(':content', $content);\n-    $stmt->execute();\n+   \n \n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671647776322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,19 +7,15 @@\n \n }\n \n \n-\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-if (isset($_POST['submit'])) {\n \n     $content = $_POST['content'];\n \n-\n     $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n    \n \n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671647786590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-\n+     \n     $content = $_POST['content'];\n \n     $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n    \n"
+                },
+                {
+                    "date": 1671647798100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,17 +5,19 @@\n     header('location:view/connection.phtml');\n     exit();\n \n }\n+ \n+  \n+$content = $_POST['content'];\n \n-\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n      \n-    $content = $_POST['content'];\n+  \n \n     $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n    \n \n"
+                },
+                {
+                    "date": 1671647831949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,11 @@\n \n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n-}\n \n-     \n-  \n \n+\n     $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n-   \n \n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671647879482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,17 @@\n \n }\n  \n   \n+\n $content = $_POST['content'];\n \n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n \n \n-    $sql = \"INSERT INTO 'messages'('content') VALUES ('$content')\";\n+   \n \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648190639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,19 @@\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n+}\n \n+if(isset($_POST['content'])){\n \n+    $name = $_POST['content'];\n+  \n\\ No newline at end of file\n+\n+  \n    \n-\n-\n-}\n+  \n+    $sql=\"INSERT INTO messages (content) VALUES('\".$content.\"',)\";\n+  \n+   \n+  }\n+    ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648321031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n }\n \n if(isset($_POST['content'])){\n \n-    $name = $_POST['content'];\n+    $content = $_POST['content'];\n   \n \n   \n    \n"
+                },
+                {
+                    "date": 1671648469019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,17 +16,14 @@\n } catch (Exception $e) {\n \n }\n \n-if(isset($_POST['content'])){\n \n-    $content = $_POST['content'];\n-  \n \n   \n    \n   \n     $sql=\"INSERT INTO messages (content) VALUES('\".$content.\"',)\";\n   \n    \n-  }\n+  \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648510416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n }\n  \n   \n \n-$content = $_POST['content'];\n \n+\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n"
+                },
+                {
+                    "date": 1671648564736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n \n \n   \n    \n+\"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\"\n+   \n   \n-    $sql=\"INSERT INTO messages (content) VALUES('\".$content.\"',)\";\n-  \n    \n   \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648580496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n \n   \n    \n-\"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\"\n+$sql =\"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\"\n    \n   \n    \n   \n"
+                },
+                {
+                    "date": 1671648662873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,8 @@\n   \n    \n $sql =\"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\"\n    \n-  \n+  var_dump($sql);\n    \n   \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648669698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n }\n \n \n \n-  \n+\n+\n+$sql = \"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\";\n    \n-$sql =\"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\"\n-   \n   var_dump($sql);\n    \n   \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671648751352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,8 @@\n \n \n $sql = \"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\";\n    \n-  var_dump($sql);\n+  \n    \n   \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671697308089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,25 +5,19 @@\n     header('location:view/connection.phtml');\n     exit();\n \n }\n- \n-  \n \n-\n-\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n \n+$req = $db->prepare(\"INSERT INTO messages (content, createdAt, user_id, ) VALUES (:content, :createdAt, :user_id, )\");\n+    $req->execute(array(\n+            \"content\" => $content, \n+            \"createdAt\" => $createdAt,\n+           \n+            ));\n \n-\n-\n-\n\\ No newline at end of file\n-$sql = \"INSERT INTO `messages`(`id`, `content`, `createdAt`, `user_id`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')\";\n-   \n-  \n-   \n-  \n-    ?>\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671697454316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,12 @@\n } catch (Exception $e) {\n \n }\n \n-$req = $db->prepare(\"INSERT INTO messages (content, createdAt, user_id, ) VALUES (:content, :createdAt, :user_id, )\");\n+     \n+\n+$req = $db->prepare(\"INSERT INTO messages (content, createdAt,  ) VALUES (:content, :createdAt, :user_id, )\");\n     $req->execute(array(\n-            \"content\" => $content, \n-            \"createdAt\" => $createdAt,\n            \n             ));\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671698181880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,13 +11,16 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n+$createdAt = new \\DateTime;\n+$user_id= $_SESSION['user']['id'];\n \n-     \n+$req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n+    $req->execute(array(\n+            'content'=>$content,\n+            'createdAt'=>$createdAt,\n \n-$req = $db->prepare(\"INSERT INTO messages (content, createdAt,  ) VALUES (:content, :createdAt, :user_id, )\");\n-    $req->execute(array(\n-           \n+\n             ));\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671698198795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n $req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n     $req->execute(array(\n             'content'=>$content,\n             'createdAt'=>$createdAt,\n+            'user_id'=>$user_id,\n \n \n             ));\n \n"
+                },
+                {
+                    "date": 1671698396619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n }\n $createdAt = new \\DateTime;\n $user_id= $_SESSION['user']['id'];\n-\n+$content=$_POST['content'];\n $req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n     $req->execute(array(\n             'content'=>$content,\n             'createdAt'=>$createdAt,\n"
+                },
+                {
+                    "date": 1671698638330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = new \\DateTime;\n+$createdAt = '00:00:00';\n $user_id= $_SESSION['user']['id'];\n $content=$_POST['content'];\n $req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n     $req->execute(array(\n"
+                },
+                {
+                    "date": 1671698752466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,16 +12,16 @@\n } catch (Exception $e) {\n \n }\n $createdAt = '00:00:00';\n-$user_id= $_SESSION['user']['id'];\n-$content=$_POST['content'];\n+$user_id = $_SESSION['user']['id'];\n+$content = $_POST['content'];\n $req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n-    $req->execute(array(\n-            'content'=>$content,\n-            'createdAt'=>$createdAt,\n-            'user_id'=>$user_id,\n+$req->execute(\n+    array(\n+        'content' => $content,\n+        'createdAt' => $createdAt,\n+        'user_id' => $user_id\n+        )\n+);\n \n-\n-            ));\n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671698903486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,12 @@\n }\n $createdAt = '00:00:00';\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n-$req = $db->prepare(\"INSERT INTO messages (content,cretaedAt,user_id) VALUES (:content, :createdAt, :user_id, )\");\n+$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content, :user_id, )\");\n $req->execute(\n     array(\n         'content' => $content,\n-        'createdAt' => $createdAt,\n         'user_id' => $user_id\n         )\n );\n \n"
+                },
+                {
+                    "date": 1671698964116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n $content = $_POST['content'];\n $req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content, :user_id, )\");\n $req->execute(\n     array(\n-        'content' => $content,\n-        'user_id' => $user_id\n+        ':content' => $content,\n+        ':user_id' => $user_id\n         )\n );\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671699365808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,12 @@\n }\n $createdAt = '00:00:00';\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n-$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content, :user_id, )\");\n+\n+$content = 'test';\n+$req = $db->prepare(\"INSERT INTO messages (content) VALUES ('test')\");\n $req->execute(\n-    array(\n-        ':content' => $content,\n-        ':user_id' => $user_id\n-        )\n+\n );\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671699414353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,12 @@\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $content = 'test';\n-$req = $db->prepare(\"INSERT INTO messages (content) VALUES ('test')\");\n+$req = $db->prepare(\"INSERT INTO messages (content) VALUES (:content)\");\n $req->execute(\n-\n+    array(\n+        ':content' => 'test'\n+        )\n );\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671699451506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n $content = 'test';\n $req = $db->prepare(\"INSERT INTO messages (content) VALUES (:content)\");\n $req->execute(\n     array(\n-        ':content' => 'test'\n+        ':content' => $content\n         )\n );\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671699522141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,8 @@\n $createdAt = '00:00:00';\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n-$content = 'test';\n $req = $db->prepare(\"INSERT INTO messages (content) VALUES (:content)\");\n $req->execute(\n     array(\n         ':content' => $content\n"
+                },
+                {
+                    "date": 1671699774442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,14 @@\n $createdAt = '00:00:00';\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n-$req = $db->prepare(\"INSERT INTO messages (content) VALUES (:content)\");\n+$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content,:user_id)\");\n $req->execute(\n     array(\n-        ':content' => $content\n+        ':content' => $content,\n+        ':user_id' => $_SESSION['user']['id'],\n+\n         )\n );\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671700161688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,17 +11,18 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = '00:00:00';\n+$createdAt = date(\"h:i:s\");\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content,:user_id)\");\n $req->execute(\n     array(\n         ':content' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n+        ':createdAt' => $createdAt,\n \n         )\n );\n \n"
+                },
+                {
+                    "date": 1671700190106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n $createdAt = date(\"h:i:s\");\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n-$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content,:user_id)\");\n+$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':content' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n"
+                },
+                {
+                    "date": 1671700242045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n $createdAt = date(\"h:i:s\");\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n-$req = $db->prepare(\"INSERT INTO messages (content,user_id) VALUES (:content,:user_id,:createdAt)\");\n+$req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':content' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n"
+                },
+                {
+                    "date": 1671700614061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = date(\"h:i:s\");\n+$createdAt = DateTime(\"Y-m-d H:i:s\");\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n"
+                },
+                {
+                    "date": 1671700630379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = DateTime(\"Y-m-d H:i:s\");\n+$createdAt = Datetime(\"Y-m-d H:i:s\");\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n"
+                },
+                {
+                    "date": 1671700774029,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = Datetime(\"Y-m-d H:i:s\");\n+$createdAt = DateTime('Y-m-d H:i:s');\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n"
+                },
+                {
+                    "date": 1671700884604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,18 +11,18 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n \n }\n-$createdAt = DateTime('Y-m-d H:i:s');\n+$createdAt = new DateTime();\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':content' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n-        ':createdAt' => $createdAt,\n+        ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n \n"
+                },
+                {
+                    "date": 1671701379778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-\n+     echo \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671701385491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-     echo \n+echo \"hello\";\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671701400290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-echo \"hello\";\n+echo \"yes\";\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671701415390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,6 +24,6 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-echo \"yes\";\n+\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671634111113,
+            "name": "Commit-0",
+            "content": "<?php\n\n\ntry {\n      $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n    } catch (Exception $e) {\n    }\n\n\n    if(isset($_POST['submit'])) {\n        // Variables\n        $user_id = $_POST['user_id'];\n        $content = $_POST['content'];\n        "
+        }
+    ]
+}

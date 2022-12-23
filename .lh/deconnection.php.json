@@ -1,0 +1,90 @@
+{
+    "sourceFile": "deconnection.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1671457546270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671457622746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n <?php\n session_destroy();\n \n+header('location:index.php');\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671457710806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_destroy();\n \n-header('location:index.php');\n+header('location:view/connection.phtml');\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458183358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_destroy();\n \n-header('location:view/connection.phtml');\n \n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458656903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <?php\n+ session_start();\n+\n session_destroy();\n \n \n \n"
+                },
+                {
+                    "date": 1671460244033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n  session_start();\n \n session_destroy();\n+exit();\n \n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671462642277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n+header('location:./connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671462753875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./connection.phtml');\n+header('location:./../connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671462809600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./../connection.phtml');\n+header('location: connection.php');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671462844250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location: connection.php');\n+header('location:./connection.php');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671462851881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./connection.php');\n+header('location:./connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671463011060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./connection.phtml');\n+header('location:./../connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671463929179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./../connection.phtml');\n+header('location:./connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671463960237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./connection.phtml');\n+header('location:./../connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671464024928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./../connection.phtml');\n+header('location:./../connection.php');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671464049245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./../connection.php');\n+header('location:./connection.php');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671464165359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./connection.php');\n+header('location:./../connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671464218175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n  session_start();\n \n session_destroy();\n-header('location:./../connection.phtml');\n+header('location:./view/connection.phtml');\n exit();\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671613108940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n <?php\n- session_start();\n-\n+session_start();\n session_destroy();\n-header('location:./view/connection.phtml');\n+header('location:./view/home.phtml');\n exit();\n \n-\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671457546270,
+            "name": "Commit-0",
+            "content": "<?php\nsession_destroy();\n\n?>"
+        }
+    ]
+}

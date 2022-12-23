@@ -1,0 +1,74 @@
+{
+    "sourceFile": "hello.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1670590063478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670592273702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n \n \n-\n-\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1670595811713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,12 @@\n+<?php\n+  session_start();\n+?>\n \n \n <!DOCTYPE html>\n+\n+\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                },
+                {
+                    "date": 1670599410707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,11 @@\n <?php\n   session_start();\n+\n+ if(!isset($_SESSION['user'])){\n+   header('Location:connection.php');\n+}\n+\n ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1670599576637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n \n+\n ?>\n \n \n <!DOCTYPE html>\n@@ -18,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue</H1>\n+    <H1>bienvenue <?php echo $_SESSION['name']?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670599590069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue <?php echo $_SESSION['name']?></H1>\n+    <H1>bienvenue <?php echo $_SESSION['user']?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670599636624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue <?php echo $_SESSION['user']?></H1>\n+    <H1>bienvenue <?php echo $_SESSION['user'->name]?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670599653375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue <?php echo $_SESSION['user'->name]?></H1>\n+    <H1>bienvenue <?php echo $_SESSION['user->name']?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670599668554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue <?php echo $_SESSION['user->name']?></H1>\n+    <H1>bienvenue <?php echo $_SESSION['user']?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670599986501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n+var_dump($_SESSION['user']);\n \n-\n ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1670600018328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n-var_dump($_SESSION['user']);\n+var_dump($_SESSION['name']);\n \n ?>\n \n \n"
+                },
+                {
+                    "date": 1670600221617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n-var_dump($_SESSION['name']);\n+var_dump($_SESSION['user']['name']);\n \n ?>\n \n \n"
+                },
+                {
+                    "date": 1670600258168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,7 +19,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    <H1>bienvenue <?php echo $_SESSION['user']?></H1>\n+    <H1>bienvenue <?php echo $_SESSION['user']['name']?></H1>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670600272732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n \n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n-var_dump($_SESSION['user']['name']);\n \n+\n ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1671439986951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   session_start();\n-\n+  include (\"nav.php\");\n  if(!isset($_SESSION['user'])){\n    header('Location:connection.php');\n }\n \n"
+                }
+            ],
+            "date": 1670590063478,
+            "name": "Commit-0",
+            "content": "\n\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n</head>\n<body>\n    <H1>bienvenue</H1>\n</body>\n</html>"
+        }
+    ]
+}

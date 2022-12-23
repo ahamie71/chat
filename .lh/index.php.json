@@ -1,0 +1,282 @@
+{
+    "sourceFile": "index.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 66,
+            "patches": [
+                {
+                    "date": 1670488641735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670488943747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \ttry\n \t{\n-\t\t$db = new PDO('mysql:host=localhost;dbname=prog;charset=utf8','root','root');\n+\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n \t\t$message= \" connexion valide\";\n \t}\n \tcatch (Exception $e)\n \t{\n"
+                },
+                {
+                    "date": 1670490958796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,14 @@\n \t<title></title>\n </head>\n <body>\n <?php\n+\n+if (isset($_POST['connexion']))\n+\n+echo\"hello\";\n+\n+\n     \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \ttry\n@@ -22,10 +28,11 @@\n \t}\n \n \techo $message;\n \n-\t\n+\t \n \n+\n ?>\n \n \n </body>\n"
+                },
+                {
+                    "date": 1670491008055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,20 +15,20 @@\n \n     \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\ttry\n-\t{\n-\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t\t$message= \" connexion valide\";\n-\t}\n-\tcatch (Exception $e)\n-\t{\n-\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n+\t// try\n+\t// {\n+\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n+\t// \t$message= \" connexion valide\";\n+\t// }\n+\t// catch (Exception $e)\n+\t// {\n+\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n \n-\t}\n+\t// }\n \n-\techo $message;\n+\t// echo $message;\n \n \t \n \n \n"
+                },
+                {
+                    "date": 1670491041468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <?php\n \n if (isset($_POST['connexion']))\n \n-echo\"hello\";\n+echo \"hello\";\n \n \n     \n \t//connexion à la base de donnée\n"
+                },
+                {
+                    "date": 1670491075867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n </head>\n <body>\n <?php\n \n-if (isset($_POST['connexion']))\n+if (isset($_POST['connexion'])){\n \n echo \"hello\";\n \n-\n+}\n     \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t// try\n"
+                },
+                {
+                    "date": 1670491099777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n </head>\n <body>\n <?php\n \n-if (isset($_POST['connexion'])){\n+if(isset($_POST['connexion'])){\n \n echo \"hello\";\n \n }\n"
+                },
+                {
+                    "date": 1670491143545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,20 +15,20 @@\n }\n     \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t// try\n-\t// {\n-\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t// \t$message= \" connexion valide\";\n-\t// }\n-\t// catch (Exception $e)\n-\t// {\n-\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n+\t try\n+\t {\n+\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n+\t\t$message= \" connexion valide\";\n+\t }\n+\t catch (Exception $e)\n+\t {\n+\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n \n-\t// }\n+\t }\n \n-\t// echo $message;\n+\techo $message;\n \n \t \n \n \n"
+                },
+                {
+                    "date": 1670491174742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n </head>\n <body>\n <?php\n \n-if(isset($_POST['connexion'])){\n+if(isset($_POST['Connexion'])){\n \n echo \"hello\";\n \n }\n"
+                },
+                {
+                    "date": 1670491285024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,13 @@\n <body>\n <?php\n \n if(isset($_POST['Connexion'])){\n+    \n+\t$name=$_POST['email'];\n+\t$name=$_POST['password'];\n \n-echo \"hello\";\n+  echo $name;\n \n }\n     \n \t//connexion à la base de donnée\n"
+                },
+                {
+                    "date": 1670491324182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n if(isset($_POST['Connexion'])){\n     \n \t$name=$_POST['email'];\n-\t$name=$_POST['password'];\n+\t$password=$_POST['password'];\n \n   echo $name;\n \n }\n"
+                },
+                {
+                    "date": 1670491340813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,20 +18,20 @@\n }\n     \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t try\n-\t {\n-\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t\t$message= \" connexion valide\";\n-\t }\n-\t catch (Exception $e)\n-\t {\n-\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n+\t//  try\n+\t//  {\n+\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n+\t// \t$message= \" connexion valide\";\n+\t//  }\n+\t//  catch (Exception $e)\n+\t//  {\n+\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n \n-\t }\n+\t//  }\n \n-\techo $message;\n+\t// echo $message;\n \n \t \n \n \n"
+                },
+                {
+                    "date": 1670491831441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,18 +6,15 @@\n \t<title></title>\n </head>\n <body>\n <?php\n+ // on verifie tout d'abord les  informations du formulaire\n \n-if(isset($_POST['Connexion'])){\n-    \n-\t$name=$_POST['email'];\n-\t$password=$_POST['password'];\n+    if(isset($_POST['name'])&& (isset($_POST['password'])){\n \n-  echo $name;\n+\t\t;\n+\t}\n \n-}\n-    \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t//  try\n \t//  {\n"
+                },
+                {
+                    "date": 1670491861678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n <body>\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n-    if(isset($_POST['name'])&& (isset($_POST['password'])){\n+    if(isset($_POST['name'])&& isset($_POST['password'])){\n \n-\t\t;\n+\t\t\n \t}\n \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n"
+                },
+                {
+                    "date": 1670491975204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,11 @@\n <body>\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n-    if(isset($_POST['name'])&& isset($_POST['password'])){\n-\n+    if(isset($_POST['name'])&& isset($_POST['password'])){ // on verifie si l'utilisateur a rentrer son nom et son mot de passe\n+    \n+\t\techo \"bienvebue cher utlisateur\";\n \t\t\n \t}\n \n \t//connexion à la base de donnée\n"
+                },
+                {
+                    "date": 1670492052133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,11 @@\n <body>\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n-    if(isset($_POST['name'])&& isset($_POST['password'])){ // on verifie si l'utilisateur a rentrer son nom et son mot de passe\n+    if(isset($_POST['name'])&& isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n     \n-\t\techo \"bienvebue cher utlisateur\";\n+\t\techo \"bienvenue cher utlisateur\";\n \t\t\n \t}\n \n \t//connexion à la base de donnée\n"
+                },
+                {
+                    "date": 1670492226794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,14 +8,19 @@\n <body>\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n-    if(isset($_POST['name'])&& isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n+    if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n     \n \t\techo \"bienvenue cher utlisateur\";\n \t\t\n \t}\n \n+\telse{\n+\n+\t\techo\" rentrez bien for informatio\";\n+\t}\n+\n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t//  try\n \t//  {\n"
+                },
+                {
+                    "date": 1670492364041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,10 @@\n \t\techo \"bienvenue cher utlisateur\";\n \t\t\n \t}\n \n-\telse{\n+\t\n \n-\t\techo\" rentrez bien for informatio\";\n-\t}\n-\n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t//  try\n \t//  {\n"
+                },
+                {
+                    "date": 1670492623729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,4 @@\n-<!DOCTYPE html>\n-<html>\n-<head>\n-\t<meta charset=\"utf-8\">\n-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-\t<title></title>\n-</head>\n-<body>\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n     if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n@@ -37,7 +29,19 @@\n \n ?>\n \n \n+\n+<!DOCTYPE html>\n+<html>\n+<head>\n+\t<meta charset=\"utf-8\">\n+\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+\t<title></title>\n+</head>\n+<body>\n+\n+\n+\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1670492912382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,13 @@\n     \n \t\techo \"bienvenue cher utlisateur\";\n \t\t\n \t}\n+\telse{\n \n+\t\techo \" rentrez bien vos informations du formulaire\";\n+\t}\n+\n \t\n \n \t//connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n"
+                },
+                {
+                    "date": 1670492932306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n  // on verifie tout d'abord les  informations du formulaire\n \n     if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n     \n-\t\techo \"bienvenue cher utlisateur\";\n+\t\techo \"bienvenue cher utilisateur\";\n \t\t\n \t}\n \telse{\n \n"
+                },
+                {
+                    "date": 1670493368590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,51 +1,47 @@\n-<?php\n- // on verifie tout d'abord les  informations du formulaire\n-\n-    if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n-    \n-\t\techo \"bienvenue cher utilisateur\";\n-\t\t\n-\t}\n-\telse{\n-\n-\t\techo \" rentrez bien vos informations du formulaire\";\n-\t}\n-\n-\t\n-\n-\t//connexion à la base de donnée\n-\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t//  try\n-\t//  {\n-\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t// \t$message= \" connexion valide\";\n-\t//  }\n-\t//  catch (Exception $e)\n-\t//  {\n-\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n-\n-\t//  }\n-\n-\t// echo $message;\n-\n-\t \n-\n-\n-?>\n-\n-\n-\n <!DOCTYPE html>\n <html>\n <head>\n \t<meta charset=\"utf-8\">\n \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n \t<title></title>\n </head>\n <body>\n \n+    <div class=\"container\">\n+    <form action=\"config.php\" method=\"post\">  \n+        <div class=\"row mb-3\">\n+          <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n+          <div class=\"col-sm-10\">\n+            <input type=\"name\" class=\"\" id=\"name\">\n+          </div>\n+        </div>\n+        <div class=\"row mb-3\">\n+          <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n+          <div class=\"col-sm-10\">\n+            <input type=\"password\" class=\"\" id=\"password\">\n+          </div>\n+        </div>\n+       \n+        <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n+      </form>  \n+      </div>\n \n+      <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n+     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+      </body>\n \n-</body>\n-</html>\n+    </html>\n \n+    <style>\n+   \n+   .container {\n+     margin-top: 10px;\n+     margin-bottom: auto;\n+     \n+\n+    \n+   }\n+\n+\n+    </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670493543737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\n <body>\n \n     <div class=\"container\">\n-    <form action=\"config.php\" method=\"post\">  \n+    <form action=\"config.php\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"\" id=\"name\">\n"
+                },
+                {
+                    "date": 1670493661011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,15 @@\n     <form action=\"config.php\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"name\" class=\"\" id=\"name\">\n+            <input type=\"text\" name=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"password\" class=\"\" id=\"password\">\n+            <input type=\"password\" name=\"password>\n           </div>\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n"
+                },
+                {
+                    "date": 1670493683971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"password\" name=\"password>\n+            <input type=\"password\" name=\"password\">\n           </div>\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n"
+                },
+                {
+                    "date": 1670505860794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\n <body>\n \n     <div class=\"container\">\n-    <form action=\"config.php\" method=\"POST\">  \n+    <form action=\"\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"text\" name=\"name\">\n"
+                },
+                {
+                    "date": 1670505908486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             <input type=\"password\" name=\"password\">\n           </div>\n         </div>\n        \n-        <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n+        <button type=\"submit\" class=\"btn btn-primary\" name= \"bouton-valider\">Connexion</button>\n       </form>  \n       </div>\n \n       <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1670506133760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,75 @@\n+<?php \n+\n+if(isset($_POST['bouton-valider'])){\n+\n+\t\n+\t// on verifie tout d'abord les  informations du formulaire\n+   \n+\t   if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n+\t\t   // on met le name et le password dans des vairablers \n+   \n+\t\t   $name= $_POST['name'];\n+\t\t   $password= $_POST['password'];\n+   \n+   //connexion à la base de donnée\n+\t   //si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n+\t\ttry\n+\t\t {\n+\t\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n+\t\t\t$message= \" connexion valide\";\n+\t\t }\n+\t\t catch (Exception $e)\n+\t\t {\n+\t\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n+   \n+\t\t }\n+   \n+\t   echo $message;\n+   \n+\t\t   // nous allons verifieer si les information ssont correctes\n+\t\t   //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n+\t\t   \n+\t   $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n+\t   $userStatement=$db->prepare($sql);\n+\t   \n+\t   $userStatement->execute();\n+\t   var_dump($userStatement->fetch());\n+\t $user= $userStatement->fetch();\n+\t  $num_ligne=$userStatement->rowCount();;\n+   \n+\t  if($num_ligne>0){\n+   \n+\t   header(\"location:bienvenue.php\");\n+\t   \n+   \n+\t  }else{\n+\t echo \"adresse mail not good or your password is not correct\";\n+   \n+\t  }\n+   \n+   \n+\t   }\n+\t   \n+   \n+\t   \n+   \n+\t\t\n+   \n+   \n+   \n+\t\n+   \n+\n+}\n+\n+\n+?>\n+\n+\n+\n+\n+\n <!DOCTYPE html>\n <html>\n <head>\n \t<meta charset=\"utf-8\">\n"
+                },
+                {
+                    "date": 1670506143026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n \t\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n    \n \t\t }\n    \n-\t   echo $message;\n+\t  \n    \n \t\t   // nous allons verifieer si les information ssont correctes\n \t\t   //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n \t\t   \n"
+                },
+                {
+                    "date": 1670506229419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,34 +42,17 @@\n \t   header(\"location:bienvenue.php\");\n \t   \n    \n \t  }else{\n-\t echo \"adresse mail not good or your password is not correct\";\n+\t $error= \"adresse mail not good or your password is not correct\";\n    \n \t  }\n    \n    \n \t   }\n-\t   \n-   \n-\t   \n-   \n-\t\t\n-   \n-   \n-   \n-\t\n-   \n-\n }\n \n-\n ?>\n-\n-\n-\n-\n-\n <!DOCTYPE html>\n <html>\n <head>\n \t<meta charset=\"utf-8\">\n"
+                },
+                {
+                    "date": 1670506338642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \t\t   // on met le name et le password dans des vairablers \n    \n \t\t   $name= $_POST['name'];\n \t\t   $password= $_POST['password'];\n+\t\t   $erreur =\"\";\n    \n    //connexion à la base de donnée\n \t   //si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t\ttry\n"
+                },
+                {
+                    "date": 1670506397023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,8 +62,14 @@\n \t<title></title>\n </head>\n <body>\n \n+<?php \n+if(isset($erreur)){\n+\n+\techo \"erreur\";\n+}\n+\n     <div class=\"container\">\n     <form action=\"\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n"
+                },
+                {
+                    "date": 1670506403836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n if(isset($erreur)){\n \n \techo \"erreur\";\n }\n-\n+?>\n     <div class=\"container\">\n     <form action=\"\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n"
+                },
+                {
+                    "date": 1670506432434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n \n <?php \n if(isset($erreur)){\n \n-\techo \"erreur\";\n+\techo $erreur;\n }\n ?>\n     <div class=\"container\">\n     <form action=\"\" method=\"POST\">  \n"
+                },
+                {
+                    "date": 1670506472328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \t   $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n \t   $userStatement=$db->prepare($sql);\n \t   \n \t   $userStatement->execute();\n-\t   var_dump($userStatement->fetch());\n+\t   \n \t $user= $userStatement->fetch();\n \t  $num_ligne=$userStatement->rowCount();;\n    \n \t  if($num_ligne>0){\n"
+                },
+                {
+                    "date": 1670506649121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \t\t   // on met le name et le password dans des vairablers \n    \n \t\t   $name= $_POST['name'];\n \t\t   $password= $_POST['password'];\n-\t\t   $erreur =\"\";\n+\t\t   $erreur =\"\" ;\n    \n    //connexion à la base de donnée\n \t   //si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t\ttry\n@@ -43,9 +43,9 @@\n \t   header(\"location:bienvenue.php\");\n \t   \n    \n \t  }else{\n-\t $error= \"adresse mail not good or your password is not correct\";\n+\t $erreur= \"adresse mail not good or your password is not correct\";\n    \n \t  }\n    \n    \n"
+                },
+                {
+                    "date": 1670506892839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t   \n+\t    $_SESSION['name']= $name;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670507442082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <?php \n \n+session_start();\n+\n if(isset($_POST['bouton-valider'])){\n \n \t\n \t// on verifie tout d'abord les  informations du formulaire\n@@ -40,9 +42,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION['name']= $name;\n+\t    $_SESSION['name'] = $name ;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670507459002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION['name'] = $name ;\n+\t    $_SESSION('name') = $name ;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670507469180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION('name') = $name ;\n+\t    $_SESSION['name'] = $name ;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670507510991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION['name'] = $name ;\n+\t    $_SESSION['name']  ;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670507549486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n    \n \t  if($num_ligne>0){\n    \n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION['name']  ;\n+\t    $_SESSION['name'] = $name;\n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n"
+                },
+                {
+                    "date": 1670509659396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,16 +95,4 @@\n       </body>\n \n     </html>\n \n-    <style>\n-   \n-   .container {\n-     margin-top: 10px;\n-     margin-bottom: auto;\n-     \n-\n-    \n-   }\n-\n-\n-    </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670509704632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n \n \techo $erreur;\n }\n ?>\n-    <div class=\"container\">\n+    <div class=\"containr\">\n     <form action=\"\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n"
+                },
+                {
+                    "date": 1670509818786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n \n \techo $erreur;\n }\n ?>\n-    <div class=\"containr\">\n+    <div class=\"container\">\n     <form action=\"\" method=\"POST\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n@@ -95,4 +95,16 @@\n       </body>\n \n     </html>\n \n+    <style>\n+   \n+   .container {\n+     margin-top: 1000px;\n+     margin-bottom: auto;\n+     \n+\n+    \n+   }\n+\n+\n+    </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670509848525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,9 +98,9 @@\n \n     <style>\n    \n    .container {\n-     margin-top: 1000px;\n+     margin-top: 100px;\n      margin-bottom: auto;\n      \n \n     \n"
+                },
+                {
+                    "date": 1670509896563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -94,17 +94,4 @@\n      <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n       </body>\n \n     </html>\n-\n-    <style>\n-   \n-   .container {\n-     margin-top: 100px;\n-     margin-bottom: auto;\n-     \n-\n-    \n-   }\n-\n-\n-    </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670514125700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,19 +40,24 @@\n \t $user= $userStatement->fetch();\n \t  $num_ligne=$userStatement->rowCount();;\n    \n \t  if($num_ligne>0){\n-   \n+\t\t$_SESSION['name'] = $name;\n+\n \t   header(\"location:bienvenue.php\");\n-\t    $_SESSION['name'] = $name;\n+\t   \n    \n \t  }else{\n \t $erreur= \"adresse mail not good or your password is not correct\";\n    \n \t  }\n    \n+     \n    \n \t   }\n+\n+\n+\n }\n \n ?>\n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1670514948451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,102 +1,15 @@\n-<?php \n-\n-session_start();\n-\n-if(isset($_POST['bouton-valider'])){\n-\n-\t\n-\t// on verifie tout d'abord les  informations du formulaire\n-   \n-\t   if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n-\t\t   // on met le name et le password dans des vairablers \n-   \n-\t\t   $name= $_POST['name'];\n-\t\t   $password= $_POST['password'];\n-\t\t   $erreur =\"\" ;\n-   \n-   //connexion à la base de donnée\n-\t   //si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t\ttry\n-\t\t {\n-\t\t\t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t\t\t$message= \" connexion valide\";\n-\t\t }\n-\t\t catch (Exception $e)\n-\t\t {\n-\t\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n-   \n-\t\t }\n-   \n-\t  \n-   \n-\t\t   // nous allons verifieer si les information ssont correctes\n-\t\t   //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n-\t\t   \n-\t   $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n-\t   $userStatement=$db->prepare($sql);\n-\t   \n-\t   $userStatement->execute();\n-\t   \n-\t $user= $userStatement->fetch();\n-\t  $num_ligne=$userStatement->rowCount();;\n-   \n-\t  if($num_ligne>0){\n-\t\t$_SESSION['name'] = $name;\n-\n-\t   header(\"location:bienvenue.php\");\n-\t   \n-   \n-\t  }else{\n-\t $erreur= \"adresse mail not good or your password is not correct\";\n-   \n-\t  }\n-   \n-     \n-   \n-\t   }\n-\n-\n-\n-}\n-\n-?>\n <!DOCTYPE html>\n-<html>\n+<html lang=\"en\">\n <head>\n-\t<meta charset=\"utf-8\">\n-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n-\t<title></title>\n+\t<meta charset=\"UTF-8\">\n+\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+\t<title>Document</title>\n </head>\n <body>\n+\t<!--si pas connecté on-->\n \n-<?php \n-if(isset($erreur)){\n+\t<a href=\"connection.php\">Connectez-vous</a>\n \n-\techo $erreur;\n-}\n-?>\n-    <div class=\"container\">\n-    <form action=\"\" method=\"POST\">  \n-        <div class=\"row mb-3\">\n-          <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n-          <div class=\"col-sm-10\">\n-            <input type=\"text\" name=\"name\">\n-          </div>\n-        </div>\n-        <div class=\"row mb-3\">\n-          <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n-          <div class=\"col-sm-10\">\n-            <input type=\"password\" name=\"password\">\n-          </div>\n-        </div>\n-       \n-        <button type=\"submit\" class=\"btn btn-primary\" name= \"bouton-valider\">Connexion</button>\n-      </form>  \n-      </div>\n-\n-      <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n-     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n-      </body>\n-\n-    </html>\n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670514997936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \t<title>Document</title>\n </head>\n <body>\n \t<!--si pas connecté on-->\n+\t<p>Pour discuter <a href=\"connection.php\">Connectez-vous</a></p>\n+\t\n \n-\t<a href=\"connection.php\">Connectez-vous</a>\n-\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670516224444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,23 @@\n+\n+\n+<?php\n+ \n+if(isset($_POST['name']) && isset($_POST['password']){\n+\n+\t$name=$_POST['name'];\n+\t$password=$_POST['password'];\n+}\n+\n+\n+\n+\n+\n+\n+\n+\n+?>\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n \t<meta charset=\"UTF-8\">\n@@ -8,8 +27,11 @@\n </head>\n <body>\n \t<!--si pas connecté on-->\n \t<p>Pour discuter <a href=\"connection.php\">Connectez-vous</a></p>\n+    \n \t\n+\t \n \n\\ No newline at end of file\n </body>\n-</html>\n+</html>\n+\n"
+                },
+                {
+                    "date": 1670516231632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n \n \n <?php\n  \n-if(isset($_POST['name']) && isset($_POST['password']){\n+if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n \t$password=$_POST['password'];\n }\n@@ -33,4 +33,5 @@\n \t \n \n </body>\n </html>\n+\n"
+                },
+                {
+                    "date": 1670516666484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,19 +3,14 @@\n <?php\n  \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n+\techo\"hello\";\n+\n \t$name=$_POST['name'];\n \t$password=$_POST['password'];\n }\n \n-\n-\n-\n-\n-\n-\n-\n ?>\n \n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670516714799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,9 @@\n \n \n-<?php\n- \n-if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\techo\"hello\";\n \n-\t$name=$_POST['name'];\n-\t$password=$_POST['password'];\n-}\n \n-?>\n \n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1670591831782,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,25 @@\n+ <?php\n+   \n+   session_start();\n+   $_session['name']= 'name';\n \n \n \n+?>\n \n \n \n+\n <!DOCTYPE html>\n+\n+\n <html lang=\"en\">\n <head>\n \t<meta charset=\"UTF-8\">\n \t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n \t<title>Document</title>\n </head>\n <body>\n-\t<!--si pas connecté on-->\n \t<p>Pour discuter <a href=\"connection.php\">Connectez-vous</a></p>\n-    \n-\t\n-\t \n-\n </body>\n-</html>\n-\n"
+                },
+                {
+                    "date": 1670592086678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,20 @@\n    \n    session_start();\n    $_session['name']= 'name';\n \n+   if($_session['name']=='name'){\n+   \n+\t(header('Location:index.php'));\n \n+   }else{\n \n+\theader('Location:connection.php');\n+   }\n+\n+   \n+\n+\n ?>\n \n \n \n"
+                },
+                {
+                    "date": 1670592386399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,17 @@\n  <?php\n    \n    session_start();\n+\n    $_session['name']= 'name';\n \n    if($_session['name']=='name'){\n    \n-\t(header('Location:index.php'));\n+\t(header('Location:connection.php'));\n \n    }else{\n \n-\theader('Location:connection.php');\n+\theader('Location:index.php');\n    }\n \n    \n \n"
+                },
+                {
+                    "date": 1670592543903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,12 @@\n \n    $_session['name']= 'name';\n \n    if($_session['name']=='name'){\n-   \n-\t(header('Location:connection.php'));\n \n+\t\n+   header('Location:connection.php');\n+\n    }else{\n \n \theader('Location:index.php');\n    }\n"
+                },
+                {
+                    "date": 1670592561355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,14 @@\n    $_session['name']= 'name';\n \n    if($_session['name']=='name'){\n \n-\t\n-   header('Location:connection.php');\n \n+   header('Location:index.php');\n+\n    }else{\n \n-\theader('Location:index.php');\n+\theader('Location:connection.php');\n    }\n \n    \n \n"
+                },
+                {
+                    "date": 1670595154277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,9 @@\n- <?php\n-   \n-   session_start();\n+ \n \n-   $_session['name']= 'name';\n \n-   if($_session['name']=='name'){\n \n \n-   header('Location:index.php');\n-\n-   }else{\n-\n-\theader('Location:connection.php');\n-   }\n-\n-   \n-\n-\n-?>\n-\n-\n-\n-\n <!DOCTYPE html>\n \n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670598673531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,18 @@\n- \n+<?php\n+ session_start();\n \n+ if(isset($_SESSION['user'])){\n \n+\t header('Location:hello.php');\n+ } else{\n \n+\theader('Location:connection.php');\n+ }\n \n+\n+?>\n <!DOCTYPE html>\n-\n-\n <html lang=\"en\">\n <head>\n \t<meta charset=\"UTF-8\">\n \t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                },
+                {
+                    "date": 1670598721708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,18 +7,4 @@\n  } else{\n \n \theader('Location:connection.php');\n  }\n-\n-\n-?>\n-<!DOCTYPE html>\n-<html lang=\"en\">\n-<head>\n-\t<meta charset=\"UTF-8\">\n-\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-\t<title>Document</title>\n-</head>\n-<body>\n-\t<p>Pour discuter <a href=\"connection.php\">Connectez-vous</a></p>\n-</body>\n"
+                },
+                {
+                    "date": 1671443124591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n <?php\n  session_start();\n \n  if(isset($_SESSION['user'])){\n-\n-\t header('Location:hello.php');\n+\t header('Location:hello.phtml');\n  } else{\n-\n \theader('Location:connection.php');\n  }\n"
+                },
+                {
+                    "date": 1671443145065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n  session_start();\n \n  if(isset($_SESSION['user'])){\n-\t header('Location:hello.phtml');\n+\t header('Location:view/hello.phtml');\n  } else{\n \theader('Location:connection.php');\n  }\n"
+                },
+                {
+                    "date": 1671443159348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n  if(isset($_SESSION['user'])){\n \t header('Location:view/hello.phtml');\n  } else{\n-\theader('Location:connection.php');\n+\theader('Location:connection.phtml');\n  }\n"
+                },
+                {
+                    "date": 1671443174687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,6 @@\n \n  if(isset($_SESSION['user'])){\n \t header('Location:view/hello.phtml');\n  } else{\n-\theader('Location:connection.phtml');\n+\theader('Location:view/connection.phtml');\n  }\n"
+                },
+                {
+                    "date": 1671458549223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n- session_start();\n+session_start();\n \n- if(isset($_SESSION['user'])){\n-\t header('Location:view/hello.phtml');\n- } else{\n+if (isset($_SESSION['user'])) {\n+\theader('Location:view/hello.phtml');\n+} else {\n \theader('Location:view/connection.phtml');\n- }\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1670488641735,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<title></title>\n</head>\n<body>\n<?php\n    \n\t//connexion à la base de donnée\n\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n\ttry\n\t{\n\t\t$db = new PDO('mysql:host=localhost;dbname=prog;charset=utf8','root','root');\n\t\t$message= \" connexion valide\";\n\t}\n\tcatch (Exception $e)\n\t{\n\t\t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n\n\t}\n\n\techo $message;\n\n\t\n\n?>\n\n\n</body>\n</html>\n\n"
+        }
+    ]
+}

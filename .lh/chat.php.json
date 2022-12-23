@@ -1,0 +1,250 @@
+{
+    "sourceFile": "chat.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 58,
+            "patches": [
+                {
+                    "date": 1671532771783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671532862092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n+ \n \n-\n $content = $_POST['content'];\n \n $createdAt = $_POST['createdAt'];\n \n@@ -11,9 +11,9 @@\n     } catch (Exception $e) {\n     }\n \n       \n-    $sql = \"SELECT * FROM  message WHERE content = '$content' AND  createdAt = '$createdAt' \";\n+    $sql = \"SELECT * FROM  messages WHERE content = '$content' AND  createdAt = '$createdAt' \";\n \n     $messageStatement = $db->prepare($sql);\n \n     $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671532934054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n <?php\n  \n+ if (isset($_POST['send'])) {\n \n+\n+    if (isset($_POST['content']) && isset($_POST['createdAt'])) {\n+  \n $content = $_POST['content'];\n \n $createdAt = $_POST['createdAt'];\n \n"
+                },
+                {
+                    "date": 1671532975008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,6 @@\n     $messageStatement->execute();\n \n     $message = $messageStatement->fetch();\n \n+}\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671533014418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,30 @@\n <?php\n- \n- if (isset($_POST['send'])) {\n \n+if (isset($_POST['send'])) {\n \n+\n     if (isset($_POST['content']) && isset($_POST['createdAt'])) {\n-  \n-$content = $_POST['content'];\n \n-$createdAt = $_POST['createdAt'];\n+        $content = $_POST['content'];\n \n+        $createdAt = $_POST['createdAt'];\n \n-try {\n-      $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    } catch (Exception $e) {\n-    }\n \n-      \n-    $sql = \"SELECT * FROM  messages WHERE content = '$content' AND  createdAt = '$createdAt' \";\n+        try {\n+            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+        } catch (Exception $e) {\n+        }\n \n-    $messageStatement = $db->prepare($sql);\n \n-    $messageStatement->execute();\n+        $sql = \"SELECT * FROM  messages WHERE content = '$content' AND  createdAt = '$createdAt' \";\n \n-    $message = $messageStatement->fetch();\n+        $messageStatement = $db->prepare($sql);\n \n+        $messageStatement->execute();\n+\n+        $message = $messageStatement->fetch();\n+\n+\n+    }\n }\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671533261519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,15 @@\n \n         $content = $_POST['content'];\n \n         $createdAt = $_POST['createdAt'];\n+        \n \n-\n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n \n-\n         $sql = \"SELECT * FROM  messages WHERE content = '$content' AND  createdAt = '$createdAt' \";\n \n         $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671534825807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,25 @@\n <?php\n \n-if (isset($_POST['send'])) {\n+if (isset($_POST['submit'])) {\n \n \n     if (isset($_POST['content']) && isset($_POST['createdAt'])) {\n \n+\n+\n         $content = $_POST['content'];\n \n         $createdAt = $_POST['createdAt'];\n-        \n+         \n \n+      \n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n \n-        $sql = \"SELECT * FROM  messages WHERE content = '$content' AND  createdAt = '$createdAt' \";\n+        $sql = \"SELECT * FROM  messages  \";\n \n         $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671540767381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,12 @@\n <?php\n \n-if (isset($_POST['submit'])) {\n-\n-\n-    if (isset($_POST['content']) && isset($_POST['createdAt'])) {\n-\n-\n-\n-        $content = $_POST['content'];\n-\n-        $createdAt = $_POST['createdAt'];\n-         \n-\n-      \n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n \n-        $sql = \"SELECT * FROM  messages  \";\n \n-        $messageStatement = $db->prepare($sql);\n+$sql = \"SELECT  * FROM  'messages' \";\n \n-        $messageStatement->execute();\n \n-        $message = $messageStatement->fetch();\n-\n-\n-    }\n-}\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671540814999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n \n \n $sql = \"SELECT  * FROM  'messages' \";\n \n+var_dump($sql);\n \n+\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671540927750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         } catch (Exception $e) {\n         }\n \n \n-$sql = \"SELECT  * FROM  'messages' \";\n+ $sql = \"SELECT *FROM messages\";\n \n var_dump($sql);\n \n \n"
+                },
+                {
+                    "date": 1671540950963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         } catch (Exception $e) {\n         }\n \n \n- $sql = \"SELECT *FROM messages\";\n+ $sql = \"SELECT * FROM messages \";\n \n var_dump($sql);\n \n \n"
+                },
+                {
+                    "date": 1671540993732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n         } catch (Exception $e) {\n         }\n \n \n- $sql = \"SELECT * FROM messages \";\n \n+ $sql = \"SELECT  content * FROM messages \";\n var_dump($sql);\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541128573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,14 @@\n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n+        $content = $_POST['content'];\n \n+    \n \n \n- $sql = \"SELECT  content * FROM messages \";\n+        $sql = \"SELECT * FROM  message WHERE content ='$content'\";\n var_dump($sql);\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541170136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,9 @@\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n+        $sql = \"SELECT * FROM  messages WHERE content ='$content'\";\n+        var_dump($sql);\n \n-    \n \n-\n-        $sql = \"SELECT * FROM  message WHERE content ='$content'\";\n-var_dump($sql);\n-\n-\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541255294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,12 @@\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n         $sql = \"SELECT * FROM  messages WHERE content ='$content'\";\n-        var_dump($sql);\n+        $messageStatement = $db->prepare($sql);\n \n+    $messageStatement->execute();\n \n+    $message = $messageStatement->fetchAll();\n+\n+\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541299114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,13 +4,14 @@\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n-        $sql = \"SELECT * FROM  messages WHERE content ='$content'\";\n+\n+        $sql = \"SELECT * FROM  messages WHERE 'content' ='$content'\";\n         $messageStatement = $db->prepare($sql);\n \n-    $messageStatement->execute();\n+        $messageStatement->execute();\n \n-    $message = $messageStatement->fetchAll();\n+      $message = $messageStatement->fetchAll();\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541325344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n \n-        $sql = \"SELECT * FROM  messages WHERE 'content' ='$content'\";\n-        $messageStatement = $db->prepare($sql);\n+        $sql = \" SELECT * FROM  messages WHERE content ='$content'\";\n+         $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n \n-      $message = $messageStatement->fetchAll();\n+        $messages = $messageStatement->fetchAll();\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671541352643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n \n+var_dump($content);\n+\n         $sql = \" SELECT * FROM  messages WHERE content ='$content'\";\n          $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671541402092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n         } catch (Exception $e) {\n         }\n         $content = $_POST['content'];\n \n-var_dump($content);\n+       \n \n-        $sql = \" SELECT * FROM  messages WHERE content ='$content'\";\n+        $sql = \" SELECT * FROM message WHERE content ='$content'\";\n          $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n \n"
+                },
+                {
+                    "date": 1671541457372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,11 +7,14 @@\n         $content = $_POST['content'];\n \n        \n \n-        $sql = \" SELECT * FROM message WHERE content ='$content'\";\n+        $sql = \" SELECT * FROM  messages WHERE content ='$content'\";\n+          \n+        var_dump($sql);\n+\n          $messageStatement = $db->prepare($sql);\n-\n+       \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n \n"
+                },
+                {
+                    "date": 1671541527483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,11 @@\n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n-        $content = $_POST['content'];\n+     \n \n-       \n-\n-        $sql = \" SELECT * FROM  messages WHERE content ='$content'\";\n+        $sql = \" SELECT * FROM  messages\" ;\n           \n         var_dump($sql);\n \n          $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671541784034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n-     \n+          \n \n-        $sql = \" SELECT * FROM  messages\" ;\n+        $sql = \"SELECT * FROM `messages`\";\n           \n         var_dump($sql);\n \n          $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671541816959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         } catch (Exception $e) {\n         }\n           \n \n-        $sql = \"SELECT * FROM `messages`\";\n+        $sql = \"SELECT content FROM messages \":\n           \n         var_dump($sql);\n \n          $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671541986159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,11 @@\n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n-          \n \n-        $sql = \"SELECT content FROM messages \":\n+\n+$sql =  'SELECT * FROM messages WHERE is_enabled = TRUE';\n           \n         var_dump($sql);\n \n          $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671542014214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n         } catch (Exception $e) {\n         }\n \n \n-$sql =  'SELECT * FROM messages WHERE is_enabled = TRUE';\n+        $sql ='SELECT * FROM messages WHERE is_enabled = TRUE';\n           \n         var_dump($sql);\n \n-         $messageStatement = $db->prepare($sql);\n+        //  $messageStatement = $db->prepare($sql);\n        \n-        $messageStatement->execute();\n+        // $messageStatement->execute();\n \n-        $messages = $messageStatement->fetchAll();\n+        // $messages = $messageStatement->fetchAll();\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671542547833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,16 @@\n         } catch (Exception $e) {\n         }\n \n \n-        $sql ='SELECT * FROM messages WHERE is_enabled = TRUE';\n+$sql = 'SELECT * FROM messages ';\n           \n         var_dump($sql);\n \n-        //  $messageStatement = $db->prepare($sql);\n+         $messageStatement = $db->prepare($sql);\n        \n-        // $messageStatement->execute();\n+        $messageStatement->execute();\n \n-        // $messages = $messageStatement->fetchAll();\n+        $messages = $messageStatement->fetchAll();\n \n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671542664119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n         } catch (Exception $e) {\n         }\n \n \n-$sql = 'SELECT * FROM messages ';\n+$sql = \"SELECT * FROM `messages`\";\n           \n-        var_dump($sql);\n+   \n \n          $messageStatement = $db->prepare($sql);\n        \n         $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671542703452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,6 +15,6 @@\n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n \n-\n+var_dump($messages);\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671542718786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,12 @@\n \n \n $sql = \"SELECT * FROM `messages`\";\n           \n-   \n-\n          $messageStatement = $db->prepare($sql);\n        \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n \n-var_dump($messages);\n+\n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671542763272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,14 +5,15 @@\n         } catch (Exception $e) {\n         }\n \n \n-$sql = \"SELECT * FROM `messages`\";\n+         $sql = \"SELECT * FROM `messages`\";\n           \n          $messageStatement = $db->prepare($sql);\n        \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n-\n-\n+     \n+         var_dump($messages);\n+         \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671543081020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,19 @@\n <?php\n \n-        try {\n-            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-        } catch (Exception $e) {\n-        }\n+try {\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+} catch (Exception $e) {\n+}\n \n \n-         $sql = \"SELECT * FROM `messages`\";\n-          \n-         $messageStatement = $db->prepare($sql);\n-       \n-        $messageStatement->execute();\n+$sql = \"SELECT * FROM `messages`\";\n \n\\ No newline at end of file\n-        $messages = $messageStatement->fetchAll();\n-     \n-         var_dump($messages);\n-         \n-    ?>\n+$messageStatement = $db->prepare($sql);\n+\n+$messageStatement->execute();\n+\n+$messages = $messageStatement->fetchAll();\n+\n+var_dump($messages);\n+include(\"hello.phtml\");\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671543105555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,6 +14,6 @@\n \n $messages = $messageStatement->fetchAll();\n \n var_dump($messages);\n-include(\"hello.phtml\");\n+include(\"view/hello.phtml\");\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671544536494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,16 @@\n <?php\n+if (isset($_POST['submit'])) {\n \n+\n+    if (isset($_POST['name'])) {\n+  \n+      $content = $_POST['content'];\n+  \n+     \n+  \n+\n+\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n@@ -15,5 +25,8 @@\n $messages = $messageStatement->fetchAll();\n \n var_dump($messages);\n include(\"view/hello.phtml\");\n+\n+\n+    }\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671544544828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   \n       $content = $_POST['content'];\n   \n      \n-  \n+    }\n \n \n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n@@ -27,6 +27,6 @@\n var_dump($messages);\n include(\"view/hello.phtml\");\n \n \n-    }\n+    \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671545261071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,35 @@\n <?php\n-if (isset($_POST['submit'])) {\n \n+        try {\n+            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+        } catch (Exception $e) {\n+        }\n \n-    if (isset($_POST['name'])) {\n-  \n-      $content = $_POST['content'];\n-  \n-     \n-    }\n \n+        $sql = \"SELECT * FROM `messages`\";\n \n-try {\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-} catch (Exception $e) {\n-}\n+        $messageStatement = $db->prepare($sql);\n \n+        $messageStatement->execute();\n \n-$sql = \"SELECT * FROM `messages`\";\n+        $messages = $messageStatement->fetchAll();\n \n-$messageStatement = $db->prepare($sql);\n+        \n+        include(\"view/hello.phtml\");\n \n-$messageStatement->execute();\n+        foreach($messages as $messageStatement){\n \n-$messages = $messageStatement->fetchAll();\n+            echo \"<tr>\";\n+            echo \"<td>\".$R['userid'].\"</td>\n+                   <td>\".$R['content'].\"</td>\n+                   <td>\".$R['createdAt'].\"</td>;\n+                  \n+                  \n+                   \n+            echo \"</tr>\";\n+        }\n \n-var_dump($messages);\n-include(\"view/hello.phtml\");\n+    \n \n-\n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671545336748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,16 +16,14 @@\n \n         \n         include(\"view/hello.phtml\");\n \n-        foreach($messages as $messageStatement){\n+        foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\".$R['userid'].\"</td>\n-                   <td>\".$R['content'].\"</td>\n-                   <td>\".$R['createdAt'].\"</td>;\n-                  \n-                  \n+            echo \"<td>\" . $message['userid'] . \"</td>\n+                   <td>\" . $message['content'] . \"</td>\n+                   <td>\" . $message['createdAt'] . \"</td>\";\n                    \n             echo \"</tr>\";\n         }\n \n"
+                },
+                {
+                    "date": 1671545379835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['userid'] . \"</td>\n+            echo \"<td>\" . $message['user_id'] . \"</td>\n                    <td>\" . $message['content'] . \"</td>\n                    <td>\" . $message['createdAt'] . \"</td>\";\n                    \n             echo \"</tr>\";\n"
+                },
+                {
+                    "date": 1671545410179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id'] . \"</td>\n+            echo \"<td>\" . $message['user_id']['name'] . \"</td>\n                    <td>\" . $message['content'] . \"</td>\n                    <td>\" . $message['createdAt'] . \"</td>\";\n                    \n             echo \"</tr>\";\n"
+                },
+                {
+                    "date": 1671545426141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id']['name'] . \"</td>\n+            echo \"<td>\" . $message['user_id'] . \"</td>\n                    <td>\" . $message['content'] . \"</td>\n                    <td>\" . $message['createdAt'] . \"</td>\";\n                    \n             echo \"</tr>\";\n"
+                },
+                {
+                    "date": 1671545626451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,18 +12,19 @@\n \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n+        \n \n         \n         include(\"view/hello.phtml\");\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id'] . \"</td>\n-                   <td>\" . $message['content'] . \"</td>\n-                   <td>\" . $message['createdAt'] . \"</td>\";\n+            echo \"<td>\" . $message['user_id'] . \"</td></br>\n+                   <td>\" . $message['content'] . \"</td></br>\n+                   <td>\" . $message['createdAt'] . \"</td></br>\";\n                    \n             echo \"</tr>\";\n         }\n \n"
+                },
+                {
+                    "date": 1671547128367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,24 +5,26 @@\n         } catch (Exception $e) {\n         }\n \n \n+\n+\n         $sql = \"SELECT * FROM `messages`\";\n \n         $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n         \n-\n+        $message['createdAt']= date(\"F j, Y, g:i a\"); \n         \n         include(\"view/hello.phtml\");\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id'] . \"</td></br>\n+            echo \"<td>\" . $message['user_id']. \"</td></br>\n                    <td>\" . $message['content'] . \"</td></br>\n                    <td>\" . $message['createdAt'] . \"</td></br>\";\n                    \n             echo \"</tr>\";\n"
+                },
+                {
+                    "date": 1671549303233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +1,36 @@\n <?php\n \n-        try {\n-            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-        } catch (Exception $e) {\n-        }\n+try {\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+} catch (Exception $e) {\n+}\n \n+$sql = \"SELECT u.name, m.comment, m.createdAt\n+FROM messages\n+JOIN comments c\n+\tON u.user_id = m.user_id\";\n \n+$messageStatement = $db->prepare($sql);\n \n+$messageStatement->execute();\n \n-        $sql = \"SELECT * FROM `messages`\";\n+$messages = $messageStatement->fetchAll();\n \n-        $messageStatement = $db->prepare($sql);\n \n-        $messageStatement->execute();\n \n-        $messages = $messageStatement->fetchAll();\n-        \n-        $message['createdAt']= date(\"F j, Y, g:i a\"); \n-        \n-        include(\"view/hello.phtml\");\n+include(\"view/hello.phtml\");\n \n-        foreach($messages as $message){\n+foreach ($messages as $message) {\n \n-            echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id']. \"</td></br>\n+    echo \"<tr>\";\n+    echo \"<td>\" . $message['user_id'] . \"</td></br>\n                    <td>\" . $message['content'] . \"</td></br>\n                    <td>\" . $message['createdAt'] . \"</td></br>\";\n-                   \n-            echo \"</tr>\";\n-        }\n \n-    \n+    echo \"</tr>\";\n+}\n \n-    \n+\n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671549332471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,11 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-$sql = \"SELECT u.name, m.comment, m.createdAt\n+$sql = \"SELECT u.name, m.message, m.createdAt\n FROM messages\n-JOIN comments c\n+JOIN user c\n \tON u.user_id = m.user_id\";\n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671549365421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-$sql = \"SELECT u.name, m.message, m.createdAt\n+$sql = \"SELECT u.user_id, m.message, m.createdAt\n FROM messages\n JOIN user c\n \tON u.user_id = m.user_id\";\n \n"
+                },
+                {
+                    "date": 1671549445877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,12 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-$sql = \"SELECT u.user_id, m.message, m.createdAt\n+$sql = \"SELECT  m.message, m.createdAt\n FROM messages\n-JOIN user c\n-\tON u.user_id = m.user_id\";\n+JOIN user \n+\tON u.name = m.user_id\";\n \n $messageStatement = $db->prepare($sql);\n \n $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671549463563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n \n-$sql = \"SELECT  m.message, m.createdAt\n+$sql = \"SELECT  m.content, m.createdAt\n FROM messages\n JOIN user \n \tON u.name = m.user_id\";\n \n"
+                },
+                {
+                    "date": 1671550191772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +1,36 @@\n <?php\n \n-try {\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-} catch (Exception $e) {\n-}\n+        try {\n+            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+        } catch (Exception $e) {\n+        }\n \n-$sql = \"SELECT  m.content, m.createdAt\n-FROM messages\n-JOIN user \n-\tON u.name = m.user_id\";\n \n-$messageStatement = $db->prepare($sql);\n \n-$messageStatement->execute();\n \n-$messages = $messageStatement->fetchAll();\n+        $sql = \"SELECT * FROM `messages`\";\n \n+        $messageStatement = $db->prepare($sql);\n \n+        $messageStatement->execute();\n \n-include(\"view/hello.phtml\");\n+        $messages = $messageStatement->fetchAll();\n+        \n+     \n+        \n+        include(\"view/hello.phtml\");\n \n-foreach ($messages as $message) {\n+        foreach($messages as $message){\n \n-    echo \"<tr>\";\n-    echo \"<td>\" . $message['user_id'] . \"</td></br>\n+            echo \"<tr>\";\n+            echo \"<td>\" . $message['user_id']. \"</td></br>\n                    <td>\" . $message['content'] . \"</td></br>\n                    <td>\" . $message['createdAt'] . \"</td></br>\";\n+                   \n+            echo \"</tr>\";\n+        }\n \n-    echo \"</tr>\";\n-}\n+    \n \n-\n-\n-\n+    \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671550952542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,12 @@\n \n \n \n \n-        $sql = \"SELECT * FROM `messages`\";\n+$sql = \"SELECT u.name,m.content,m.createdAt \n+        FROM messages m \n+        JOIN user u ON m.user_id= u.id\";\n+   \n \n         $messageStatement = $db->prepare($sql);\n \n         $messageStatement->execute();\n"
+                },
+                {
+                    "date": 1671550995078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n \n \n \n-$sql = \"SELECT u.name,m.content,m.createdAt \n+$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id,\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\";\n    \n \n"
+                },
+                {
+                    "date": 1671551114356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \n \n \n \n-$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id,\n+$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\";\n    \n \n"
+                },
+                {
+                    "date": 1671551231461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n-            echo \"<td>\" . $message['user_id']. \"</td></br>\n+            echo \"<td>\" . $message['name']. \"</td></br>\n                    <td>\" . $message['content'] . \"</td></br>\n                    <td>\" . $message['createdAt'] . \"</td></br>\";\n                    \n             echo \"</tr>\";\n"
+                },
+                {
+                    "date": 1671551536679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,7 +33,6 @@\n             echo \"</tr>\";\n         }\n \n     \n-\n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671613167703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,8 @@\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n         }\n \n-\n-\n-\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\";\n    \n@@ -20,9 +17,9 @@\n         $messages = $messageStatement->fetchAll();\n         \n      \n         \n-        include(\"view/hello.phtml\");\n+       \n \n         foreach($messages as $message){\n \n             echo \"<tr>\";\n@@ -32,7 +29,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n+        include(\"view/hello.phtml\");\n     \n-    \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671613297167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n-        include(\"view/hello.phtml\");\n+       header(\"Location:hello.phtml\")\n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671613312157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n-       header(\"Location:hello.phtml\")\n+       header(\"Location:view/hello.phtml\")\n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671613689152,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,9 @@\n \n         $messageStatement->execute();\n \n         $messages = $messageStatement->fetchAll();\n-        \n-     \n-        \n+\n        \n \n         foreach($messages as $message){\n \n@@ -29,7 +27,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n-       header(\"Location:view/hello.phtml\")\n+       \n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671614446751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,7 +27,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n-       \n+       include(\"view/hello.phtml\");\n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671614466719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n-<?php\n+<?php \n+ include(\"view/hello.phtml\");\n \n         try {\n             $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n         } catch (Exception $e) {\n@@ -27,7 +28,7 @@\n                    \n             echo \"</tr>\";\n         }\n \n-       include(\"view/hello.phtml\");\n+       \n     \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671614634957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +0,0 @@\n-<?php \n- include(\"view/hello.phtml\");\n-\n-        try {\n-            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-        } catch (Exception $e) {\n-        }\n-\n-$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n-        FROM messages m \n-        JOIN user u ON m.user_id= u.id\";\n-   \n-\n-        $messageStatement = $db->prepare($sql);\n-\n-        $messageStatement->execute();\n-\n-        $messages = $messageStatement->fetchAll();\n-\n-       \n-\n-        foreach($messages as $message){\n-\n-            echo \"<tr>\";\n-            echo \"<td>\" . $message['name']. \"</td></br>\n-                   <td>\" . $message['content'] . \"</td></br>\n-                   <td>\" . $message['createdAt'] . \"</td></br>\";\n-                   \n-            echo \"</tr>\";\n-        }\n-\n-       \n-    \n-?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671532771783,
+            "name": "Commit-0",
+            "content": "<?php\n\n\n$content = $_POST['content'];\n\n$createdAt = $_POST['createdAt'];\n\n\ntry {\n      $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n    } catch (Exception $e) {\n    }\n\n      \n    $sql = \"SELECT * FROM  message WHERE content = '$content' AND  createdAt = '$createdAt' \";\n\n    $messageStatement = $db->prepare($sql);\n\n    $messageStatement->execute();\n\n    $message = $messageStatement->fetch();\n\n    ?>"
+        }
+    ]
+}

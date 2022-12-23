@@ -1,0 +1,118 @@
+{
+    "sourceFile": "bienvenue.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1670496213943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670496228095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<h1> bien venue</h1>\n\\ No newline at end of file\n+<h1> bienvenue</h1>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670505801812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,5 @@\n-<h1> bienvenue</h1>\n\\ No newline at end of file\n+<?php\n+\n+echo \"Bienvenue\";\n+\n+?>\n"
+                },
+                {
+                    "date": 1670506743450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <?php\n \n-echo \"Bienvenue\";\n+echo \"Bienvenue sur notre site\";\n \n ?>\n"
+                },
+                {
+                    "date": 1670507030996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n <?php\n \n-echo \"Bienvenue sur notre site\";\n+session_start();\n \n+echo \"hello\" . $_SESSION['name'];\n+\n ?>\n"
+                },
+                {
+                    "date": 1670507110051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,4 +4,18 @@\n \n echo \"hello\" . $_SESSION['name'];\n \n ?>\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>hello</title>\n+</head>\n+<body>\n+    \n+ <?php   echo \"hello\" . $_SESSION['name']; \n+ ?>\n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670507235632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\n \n session_start();\n \n-echo \"hello\" . $_SESSION['name'];\n \n+\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1670507583962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     <title>hello</title>\n </head>\n <body>\n     \n- <?php   echo \"hello\" . $_SESSION['name']; \n+ <?php   echo \"hello\" . $_SESSION['name']= $name; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670507596207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     <title>hello</title>\n </head>\n <body>\n     \n- <?php   echo \"hello\" . $_SESSION['name']= $name; \n+ <?php   echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670507685476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     <title>hello</title>\n </head>\n <body>\n     \n- <?php   echo \"hello\" . $_SESSION['name']; \n+ <?php   echo \"hello\" , $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670507709047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     <title>hello</title>\n </head>\n <body>\n     \n- <?php   echo \"hello\" , $_SESSION['name']; \n+ <?php   echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670508016217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n     <title>hello</title>\n </head>\n <body>\n     \n- <?php   echo \"hello\" . $_SESSION['name']; \n+ <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670509428656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n <?php\n \n session_start();\n \n-\n-\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n@@ -13,9 +11,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>hello</title>\n </head>\n <body>\n-    \n+<a href =\"deconnexion.php\">deconnexion</a>\n  <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670509452189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>hello</title>\n </head>\n <body>\n-<a href =\"deconnexion.php\">deconnexion</a>\n+<a href =\"index.php\">deconnexion</a>\n  <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670510519714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>hello</title>\n </head>\n <body>\n-<a href =\"index.php\">deconnexion</a>\n+<a href =\".php\">deconnexion</a>\n  <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670510547129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>hello</title>\n </head>\n <body>\n-<a href =\".php\">deconnexion</a>\n+<a href =\"bienvenue.php\">deconnexion</a>\n  <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670510599762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>hello</title>\n </head>\n <body>\n-<a href =\"bienvenue.php\">deconnexion</a>\n+<a href =\"index.php\">deconnexion</a>\n  <?php  echo \"hello\" . $_SESSION['name']; \n  ?>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670511509847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,19 @@\n <?php\n \n session_start();\n \n+\n+if(isset($_SESSION['name'])){\n+\n+    echo \"welcome to the page \" . $_SESSION['name'];\n+}\n+\n+else{\n+\n+    echo \"please login first\";\n+}\n+\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1670512045217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n session_start();\n \n \n-if(isset($_SESSION['name'])){\n+if{\n \n     echo \"welcome to the page \" . $_SESSION['name'];\n }\n \n"
+                },
+                {
+                    "date": 1670512053862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n session_start();\n \n \n-if{\n+if(){\n \n     echo \"welcome to the page \" . $_SESSION['name'];\n }\n \n"
+                },
+                {
+                    "date": 1670512163732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,16 +2,16 @@\n \n session_start();\n \n \n-if(){\n+if(\"\"){\n \n     echo \"welcome to the page \" . $_SESSION['name'];\n }\n \n else{\n \n-    echo \"please login first\";\n+    echo \"please login fi\";\n }\n \n ?>\n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1670512610881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n session_start();\n \n \n-if(\"\"){\n+if()){\n \n     echo \"welcome to the page \" . $_SESSION['name'];\n }\n \n"
+                },
+                {
+                    "date": 1670512630535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n session_start();\n \n \n-if()){\n+if(){\n \n     echo \"welcome to the page \" . $_SESSION['name'];\n }\n \n"
+                },
+                {
+                    "date": 1670512654933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,17 @@\n \n session_start();\n \n \n-if(){\n+// if{\n \n-    echo \"welcome to the page \" . $_SESSION['name'];\n-}\n+//     echo \"welcome to the page \" . $_SESSION['name'];\n+// }\n \n-else{\n+// else{\n \n-    echo \"please login fi\";\n-}\n+//     echo \"please login fi\";\n+// }\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670512781605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,17 +2,16 @@\n \n session_start();\n \n \n-// if{\n \n-//     echo \"welcome to the page \" . $_SESSION['name'];\n-// }\n+    echo \"welcome to the page \" . $_SESSION['name'];\n+}\n \n-// else{\n+else{\n \n-//     echo \"please login fi\";\n-// }\n+     echo \"please login fi\";\n+}\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670513166397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,16 @@\n session_start();\n \n \n \n-    echo \"welcome to the page \" . $_SESSION['name'];\n-}\n+//     echo \"welcome to the page \" . $_SESSION['name'];\n \n-else{\n \n-     echo \"please login fi\";\n-}\n+// else{\n \n+//      echo \"please login fi\";\n+// }\n+\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                }
+            ],
+            "date": 1670496213942,
+            "name": "Commit-0",
+            "content": "<h1> bien venue</h1>"
+        }
+    ]
+}

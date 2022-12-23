@@ -1,0 +1,118 @@
+{
+    "sourceFile": "config.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 25,
+            "patches": [
+                {
+                    "date": 1670493402815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670493429644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,16 @@\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n- echo \"hello world\";\n-    // if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n+    if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n     \n-\t// \techo \"bienvenue cher utilisateur\";\n+\t\techo \"bienvenue cher utilisateur\";\n \t\t\n-\t// }\n-\t// else{\n+\t}\n+\telse{\n \n-\t// \techo \"rentrez bien vos informations du formulaire\";\n-\t// }\n+\t\techo \"rentrez bien vos informations du formulaire\";\n+\t}\n \n \t\n \n \t//connexion à la base de donnée\n"
+                },
+                {
+                    "date": 1670493883739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,36 @@\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n     if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n-    \n-\t\techo \"bienvenue cher utilisateur\";\n-\t\t\n-\t}\n-\telse{\n+     \n \n-\t\techo \"rentrez bien vos informations du formulaire\";\n-\t}\n+//connexion à la base de donnée\n+\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n+\t try\n+\t  {\n+\t \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n+\t \t$message= \" connexion valide\";\n+\t  }\n+\t  catch (Exception $e)\n+\t  {\n+\t \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n \n-\t\n+\t  }\n \n-\t//connexion à la base de donnée\n-\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t//  try\n-\t//  {\n-\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t// \t$message= \" connexion valide\";\n-\t//  }\n-\t//  catch (Exception $e)\n-\t//  {\n-\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n+    echo $message;\n \n-\t//  }\n+        // nous allons verifieer si les information ssont correctes\n+        //requete pour selectionner les utlisateurs \n+        \n+        $requete=\n \n-\t// echo $message;\n \n+    }\n+\t\n+\n+\t\n+\n \t \n \n \n ?>\n"
+                },
+                {
+                    "date": 1670494311661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,13 @@\n <?php\n  // on verifie tout d'abord les  informations du formulaire\n \n     if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n-     \n+        // on met le name et le password dans des vairablers \n \n+        $name= $_POST['name'];\n+        $password= $_POST['password'];\n+\n //connexion à la base de donnée\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t try\n \t  {\n@@ -21,9 +24,9 @@\n \n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner les utlisateurs \n         \n-        $requete=\n+    $req =mysqli_query( $db , \"SELECT * FROM user WHERE name = '$name' And password = '$password' \");\n \n \n     }\n \t\n"
+                },
+                {
+                    "date": 1670494733146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,14 @@\n \n     echo $message;\n \n         // nous allons verifieer si les information ssont correctes\n-        //requete pour selectionner les utlisateurs \n+        //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n-    $req =mysqli_query( $db , \"SELECT * FROM user WHERE name = '$name' And password = '$password' \");\n+    $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n+    $em=$db->prepare($sql);\n+    $em->execute();\n \n-\n     }\n \t\n \n \t\n"
+                },
+                {
+                    "date": 1670494837542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,9 @@\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $em=$db->prepare($sql);\n     $em->execute();\n+    var_dump();\n \n     }\n \t\n \n"
+                },
+                {
+                    "date": 1670494857184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $em=$db->prepare($sql);\n     $em->execute();\n-    var_dump();\n+    var_dump($em);\n \n     }\n \t\n \n"
+                },
+                {
+                    "date": 1670494949604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $em=$db->prepare($sql);\n     $em->execute();\n-    var_dump($em);\n+   // var_dump($em);\n \n     }\n \t\n \n"
+                },
+                {
+                    "date": 1670495392219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,22 @@\n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $em=$db->prepare($sql);\n     $em->execute();\n    // var_dump($em);\n+  \n+   $num_ligne= count($sql);\n \n+   if($num_ligne>0){\n+\n+    header(\"location:bienvenue.php\");\n+\n+\n+   }else{\n+  echo \"adresse mail not good or your password is not correct\"\n+\n+   }\n+\n+\n     }\n \t\n \n \t\n"
+                },
+                {
+                    "date": 1670495400106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n     header(\"location:bienvenue.php\");\n \n \n    }else{\n-  echo \"adresse mail not good or your password is not correct\"\n+  echo \"adresse mail not good or your password is not correct\";\n \n    }\n \n \n"
+                },
+                {
+                    "date": 1670495502396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     $em=$db->prepare($sql);\n     $em->execute();\n    // var_dump($em);\n   \n-   $num_ligne= count($sql);\n+   $num_ligne= mysql_num_rows($sql);;\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670495534854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     $em=$db->prepare($sql);\n     $em->execute();\n    // var_dump($em);\n   \n-   $num_ligne= mysql_num_rows($sql);;\n+   $num_ligne= mysql_num_rows($em);;\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670495731167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,27 +24,25 @@\n \n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n-    $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n-    $em=$db->prepare($sql);\n-    $em->execute();\n-   // var_dump($em);\n+   $sql= mysqli_query($db, \"SELECT * FROM user WHERE email = '$email'and password='$password\");\n+ var_dump($sql);\n   \n-   $num_ligne= mysql_num_rows($em);;\n+//    $num_ligne= mysql_num_rows($sql);;\n \n-   if($num_ligne>0){\n+//    if($num_ligne>0){\n \n-    header(\"location:bienvenue.php\");\n+//     header(\"location:bienvenue.php\");\n \n \n-   }else{\n-  echo \"adresse mail not good or your password is not correct\";\n+//    }else{\n+//   echo \"adresse mail not good or your password is not correct\";\n \n-   }\n+//    }\n \n \n-    }\n+//     }\n \t\n \n \t\n \n"
+                },
+                {
+                    "date": 1670495763496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n \n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n-   $sql= mysqli_query($db, \"SELECT * FROM user WHERE email = '$email'and password='$password\");\n- var_dump($sql);\n+   $sql= mysqli_query($db, \"SELECT * FROM user WHERE name = '$name' AND password='$password\");\n+   var_dump($sql);\n   \n //    $num_ligne= mysql_num_rows($sql);;\n \n //    if($num_ligne>0){\n"
+                },
+                {
+                    "date": 1670495781264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n \n //    }\n \n \n-//     }\n+     }\n \t\n \n \t\n \n"
+                },
+                {
+                    "date": 1670495846185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n-   $sql= mysqli_query($db, \"SELECT * FROM user WHERE name = '$name' AND password='$password\");\n+   $sql= mysqli_query($db, \"SELECT * FROM user WHERE name = '$name' AND  password='$password' \");\n    var_dump($sql);\n   \n //    $num_ligne= mysql_num_rows($sql);;\n \n"
+                },
+                {
+                    "date": 1670495901895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,25 +24,27 @@\n \n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n-   $sql= mysqli_query($db, \"SELECT * FROM user WHERE name = '$name' AND  password='$password' \");\n-   var_dump($sql);\n+    $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n+    $em=$db->prepare($sql);\n+    $em->execute();\n+    var_dump($em);\n   \n-//    $num_ligne= mysql_num_rows($sql);;\n+   $num_ligne= mysql_num_rows($sql);;\n \n-//    if($num_ligne>0){\n+   if($num_ligne>0){\n \n-//     header(\"location:bienvenue.php\");\n+    header(\"location:bienvenue.php\");\n \n \n-//    }else{\n-//   echo \"adresse mail not good or your password is not correct\";\n+   }else{\n+  echo \"adresse mail not good or your password is not correct\";\n \n-//    }\n+   }\n \n \n-     }\n+    }\n \t\n \n \t\n \n"
+                },
+                {
+                    "date": 1670496074878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,11 @@\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $em=$db->prepare($sql);\n     $em->execute();\n-    var_dump($em);\n+    //var_dump($em);\n   \n-   $num_ligne= mysql_num_rows($sql);;\n+$num_ligne= rowcount($db);\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670496177354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     $em=$db->prepare($sql);\n     $em->execute();\n     //var_dump($em);\n   \n-$num_ligne= rowcount($db);\n+$num_ligne=$em->rowCount();\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670496273255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t try\n \t  {\n \t \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t \t$message= \" connexion valide\";\n+\t \t\n \t  }\n \t  catch (Exception $e)\n \t  {\n \t \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n@@ -29,15 +29,15 @@\n     $em=$db->prepare($sql);\n     $em->execute();\n     //var_dump($em);\n   \n-$num_ligne=$em->rowCount();\n+   $num_ligne=$em->rowCount();\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n+    \n \n-\n    }else{\n   echo \"adresse mail not good or your password is not correct\";\n \n    }\n"
+                },
+                {
+                    "date": 1670496286108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n \t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n \t try\n \t  {\n \t \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t \t\n+\t \t$message= \" connexion valide\";\n \t  }\n \t  catch (Exception $e)\n \t  {\n \t \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n"
+                },
+                {
+                    "date": 1670497136841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,13 +25,14 @@\n         // nous allons verifieer si les information ssont correctes\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n-    $em=$db->prepare($sql);\n-    $em->execute();\n-    //var_dump($em);\n-  \n-   $num_ligne=$em->rowCount();\n+    $userStatement=$db->prepare($sql);\n+    var_dump($userStatement);\n+    $userStatement->execute();\n+   \n+  $user= $userStatement->fetch();\n+   $num_ligne=$em->rowCount();;\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670497252959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,11 @@\n         //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n         \n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $userStatement=$db->prepare($sql);\n+    \n+    $userStatement->execute();\n     var_dump($userStatement);\n-    $userStatement->execute();\n-   \n   $user= $userStatement->fetch();\n    $num_ligne=$em->rowCount();;\n \n    if($num_ligne>0){\n"
+                },
+                {
+                    "date": 1670497320451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n     $userStatement=$db->prepare($sql);\n     \n     $userStatement->execute();\n-    var_dump($userStatement);\n+    var_dump($userStatement->fetch());\n   $user= $userStatement->fetch();\n    $num_ligne=$em->rowCount();;\n \n    if($num_ligne>0){\n"
+                },
+                {
+                    "date": 1670497812477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     \n     $userStatement->execute();\n     var_dump($userStatement->fetch());\n   $user= $userStatement->fetch();\n-   $num_ligne=$em->rowCount();;\n+   $num_ligne=$userStatement->rowCount();;\n \n    if($num_ligne>0){\n \n     header(\"location:bienvenue.php\");\n"
+                },
+                {
+                    "date": 1670506496586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,55 +0,0 @@\n-<?php\n- // on verifie tout d'abord les  informations du formulaire\n-\n-    if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n-        // on met le name et le password dans des vairablers \n-\n-        $name= $_POST['name'];\n-        $password= $_POST['password'];\n-\n-//connexion à la base de donnée\n-\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n-\t try\n-\t  {\n-\t \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\t \t$message= \" connexion valide\";\n-\t  }\n-\t  catch (Exception $e)\n-\t  {\n-\t \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n-\n-\t  }\n-\n-    echo $message;\n-\n-        // nous allons verifieer si les information ssont correctes\n-        //requete pour selectionner l'utlisateur qui a pour email et mot de passe rentreé dans le formulaire\n-        \n-    $sql= \"SELECT * FROM user WHERE name = '$name' And password = '$password'\";\n-    $userStatement=$db->prepare($sql);\n-    \n-    $userStatement->execute();\n-    var_dump($userStatement->fetch());\n-  $user= $userStatement->fetch();\n-   $num_ligne=$userStatement->rowCount();;\n-\n-   if($num_ligne>0){\n-\n-    header(\"location:bienvenue.php\");\n-    \n-\n-   }else{\n-  echo \"adresse mail not good or your password is not correct\";\n-\n-   }\n-\n-\n-    }\n-\t\n-\n-\t\n-\n-\t \n-\n-\n-?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1670493402815,
+            "name": "Commit-0",
+            "content": "<?php\n // on verifie tout d'abord les  informations du formulaire\n\n echo \"hello world\";\n    // if(isset($_POST['name']) && isset($_POST['password'])){ // on verifie si l'utilisateur a rentré son nom et son mot de passe\n    \n\t// \techo \"bienvenue cher utilisateur\";\n\t\t\n\t// }\n\t// else{\n\n\t// \techo \"rentrez bien vos informations du formulaire\";\n\t// }\n\n\t\n\n\t//connexion à la base de donnée\n\t//si ily'a une erreur dans le try le code qui est dan le catch va s'executer sinon le code dedans le try focntionne tres bien \n\t//  try\n\t//  {\n\t// \t$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n\t// \t$message= \" connexion valide\";\n\t//  }\n\t//  catch (Exception $e)\n\t//  {\n\t// \t\t$message='verifie ton mot de passe et ton identifiant : ' . $e->getMessage();\n\n\t//  }\n\n\t// echo $message;\n\n\t \n\n\n?>\n"
+        }
+    ]
+}

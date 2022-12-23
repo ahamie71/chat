@@ -1,0 +1,18 @@
+{
+    "sourceFile": "view/test.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1671446264960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1671446264960,
+            "name": "Commit-0",
+            "content": "<?php\nsession_start();\nsession_destroy();\nheader('Location:test.php');\n\n\n?>"
+        }
+    ]
+}

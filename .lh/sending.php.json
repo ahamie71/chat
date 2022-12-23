@@ -1,0 +1,50 @@
+{
+    "sourceFile": "sending.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 8,
+            "patches": [
+                {
+                    "date": 1671705789180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671705795964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n+   header\n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705801277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n-   header\n+   header('location')\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705810179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n-   header('location')\n+   header('location:./')\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705820624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n-   header('location:./')\n+   header('location:./../welcome')\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705828739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n-   header('location:./../welcome')\n+header('location:./../welcome.phtml');\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705838860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,7 +26,7 @@\n         )\n );\n \n \n-header('location:./../welcome.phtml');\n+header('location:./welcome.phtml');\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705885129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n+hhg\n \n+header('location:./view/welcome.phtml');\n \n-header('location:./welcome.phtml');\n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671705912718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-hhg\n \n+\n header('location:./view/welcome.phtml');\n \n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1671705789180,
+            "name": "Commit-0",
+            "content": "<?php\nsession_start();\n//check do the person logged in\nif ($_SESSION['user'] == NULL) {\n    header('location:view/connection.phtml');\n    exit();\n\n}\n\ntry {\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n} catch (Exception $e) {\n\n}\n$createdAt = new DateTime();\n$user_id = $_SESSION['user']['id'];\n$content = $_POST['content'];\n\n$req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n$req->execute(\n    array(\n        ':content' => $content,\n        ':user_id' => $_SESSION['user']['id'],\n        ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n\n        )\n);\n\n\n\n\n?>"
+        }
+    ]
+}

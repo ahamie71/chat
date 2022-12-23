@@ -1,0 +1,734 @@
+{
+    "sourceFile": "connection.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 179,
+            "patches": [
+                {
+                    "date": 1670515146503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670515363313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,18 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>login form</title>\n </head>\n <body>\n-    \n+<div class=\"mb-3 row\">\n+    <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n+    <div class=\"col-sm-10\">\n+      <input type=\"text\" readonly class=\"form-control-plaintext\" id=\"staticEmail\" name=\"name\">\n+    </div>\n+  </div>\n+  <div class=\"mb-3 row\">\n+    <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n+    <div class=\"col-sm-10\">\n+      <input type=\"password\" class=\"form-control\" id=\"inputPassword\" name=\"password\">\n+    </div>\n+  </div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670515419475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n+    \n     <title>login form</title>\n </head>\n <body>\n <div class=\"mb-3 row\">\n@@ -18,6 +20,10 @@\n     <div class=\"col-sm-10\">\n       <input type=\"password\" class=\"form-control\" id=\"inputPassword\" name=\"password\">\n     </div>\n   </div>\n+\n+\n+\n+  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670515445595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     \n     <title>login form</title>\n </head>\n <body>\n-<div class=\"mb-3 row\">\n+<div class=\"container\">\n     <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n     <div class=\"col-sm-10\">\n       <input type=\"text\" readonly class=\"form-control-plaintext\" id=\"staticEmail\" name=\"name\">\n     </div>\n"
+                },
+                {
+                    "date": 1670515456241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     \n     <title>login form</title>\n </head>\n <body>\n-<div class=\"container\">\n+<div class=\"mb-3 row\">\n     <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n     <div class=\"col-sm-10\">\n       <input type=\"text\" readonly class=\"form-control-plaintext\" id=\"staticEmail\" name=\"name\">\n     </div>\n@@ -23,7 +23,7 @@\n   </div>\n \n \n \n-  <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n+  \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670515520595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,10 @@\n     <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n     <div class=\"col-sm-10\">\n       <input type=\"password\" class=\"form-control\" id=\"inputPassword\" name=\"password\">\n     </div>\n+\n+    <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n   </div>\n \n \n \n"
+                },
+                {
+                    "date": 1670515533146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <div class=\"col-sm-10\">\n       <input type=\"password\" class=\"form-control\" id=\"inputPassword\" name=\"password\">\n     </div>\n \n-    <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n+    <button type=\"submit\" class=\"btn btn-primary\">Connection</button>\n   </div>\n \n \n \n"
+                },
+                {
+                    "date": 1670515847348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,24 +8,21 @@\n     \n     <title>login form</title>\n </head>\n <body>\n-<div class=\"mb-3 row\">\n-    <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n-    <div class=\"col-sm-10\">\n-      <input type=\"text\" readonly class=\"form-control-plaintext\" id=\"staticEmail\" name=\"name\">\n-    </div>\n-  </div>\n-  <div class=\"mb-3 row\">\n-    <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n-    <div class=\"col-sm-10\">\n-      <input type=\"password\" class=\"form-control\" id=\"inputPassword\" name=\"password\">\n-    </div>\n \n-    <button type=\"submit\" class=\"btn btn-primary\">Connection</button>\n+<form>\n+  <div class=\"mb-3\">\n+    <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n+    <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n+   \n   </div>\n-\n-\n-\n+  <div class=\"mb-3\">\n+    <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n+    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\">\n+  </div>\n   \n+  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n+</form>\n+  \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670515875405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n </head>\n <body>\n \n <form>\n+    <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n    \n"
+                },
+                {
+                    "date": 1670516036969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form>\n+<form action =\"\" method=\"\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670516262063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"\" method=\"\">\n+<form action =\"index.php\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670516295884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n     <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\">\n   </div>\n   \n-  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n+  <button type=\"submit\" class=\"btn btn-primary\">Connection</button>\n </form>\n   \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670516403723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"index.php\" method=\"POST\">\n+<form action =\"\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670516719373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,23 @@\n+<?php\n+ \n+if(isset($_POST['name']) && isset($_POST['password'])){\n+\n+\techo\"hello\";\n+\n+\t$name=$_POST['name'];\n+\t$password=$_POST['password'];\n+}\n+\n+\n+\n+?>\n+\n+\n+\n <!DOCTYPE html>\n+\n+\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n"
+                },
+                {
+                    "date": 1670516735525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"\" method=\"POST\">\n+<form action =\"connection.php\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670516746100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"connection.php\" method=\"POST\">\n+<form action =\"\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670517009030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,28 @@\n <?php\n  \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\techo\"hello\";\n+\t\n \n \t$name=$_POST['name'];\n \t$password=$_POST['password'];\n+   \n }\n \n+try{\n \n+ $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n \n+ $message= \"Connected\";\n+}\n+catch(Exception $e){\n+\n+    $message= \"Error connecting to the database\";\n+}\n+\n+\n+\n ?>\n \n \n \n@@ -27,9 +39,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"\" method=\"POST\">\n+<form action =\"index.php\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670517054896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,9 +39,9 @@\n     <title>login form</title>\n </head>\n <body>\n \n-<form action =\"index.php\" method=\"POST\">\n+<form action =\"\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n"
+                },
+                {
+                    "date": 1670517163487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,10 @@\n <?php\n  \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\t\n-\n \t$name=$_POST['name'];\n-\t$password=$_POST['password'];\n-   \n+\t$password=$_POST['password']; \n }\n \n try{\n \n@@ -19,10 +16,10 @@\n \n     $message= \"Error connecting to the database\";\n }\n \n+echo $message;\n \n-\n ?>\n \n \n \n"
+                },
+                {
+                    "date": 1670517173212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n \n     $message= \"Error connecting to the database\";\n }\n \n-echo $message;\n \n ?>\n \n \n"
+                },
+                {
+                    "date": 1670584436066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,31 +1,28 @@\n <?php\n- \n+session_start();\n if(isset($_POST['name']) && isset($_POST['password'])){\n-\n \t$name=$_POST['name'];\n \t$password=$_POST['password']; \n }\n-\n try{\n-\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-\n- $message= \"Connected\";\n }\n catch(Exception $e){\n-\n-    $message= \"Error connecting to the database\";\n }\n \n+$sql= \"SELECT * FROM 'user ' WHERE name= '$name' AND password= '$password'\";\n \n-?>\n+$userStatement= $db->prepare($sql);\n+$userStatement->execute();\n+$user= $userStatement->fetch()\n \n+var_dump($user);\n \n \n+?>\n <!DOCTYPE html>\n \n-\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n@@ -40,9 +37,8 @@\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n     <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n-   \n   </div>\n   <div class=\"mb-3\">\n     <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n     <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\">\n"
+                },
+                {
+                    "date": 1670584442544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n $sql= \"SELECT * FROM 'user ' WHERE name= '$name' AND password= '$password'\";\n \n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n-$user= $userStatement->fetch()\n+$user= $userStatement->fetch();\n \n var_dump($user);\n \n \n"
+                },
+                {
+                    "date": 1670584522034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,8 @@\n catch(Exception $e){\n }\n \n $sql= \"SELECT * FROM 'user ' WHERE name= '$name' AND password= '$password'\";\n-\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n@@ -36,13 +35,13 @@\n <form action =\"\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n-    <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\">\n+    <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" name='name'>\n   </div>\n   <div class=\"mb-3\">\n     <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n-    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\">\n+    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"password\">\n   </div>\n   \n   <button type=\"submit\" class=\"btn btn-primary\">Connection</button>\n </form>\n"
+                },
+                {
+                    "date": 1670584558517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n }\n catch(Exception $e){\n }\n \n-$sql= \"SELECT * FROM 'user ' WHERE name= '$name' AND password= '$password'\";\n+$sql= \"SELECT * FROM 'user' WHERE name= '$name' AND password= '$password'\";\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n"
+                },
+                {
+                    "date": 1670584604865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n }\n catch(Exception $e){\n }\n \n-$sql= \"SELECT * FROM 'user' WHERE name= '$name' AND password= '$password'\";\n+$sql= \"SELECT * FROM 'user' WHERE name = '$name' AND password= '$password'\";\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n"
+                },
+                {
+                    "date": 1670584651757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n }\n catch(Exception $e){\n }\n \n-$sql= \"SELECT * FROM 'user' WHERE name = '$name' AND password= '$password'\";\n+$sql= \"SELECT * FROM 'user' WHERE name = '$name' AND  password= '$password'\";\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n"
+                },
+                {
+                    "date": 1670584702182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,15 +10,16 @@\n catch(Exception $e){\n }\n \n $sql= \"SELECT * FROM 'user' WHERE name = '$name' AND  password= '$password'\";\n+var_dump($sql);\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n-var_dump($user);\n \n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670584741226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,19 @@\n <?php\n session_start();\n if(isset($_POST['name']) && isset($_POST['password'])){\n+\n \t$name=$_POST['name'];\n+\n \t$password=$_POST['password']; \n }\n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n catch(Exception $e){\n }\n \n-$sql= \"SELECT * FROM 'user' WHERE name = '$name' AND  password= '$password'\";\n+$sql= \"SELECT * FROM  user WHERE name = '$name' AND  password= '$password'\";\n var_dump($sql);\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n"
+                },
+                {
+                    "date": 1670584754607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n }\n catch(Exception $e){\n }\n \n-$sql= \"SELECT * FROM  user WHERE name = '$name' AND  password= '$password'\";\n+$sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n var_dump($sql);\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n"
+                },
+                {
+                    "date": 1670584893595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,9 @@\n <?php\n session_start();\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\t$name=$_POST['name'];\n-\n-\t$password=$_POST['password']; \n-}\n+\t\n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n catch(Exception $e){\n"
+                },
+                {
+                    "date": 1670584899322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n session_start();\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\t\n+}\n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n catch(Exception $e){\n"
+                },
+                {
+                    "date": 1670584961065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n <?php\n session_start();\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n-}\n+\t$name=$_POST['name'];\n+\n+\t$password=$_POST['password']; \n+\n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n catch(Exception $e){\n@@ -14,11 +17,11 @@\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n+}\n \n \n-\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670584992600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,13 +12,15 @@\n catch(Exception $e){\n }\n \n $sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n-var_dump($sql);\n+\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n+var_dump($user);\n+\n }\n \n \n ?>\n"
+                },
+                {
+                    "date": 1670588731761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n-var_dump($user);\n \n }\n \n \n"
+                },
+                {
+                    "date": 1670589127341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,13 @@\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n+$num_line= $userStatement->rowCount($sql);\n+if ($num_line>1)\n \n+\n+\n }\n \n \n ?>\n"
+                },
+                {
+                    "date": 1670589641666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,11 @@\n $num_line= $userStatement->rowCount($sql);\n if ($num_line>1)\n \n \n+};\n \n-}\n \n-\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670589651085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n $num_line= $userStatement->rowCount($sql);\n-if ($num_line>1)\n+if ($num_line>1){\n \n \n-};\n+}\n \n \n ?>\n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1670589668590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n if ($num_line>1){\n \n \n }\n+}\n \n-\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670589685454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,14 +18,14 @@\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n $num_line= $userStatement->rowCount($sql);\n-if ($num_line>1){\n \n \n+\n }\n-}\n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670589750276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n $user= $userStatement->fetch();\n \n-$num_line= $userStatement->rowCount($sql);\n+$num_line= $userStatement->rowCount();\n \n \n \n }\n"
+                },
+                {
+                    "date": 1670589975068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,20 @@\n $user= $userStatement->fetch();\n \n $num_line= $userStatement->rowCount();\n \n+if($num_line>0){\n \n+   header(\"location:hello.php\");\n \n+}else{\n+      \n+  echo \"sorry its not possible to login verify your name and your password\";\n }\n \n+}\n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670590477676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n <?php\n session_start();\n+\n+if(isset($_POST['valider'])\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n \n \t$password=$_POST['password']; \n \n+  $erreur=\"\";\n+\n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n catch(Exception $e){\n@@ -25,9 +29,9 @@\n    header(\"location:hello.php\");\n \n }else{\n       \n-  echo \"sorry its not possible to login verify your name and your password\";\n+  $erreur= \"sorry its not possible to login verify your name and your password\";\n }\n \n }\n \n@@ -44,9 +48,15 @@\n     \n     <title>login form</title>\n </head>\n <body>\n+<?php\n+ if(isset($erreur)){\n+  echo \"erreur\";\n+ }\n \n+  ?>\n+\n <form action =\"\" method=\"POST\">\n     <div class=\"container\">\n   <div class=\"mb-3\">\n     <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n@@ -56,9 +66,9 @@\n     <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n     <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"password\">\n   </div>\n   \n-  <button type=\"submit\" class=\"btn btn-primary\">Connection</button>\n+  <button type=\"submit\" class=\"btn btn-primary\" name=\"valider\">Connection</button>\n </form>\n   \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670590540335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n \n-if(isset($_POST['valider'])\n+if(isset($_POST['valider']){\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n \n"
+                },
+                {
+                    "date": 1670590560923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n+if(isset($_POST['valider']){}\n \n-if(isset($_POST['valider']){\n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n \n"
+                },
+                {
+                    "date": 1670590573743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n-if(isset($_POST['valider']){}\n+if(isset($_POST['valider']){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n"
+                },
+                {
+                    "date": 1670590586978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n \n }\n \n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670590593652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,12 @@\n }\n \n }\n \n+}\n \n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670590609253,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n-if(isset($_POST['valider']){\n+if(isset($_POST['valider']){}\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n@@ -38,8 +38,10 @@\n }\n \n \n \n+\n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1670590645803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n-if(isset($_POST['valider']){}\n+if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n \t$name=$_POST['name'];\n"
+                },
+                {
+                    "date": 1670590672425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n </head>\n <body>\n <?php\n  if(isset($erreur)){\n-  echo \"erreur\";\n+  echo \"$erreur\";\n  }\n \n   ?>\n \n"
+                },
+                {
+                    "date": 1670593070245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-session_start();\n+\n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n@@ -19,10 +19,16 @@\n $sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n \n $userStatement= $db->prepare($sql);\n $userStatement->execute();\n+ \n+\n+\n+\n $user= $userStatement->fetch();\n \n+$_SESSION['user']=$user;\n+\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670595010921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,23 @@\n <?php\n+   session_start();\n \n+   $_session['name']= 'name';\n+\n+   if($_session['name']=='name'){\n+\n+\n+   header('Location:index.php');\n+\n+   }else{\n+\n+\theader('Location:connection.php');\n+   }\n+\n+   \n+\n+\n+\n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n@@ -18,13 +35,13 @@\n \n $sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n \n $userStatement= $db->prepare($sql);\n+\n+\n $userStatement->execute();\n  \n \n-\n-\n $user= $userStatement->fetch();\n \n $_SESSION['user']=$user;\n \n"
+                },
+                {
+                    "date": 1670595052751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,12 @@\n    session_start();\n \n    $_session['name']= 'name';\n \n-   if($_session['name']=='name'){\n-\n-\n-   header('Location:index.php');\n-\n-   }else{\n-\n-\theader('Location:connection.php');\n-   }\n-\n    \n+   \n \n \n-\n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n"
+                },
+                {
+                    "date": 1670595073936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n    session_start();\n \n-   $_session['name']= 'name';\n+   $_SESSION['user']=$user;\n \n    \n    \n \n@@ -32,10 +32,10 @@\n  \n \n $user= $userStatement->fetch();\n \n-$_SESSION['user']=$user;\n \n+\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670595106453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n    session_start();\n \n-   $_SESSION['user']=$user;\n+   $_SESSION['name']=$name;\n \n    \n    \n \n"
+                },
+                {
+                    "date": 1670595119751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n    session_start();\n \n-   $_SESSION['name']=$name;\n+   $_SESSION['name']= 'name ';\n \n    \n    \n \n"
+                },
+                {
+                    "date": 1670595712753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,8 @@\n <?php\n    session_start();\n \n-   $_SESSION['name']= 'name ';\n-\n    \n-   \n \n \n if(isset($_POST['valider'])){\n \n@@ -32,10 +29,21 @@\n  \n \n $user= $userStatement->fetch();\n \n+$_SESSION['user']= $user;\n \n+if($_SESSION['iuser']==true){\n+  \n+  header(\"Location:index.php\");\n \n+\n+}else{\n+\n+  header(\"Location:connection.php\");\n+\n+}\n+\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670595746482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n $user= $userStatement->fetch();\n \n $_SESSION['user']= $user;\n \n-if($_SESSION['iuser']==true){\n+if($_SESSION['user']==true){\n   \n   header(\"Location:index.php\");\n \n \n"
+                },
+                {
+                    "date": 1670595867771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n <?php\n    session_start();\n \n-   \n-\n-\n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n \n@@ -33,9 +30,9 @@\n $_SESSION['user']= $user;\n \n if($_SESSION['user']==true){\n   \n-  header(\"Location:index.php\");\n+  header(\"Location:hello.php\");\n \n \n }else{\n \n"
+                },
+                {
+                    "date": 1670597265952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,13 @@\n $sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n \n $userStatement= $db->prepare($sql);\n \n-\n $userStatement->execute();\n  \n-\n $user= $userStatement->fetch();\n \n+var_dump($user);\n $_SESSION['user']= $user;\n \n if($_SESSION['user']==true){\n   \n"
+                },
+                {
+                    "date": 1670597312094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,23 +23,11 @@\n \n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n-\n var_dump($user);\n-$_SESSION['user']= $user;\n \n-if($_SESSION['user']==true){\n-  \n-  header(\"Location:hello.php\");\n \n-\n-}else{\n-\n-  header(\"Location:connection.php\");\n-\n-}\n-\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670597334567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-   session_start();\n+  \n \n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n"
+                },
+                {
+                    "date": 1670597376127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,12 @@\n \n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n-var_dump($user);\n \n+ var_dump($user);\n \n+\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670597480392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n \n- var_dump($user);\n+ var_dump($user);die();\n+   \n \n-\n $num_line= $userStatement->rowCount();\n \n if($num_line>0){\n \n"
+                },
+                {
+                    "date": 1670597596906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,11 @@\n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n \n- var_dump($user);die();\n+$_SESSION['user']=$user;\n+\n+ \n    \n \n $num_line= $userStatement->rowCount();\n \n"
+                },
+                {
+                    "date": 1670597621896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-  \n+  session_start();\n \n if(isset($_POST['valider'])){\n \n if(isset($_POST['name']) && isset($_POST['password'])){\n"
+                },
+                {
+                    "date": 1670597756003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,16 @@\n   session_start();\n \n if(isset($_POST['valider'])){\n \n-if(isset($_POST['name']) && isset($_POST['password'])){\n+   \n+     if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\t$name=$_POST['name'];\n+\t    $name=$_POST['name'];\n \n-\t$password=$_POST['password']; \n+\t     $password=$_POST['password']; \n \n-  $erreur=\"\";\n+        $erreur=\"\";\n \n try{\n  $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n }\n@@ -31,9 +32,9 @@\n    \n \n $num_line= $userStatement->rowCount();\n \n-if($num_line>0){\n+if($num_line=1){\n \n    header(\"location:hello.php\");\n \n }else{\n"
+                },
+                {
+                    "date": 1670597847423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n    \n \n $num_line= $userStatement->rowCount();\n \n-if($num_line=1){\n+if($num_line == 1){\n \n    header(\"location:hello.php\");\n \n }else{\n"
+                },
+                {
+                    "date": 1671439966043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <?php\n   session_start();\n \n+  include (\"nav.php\");\n+\n if(isset($_POST['valider'])){\n \n    \n      if(isset($_POST['name']) && isset($_POST['password'])){\n"
+                },
+                {
+                    "date": 1671441044047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,18 +26,14 @@\n \n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n+var_dump($user);\n+die();\n+if($user){\n \n-$_SESSION['user']=$user;\n+}\n \n- \n-   \n-\n-$num_line= $userStatement->rowCount();\n-\n-if($num_line == 1){\n-\n    header(\"location:hello.php\");\n \n }else{\n       \n"
+                },
+                {
+                    "date": 1671441063501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,12 @@\n  \n $user= $userStatement->fetch();\n var_dump($user);\n die();\n-if($user){\n+if($user)\n \n-}\n \n+\n    header(\"location:hello.php\");\n \n }else{\n       \n@@ -47,8 +47,9 @@\n \n \n \n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671441070684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n  \n $user= $userStatement->fetch();\n var_dump($user);\n die();\n-if($user)\n+if($user){\n \n \n \n    header(\"location:hello.php\");\n"
+                },
+                {
+                    "date": 1671441081590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,15 +41,15 @@\n }\n \n }\n \n-}\n \n \n \n \n \n \n+\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671441104207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,15 +41,15 @@\n }\n \n }\n \n+}\n \n \n \n \n \n \n-\n ?>\n <!DOCTYPE html>\n \n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671441308818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,14 +26,14 @@\n \n $userStatement->execute();\n  \n $user= $userStatement->fetch();\n-var_dump($user);\n-die();\n-if($user){\n+if($user!=false){\n \n+ $_SESSION[\"user\"]=$user;\n \n \n+\n    header(\"location:hello.php\");\n \n }else{\n       \n"
+                },
+                {
+                    "date": 1671441549238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,12 @@\n if($user!=false){\n \n  $_SESSION[\"user\"]=$user;\n \n+ \n \n \n+\n    header(\"location:hello.php\");\n \n }else{\n       \n"
+                },
+                {
+                    "date": 1671441781032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,12 +30,12 @@\n if($user!=false){\n \n  $_SESSION[\"user\"]=$user;\n \n- \n \n \n \n+\n    header(\"location:hello.php\");\n \n }else{\n       \n@@ -51,39 +51,4 @@\n \n \n \n ?>\n-<!DOCTYPE html>\n-\n-<html lang=\"en\">\n-<head>\n-    <meta charset=\"UTF-8\">\n-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n-    \n-    <title>login form</title>\n-</head>\n-<body>\n-<?php\n- if(isset($erreur)){\n-  echo \"$erreur\";\n- }\n-\n-  ?>\n-\n-<form action =\"\" method=\"POST\">\n-    <div class=\"container\">\n-  <div class=\"mb-3\">\n-    <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n-    <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" name='name'>\n-  </div>\n-  <div class=\"mb-3\">\n-    <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n-    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"password\">\n-  </div>\n-  \n-  <button type=\"submit\" class=\"btn btn-primary\" name=\"valider\">Connection</button>\n-</form>\n-  \n-</body>\n-</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671441830219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,11 +44,5 @@\n \n }\n \n }\n-\n-\n-\n-\n-\n-\n-?>\n+include(\"view/connection.phtml\");\n"
+                },
+                {
+                    "date": 1671442265414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \n \n \n \n-   header(\"location:hello.php\");\n+   header(\"location:hello.phtml\");\n \n }else{\n       \n   $erreur= \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671442277902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n   session_start();\n \n-  include (\"nav.php\");\n+  include (\"nav.phtml\");\n \n if(isset($_POST['valider'])){\n \n    \n"
+                },
+                {
+                    "date": 1671442482387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n   session_start();\n \n-  include (\"nav.phtml\");\n+  include (\"view/nav.phtml\");\n \n if(isset($_POST['valider'])){\n \n    \n"
+                },
+                {
+                    "date": 1671443900576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n \n \n \n \n-   header(\"location:hello.phtml\");\n+   header(\"location:view/hello.phtml\");\n \n }else{\n       \n   $erreur= \"sorry its not possible to login verify your name and your password\";\n@@ -44,5 +44,5 @@\n \n }\n \n }\n-include(\"view/connection.phtml\");\n+// include(\"view/connection.phtml\");\n"
+                },
+                {
+                    "date": 1671443948976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,5 +44,5 @@\n \n }\n \n }\n-// include(\"view/connection.phtml\");\n+ include(\"view/connection.phtml\");\n"
+                },
+                {
+                    "date": 1671444564825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,48 +1,47 @@\n <?php\n-  session_start();\n+session_start();\n \n-  include (\"view/nav.phtml\");\n+include(\"view/nav.phtml\");\n \n-if(isset($_POST['valider'])){\n+if (isset($_POST['valider'])) {\n \n-   \n-     if(isset($_POST['name']) && isset($_POST['password'])){\n \n-\t    $name=$_POST['name'];\n+  if (isset($_POST['name']) && isset($_POST['password'])) {\n \n-\t     $password=$_POST['password']; \n+    $name = $_POST['name'];\n \n-        $erreur=\"\";\n+    $password = $_POST['password'];\n \n-try{\n- $db= new PDO('mysql:host=localhost;dbname=train;charset=utf8','root','root');\n-}\n-catch(Exception $e){\n-}\n+    $erreur = \"\";\n \n-$sql= \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n+    try {\n+      $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+    } catch (Exception $e) {\n+    }\n \n-$userStatement= $db->prepare($sql);\n+    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n \n-$userStatement->execute();\n- \n-$user= $userStatement->fetch();\n-if($user!=false){\n+    $userStatement = $db->prepare($sql);\n \n- $_SESSION[\"user\"]=$user;\n+    $userStatement->execute();\n \n+    $user = $userStatement->fetch();\n+    if ($user != false) {\n \n+      $_SESSION[\"user\"] = $user;\n \n \n \n-   header(\"location:view/hello.phtml\");\n \n-}else{\n-      \n-  $erreur= \"sorry its not possible to login verify your name and your password\";\n-}\n \n-}\n+      header(\"location:hello.phtml\");\n \n+    } else {\n+\n+      $erreur = \"sorry its not possible to login verify your name and your password\";\n+    }\n+\n+  }\n+\n }\n- include(\"view/connection.phtml\");\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671444691476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,19 +29,14 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n+      header(\"location:view/hello.phtml\");\n \n-\n-\n-\n-      header(\"location:hello.phtml\");\n-\n     } else {\n \n       $erreur = \"sorry its not possible to login verify your name and your password\";\n     }\n \n   }\n \n }\n\\ No newline at end of file\n-include(\"view/connection.phtml\");\n"
+                },
+                {
+                    "date": 1671444701148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,5 +38,6 @@\n     }\n \n   }\n \n-}\n\\ No newline at end of file\n+}\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671444949087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,4 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671444970630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,4 +39,5 @@\n \n   }\n \n }\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445875664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:hello.phtml\");\n \n     } else {\n \n       $erreur = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671445891964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,5 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n+include(\"view/connection.php\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445900053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,5 @@\n \n   }\n \n }\n-include(\"view/connection.php\");\n\\ No newline at end of file\n+include(\" connection.php\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445927758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,15 +29,18 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:hello.phtml\");\n \n+\n+\n+      header(\"location:view/hello.phtml\");\n+\n     } else {\n \n       $erreur = \"sorry its not possible to login verify your name and your password\";\n     }\n \n\\ No newline at end of file\n   }\n \n }\n-include(\" connection.php\");\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671445961655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,8 @@\n \n       $_SESSION[\"user\"] = $user;\n \n \n-\n-\n       header(\"location:view/hello.phtml\");\n \n     } else {\n \n"
+                },
+                {
+                    "date": 1671446742544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n       $_SESSION[\"user\"] = $user;\n \n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:hello.phtml\");\n \n     } else {\n \n       $erreur = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671446782104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n       $_SESSION[\"user\"] = $user;\n \n \n-      header(\"location:hello.phtml\");\n+      header(\"location:view/hello.phtml\");\n \n     } else {\n \n       $erreur = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671447251787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,4 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671447305803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,4 +40,5 @@\n \n   }\n \n }\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671447353197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n       header(\"location:view/hello.phtml\");\n \n     } else {\n \n-      $erreur = \"sorry its not possible to login verify your name and your password\";\n+      $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1671447366992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $erreur = \"\";\n+    $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n"
+                },
+                {
+                    "date": 1671447414258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n       $_SESSION[\"user\"] = $user;\n \n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:hello.phtml\");\n \n     } else {\n \n       $error = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671447515047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,8 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-\n       header(\"location:hello.phtml\");\n \n     } else {\n \n"
+                },
+                {
+                    "date": 1671447684932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:hello.phtml\");\n+      header(\"location:view/hello.phtml\");\n \n     } else {\n \n       $error = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671447707004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,5 +39,4 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671447713639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,4 +39,5 @@\n \n   }\n \n }\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671447928429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n session_start();\n \n-include(\"view/nav.phtml\");\n \n+\n if (isset($_POST['valider'])) {\n \n \n   if (isset($_POST['name']) && isset($_POST['password'])) {\n"
+                },
+                {
+                    "date": 1671447944864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n session_start();\n \n+include(\"view/connection.phtml\");\n \n \n if (isset($_POST['valider'])) {\n \n@@ -39,5 +40,4 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671447965680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n <?php\n session_start();\n \n-include(\"view/connection.phtml\");\n+include(\"view/nav.phtml\");\n \n-\n if (isset($_POST['valider'])) {\n \n \n   if (isset($_POST['name']) && isset($_POST['password'])) {\n@@ -40,4 +39,5 @@\n \n   }\n \n }\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671449063088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n \n       header(\"location:view/hello.phtml\");\n \n     } else {\n+      dd(\"hello\");\n \n       $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n"
+                },
+                {
+                    "date": 1671449082565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-\n+      dd(\"Welcome\");\n     } else {\n       dd(\"hello\");\n \n       $error = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671449113660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,11 @@\n \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-      dd(\"Welcome\");\n+      var_dump(\"Welcome\");\n     } else {\n-      dd(\"hello\");\n+      var_dump(\"hello\");\n \n       $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n"
+                },
+                {
+                    "date": 1671455891612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,11 +30,11 @@\n \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-      var_dump(\"Welcome\");\n+     \n     } else {\n-      var_dump(\"hello\");\n+     \n \n       $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n"
+                },
+                {
+                    "date": 1671458270404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,4 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458503161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,4 +40,5 @@\n \n   }\n \n }\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458861319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,5 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n+include(\"connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458926798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,5 @@\n \n   }\n \n }\n-include(\"connection.phtml\");\n\\ No newline at end of file\n+include(\"connection.php\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458938688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,5 +40,4 @@\n \n   }\n \n }\n-include(\"connection.php\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671458963949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:hello.phtml\");\n      \n     } else {\n      \n \n"
+                },
+                {
+                    "date": 1671459066138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     if ($user != false) {\n \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:hello.phtml\");\n+      header(\"location:view/hello.phtml\");\n      \n     } else {\n      \n \n"
+                },
+                {
+                    "date": 1671459238210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n+      var_dump($user):\n      \n     } else {\n      \n \n"
+                },
+                {
+                    "date": 1671459267450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,13 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n-\n+      var_dump($user);\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-      var_dump($user):\n+   \n      \n     } else {\n      \n \n"
+                },
+                {
+                    "date": 1671459794923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,13 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n-      var_dump($user);\n+     \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-   \n+      exit();\n      \n     } else {\n      \n \n"
+                },
+                {
+                    "date": 1671459880325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,4 +41,5 @@\n \n   }\n \n }\n+  include(\"view/connection.phtml\")\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671459887790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,10 @@\n      \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n-      exit();\n      \n+     \n     } else {\n      \n \n       $error = \"sorry its not possible to login verify your name and your password\";\n"
+                },
+                {
+                    "date": 1671460001257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,5 +41,5 @@\n \n   }\n \n }\n-  include(\"view/connection.phtml\")\n\\ No newline at end of file\n+include(\"view/connection.phtml\");\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671460226448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,5 +41,5 @@\n \n   }\n \n }\n-include(\"view/connection.phtml\");\n\\ No newline at end of file\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671461844023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,8 +30,9 @@\n      \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/hello.phtml\");\n+      exit();\n      \n      \n     } else {\n      \n"
+                },
+                {
+                    "date": 1671702862112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n+    \n+\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671702868947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n \n     $name = $_POST['name'];\n \n-    $password = $_POST['password'];\n+    $password = \n \n-    \n \n+\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671702876487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n \n     $name = $_POST['name'];\n \n-    $password = \n+    $password = password_ha\n \n \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702888502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n \n     $name = $_POST['name'];\n \n-    $password = password_ha\n+    $password = $_POST['password'];\n \n+    \n \n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671702893844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,10 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n+    $pass\n+\n     \n \n     $error = \"\";\n \n"
+                },
+                {
+                    "date": 1671702902189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass\n+    $pass= password\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702915391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password\n+    $pass= password_hash($);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702925060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($);\n+    $pass= password_hash($password);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702931567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password);\n+    $pass= password_hash($password,passw);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702937980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,passw);\n+    $pass= password_hash($password,Pass);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702944327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,Pass);\n+    $pass= password_hash($password,Password_);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702954234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,Password_);\n+    $pass= password_hash($password,P);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702961852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,P);\n+    $pass= password_hash($password,PASSWORD_DE);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702967540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DE);\n+    $pass= password_hash($password,PASSWORD_DEFAULT));\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671702988174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT));\n+    $pass= password_hash($password,PASSWORD_DEFAULT);\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703051976,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,8 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT);\n \n-    \n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703137352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT);\n \n+    var\n+\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703143972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT);\n \n-    var\n+    var_dump($pass)\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703188365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT);\n \n-    var_dump($pass)\n+    var_dump($pass);\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703224132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT);\n \n-    var_dump($pass);\n+    \n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703230564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,8 @@\n       $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n   }\n-\n+   \n+  var_dump()\n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671703235880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,8 @@\n       $error = \"sorry its not possible to login verify your name and your password\";\n     }\n \n   }\n-   \n-  var_dump()\n+\n+  var_dump($pass);\n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671703303860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,7 +45,7 @@\n     }\n \n   }\n \n-  var_dump($pass);\n+\n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671703499684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,12 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT);\n+    \n \n+    $pass= password_hash($password,PASSWORD_DEFAULT );\n+\n     \n \n     $error = \"\";\n \n"
+                },
+                {
+                    "date": 1671703505830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    \n+    $options = [\n+      'cost' => 12,\n+  ];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT );\n \n     \n"
+                },
+                {
+                    "date": 1671703513476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $options = [\n       'cost' => 12,\n   ];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT );\n+    $pass= password_hash($password,PASSWORD_ );\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703518995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $options = [\n       'cost' => 12,\n   ];\n \n-    $pass= password_hash($password,PASSWORD_ );\n+    $pass= password_hash($password,PASSWORD_BCRYPT, );\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703526917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $options = [\n       'cost' => 12,\n   ];\n \n-    $pass= password_hash($password,PASSWORD_BCRYPT, );\n+    $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n \n     \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703533299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n   ];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n \n-    \n \n+\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703622695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,14 @@\n \n     $password = $_POST['password'];\n \n     $options = [\n-      'cost' => 12,\n+      'cost' => 10,\n   ];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n \n \n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703663582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,8 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $options = [\n-      'cost' => 10,\n-  ];\n-\n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703709744,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n \n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n+     \n \n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703714839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n      \n+    echo \n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703720351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n      \n-    echo \n+    echo \"\"\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703728639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n      \n-    echo \"\"\n+    echo \"$\"\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703747664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,12 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_BCRYPT,$options );\n-     \n-    echo \"$\"\n+    $pass= password_hash($password,PASSWORD_BCRYPT,$s );\n \n+    echo \"$pass\";\n+\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671703907138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_BCRYPT,$s );\n+    $pass= password_hash($password,PASSWORD_BCRYPT );\n \n-    echo \"$pass\";\n+   \n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671703931962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_BCRYPT );\n+    $pass= password_hash($password,PASSWORD_BCRYPT);\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671703944226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_BCRYPT);\n+    $pass= password_hash($password,'PASSWORD_BCRYPT');\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704009983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,'PASSWORD_BCRYPT');\n+    $pass= password_hash($password,'PASSWORD_B');\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704022501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,'PASSWORD_B');\n+    $pass= password_hash($password'PASSWORD_DE');\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704028934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password'PASSWORD_DE');\n+    $pass= password_hash($password,PASSWORD_DEF);\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704034016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEF);\n+    $pass= password_hash($password,PASSWORD_DEFAULT,);\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704040095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT,);\n+    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>]);\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704048028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>]);\n+    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>3]);\n \n    \n \n     $error = \"\";\n"
+                },
+                {
+                    "date": 1671704126280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>3]);\n \n-   \n+    \n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704132535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>3]);\n \n-    \n+    echo \n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704139768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>3]);\n \n-    echo \n+    echo \"$pass\"\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704201386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,11 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>3]);\n+    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>10]);\n \n-    echo \"$pass\"\n+    echo \"$pass\";\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704221564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>10]);\n \n-    echo \"$pass\";\n+    var\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704229389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>10]);\n \n-    var\n+    var_dump($)\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704234482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $password = $_POST['password'];\n \n     $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>10]);\n \n-    var_dump($)\n+    var_dump($pass)\n \n     $error = \"\";\n \n     try {\n"
+                },
+                {
+                    "date": 1671704402037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,12 +11,9 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n \n-    $pass= password_hash($password,PASSWORD_DEFAULT,['cost' =>10]);\n \n-    var_dump($pass)\n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1671705214340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     if ($user != false) {\n      \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:view/welcome.phtml\");\n       exit();\n      \n      \n     } else {\n"
+                }
+            ],
+            "date": 1670515146503,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>login form</title>\n</head>\n<body>\n    \n</body>\n</html>"
+        }
+    ]
+}

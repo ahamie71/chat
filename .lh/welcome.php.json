@@ -1,0 +1,266 @@
+{
+    "sourceFile": "welcome.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 62,
+            "patches": [
+                {
+                    "date": 1671705492077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671706864145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\";\n+        JOIN user u ON m.user_id= u.id\"\n+        ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706884602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\"\n+        JOIN user u ON m.user_id= u.id\" \n         ;\n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671706893500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ;\n+        ORDER BY ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706905711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ORDER BY ;\n+        ORDER BY é;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706957723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ORDER BY é;\n+        ORDER BY  ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706967471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\" \n-        ORDER BY  ;\n+        JOIN user u ON m.user_id= u.id\" ;\n+        ORDER BY .co ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706975127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" ;\n-        ORDER BY .co ;\n+        ORDER BY  ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706990146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\" ;\n-        ORDER BY  ;\n+        JOIN user u ON m.user_id= u.id\", ;\n+        ORDER BY ;\n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671706997460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\", ;\n+        JOIN user u ON m.user_id= u.id\" ORDER BY ;\n         ORDER BY ;\n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707004640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\" ORDER BY ;\n-        ORDER BY ;\n+        JOIN user u ON m.user_id= u.id\"  ;\n+        \n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671707035091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,10 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\"  ;\n+        JOIN user u ON m.user_id= u.id\" \n+        ;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707040709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ;\n+        ORDER BY ;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707046705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ORDER BY ;\n+        ORDER BY m.;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707056407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ORDER BY m.;\n+        ORDER BY m.content ;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707063326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n-        ORDER BY m.content ;\n+        ORDER BY m.content DESC\n+        limite;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707068380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n         ORDER BY m.content DESC\n-        limite;\n+        L;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707073820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n         ORDER BY m.content DESC\n-        L;\n+        LIMIT ;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707079362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\" \n         ORDER BY m.content DESC\n-        LIMIT ;\n+        LIMIT 5;\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707084472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\" \n+        JOIN user u ON m.user_id= u.id\",\n         ORDER BY m.content DESC\n         LIMIT 5;\n         \n \n"
+                },
+                {
+                    "date": 1671707107303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\",\n         ORDER BY m.content DESC\n-        LIMIT 5;\n+        LIMIT 5;\"\"\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707113723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id\",\n+        JOIN user u ON m.user_id= u.id,\n         ORDER BY m.content DESC\n-        LIMIT 5;\"\"\n+        LIMIT 5;\"\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707119349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id,\n         ORDER BY m.content DESC\n-        LIMIT 5;\"\n+        LIMIT 5\"\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707133200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,11 @@\n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n-        JOIN user u ON m.user_id= u.id,\n+        JOIN user u ON m.user_id= u.id\n         ORDER BY m.content DESC\n-        LIMIT 5\"\n+        LIMIT 5\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671707246721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.content DESC\n+        ORDER BY m.content A\n         LIMIT 5\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671707254532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.content A\n+        ORDER BY m.content Asc\n         LIMIT 5\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671712803451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.content Asc\n+        ORDER BY m.CreatedAt Asc\n         LIMIT 5\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671712809173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.CreatedAt Asc\n+        ORDER BY m.createdAt Asc\n         LIMIT 5\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671712902136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.createdAt Asc\n+        ORDER BY m.createdAt DE\n         LIMIT 5\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671713017193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.createdAt DE\n-        LIMIT 5\";\n+        ORDER BY m.createdAt DESC\n+        LIMIT 5 of\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671713024608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 of\";\n+        LIMIT 5 offset5\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671713031631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 offset5\";\n+        LIMIT 5 O 5\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671713194877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 O 5\";\n+        LIMIT 5 OFFSET \";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671713206045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 OFFSET \";\n+        LIMIT 5 OFFSET 1\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671714368359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 OFFSET 1\";\n+        LIMIT 5 OFFSET 5\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671714432781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n-        LIMIT 5 OFFSET 5\";\n+        LIMIT 5 OFFSET \";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671714478198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,10 +25,10 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.createdAt DESC\n-        LIMIT 5 OFFSET \";\n+        ORDER BY m.c DESC\n+        LIMIT 5 OFFSET 0\";\n         \n \n \n $messageStatement = $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1671714485552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.c DESC\n+        ORDER BY m.user_id DESC\n         LIMIT 5 OFFSET 0\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671714533718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n-        ORDER BY m.user_id DESC\n+        ORDER BY m.createdAt DESC\n         LIMIT 5 OFFSET 0\";\n         \n \n \n"
+                },
+                {
+                    "date": 1671714705282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,11 @@\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n         LIMIT 5 OFFSET 0\";\n+\n         \n+        \n \n \n $messageStatement = $db->prepare($sql);\n \n"
+                },
+                {
+                    "date": 1671714810382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n         LIMIT 5 OFFSET 0\";\n \n+\n         \n-        \n \n \n $messageStatement = $db->prepare($sql);\n \n@@ -55,8 +55,9 @@\n \n     '                 <div class=\"container\">' .\n     '<img src=\"/w3images/bandmember.jpg\">' .\n     '                     <p> ' . $message['name'] . '</p>' .\n+    \n     '                     <p >' . $message['content'] . '</p>' .\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n"
+                },
+                {
+                    "date": 1671714821941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n \n     '                 <div class=\"container\">' .\n     '<img src=\"/w3images/bandmember.jpg\">' .\n     '                     <p> ' . $message['name'] . '</p>' .\n-    \n+    '<p> ' . $message['id'] . '</p>' .\n     '                     <p >' . $message['content'] . '</p>' .\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n"
+                },
+                {
+                    "date": 1671714921981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,10 +61,10 @@\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n \n-\n     \n+    \n \n   echo $string;\n \n \n"
+                },
+                {
+                    "date": 1671714940493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,10 +61,10 @@\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n \n+    var_dump($string)\n     \n-    \n \n   echo $string;\n \n \n"
+                },
+                {
+                    "date": 1671714960048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n \n-    var_dump($string)\n+    var_dump($messsage);\n     \n \n   echo $string;\n \n"
+                },
+                {
+                    "date": 1671714965764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n \n-    var_dump($messsage);\n+    var_dump($messages[]);\n     \n \n   echo $string;\n \n"
+                },
+                {
+                    "date": 1671714990876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,10 +61,10 @@\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n \n-    var_dump($messages[]);\n     \n+    \n \n   echo $string;\n \n \n"
+                },
+                {
+                    "date": 1671715181043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n \n     '                 <div class=\"container\">' .\n     '<img src=\"/w3images/bandmember.jpg\">' .\n     '                     <p> ' . $message['name'] . '</p>' .\n-    '<p> ' . $message['id'] . '</p>' .\n+    \n     '                     <p >' . $message['content'] . '</p>' .\n     ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n     '</div>';\n \n"
+                },
+                {
+                    "date": 1671716166393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,13 @@\n }\n \n \n \n+\n+\n+\n+\n+\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n"
+                },
+                {
+                    "date": 1671716183710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,19 @@\n } catch (Exception $e) {\n }\n \n \n+// On détermine sur quelle page on se trouve\n+if(isset($_GET['page']) && !empty($_GET['page'])){\n+    $currentPage = (int) strip_tags($_GET['page']);\n+}else{\n+    $currentPage = 1;\n+}\n \n \n \n \n \n-\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n"
+                },
+                {
+                    "date": 1671716739492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,12 @@\n }else{\n     $currentPage = 1;\n }\n \n+ \n \n \n \n-\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n"
+                },
+                {
+                    "date": 1671716745467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- \n+ $em=SELECT COUNT(*) AS nb_articles FROM `articles`;\n \n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716751656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em=SELECT COUNT(*) AS nb_articles FROM `articles`;\n+ $em=SELECT COUNT(*) AS messages FROM `articles`;\n \n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716756770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em=SELECT COUNT(*) AS messages FROM `articles`;\n+ $em= SELECT COUNT(*) AS messages FROM `articles`;\n \n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716763512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= SELECT COUNT(*) AS messages FROM `articles`;\n+ $em= \"SELECT COUNT(*) AS messages FROM `messages`;\n \n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716771617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= \"SELECT COUNT(*) AS messages FROM `messages`;\n+ $em= \"SELECT COUNT(*)  FROM `messages`\";\n \n \n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716776868,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,10 @@\n }\n \n  $em= \"SELECT COUNT(*)  FROM `messages`\";\n \n+echo $em;\n \n-\n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n         ORDER BY m.createdAt DESC\n"
+                },
+                {
+                    "date": 1671716807108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= \"SELECT COUNT(*)  FROM `messages`\";\n+ $em= \"SELECT COUNT(*) me  FROM `messages`\";\n \n echo $em;\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716814247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= \"SELECT COUNT(*) me  FROM `messages`\";\n+ $em= \"SELECT COUNT(*) As messages  FROM `messages`\";\n \n echo $em;\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716866091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= \"SELECT COUNT(*) As messages  FROM `messages`\";\n+ $em= \"SELECT COUNT(*) As   FROM `messages`\";\n \n echo $em;\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716871339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n }else{\n     $currentPage = 1;\n }\n \n- $em= \"SELECT COUNT(*) As   FROM `messages`\";\n+ $em= \"SELECT COUNT(*) As content  FROM `messages`\";\n \n echo $em;\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n"
+                },
+                {
+                    "date": 1671716936562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n }\n \n  $em= \"SELECT COUNT(*) As content  FROM `messages`\";\n \n-v\n+va\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n"
+                },
+                {
+                    "date": 1671717264830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n  $nbstemt->execute();\n  \n  $result = $nbstemt->fetchAll();\n \n-var_dump($nbmes);\n+var_dump($nbme);\n \n $sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n         FROM messages m \n         JOIN user u ON m.user_id= u.id\n"
+                }
+            ],
+            "date": 1671705492077,
+            "name": "Commit-0",
+            "content": "<?php\nsession_start();\ninclude(\"nav.phtml\");\nif (!isset($_SESSION['user'])) {\n  header('Location:view/connection.phtml');\n\n}\n\n?>\n\n<H1>Bienvenue\n  <?php echo $_SESSION['user']['name'] ?>\n</H1>\n\n\n<?php\n\n\ntry {\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n} catch (Exception $e) {\n}\n\n\n\n$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n        FROM messages m \n        JOIN user u ON m.user_id= u.id\";\n\n\n$messageStatement = $db->prepare($sql);\n\n$messageStatement->execute();\n\n$messages = $messageStatement->fetchAll();\n\nforeach ($messages as $message) {\n\n\n  // echo \"<tr>\";\n  // echo \"<td>\" . $message['name'] . \"</td></br>\n  //                  <td>\" . $message['content'] . \"</td></br>\n  //                  <td>\" . $message['createdAt'] . \"</td></br>\";\n\n  // echo \"</tr>\";\n\n\n\n  $string =\n\n    '                 <div class=\"container\">' .\n    '<img src=\"/w3images/bandmember.jpg\">' .\n    '                     <p> ' . $message['name'] . '</p>' .\n    '                     <p >' . $message['content'] . '</p>' .\n    ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n    '</div>';\n\n\n\n    \n\n  echo $string;\n\n\n}\n\n\n\n?>"
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 24,
+            "patches": [
+                {
+                    "date": 1670489200467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1670489215731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <form>\n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"nam\" class=\"form-control\" id=\"inputEmail3\">\n+            <input type=\"name\" class=\"form-control\" id=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n"
+                },
+                {
+                    "date": 1670489272272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n <html>\n <head>\n \t<meta charset=\"utf-8\">\n \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n \t<title></title>\n </head>\n <body>\n \n@@ -21,5 +22,9 @@\n           </div>\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n-      </form>  \n\\ No newline at end of file\n+      </form>  \n+\n+      <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+      </body>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489446189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n </head>\n <body>\n \n     <form>\n+        <div class=\"container\"\n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"form-control\" id=\"name\">\n"
+                },
+                {
+                    "date": 1670489452699,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\n <body>\n \n     <form>\n-        <div class=\"container\"\n+        <div class=\"container\">\n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"form-control\" id=\"name\">\n"
+                },
+                {
+                    "date": 1670489468269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n         <div class=\"container\">\n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"name\" class=\"form-control\" id=\"name\">\n+            <input type=\"name\" class=\"\" id=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n"
+                },
+                {
+                    "date": 1670489487406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"password\" class=\"form-control\" id=\"inputPassword3\">\n+            <input type=\"password\" class=\"\" id=\"inputPassword3\">\n           </div>\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n"
+                },
+                {
+                    "date": 1670489510739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             <input type=\"password\" class=\"\" id=\"inputPassword3\">\n           </div>\n         </div>\n        \n-        <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n+        <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n       </form>  \n \n       <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1670489593171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,17 @@\n       </form>  \n \n       <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n-      </body>\n\\ No newline at end of file\n+      </body>\n+\n+    </html>\n+\n+    <style>\n+\n+.container{\n+\n+      justify-content: center;\n+      margin-bottom: 10cm;\n+}\n+\n+    </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489608829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\n <body>\n \n     <form>\n-        <div class=\"container\">\n+        <div class=\"hello\">\n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"\" id=\"name\">\n@@ -34,9 +34,8 @@\n \n     <style>\n \n .container{\n-\n       justify-content: center;\n       margin-bottom: 10cm;\n }\n \n"
+                },
+                {
+                    "date": 1670489614484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n     </html>\n \n     <style>\n \n-.container{\n+.hello{\n       justify-content: center;\n       margin-bottom: 10cm;\n }\n \n"
+                },
+                {
+                    "date": 1670489641502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,8 @@\n     <style>\n \n .hello{\n       justify-content: center;\n-      margin-bottom: 10cm;\n+      margin:auto;\n }\n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489653238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,8 @@\n     <style>\n \n .hello{\n       justify-content: center;\n-      margin:auto;\n+      margin:20px;\n }\n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489763142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,11 @@\n \t<title></title>\n </head>\n <body>\n \n+    <div class=\"container\">\n     <form>\n-        <div class=\"hello\">\n+        \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"\" id=\"name\">\n@@ -33,10 +34,7 @@\n     </html>\n \n     <style>\n \n-.hello{\n-      justify-content: center;\n-      margin:20px;\n-}\n \n+\n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489769290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n       </form>  \n+      </div>\n \n       <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n       </body>\n"
+                },
+                {
+                    "date": 1670489793950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,11 @@\n \n     </html>\n \n     <style>\n+   \n+   .container {\n \n+    margin: auto;\n \n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489801979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,8 @@\n    \n    .container {\n \n     margin: auto;\n+   }\n \n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489824663,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n    \n    .container {\n \n     margin: auto;\n+    text-align: center;\n    }\n \n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489843897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,15 @@\n     <form>\n         \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n-          <div class=\"col-sm-10\">\n+          \n             <input type=\"name\" class=\"\" id=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n-          <div class=\"col-sm-10\">\n+         \n             <input type=\"password\" class=\"\" id=\"inputPassword3\">\n           </div>\n         </div>\n        \n"
+                },
+                {
+                    "date": 1670489853493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,15 @@\n     <form>\n         \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n-          \n+          <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"\" id=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n           <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n-         \n+          <div class=\"col-sm-10\">\n             <input type=\"password\" class=\"\" id=\"inputPassword3\">\n           </div>\n         </div>\n        \n"
+                },
+                {
+                    "date": 1670489894784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,11 +36,11 @@\n \n     <style>\n    \n    .container {\n+     margin-top: 10px;\n \n-    margin: auto;\n-    text-align: center;\n+    \n    }\n \n \n     </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1670489910991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n     <style>\n    \n    .container {\n      margin-top: 10px;\n+     margin-bottom: auto;\n \n     \n    }\n \n"
+                },
+                {
+                    "date": 1670490154156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n </head>\n <body>\n \n     <div class=\"container\">\n-    <form>\n+    <form action=\"index.php\" method=\"post\">\n         \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n@@ -38,8 +38,9 @@\n    \n    .container {\n      margin-top: 10px;\n      margin-bottom: auto;\n+     \n \n     \n    }\n \n"
+                },
+                {
+                    "date": 1670492289624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n             <input type=\"name\" class=\"\" id=\"name\">\n           </div>\n         </div>\n         <div class=\"row mb-3\">\n-          <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n+          <label for=\"password\" class=\"col-sm-2 col-form-label\">Password</label>\n           <div class=\"col-sm-10\">\n-            <input type=\"password\" class=\"\" id=\"inputPassword3\">\n+            <input type=\"password\" class=\"\" id=\"password\">\n           </div>\n         </div>\n        \n         <button type=\"submit\" class=\"btn btn-primary\">Connexion</button>\n"
+                },
+                {
+                    "date": 1670492841374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,9 @@\n </head>\n <body>\n \n     <div class=\"container\">\n-    <form action=\"index.php\" method=\"post\">\n-        \n+    <form action=\"index.php\" method=\"post\">  \n         <div class=\"row mb-3\">\n           <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n           <div class=\"col-sm-10\">\n             <input type=\"name\" class=\"\" id=\"name\">\n@@ -28,9 +27,9 @@\n       </form>  \n       </div>\n \n       <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n       </body>\n \n     </html>\n \n"
+                }
+            ],
+            "date": 1670489200467,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset=\"utf-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\t<title></title>\n</head>\n<body>\n\n    <form>\n        <div class=\"row mb-3\">\n          <label for=\"name\" class=\"col-sm-2 col-form-label\">Name</label>\n          <div class=\"col-sm-10\">\n            <input type=\"nam\" class=\"form-control\" id=\"inputEmail3\">\n          </div>\n        </div>\n        <div class=\"row mb-3\">\n          <label for=\"inputPassword3\" class=\"col-sm-2 col-form-label\">Password</label>\n          <div class=\"col-sm-10\">\n            <input type=\"password\" class=\"form-control\" id=\"inputPassword3\">\n          </div>\n        </div>\n       \n        <button type=\"submit\" class=\"btn btn-primary\">Sign in</button>\n      </form>  "
+        }
+    ]
+}
