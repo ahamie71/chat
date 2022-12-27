@@ -1,0 +1,254 @@
+{
+    "sourceFile": "inscription.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 59,
+            "patches": [
+                {
+                    "date": 1671791444830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671791450112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,1 @@\n+<?ph\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791470767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<?ph\n\\ No newline at end of file\n+<?p\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791625105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,4 @@\n-<?p\n\\ No newline at end of file\n+<?php \n+\n+\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791670304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php \n+  \n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791677069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php \n-  \n-\n+   include\n+ \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791686472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +0,0 @@\n-<?php \n-   include\n- \n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791693328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,4 @@\n+<?php \n+   include('view')\n+ \n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791698991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php \n-   include('view')\n+   include('view/nav.phtml')\n  \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792942938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n <?php \n    include('view/nav.phtml')\n  \n+\n+\n+   \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792951272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php \n    include('view/nav.phtml')\n  \n+   if (isset[]\n \n \n-   \n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792957470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php \n    include('view/nav.phtml')\n  \n-   if (isset[]\n+   if (isset()\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792964415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php \n    include('view/nav.phtml')\n  \n-   if (isset()\n+   if (isset($_POST['name)\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792969651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php \n    include('view/nav.phtml')\n  \n-   if (isset($_POST['name)\n+   if (isset($_POST['name']) && $_POST['password\n \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792980348,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n <?php \n    include('view/nav.phtml')\n  \n-   if (isset($_POST['name']) && $_POST['password\n+   if (isset($_POST['name']) && $_POST['passwords']){\n \n \n+    \n+   }\n \n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671792988481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n <?php \n    include('view/nav.phtml')\n  \n-   if (isset($_POST['name']) && $_POST['passwords']){\n+   if(isset($_POST['name']) && $_POST['passwords']){\n \n \n-    \n+\n    }\n \n \n \n"
+                },
+                {
+                    "date": 1671792997378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,12 @@\n-<?php \n-   include('view/nav.phtml')\n+<?php\n+include('view/nav.phtml');\n  \n    if(isset($_POST['name']) && $_POST['passwords']){\n \n+     \n+    \n \n-\n    }\n \n \n \n"
+                },
+                {
+                    "date": 1671793074950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,7 @@\n <?php\n include('view/nav.phtml');\n  \n-   if(isset($_POST['name']) && $_POST['passwords']){\n+   \n \n-     \n-    \n \n-   }\n-\n-\n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793086290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,22 @@\n <?php\n include('view/nav.phtml');\n  \n-   \n+if (isset($_POST['valider'])) {\n \n \n+    if (isset($_POST['name']) && isset($_POST['password'])) {\n+  \n+      $name = $_POST['name'];\n+  \n+      $password = $_POST['password'];\n+  \n+  \n+      $error = \"\";\n+  \n+      try {\n+        $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+      } catch (Exception $e) {\n+      }\n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793091683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,6 @@\n   \n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n-      }\n+      \n \n-\n\\ No newline at end of file\n-?>\n"
+                },
+                {
+                    "date": 1671793099490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n-\n+°\n"
+                },
+                {
+                    "date": 1671793115023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,11 +10,9 @@\n   \n       $password = $_POST['password'];\n   \n   \n-      $error = \"\";\n-  \n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n-°\n+      }\n"
+                },
+                {
+                    "date": 1671793122894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n-      }\n+      }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793309132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,5 @@\n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n-      }\n\\ No newline at end of file\n+      };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793319534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,5 +14,7 @@\n       try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n-      };\n\\ No newline at end of file\n+      }\n+\n+    }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793336472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,17 +4,19 @@\n if (isset($_POST['valider'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n-  \n-      $name = $_POST['name'];\n-  \n-      $password = $_POST['password'];\n-  \n-  \n+\n+        $name = $_POST['name'];\n+\n+        $password = $_POST['password'];\n+\n+    }\n       try {\n\\ No newline at end of file\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n       } catch (Exception $e) {\n       \n       }\n \n-    }\n+    }\n+\n+    ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793382045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,9 @@\n       } catch (Exception $e) {\n       \n       }\n \n+\n+      \n     }\n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793401487,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n       } catch (Exception $e) {\n       \n       }\n \n+      \n \n-      \n     }\n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793457841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,26 @@\n       } catch (Exception $e) {\n       \n       }\n \n-      \n+      $createdAt = new DateTime();\n+$user_id = $_SESSION['user']['id'];\n+$content = $_POST['content'];\n \n+$req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n+$req->execute(\n+    array(\n+        ':content' => $content,\n+        ':user_id' => $_SESSION['user']['id'],\n+        ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n+\n+        )\n+);\n+\n+\n+header('location:./view/welcome.phtml');\n+\n+?>\n+\n     }\n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793463801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,9 +33,9 @@\n \n \n header('location:./view/welcome.phtml');\n \n-?>\n \n+\n     }\n \n     ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793488981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,8 @@\n       } catch (Exception $e) {\n       \n       }\n \n-      $createdAt = new DateTime();\n-$user_id = $_SESSION['user']['id'];\n-$content = $_POST['content'];\n-\n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':content' => $content,\n"
+                },
+                {
+                    "date": 1671793496369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,13 @@\n       } catch (Exception $e) {\n       \n       }\n \n+\n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n-        ':content' => $content,\n+        ':name' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n"
+                },
+                {
+                    "date": 1671793506705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       \n       }\n \n \n-$req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n+$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:content,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':name' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n"
+                },
+                {
+                    "date": 1671793532367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       \n       }\n \n \n-$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:content,:user_id,:createdAt)\");\n+$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:name,:user_id,:createdAt)\");\n $req->execute(\n     array(\n         ':name' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n"
+                },
+                {
+                    "date": 1671793539602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       \n       }\n \n \n-$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:name,:user_id,:createdAt)\");\n+$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:name,:password)\");\n $req->execute(\n     array(\n         ':name' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n"
+                },
+                {
+                    "date": 1671793551252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n $req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:name,:password)\");\n $req->execute(\n     array(\n         ':name' => $content,\n-        ':user_id' => $_SESSION['user']['id'],\n+        ':password' => $password,\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n"
+                },
+                {
+                    "date": 1671793557574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n $req->execute(\n     array(\n         ':name' => $content,\n         ':password' => $password,\n-        ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n+      \n \n         )\n );\n \n"
+                },
+                {
+                    "date": 1671793571428,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n       \n       }\n \n \n-$req = $db->prepare(\"INSERT INTO messages (name,password) VALUES (:name,:password)\");\n+$req = $db->prepare(\"INSERT INTO user (name,password) VALUES (:name,:password)\");\n $req->execute(\n     array(\n         ':name' => $content,\n         ':password' => $password,\n"
+                },
+                {
+                    "date": 1671793581337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         )\n );\n \n \n-header('location:./view/welcome.phtml');\n+header('location:./view/conne');\n \n \n \n     }\n"
+                },
+                {
+                    "date": 1671793595505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n include('view/nav.phtml');\n  \n-if (isset($_POST['valider'])) {\n+if (isset($_POST[''])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n \n@@ -28,9 +28,9 @@\n         )\n );\n \n \n-header('location:./view/conne');\n+header('location:./view/connection.phtml');\n \n \n \n     }\n"
+                },
+                {
+                    "date": 1671793609278,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n include('view/nav.phtml');\n  \n-if (isset($_POST[''])) {\n+if (isset($_POST['sinscrire'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n \n"
+                },
+                {
+                    "date": 1671793634597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n $req = $db->prepare(\"INSERT INTO user (name,password) VALUES (:name,:password)\");\n $req->execute(\n     array(\n-        ':name' => $content,\n+        ':name' => $contet,\n         ':password' => $password,\n       \n \n         )\n"
+                },
+                {
+                    "date": 1671793675459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n $req = $db->prepare(\"INSERT INTO user (name,password) VALUES (:name,:password)\");\n $req->execute(\n     array(\n-        ':name' => $contet,\n+        ':name' => $name,\n         ':password' => $password,\n       \n \n         )\n"
+                },
+                {
+                    "date": 1671793905179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n include('view/nav.phtml');\n  \n-if (isset($_POST['sinscrire'])) {\n+if (isset($_POST['register'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n \n"
+                },
+                {
+                    "date": 1671793926376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n include('view/nav.phtml');\n- \n+\n if (isset($_POST['register'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n@@ -10,29 +10,29 @@\n \n         $password = $_POST['password'];\n \n     }\n-      try {\n+    try {\n         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-      } catch (Exception $e) {\n-      \n-      }\n+    } catch (Exception $e) {\n \n+    }\n \n-$req = $db->prepare(\"INSERT INTO user (name,password) VALUES (:name,:password)\");\n-$req->execute(\n-    array(\n-        ':name' => $name,\n-        ':password' => $password,\n-      \n \n+    $req = $db->prepare(\"INSERT INTO user (name,password) VALUES (:name,:password)\");\n+    $req->execute(\n+        array(\n+            ':name' => $name,\n+            ':password' => $password,\n+\n+\n         )\n\\ No newline at end of file\n-);\n+    );\n \n \n-header('location:./view/connection.phtml');\n+    header('location:./view/connection.phtml');\n \n \n \n-    }\n+}\n \n-    ?>\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671793935455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,8 @@\n     $req->execute(\n         array(\n             ':name' => $name,\n             ':password' => $password,\n-\n-\n         )\n     );\n \n \n"
+                },
+                {
+                    "date": 1671794029610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,12 +25,12 @@\n             ':password' => $password,\n         )\n     );\n \n-\n     header('location:./view/connection.phtml');\n+      \n+    \n \n \n-\n }\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794037194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,8 @@\n         )\n     );\n \n     header('location:./view/connection.phtml');\n-      \n-    \n-\n-\n+else\n }\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794042850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,9 @@\n         )\n     );\n \n     header('location:./view/connection.phtml');\n-else\n+\n }\n \n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794109973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n     );\n \n     header('location:./view/connection.phtml');\n \n+}else{\n+\n+    include\n }\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794119160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     header('location:./view/connection.phtml');\n \n }else{\n \n-    include\n+    include('view/)\n }\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794124397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     header('location:./view/connection.phtml');\n \n }else{\n \n-    include('view/)\n+    include('view/connection)\n }\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794129561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n     header('location:./view/connection.phtml');\n \n }else{\n \n-    include('view/connection)\n+    include('view/connection.phtml');\n }\n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794215921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n-include('view/nav.phtml');\n \n+\n if (isset($_POST['register'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n"
+                },
+                {
+                    "date": 1671794232343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n+include('view/nav.phtml');\n \n-\n if (isset($_POST['register'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n"
+                },
+                {
+                    "date": 1671794237449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n-include('view/nav.phtml');\n \n+\n if (isset($_POST['register'])) {\n \n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n"
+                },
+                {
+                    "date": 1671794243500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,7 +31,7 @@\n }else{\n \n     include('view/connection.phtml');\n }\n+ \n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794249320,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     header('location:./view/connection.phtml');\n \n }else{\n-\n+    include('view/nav.phtml');\n     include('view/connection.phtml');\n }\n  \n \n"
+                },
+                {
+                    "date": 1671794485244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     header('location:./view/connection.phtml');\n \n }else{\n-    echo\"toto\n+    echo\"toto\"\n     include('view/nav.phtml');\n     include('view/connection.phtml');\n }\n  \n"
+                },
+                {
+                    "date": 1671794726761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             ':name' => $name,\n             ':password' => $password,\n         )\n     );\n-die()\n+die();\n     header('location:./view/connection.phtml');\n \n }else{\n     echo \"tata\";\n"
+                }
+            ],
+            "date": 1671791444830,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

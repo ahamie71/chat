@@ -1,0 +1,122 @@
+{
+    "sourceFile": "view/inscription.phtml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1671792102542,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671792359033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS></button>\n+<button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS</button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671793870327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS</button>\n+<button type=\"submit\" name=\"sinscrire\">r</button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671793877582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"sinscrire\">r</button>\n+<button type=\"submit\" name=\"sinscrire\"></button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671793884110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"sinscrire\"></button>\n+<button type=\"submit\" name=\"register\">INSCRIVER VOUS</button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671793892209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,33 +1,36 @@\n <?php\n- include(\"nav.phtml\");\n+include(\"nav.phtml\");\n ?>\n \n \n <!DOCTYPE html>\n <html lang=\"en\">\n+\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Inscriptin</title>\n </head>\n+\n <body>\n-    \n-<div class=\"container\">\n \n-<form action=\"./../inscription.php\" method=\"POST\">\n+    <div class=\"container\">\n \n-<input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n-<input type=\"password\" name=\"password\" placeholder=\"create password\">\n+        <form action=\"./../inscription.php\" method=\"POST\">\n \n-<button type=\"submit\" name=\"register\">INSCRIVER VOUS</button>\n+            <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n+            <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n+            <button type=\"submit\" name=\"register\">INSCRIVER VOUS</button>\n \n \n-</form>\n \n+        </form>\n \n-</div>\n \n+    </div>\n+\n </body>\n+\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671794199695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-include(\"nav.phtml\");\n+\n ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1671794758747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n <body>\n \n     <div class=\"container\">\n \n-        <form action=\"./../inscription.php\" method=\"POST\">\n+        <form action=\".../inscription.php\" method=\"POST\">\n \n             <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n             <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671794795176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n <body>\n \n     <div class=\"container\">\n \n-        <form action=\".../inscription.php\" method=\"POST\">\n+        <form action=\"./inscription.php\" method=\"POST\">\n \n             <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n             <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671805002554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n <?php\n-\n+ <?php\n+ if (isset($erreur)) {\n+     echo \"$error\";\n+ }\n ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1671805013457,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n- <?php\n- if (isset($erreur)) {\n+\n+ if (isset($warnin)) {\n      echo \"$error\";\n  }\n ?>\n \n"
+                },
+                {
+                    "date": 1671805020811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n- if (isset($warnin)) {\n-     echo \"$error\";\n+ if (isset($warning)) {\n+     echo \"$warnin\";\n  }\n ?>\n \n \n"
+                },
+                {
+                    "date": 1671806430642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n  if (isset($warning)) {\n-     echo \"$warnin\";\n+     echo \"$warning\";\n  }\n ?>\n \n \n"
+                },
+                {
+                    "date": 1671807041262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n  if (isset($warning)) {\n-     echo \"$warning\";\n+     echo \"$\";\n  }\n ?>\n \n \n"
+                },
+                {
+                    "date": 1671807047597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n  if (isset($warning)) {\n-     echo \"$\";\n+     echo $_;\n  }\n ?>\n \n \n"
+                },
+                {
+                    "date": 1671807054540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n  if (isset($warning)) {\n-     echo $_;\n+     echo $_GET['warning'];\n  }\n ?>\n \n \n"
+                },
+                {
+                    "date": 1671807332499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,8 @@\n-<?php\n+<?php if(isset($msg)): ?>\n+         <?php echo $msg ?>\n \n- if (isset($warning)) {\n-     echo $_GET['warning'];\n- }\n-?>\n \n-\n <!DOCTYPE html>\n <html lang=\"en\">\n \n <head>\n"
+                },
+                {
+                    "date": 1671807338841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<?php if(isset($msg)): ?>\n+<?php if(isset($war)): ?>\n          <?php echo $msg ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1671807345025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-<?php if(isset($war)): ?>\n-         <?php echo $msg ?>\n+<?php if(isset($warning)): ?>\n+         <?php echo $warning ?>\n \n \n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671807366346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-<?php if(isset($warning)): ?>\n-         <?php echo $warning ?>\n+<?php if(isset($warning)): ? <?php echo $warning ?>\n \n \n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671807378331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n-<?php if(isset($warning)): ? <?php echo $warning ?>\n \n \n+<?php if(isset($warning)): ?>\n+ <?php echo $warning ?>\n+\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n \n <head>\n"
+                },
+                {
+                    "date": 1671807383829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n+<?php\n \n-\n <?php if(isset($warning)): ?>\n  <?php echo $warning ?>\n \n \n"
+                },
+                {
+                    "date": 1671807391755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n \n-<?php if(isset($warning)): ?>\n+ if(isset($warning)): ?>\n  <?php echo $warning ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1671807397632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,8 @@\n-<?php\n+<?php if(isset($warning)): ?>\n+         <?php echo $warning ?>\n \n- if(isset($warning)): ?>\n- <?php echo $warning ?>\n \n-\n <!DOCTYPE html>\n <html lang=\"en\">\n \n <head>\n"
+                },
+                {
+                    "date": 1671807407345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php if(isset($warning)): ?>\n-         <?php echo $warning ?>\n+         <?php echo $msg ?>\n \n \n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1671807412471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<?php if(isset($)): ?>\n+<?php if(isset($w)): ?>\n          <?php echo $msg ?>\n \n \n <!DOCTYPE html>\n"
+                },
+                {
+                    "date": 1672129227543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n ?>\n <body>\n     <div class=\"form signup\">\n         <span class=\"title\">Inscription</span>\n-          \n+            <div class=\"image-holder\"></div>\n             <form action=\"./inscription.php\" method=\"POST\">\n                 <h2 class=\"text-center\"><strong>Create</strong> an account.</h2>\n                 <div class=\"form-group\"><input class=\"form-control\" type=\"text\" required=\"required\" name=\"name\" placeholder=\"enter a username\"></div>\n \n"
+                }
+            ],
+            "date": 1671792102542,
+            "name": "Commit-0",
+            "content": "<?php\n include(\"nav.phtml\");\n?>\n\n\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Inscriptin</title>\n</head>\n<body>\n    \n<div class=\"container\">\n\n<form action=\"./../inscription.php\" method=\"POST\">\n\n<input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n<input type=\"password\" name=\"password\" placeholder=\"create password\">\n\n<button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS></button>\n\n\n\n</form>\n\n\n</div>\n\n</body>\n</html>"
+        }
+    ]
+}

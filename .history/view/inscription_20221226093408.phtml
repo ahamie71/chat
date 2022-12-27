@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscriptin</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <form action="./inscription.php" method="POST">
+        <p class="message_error"></p>
+            <?php
+
+         if (isset($warning)) {
+             echo "$warning";
+
+         
+         }
+         ?>
+        </p>
+            <input type="text" name="name" placeholder="enter your name">
+            <input type="password" name="password" placeholder="create password">
+
+            <button type="submit" name="register">INSCRIVER VOUS</button>
+
+
+
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>

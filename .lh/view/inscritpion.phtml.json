@@ -1,0 +1,194 @@
+{
+    "sourceFile": "view/inscritpion.phtml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 44,
+            "patches": [
+                {
+                    "date": 1671791276050,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1671791288276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n-<html></html>\n\\ No newline at end of file\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Inscriptin</title>\n+</head>\n+<body>\n+    \n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791294695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,8 @@\n     <title>Inscriptin</title>\n </head>\n <body>\n     \n+<div class \n+\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791301742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,17 @@\n     <title>Inscriptin</title>\n </head>\n <body>\n     \n-<div class \n+<div class=\"container\">\n \n+\n+\n+\n+\n+\n+\n+\n+</div>\n+\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791308620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n     \n <div class=\"container\">\n \n \n+<in\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791315238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     \n <div class=\"container\">\n \n \n-<in\n+<input type=\"text\" name=\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791321273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     \n <div class=\"container\">\n \n \n-<input type=\"text\" name=\"\n+<input type=\"text\" name=\"username\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791329527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     \n <div class=\"container\">\n \n \n-<input type=\"text\" name=\"username\n+<input type=\"text\" name=\"name\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791337045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     \n <div class=\"container\">\n \n \n-<input type=\"text\" name=\"name\"\n+<input type=\"text\" name=\"name\" placeholder=\"enter your name\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791347555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,15 +10,17 @@\n     \n <div class=\"container\">\n \n \n-<input type=\"text\" name=\"name\" placeholder=\"enter your name\n+<input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n \n \n \n \n \n+\n+\n </div>\n \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791352792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,15 +12,15 @@\n \n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n+<in\n \n \n \n \n \n \n-\n </div>\n \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791360165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n     \n <div class=\"container\">\n \n \n+\n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n <in\n \n"
+                },
+                {
+                    "date": 1671791368079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n <body>\n     \n <div class=\"container\">\n \n+<form method=\"post\" action=\"\n \n-\n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n <in\n \n"
+                },
+                {
+                    "date": 1671791373437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\"\n+<form method=\"post\" action=\"\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n <in\n"
+                },
+                {
+                    "date": 1671791379358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,11 @@\n <in\n \n \n \n+</form>\n \n \n-\n </div>\n \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1671791390059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,12 @@\n <form method=\"post\" action=\"\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n-<in\n \n \n \n+\n </form>\n \n \n </div>\n"
+                },
+                {
+                    "date": 1671791406267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n \n <form method=\"post\" action=\"\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n+<input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791423978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n <form method=\"post\" action=\"\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n-<input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n+<input type=\"text\" name=\"name\" placeholder=\"create password\">\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791429835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n \n <form method=\"post\" action=\"\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n-<input type=\"text\" name=\"name\" placeholder=\"create password\">\n+<input type=\"password\" name=\"name\" placeholder=\"create password\">\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791492848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\"\">\n+<form method=\"post\" action=\" <form action=\"./../connection.php\" method=\"POST\">\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n-<input type=\"password\" name=\"name\" placeholder=\"create password\">\n+<input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n \n \n \n"
+                },
+                {
+                    "date": 1671791498499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\" <form action=\"./../connection.php\" method=\"POST\">\">\n+<form method=\"post\" action=\" ./../connection.php\" method=\"POST\">\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791504519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\" ./../connection.php\" method=\"POST\">\">\n+<form method=\"post\" action=\" ./../inscription.php\" method=\"POST\">\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791511200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\" ./../inscription.php\" method=\"POST\">\">\n+<form method=\"post\" action=\" ./../inscription.php\" >\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791517678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"post\" action=\" ./../inscription.php\" >\">\n+<form method=\"POST\" action=\" ./../inscription.php\" >\"\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791524627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n+<bu\n \n \n \n-\n </form>\n \n \n </div>\n"
+                },
+                {
+                    "date": 1671791532528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<bu\n+<button type=\"submit\" name=\"s'inscrire\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791543769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"s'inscrire\n+<button type=\"submit\" name=\"s'inscrire\">IN\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791550477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"s'inscrire\">IN\n+<button type=\"submit\" name=\"s'inscrire\">INSCRIVER \n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791557039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"s'inscrire\">INSCRIVER \n+<button type=\"submit\" name=\"s'inscrire\">INSCRIVER VOUS <\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791563670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"s'inscrire\">INSCRIVER VOUS <\n+<button type=\"submit\" name=\"s'inscrire\">INSCRIVER VOUS></button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791568987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"s'inscrire\">INSCRIVER VOUS></button>\n+<button type=\"submit\" name=\"inscrire\">INSCRIVER VOUS></button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791748590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n+\n+\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n@@ -14,9 +17,9 @@\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n-<button type=\"submit\" name=\"inscrire\">INSCRIVER VOUS></button>\n+<button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS></button>\n \n \n \n </form>\n"
+                },
+                {
+                    "date": 1671791757652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n+<?php\n \n \n \n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1671791776640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n+ include(\"nav.phtml\");\n+?>\n \n \n-\n-\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"POST\" action=\" ./../inscription.php\" >\"\n+<form method=\"POST\" action=\" ./../inscription.php\" >\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791784855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form method=\"POST\" action=\" ./../inscription.php\" >\n+<form ME=\"POST\" action=\" ./../inscription.php\" >\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791821483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form ME=\"POST\" action=\" ./../inscription.php\" >\n+<\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791827610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n <body>\n     \n <div class=\"container\">\n \n-<\n \n+\n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n <button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS></button>\n"
+                },
+                {
+                    "date": 1671791847381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n <body>\n     \n <div class=\"container\">\n \n+<form action=\"./../connection.php\" method=\"POST\"></form>\n \n-\n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n <button type=\"submit\" name=\"sinscrire\">INSCRIVER VOUS></button>\n"
+                },
+                {
+                    "date": 1671791857493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"./../connection.php\" method=\"POST\"></form>\n+<form action=\"./../inscriti.php\" method=\"POST\"></form>\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791863677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"./../inscriti.php\" method=\"POST\"></form>\n+<form action=\"./../inscription.php\" method=\"POST\"></form>\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791890185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"./../inscription.php\" method=\"POST\"></form>\n+<form action=\"\" method=\"POST\"></form>\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791922222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"\" method=\"POST\"></form>\n+<form Action=\"\" method=\"POST\"></form>\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791962802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form Action=\"\" method=\"POST\"></form>\n+<form action=\"\" method=\"POST\"></form>\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671791968565,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"\" method=\"POST\"></form>\n+<form action=\"\" method=\"POST\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                },
+                {
+                    "date": 1671792050664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n <body>\n     \n <div class=\"container\">\n \n-<form action=\"./\" method=\"POST\">\n+<form action=\"./.\" method=\"POST\">\n \n <input type=\"text\" name=\"name\" placeholder=\"enter your name\">\n <input type=\"password\" name=\"password\" placeholder=\"create password\">\n \n"
+                }
+            ],
+            "date": 1671791276050,
+            "name": "Commit-0",
+            "content": "<html></html>"
+        }
+    ]
+}

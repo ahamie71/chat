@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 18,
             "patches": [
                 {
                     "date": 1671612480710,
@@ -16,6 +16,70 @@
                 {
                     "date": 1671701371827,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n \n   body {\n     background: #E5DDD5 url(\"https://www.toptal.com/designers/subtlepatterns/patterns/sports.png\") fixed;\n   }\n-\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n@@ -54,5 +53,4 @@\n     font-size: 14px;\n     font-weight: bold;\n   }\n \n-  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672060051914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     overflow: auto;\n   }\n \n   .chat-log__item {\n-    background: #fafafa;\n+    background:;\n     padding: 10px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n"
+                },
+                {
+                    "date": 1672060059925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     overflow: auto;\n   }\n \n   .chat-log__item {\n-    background:;\n+  \n     padding: 10px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n"
+                },
+                {
+                    "date": 1672060066258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     overflow: auto;\n   }\n \n   .chat-log__item {\n-  \n+    background:;\n     padding: 10px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n"
+                },
+                {
+                    "date": 1672060073506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n-    color: #FFFFFF;\n+   \n     position: fixed;\n     width: 100%;\n     z-index: 1\n   }\n@@ -23,9 +23,9 @@\n     overflow: auto;\n   }\n \n   .chat-log__item {\n-    background:;\n+    background: #fafafa;\n     padding: 10px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n"
+                },
+                {
+                    "date": 1672060084576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n-   \n+    color: #FFFFFF;\n     position: fixed;\n     width: 100%;\n     z-index: 1\n   }\n"
+                },
+                {
+                    "date": 1672060092758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n \n   body {\n-    background: #E5DDD5 url(\"https://www.toptal.com/designers/subtlepatterns/patterns/sports.png\") fixed;\n+  \n   }\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n"
+                },
+                {
+                    "date": 1672060099312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n \n-  body {\n   \n-  }\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672060112627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n \n-  \n+  body {\n+    background: #E5DDD5 url(\"https://www.toptal.com/designers/subtlepatterns/patterns/sports.png\") fixed;\n+  }\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672060123462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background: #DDDDDD;\n+    \n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060128804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    \n+    background: #DDDDDD;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060137533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background: #DDDDDD;\n+    background:red;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060146020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background:red;\n+    background: #DDDDDD;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060323549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background: #DDDDDD;\n+   \n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060330170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-   \n+    background: #DDDDDD;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060337926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background: #DDDDDD;\n+    background:red;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
+                },
+                {
+                    "date": 1672060353811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     text-align: right;\n   }\n \n   .chat-form {\n-    background:red;\n+    background:;\n     padding: 40px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n"
                 }
             ],
             "date": 1671612480710,

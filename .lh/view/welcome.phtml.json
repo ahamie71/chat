@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 178,
+            "activePatchIndex": 261,
             "patches": [
                 {
                     "date": 1671705366637,
@@ -720,6 +720,338 @@
                 {
                     "date": 1671789937584,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n </head>\n \n <body>\n \n-<?php\n+  <?php\n \n include(\"./../welcome.php\");\n ?>\n   <div class=\"hello\">\n@@ -25,41 +25,41 @@\n           <form class=\"form-horizontal\">\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n \n-            \n-                <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content'/>\n+\n+                <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n \n-          \n+\n         </div>\n       </div>\n   </div>`\n   </div>\n \n   <nav>\n-  <ul class=\"pagination\">\n-                        <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->\n-                        <li class=\"page-item <?= ($currentPage == 1) ? \"disabled\" : \"\" ?>\">\n-                            <a href=\"?page=<?= $currentPage - 1 ?>\" class=\"page-link\">Précédente</a>\n-                        </li>\n-                        <?php for($page = 1; $page <= $nbpage; $page++): ?>\n-                          <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->\n-                          <li class=\"page-item <?= ($currentPage == $page) ? \"active\" : \"\" ?>\">\n-                                <a href=\"?page=<?= $page ?>\" class=\"page-link\"><?= $page ?></a>\n-                            </li>\n-                        <?php endfor ?>\n-                          <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->\n-                          <li class=\"page-item <?= ($currentPage == $nbpage) ? \"disabled\" : \"\" ?>\">\n-                            <a href=\"?page=<?= $currentPage + 1 ?>\" class=\"page-link\">Suivante</a>\n-                        </li>\n-                    </ul>\n-                </nav>\n+    <ul class=\"pagination\">\n+      <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->\n+      <li class=\"page-item <?=($currentPage == 1) ? \"disabled\" : \"\" ?>\">\n+        <a href=\"?page=<?= $currentPage - 1 ?>\" class=\"page-link\">Précédente</a>\n+      </li>\n+      <?php for ($page = 1; $page <= $nbpage; $page++): ?>\n+      <!-- Lien vers chacune des pages (activé si on se trouve sur la page correspondante) -->\n+      <li class=\"page-item <?=($currentPage == $page) ? \"active\" : \"\" ?>\">\n+        <a href=\"?page=<?= $page ?>\" class=\"page-link\"><?= $page ?></a>\n+      </li>\n+      <?php endfor ?>\n+      <!-- Lien vers la page suivante (désactivé si on se trouve sur la dernière page) -->\n+      <li class=\"page-item <?=($currentPage == $nbpage) ? \"disabled\" : \"\" ?>\">\n+        <a href=\"?page=<?= $currentPage + 1 ?>\" class=\"page-link\">Suivante</a>\n+      </li>\n+    </ul>\n+  </nav>\n \n \n \n </body>\n"
+                },
+                {
+                    "date": 1672047990687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n ?>\n   <div class=\"hello\">\n     <form action=\"./../sending.php\" method=\"POST\">\n       <div class=\"chat-form\">\n-        <div class=\"container \">\n+        <div class=\"container\">\n           <form class=\"form-horizontal\">\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n \n"
+                },
+                {
+                    "date": 1672050701708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n   </div>`\n   </div>\n \n   <nav>\n-    <ul class=\"pagination\">\n+    <ul class=\"pagination justify-content-center\">\n       <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->\n       <li class=\"page-item <?=($currentPage == 1) ? \"disabled\" : \"\" ?>\">\n         <a href=\"?page=<?= $currentPage - 1 ?>\" class=\"page-link\">Précédente</a>\n       </li>\n"
+                },
+                {
+                    "date": 1672063019151,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,5 +120,7 @@\n   .time-left {\n     float: left;\n     color: #999;\n   }\n+\n+  \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063024335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,6 +121,61 @@\n     float: left;\n     color: #999;\n   }\n \n-  \n+  body {\n+    background: #E5DDD5 url(\"https://www.toptal.com/designers/subtlepatterns/patterns/sports.png\") fixed;\n+  }\n+  .page-header {\n+    background: #006A4E;\n+    margin: 0;\n+    padding: 20px 0 10px;\n+    color: #FFFFFF;\n+    position: fixed;\n+    width: 100%;\n+    z-index: 1\n+  }\n+\n+  .main {\n+    height: 100vh;\n+    padding-top: 70px;\n+  }\n+\n+  .chat-log {\n+    padding: 40px 0 114px;\n+    height: auto;\n+    overflow: auto;\n+  }\n+\n+  .chat-log__item {\n+    background: #fafafa;\n+    padding: 10px;\n+    margin: 0 auto 20px;\n+    max-width: 80%;\n+    float: left;\n+    border-radius: 4px;\n+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n+    clear: both;\n+  }\n+\n+  .chat-log__item.chat-log__item--own {\n+    float: right;\n+    background: #DCF8C6;\n+    text-align: right;\n+  }\n+\n+  .chat-form {\n+    background: #DDDDDD;\n+    padding: 40px 0;\n+    position: fixed;\n+    bottom: 0;\n+    width: 100%;\n+  }\n+\n+  .chat-log__author {\n+    margin: 0 auto .5em;\n+    font-size: 14px;\n+    font-weight: bold;\n+  }\n+\n+\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063064412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -172,9 +172,9 @@\n   }\n \n   .chat-log__author {\n     margin: 0 auto .5em;\n-    font-size: 14px;\n+    font-size: 1px;\n     font-weight: bold;\n   }\n \n \n"
+                },
+                {
+                    "date": 1672063078827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,17 +164,17 @@\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n-    padding: 40px 0;\n+    padding: px 0;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n   }\n \n   .chat-log__author {\n     margin: 0 auto .5em;\n-    font-size: 1px;\n+    font-size: 20px;\n     font-weight: bold;\n   }\n \n \n"
+                },
+                {
+                    "date": 1672063108459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,9 +164,9 @@\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n-    padding: px 0;\n+    padding: 20px ;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n   }\n"
+                },
+                {
+                    "date": 1672063152971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,9 +167,9 @@\n     background: #DDDDDD;\n     padding: 20px ;\n     position: fixed;\n     bottom: 0;\n-    width: 100%;\n+    width: 0%;\n   }\n \n   .chat-log__author {\n     margin: 0 auto .5em;\n"
+                },
+                {
+                    "date": 1672063164951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,12 +164,12 @@\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n-    padding: 20px ;\n+    padding: 20px 0;\n     position: fixed;\n     bottom: 0;\n-    width: 0%;\n+    width: 100%;\n   }\n \n   .chat-log__author {\n     margin: 0 auto .5em;\n"
+                },
+                {
+                    "date": 1672063178207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -149,9 +149,9 @@\n   .chat-log__item {\n     background: #fafafa;\n     padding: 10px;\n     margin: 0 auto 20px;\n-    max-width: 80%;\n+    max-width: %;\n     float: left;\n     border-radius: 4px;\n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n     clear: both;\n@@ -164,9 +164,9 @@\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n-    padding: 20px 0;\n+    padding: 20px ;\n     position: fixed;\n     bottom: 0;\n     width: 100%;\n   }\n"
+                },
+                {
+                    "date": 1672063195117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,10 +148,10 @@\n \n   .chat-log__item {\n     background: #fafafa;\n     padding: 10px;\n-    margin: 0 auto 20px;\n-    max-width: %;\n+    margin: auto 20px;\n+    max-width: 20%;\n     float: left;\n     border-radius: 4px;\n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n     clear: both;\n"
+                },
+                {
+                    "date": 1672063202373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,9 +148,9 @@\n \n   .chat-log__item {\n     background: #fafafa;\n     padding: 10px;\n-    margin: auto 20px;\n+    margin: 10px auto 20px;\n     max-width: 20%;\n     float: left;\n     border-radius: 4px;\n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n"
+                },
+                {
+                    "date": 1672063212821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -148,10 +148,10 @@\n \n   .chat-log__item {\n     background: #fafafa;\n     padding: 10px;\n-    margin: 10px auto 20px;\n-    max-width: 20%;\n+    margin: 0 auto 20px;\n+    max-width: %;\n     float: left;\n     border-radius: 4px;\n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n     clear: both;\n"
+                },
+                {
+                    "date": 1672063281338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,11 +147,11 @@\n   }\n \n   .chat-log__item {\n     background: #fafafa;\n-    padding: 10px;\n+    padding: 1px;\n     margin: 0 auto 20px;\n-    max-width: %;\n+    max-width: 80%;\n     float: left;\n     border-radius: 4px;\n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n     clear: both;\n"
+                },
+                {
+                    "date": 1672063292891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -147,9 +147,9 @@\n   }\n \n   .chat-log__item {\n     background: #fafafa;\n-    padding: 1px;\n+    padding: 30px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n     border-radius: 4px;\n"
+                },
+                {
+                    "date": 1672063355238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,8 +160,9 @@\n   .chat-log__item.chat-log__item--own {\n     float: right;\n     background: #DCF8C6;\n     text-align: right;\n+    padding\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n"
+                },
+                {
+                    "date": 1672063360961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,9 +160,9 @@\n   .chat-log__item.chat-log__item--own {\n     float: right;\n     background: #DCF8C6;\n     text-align: right;\n-    padding\n+    padding-left: ;\n   }\n \n   .chat-form {\n     background: #DDDDDD;\n"
+                },
+                {
+                    "date": 1672063382856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -160,9 +160,9 @@\n   .chat-log__item.chat-log__item--own {\n     float: right;\n     background: #DCF8C6;\n     text-align: right;\n-    padding-left: ;\n+   \n   }\n \n   .chat-form {\n     background: #DDDDDD;\n"
+                },
+                {
+                    "date": 1672063528720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,6 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n+  \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063535013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  \n+  .conta\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063568223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  .conta\n+  .paadin\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063575682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,9 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  .paadin\n+  .paading{\n+    padd\n+  }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063581003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,8 +178,8 @@\n     font-weight: bold;\n   }\n \n   .paading{\n-    padd\n+    padding-left: 100px;\n   }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063633584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,9 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  .paading{\n-    padding-left: 100px;\n-  }\n+  \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063712526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  \n+  .container\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063725177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,10 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  .container\n+  .container{\n+   padding\n \n+  }\n+\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063768948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,10 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  .container{\n-   padding\n+  \n \n-  }\n-\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063845235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,7 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-  \n+   \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063851916,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,7 +177,11 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-   \n+   .hey{\n \n+\n+    \n+   }\n+\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063859852,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,10 +178,10 @@\n     font-weight: bold;\n   }\n \n    .hey{\n+  padding-left: ;\n \n \n-    \n    }\n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672063886800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n     font-weight: bold;\n   }\n \n    .hey{\n-  padding-left: ;\n+  padding-left:px;\n \n \n    }\n \n"
+                },
+                {
+                    "date": 1672063912331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n     font-weight: bold;\n   }\n \n    .hey{\n-  padding-left:px;\n+  padding-left:20px;\n \n \n    }\n \n"
+                },
+                {
+                    "date": 1672063930583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -178,9 +178,9 @@\n     font-weight: bold;\n   }\n \n    .hey{\n-  padding-left:20px;\n+  padding:20px;\n \n \n    }\n \n"
+                },
+                {
+                    "date": 1672064056267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,11 +177,6 @@\n     font-size: 20px;\n     font-weight: bold;\n   }\n \n-   .hey{\n-  padding:20px;\n \n-\n-   }\n-\n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672064254928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,10 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background: #E5DDD5 url(\"https://www.toptal.com/designers/subtlepatterns/patterns/sports.png\") fixed;\n-  }\n+    background\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064262549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background\n+    background-image: url;\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064269049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url;\n+    background-image: url(\"images\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064278765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"images\");\n+    background-image: url(\"\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064286533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"\");\n+    background-image: url(\"./..\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064300929,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./..\");\n+    background-image: url(\"./../images/I\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064307076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./../images/I\");\n+    background-image: url(\"./../images/IMG_\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064312406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./../images/IMG_\");\n+    background-image: url(\"./../images/IMG_9800\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672064319187,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./../images/IMG_9800\");\n+    background-image: url(\"./../images/IMG_9800.JPG\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672065157824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,11 @@\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n+          <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a>\n \n-\n         </div>\n       </div>\n   </div>`\n   </div>\n"
+                },
+                {
+                    "date": 1672065172497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,14 +29,15 @@\n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n+                <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n-          <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n-                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a>\n+          <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n \n         </div>\n       </div>\n   </div>`\n"
+                },
+                {
+                    "date": 1672065189634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n-          <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+          \n                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n \n         </div>\n       </div>\n"
+                },
+                {
+                    "date": 1672065250086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                 <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n+                \n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065258931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                 <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                \n+                 <a class=\"publisher-btn text-info\" href=\"#\"  data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065269003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                 <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\"  data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n+                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Send data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065276153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,11 +29,11 @@\n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n-                <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+               <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Send data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n+                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Send> data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065281820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Send> data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n+                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Senddata-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> \n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065296473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" name=\"submit\">Senddata-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> \n+                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> \n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065301753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> \n+                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"  name=\"submit\">Send></i></a> \n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065316630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"  name=\"submit\">Send></i></a> \n+                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\" name=\"submit\">Send</i></a> \n               </div>\n             </div>\n           </form>\n           \n"
+                },
+                {
+                    "date": 1672065341318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n                <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\" name=\"submit\">Send</i></a> \n+                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\" name=\"submit\"></i></a> \n               </div>\n             </div>\n           </form>\n           \n-                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n+                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -\n \n         </div>\n       </div>\n   </div>`\n"
+                },
+                {
+                    "date": 1672065347411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               </div>\n             </div>\n           </form>\n           \n-                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -\n+                \n \n         </div>\n       </div>\n   </div>`\n"
+                },
+                {
+                    "date": 1672065379645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n     integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n+    https://use.fontawesome.com/releases/v5.7.2/css/all.css\n   <link rel=\"stylesheet\" href=\"train/style.css\">\n   <title>Document</title>\n \n </head>\n"
+                },
+                {
+                    "date": 1672065386842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n     integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n-    https://use.fontawesome.com/releases/v5.7.2/css/all.css\n+  \n   <link rel=\"stylesheet\" href=\"train/style.css\">\n   <title>Document</title>\n \n </head>\n"
+                },
+                {
+                    "date": 1672065394332,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n   <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n     integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n-  \n   <link rel=\"stylesheet\" href=\"train/style.css\">\n   <title>Document</title>\n \n </head>\n@@ -30,16 +29,15 @@\n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n-               <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+                \n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n-                 <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\" name=\"submit\"></i></a> \n               </div>\n             </div>\n           </form>\n-          \n-                \n+          <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n+                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n \n         </div>\n       </div>\n   </div>`\n"
+                },
+                {
+                    "date": 1672065399869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,16 +29,14 @@\n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n               <div class=\"col-sm-2 col-xs-4\">\n-                \n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n-          <!-- <a class=\"publisher-btn\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-smile\"></i></a>\n-                <a class=\"publisher-btn text-info\" href=\"#\" data-abc=\"true\"><i class=\"fa fa-paper-plane\"></i></a> -->\n \n+\n         </div>\n       </div>\n   </div>`\n   </div>\n@@ -124,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./../images/IMG_9800.JPG\");\n+    background-image: url(\"./../images/IMG_9800.J\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672065411426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,9 +122,9 @@\n     color: #999;\n   }\n \n   body {\n-    background-image: url(\"./../images/IMG_9800.J\");\n+    background-image: url(\"./../images/IMG_9800.JPG\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672066069503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,9 @@\n   }\n \n   .chat-log__item {\n     background: #fafafa;\n-    padding: 30px;\n+    padding: 0px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n     border-radius: 4px;\n"
+                },
+                {
+                    "date": 1672066079524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -146,9 +146,9 @@\n   }\n \n   .chat-log__item {\n     background: #fafafa;\n-    padding: 0px;\n+    padding: 30px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n     border-radius: 4px;\n"
+                },
+                {
+                    "date": 1672067752016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,9 @@\n \n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n+              \n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n"
+                },
+                {
+                    "date": 1672067772393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n   <?php\n \n include(\"./../welcome.php\");\n ?>\n+\n+\n   <div class=\"hello\">\n     <form action=\"./../sending.php\" method=\"POST\">\n       <div class=\"chat-form\">\n         <div class=\"container\">\n@@ -28,9 +30,9 @@\n \n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n-              \n+\n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n"
+                },
+                {
+                    "date": 1672067778986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n   <?php\n \n include(\"./../welcome.php\");\n ?>\n+    <div class=\"con\n \n-\n   <div class=\"hello\">\n     <form action=\"./../sending.php\" method=\"POST\">\n       <div class=\"chat-form\">\n         <div class=\"container\">\n"
+                },
+                {
+                    "date": 1672067785559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   <?php\n \n include(\"./../welcome.php\");\n ?>\n-    <div class=\"con\n+    <div class=\"container m5\">\n \n   <div class=\"hello\">\n     <form action=\"./../sending.php\" method=\"POST\">\n       <div class=\"chat-form\">\n"
+                },
+                {
+                    "date": 1672067794183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   <?php\n \n include(\"./../welcome.php\");\n ?>\n-    <div class=\"container m5\">\n+    <div class=\"container m-5\">\n \n   <div class=\"hello\">\n     <form action=\"./../sending.php\" method=\"POST\">\n       <div class=\"chat-form\">\n@@ -42,9 +42,9 @@\n         </div>\n       </div>\n   </div>`\n   </div>\n-\n+</\n   <nav>\n     <ul class=\"pagination justify-content-center\">\n       <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->\n       <li class=\"page-item <?=($currentPage == 1) ? \"disabled\" : \"\" ?>\">\n"
+                },
+                {
+                    "date": 1672067799454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n         </div>\n       </div>\n   </div>`\n   </div>\n-</\n+</div>\n   <nav>\n     <ul class=\"pagination justify-content-center\">\n       <!-- Lien vers la page précédente (désactivé si on se trouve sur la 1ère page) -->\n       <li class=\"page-item <?=($currentPage == 1) ? \"disabled\" : \"\" ?>\">\n"
+                },
+                {
+                    "date": 1672067831183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n \n \n-                <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n+                < type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n \n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n"
+                },
+                {
+                    "date": 1672067836881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n \n \n-                < type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n+                <textarea type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n \n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n"
+                },
+                {
+                    "date": 1672067847430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n \n \n-                <textarea type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n+                <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n \n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n"
+                },
+                {
+                    "date": 1672067899158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -153,9 +153,10 @@\n     padding: 30px;\n     margin: 0 auto 20px;\n     max-width: 80%;\n     float: left;\n-    border-radius: 4px;\n+   \n+  \n     box-shadow: 0 1px 2px rgba(0, 0, 0, .1);\n     clear: both;\n   }\n \n"
+                },
+                {
+                    "date": 1672069069018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n     float: left;\n     color: #999;\n   }\n \n-  body {\n+  /* body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n@@ -178,8 +178,8 @@\n   .chat-log__author {\n     margin: 0 auto .5em;\n     font-size: 20px;\n     font-weight: bold;\n-  }\n+  } */\n \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672069089387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,9 +124,9 @@\n     float: left;\n     color: #999;\n   }\n \n-  /* body {\n+   body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n"
+                },
+                {
+                    "date": 1672069096843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n-  .page-header {\n+  /* .page-header { */\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n     color: #FFFFFF;\n"
+                },
+                {
+                    "date": 1672069106104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n-  /* .page-header { */\n+  .page-header { */\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n     color: #FFFFFF;\n@@ -178,8 +178,8 @@\n   .chat-log__author {\n     margin: 0 auto .5em;\n     font-size: 20px;\n     font-weight: bold;\n-  } */\n+  }\n \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672069132450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,9 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n-  .page-header { */\n+  .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n     color: #FFFFFF;\n@@ -178,8 +178,8 @@\n   .chat-log__author {\n     margin: 0 auto .5em;\n     font-size: 20px;\n     font-weight: bold;\n-  }\n+  } */\n \n \n </style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672069174981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,8 +126,9 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n+  :*\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672069182897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -126,9 +126,8 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n-  :*\n   .page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n"
+                },
+                {
+                    "date": 1672070090413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n \n \n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n-\n+   \n               <div class=\"col-sm-2 col-xs-4\">\n                 <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n@@ -126,9 +126,9 @@\n   }\n \n    body {\n     background-image: url(\"./../images/IMG_9800.JPG\");\n-  .page-header {\n+  /*.page-header {\n     background: #006A4E;\n     margin: 0;\n     padding: 20px 0 10px;\n     color: #FFFFFF;\n"
+                },
+                {
+                    "date": 1672070106914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,15 +26,13 @@\n         <div class=\"container\">\n           <form class=\"form-horizontal\">\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n-\n-\n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n    \n               <div class=\"col-sm-2 col-xs-4\">\n-                <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n+                <button type=\"submit\" class=\"btn btn-success \" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n \n"
+                },
+                {
+                    "date": 1672070118097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,13 +26,14 @@\n         <div class=\"container\">\n           <form class=\"form-horizontal\">\n             <div class=\"row\">\n               <div class=\"col-sm-10 col-xs-8\">\n+\n                 <input type=\"text\" class=\"form-control\" id=\"\" placeholder=\"Message\" name='content' />\n               </div>\n    \n               <div class=\"col-sm-2 col-xs-4\">\n-                <button type=\"submit\" class=\"btn btn-success \" name=\"submit\">Send</button>\n+                <button type=\"submit\" class=\"btn btn-success btn-block\" name=\"submit\">Send</button>\n               </div>\n             </div>\n           </form>\n \n"
                 }
             ],
             "date": 1671705366637,

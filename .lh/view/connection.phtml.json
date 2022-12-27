@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 41,
             "patches": [
                 {
                     "date": 1671441762767,
@@ -72,6 +72,106 @@
                 {
                     "date": 1671615151412,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     <?php\n if (isset($erreur)) {\n     echo \"$error\";\n }\n-    \n+    include(\"nav.phtml\");\n \n ?>\n-\n+        \n     <form action=\"./../connection.php\" method=\"POST\">\n         <div class=\"container\">\n             <div class=\"mb-3\">\n                 <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n"
+                },
+                {
+                    "date": 1671806988838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo \"$error\";\n+    echo $error\";\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671806997336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo $error\";\n+    echo $GETerror\";\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671807003720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo $GETerror\";\n+    echo $GET_['error';\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671807010355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo $GET_['error';\n+    echo  $GET_['error'];\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671807016593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo  $GET_['error'];\n+    echo  $GET['error'];\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671807024376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo  $GET['error'];\n+    echo  $GET_['error'];\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1671807030084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n \n <body>\n     <?php\n if (isset($erreur)) {\n-    echo  $GET_['error'];\n+    echo \"$error\";\n }\n     include(\"nav.phtml\");\n \n ?>\n"
+                },
+                {
+                    "date": 1672050073985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,19 +20,49 @@\n \n ?>\n         \n     <form action=\"./../connection.php\" method=\"POST\">\n-        <div class=\"container\">\n-            <div class=\"mb-3\">\n-                <label for=\"exampleInputEmail1\" class=\"form-label\">Name</label>\n-                <input type=\"text\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\"\n-                    name='name'>\n+        \n+    <section class=\"vh-100\" style=\"background-color: #508bfc;\">\n+  <div class=\"container py-5 h-100\">\n+    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n+      <div class=\"col-12 col-md-8 col-lg-6 col-xl-5\">\n+        <div class=\"card shadow-2-strong\" style=\"border-radius: 1rem;\">\n+          <div class=\"card-body p-5 text-center\">\n+\n+            <h3 class=\"mb-5\">Sign in</h3>\n+\n+            <div class=\"form-outline mb-4\">\n+              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\" />\n+              <label class=\"form-label\" for=\"typeEmailX-2\">Email</label>\n             </div>\n-            <div class=\"mb-3\">\n-                <label for=\"exampleInputPassword1\" class=\"form-label\">Password</label>\n-                <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" name=\"password\">\n+\n+            <div class=\"form-outline mb-4\">\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" />\n+              <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n+            <!-- Checkbox -->\n+            <div class=\"form-check d-flex justify-content-start mb-4\">\n+              <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"form1Example3\" />\n+              <label class=\"form-check-label\" for=\"form1Example3\"> Remember password </label>\n+            </div>\n+\n+            <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">Login</button>\n+\n+            <hr class=\"my-4\">\n+\n+            <button class=\"btn btn-lg btn-block btn-primary\" style=\"background-color: #dd4b39;\"\n+              type=\"submit\"><i class=\"fab fa-google me-2\"></i> Sign in with google</button>\n+            <button class=\"btn btn-lg btn-block btn-primary mb-2\" style=\"background-color: #3b5998;\"\n+              type=\"submit\"><i class=\"fab fa-facebook-f me-2\"></i>Sign in with facebook</button>\n+\n+          </div>\n+        </div>\n+      </div>\n+    </div>\n+  </div>\n+\n             <button type=\"submit\" class=\"btn btn-primary\" name=\"valider\">Connection</button>\n     </form>\n \n </body>\n"
+                },
+                {
+                    "date": 1672050081315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n               <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\" />\n-              <label class=\"form-label\" for=\"typeEmailX-2\">Email</label>\n+              <label class=\"form-label\" for=\"typeEmailX-2\">N</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n               <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" />\n"
+                },
+                {
+                    "date": 1672050094452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,10 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\" />\n-              <label class=\"form-label\" for=\"typeEmailX-2\">N</label>\n+              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name' />\n+              <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n               <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" />\n"
+                },
+                {
+                    "date": 1672050142559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name' />\n+              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n@@ -48,15 +48,9 @@\n             </div>\n \n             <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">Login</button>\n \n-            <hr class=\"my-4\">\n-\n-            <button class=\"btn btn-lg btn-block btn-primary\" style=\"background-color: #dd4b39;\"\n-              type=\"submit\"><i class=\"fab fa-google me-2\"></i> Sign in with google</button>\n-            <button class=\"btn btn-lg btn-block btn-primary mb-2\" style=\"background-color: #3b5998;\"\n-              type=\"submit\"><i class=\"fab fa-facebook-f me-2\"></i>Sign in with facebook</button>\n-\n+          \n           </div>\n         </div>\n       </div>\n     </div>\n"
+                },
+                {
+                    "date": 1672050152435,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,18 +46,18 @@\n               <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"form1Example3\" />\n               <label class=\"form-check-label\" for=\"form1Example3\"> Remember password </label>\n             </div>\n \n-            <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\">Login</button>\n+            <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\" nam>Login</button>\n \n           \n           </div>\n         </div>\n       </div>\n     </div>\n   </div>\n \n-            <button type=\"submit\" class=\"btn btn-primary\" name=\"valider\">Connection</button>\n+           \n     </form>\n \n </body>\n \n"
+                },
+                {
+                    "date": 1672050159263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n               <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"form1Example3\" />\n               <label class=\"form-check-label\" for=\"form1Example3\"> Remember password </label>\n             </div>\n \n-            <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\" nam>Login</button>\n+            <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\" name=\"valider\">Login</button>\n \n           \n           </div>\n         </div>\n"
+                },
+                {
+                    "date": 1672050184668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,13 +40,9 @@\n               <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n-            <!-- Checkbox -->\n-            <div class=\"form-check d-flex justify-content-start mb-4\">\n-              <input class=\"form-check-input\" type=\"checkbox\" value=\"\" id=\"form1Example3\" />\n-              <label class=\"form-check-label\" for=\"form1Example3\"> Remember password </label>\n-            </div>\n+            \n \n             <button class=\"btn btn-primary btn-lg btn-block\" type=\"submit\" name=\"valider\">Login</button>\n \n           \n"
+                },
+                {
+                    "date": 1672050195878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050216379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,14 +31,14 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"email\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name\" />\n+              <input type=\"nam\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\" />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050221702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"nam\" id=\"typeEmailX-2\" class=\"form-control form-control-lg\"name=\"name\" />\n+              <input type=\"name\" id=\"name\" class=\"form-control form-control-lg\"name=\"name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n"
+                },
+                {
+                    "date": 1672050246331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"name\" id=\"name\" class=\"form-control form-control-lg\"name=\"name\" />\n+              <input type=\"name\"  class=\"form-control form-control-lg\"name=\"name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n"
+                },
+                {
+                    "date": 1672050261578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"name\"  class=\"form-control form-control-lg\"name=\"name\" />\n+              <input type=\"name\" id=\"name\" class=\"form-control form-control-lg\"name=\"name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n"
+                },
+                {
+                    "date": 1672050275922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\" />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"place />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050283711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"place />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=' />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050288913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=' />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=\"enter y />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050312409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=\"enter y />\n+              <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=\"enter your password\" />\n               <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n             </div>\n \n             \n"
+                },
+                {
+                    "date": 1672050334988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,15 +31,15 @@\n \n             <h3 class=\"mb-5\">Sign in</h3>\n \n             <div class=\"form-outline mb-4\">\n-              <input type=\"name\" id=\"name\" class=\"form-control form-control-lg\"name=\"name\" />\n+              <input type=\"name\" id=\"name\" class=\"form-control form-control-lg\"name=\"name\"placeholder=\"enter your name\" />\n               <label class=\"form-label\" for=\"typeEmailX-2\">Name</label>\n             </div>\n \n             <div class=\"form-outline mb-4\">\n               <input type=\"password\" id=\"typePasswordX-2\" class=\"form-control form-control-lg\" name=\"password\"placeholder=\"enter your password\" />\n-              <label class=\"form-label\" for=\"typePasswordX-2\">Password</label>\n+              <label class=\"form-label\" for=\"typePasswordX-2\"></label>\n             </div>\n \n             \n \n"
+                },
+                {
+                    "date": 1672050641934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n ?>\n         \n     <form action=\"./../connection.php\" method=\"POST\">\n         \n-    <section class=\"vh-100\" style=\"background-color:whote;\">\n+    <section class=\"vh-100\" style=\"background-color:whot;\">\n   <div class=\"container py-5 h-100\">\n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-12 col-md-8 col-lg-6 col-xl-5\">\n         <div class=\"card shadow-2-strong\" style=\"border-radius: 1rem;\">\n"
                 }
             ],
             "date": 1671441762767,

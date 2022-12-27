@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 179,
+            "activePatchIndex": 194,
             "patches": [
                 {
                     "date": 1670515146503,
@@ -724,6 +724,66 @@
                 {
                     "date": 1671705214340,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     if ($user != false) {\n      \n       $_SESSION[\"user\"] = $user;\n \n-      header(\"location:view/hello.phtml\");\n+      header(\"location:view/welcome.phtml\");\n       exit();\n      \n      \n     } else {\n"
+                },
+                {
+                    "date": 1672136906669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-      $error = \"sorry its not possible to login verify your name and your password\";\n+    header\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672136918209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header\n+    header(\"location:view/connecting.phtml\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672136923851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:view/connecting.phtml\");\n+    header(\"location:view/connecting.phtml?\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672136930462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:view/connecting.phtml?\");\n+    header(\"location:view/connecting.phtml?not\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672136936080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:view/connecting.phtml?not\");\n+    header(\"location:view/connecting.phtml?notgood=1\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137120281,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:view/connecting.phtml?notgood=1\");\n+    header(\"location:/connecting.phtml?notgood=1\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137129448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:/connecting.phtml?notgood=1\");\n+    header(\"location:connecting.pht?notgood=1\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137148669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n      \n     } else {\n      \n \n-    header(\"location:connecting.pht?notgood=1\");\n+    header(\"location:connection.php?notgood=1\");\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137183664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,8 +38,9 @@\n     } else {\n      \n \n     header(\"location:connection.php?notgood=1\");\n+    exit()\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137205114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,11 +36,10 @@\n      \n      \n     } else {\n      \n-\n     header(\"location:connection.php?notgood=1\");\n-    exit()\n+      exit();\n     }\n \n   }\n \n"
+                },
+                {
+                    "date": 1672137567397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n session_start();\n \n-include(\"view/nav.phtml\");\n \n+\n if (isset($_POST['valider'])) {\n \n \n   if (isset($_POST['name']) && isset($_POST['password'])) {\n"
+                },
+                {
+                    "date": 1672137616475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n      \n      \n     } else {\n      \n-    header(\"location:connection.php?notgood=1\");\n+    header(\"location:connection.phtml?notgood=1\");\n       exit();\n     }\n \n   }\n"
+                },
+                {
+                    "date": 1672137630702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n      \n      \n     } else {\n      \n-    header(\"location:connection.phtml?notgood=1\");\n+    header(\"location:view/connection.phtml?notgood=1\");\n       exit();\n     }\n \n   }\n"
+                },
+                {
+                    "date": 1672138229227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n      \n      \n     } else {\n      \n-    header(\"location:view/connection.phtml?notgood=1\");\n+    header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n   }\n"
+                },
+                {
+                    "date": 1672138810242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,8 @@\n       exit();\n     }\n \n   }\n+ \n \n-\n }\n   \n\\ No newline at end of file\n"
                 }
             ],
             "date": 1670515146503,

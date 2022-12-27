@@ -1,0 +1,70 @@
+{
+    "sourceFile": "valid.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1672129462099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672129511593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n <?php\n-....\n+\n $mdp1 = $_POST['mdp1'];\n $mdp2 = $_POST['mdp2'];\n \n-if($mdp1 != mdp2)\n+if($ != mdp2)\n {\n // traitement dans le cas de deux mot de passe différent\n }\n else\n {\n // traitement en cas de succès\n }\n-...\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672129520106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n $mdp1 = $_POST['mdp1'];\n $mdp2 = $_POST['mdp2'];\n \n-if($ != mdp2)\n+if($mdp1 != mdp2)\n {\n // traitement dans le cas de deux mot de passe différent\n }\n else\n"
+                },
+                {
+                    "date": 1672129525819,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n $mdp1 = $_POST['mdp1'];\n $mdp2 = $_POST['mdp2'];\n \n-if($mdp1 != mdp2)\n+if($password != mdp2)\n {\n // traitement dans le cas de deux mot de passe différent\n }\n else\n"
+                },
+                {
+                    "date": 1672129531464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n $mdp1 = $_POST['mdp1'];\n $mdp2 = $_POST['mdp2'];\n \n-if($password != mdp2)\n+if($password != $)\n {\n // traitement dans le cas de deux mot de passe différent\n }\n else\n"
+                },
+                {
+                    "date": 1672129541655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\n \n-$mdp1 = $_POST['mdp1'];\n+$password = $_POST['mdp1'];\n $mdp2 = $_POST['mdp2'];\n \n-if($password != $)\n+if($password != $password2)\n {\n // traitement dans le cas de deux mot de passe différent\n }\n else\n"
+                },
+                {
+                    "date": 1672129550009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n $password = $_POST['mdp1'];\n-$mdp2 = $_POST['mdp2'];\n+$password2= $_POST['mdp2'];\n \n if($password != $password2)\n {\n // traitement dans le cas de deux mot de passe différent\n"
+                },
+                {
+                    "date": 1672129558039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n-$password = $_POST['mdp1'];\n-$password2= $_POST['mdp2'];\n+$password = $_POST['password'];\n+$password2= $_POST['password2'];\n \n if($password != $password2)\n {\n // traitement dans le cas de deux mot de passe différent\n"
+                },
+                {
+                    "date": 1672129564092,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,11 @@\n $password2= $_POST['password2'];\n \n if($password != $password2)\n {\n-// traitement dans le cas de deux mot de passe différent\n-}\n+\n else\n {\n-// traitement en cas de succès\n+\n }\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672129571999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,13 @@\n \n $password = $_POST['password'];\n $password2= $_POST['password2'];\n \n-if($password != $password2)\n-{\n+if ($password != $password2) {\n \n-else\n+    \n+\n+}else\n {\n \n }\n \n"
+                },
+                {
+                    "date": 1672129697161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n $password2= $_POST['password2'];\n \n if ($password != $password2) {\n \n-    \n+    echo\n \n }else\n {\n \n"
+                },
+                {
+                    "date": 1672129709138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n $password2= $_POST['password2'];\n \n if ($password != $password2) {\n \n-    echo\n+    echo\" les deux mots de passe sont di\n \n }else\n {\n \n"
+                },
+                {
+                    "date": 1672129715228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n $password2= $_POST['password2'];\n \n if ($password != $password2) {\n \n-    echo\" les deux mots de passe sont di\n+    echo\" les deux mots de passe sont differents\"\n \n }else\n {\n \n"
+                },
+                {
+                    "date": 1672129721818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n }else\n {\n   \n+    \n      \n }\n \n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1672129462099,
+            "name": "Commit-0",
+            "content": "<?php\n....\n$mdp1 = $_POST['mdp1'];\n$mdp2 = $_POST['mdp2'];\n\nif($mdp1 != mdp2)\n{\n// traitement dans le cas de deux mot de passe différent\n}\nelse\n{\n// traitement en cas de succès\n}\n...\n?>"
+        }
+    ]
+}
