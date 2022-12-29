@@ -3,11 +3,39 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 7,
             "patches": [
                 {
                     "date": 1671619074588,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672145434357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 4rem;\n+    margin-bottom: 7rem;\n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672145455719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n+    margin\n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672145477437,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-    margin\n+    margin: 12px;\n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672145494193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-    margin: 12px;\n+    margin: px;\n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672215731874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-    margin: px;\n+   \n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672215830298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-   \n+    \n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672215873446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-    padding-top: rem;\n+    padding-top: 1rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n     \n   }\n"
                 }
             ],
             "date": 1671619074588,

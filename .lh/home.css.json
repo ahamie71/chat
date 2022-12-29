@@ -1,0 +1,46 @@
+{
+    "sourceFile": "home.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1672328495660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672328565536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n     body {\n         color: #5a5a5a;\n+        \n \n     }\n     /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n"
+                },
+                {
+                    "date": 1672328570751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n  /* GLOBAL STYLES\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n     body {\n-        color: #5a5a5a;\n-        \n+        color:black;\n \n+\n     }\n     /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n     /* Carousel base class */\n"
+                },
+                {
+                    "date": 1672328582389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n  /* GLOBAL STYLES\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n     body {\n-        color:black;\n+        colorblack;\n \n \n     }\n     /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672328870908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n  /* GLOBAL STYLES\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n     body {\n-        colorblack;\n-\n-\n+        color: #5a5a5a;\n+        \n     }\n     /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n     /* Carousel base class */\n"
+                },
+                {
+                    "date": 1672328878743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   -------------------------------------------------- */\n     /* Carousel base class */\n     .carousel {\n         padding: 20px;\n+        \n     }\n     /* Since positioning the image, we need to help out the caption */\n     .carousel-caption {\n         bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672328889528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   -------------------------------------------------- */\n     /* Carousel base class */\n     .carousel {\n         padding: 20px;\n-        \n+        width: 100px;\n     }\n     /* Since positioning the image, we need to help out the caption */\n     .carousel-caption {\n         bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672328897720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   -------------------------------------------------- */\n     /* Carousel base class */\n     .carousel {\n         padding: 20px;\n-        width: 100px;\n+       \n     }\n     /* Since positioning the image, we need to help out the caption */\n     .carousel-caption {\n         bottom: 3rem;\n"
+                }
+            ],
+            "date": 1672328495660,
+            "name": "Commit-0",
+            "content": " /* GLOBAL STYLES\n-------------------------------------------------- */\n    /* Padding below the footer and lighter body text */\n    body {\n        color: #5a5a5a;\n\n    }\n    /* CUSTOMIZE THE CAROUSEL\n  -------------------------------------------------- */\n    /* Carousel base class */\n    .carousel {\n        padding: 20px;\n    }\n    /* Since positioning the image, we need to help out the caption */\n    .carousel-caption {\n        bottom: 3rem;\n        z-index: 10;\n    }\n    /* Declare heights because of positioning of img element */\n    .carousel-item {\n        height: 32rem;\n        background-color: #777;\n    }\n    .carousel-item>img {\n        position: absolute;\n        top: 0;\n        left: 0;\n        min-width: 100%;\n        height: 32rem;\n    }\n    /* MARKETING CONTENT\n  -------------------------------------------------- */\n    /* Center align the text within the three columns below the carousel */\n    .marketing .col-lg-4 {\n        margin-bottom: 1.5rem;\n        text-align: center;\n    }\n    .marketing h2 {\n        font-weight: 400;\n    }\n    .marketing .col-lg-4 p {\n        margin-right: .75rem;\n        margin-left: .75rem;\n    }\n    /* Featurettes\n  ------------------------- */\n    .featurette-divider {\n        margin: 5rem 0;\n        /* Space out the Bootstrap <hr> more */\n    }\n    /* Thin out the marketing headings */\n    .featurette-heading {\n        font-weight: 300;\n        line-height: 1;\n        letter-spacing: -.05rem;\n    }\n    /* RESPONSIVE CSS\n  -------------------------------------------------- */\n    @media (min-width: 40em) {\n        /* Bump up size of carousel content */\n        .carousel-caption p {\n            margin-bottom: 1.25rem;\n            font-size: 1.25rem;\n            line-height: 1.4;\n        }\n        .featurette-heading {\n            font-size: 50px;\n        }\n    }\n    @media (min-width: 62em) {\n        .featurette-heading {\n            margin-top: 7rem;\n        }\n    }\n"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 194,
+            "activePatchIndex": 425,
             "patches": [
                 {
                     "date": 1670515146503,
@@ -784,6 +784,930 @@
                 {
                     "date": 1672138810242,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,8 +41,8 @@\n       exit();\n     }\n \n   }\n+ \n \n-\n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672236744768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,7 +42,8 @@\n     }\n \n   }\n  \n+  \n \n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672236763158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,11 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n+    \n   }\n  \n-  \n+   \n \n }\n   \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672237079574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,10 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-    \n+   if\n+\n   }\n  \n    \n \n"
+                },
+                {
+                    "date": 1672237085036,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-   if\n+   \n \n   }\n  \n    \n"
+                },
+                {
+                    "date": 1672237091967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,12 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-   \n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n+    \n+\n   }\n  \n    \n \n"
+                },
+                {
+                    "date": 1672237103711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     }\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-    \n+  if ()\n \n   }\n  \n    \n"
+                },
+                {
+                    "date": 1672237110300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     }\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-  if ()\n+  if (password_verify)\n \n   }\n  \n    \n"
+                },
+                {
+                    "date": 1672237118064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n     }\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-  if (password_verify)\n+  if (password_verify(''))\n \n   }\n  \n    \n"
+                },
+                {
+                    "date": 1672237129006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,11 +42,14 @@\n     }\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-  if (password_verify(''))\n+  if (password_verify('password', $pass)){\n \n+    \n   }\n+\n+  }\n  \n    \n \n }\n"
+                },
+                {
+                    "date": 1672237135246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n   if (password_verify('password', $pass)){\n \n-    \n+    echo \n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237141488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n   if (password_verify('password', $pass)){\n \n-    echo \n+    header(\"location:view/)\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237147751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n   if (password_verify('password', $pass)){\n \n-    header(\"location:view/)\n+    header(\"location:view/conne)\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237153622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n   if (password_verify('password', $pass)){\n \n-    header(\"location:view/conne)\n+    header(\"location:view/connection.phtml)\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237159230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n   if (password_verify('password', $pass)){\n \n-    header(\"location:view/connection.phtml)\n+      header(\"location:view/connection.phtml\");\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237233600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,12 +40,10 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+   \n \n-  if (password_verify('password', $pass)){\n-\n       header(\"location:view/connection.phtml\");\n   }\n \n   }\n"
+                },
+                {
+                    "date": 1672237241820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,8 +28,10 @@\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n      \n+      \n+\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237247686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,12 @@\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n      \n-      \n+      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n+      if (password_verify('password', $pass)){\n+\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237270568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n     }\n \n    \n \n-      header(\"location:view/connection.phtml\");\n+      -\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237277680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n     }\n \n    \n \n-      -\n+      header(\"location:view/connection.phtml\");\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237358999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,32 +27,31 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n-     \n+\n       $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-      if (password_verify('password', $pass)){\n+      if (password_verify('password', $pass)) {\n \n-      $_SESSION[\"user\"] = $user;\n+        $_SESSION[\"user\"] = $user;\n \n-      header(\"location:view/welcome.phtml\");\n-      exit();\n-     \n-     \n-    } else {\n-     \n-    header(\"location:view/connection.phtml?fault=1\");\n-      exit();\n-    }\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n \n-   \n \n-      header(\"location:view/connection.phtml\");\n-  }\n+      } else {\n \n\\ No newline at end of file\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n+      }\n+\n+\n+\n+\n+    }\n+\n   }\n- \n-   \n \n-}\n-  \n+\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672237538372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,31 +27,30 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n+     \n+      \n \n-      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+      $_SESSION[\"user\"] = $user;\n \n-      if (password_verify('password', $pass)) {\n+      header(\"location:view/welcome.phtml\");\n+      exit();\n+     \n+     \n+    } else {\n+     \n+    header(\"location:view/connection.phtml?fault=1\");\n+      exit();\n+    }\n \n-        $_SESSION[\"user\"] = $user;\n+   \n \n-        header(\"location:view/welcome.phtml\");\n-        exit();\n+      header(\"location:view/connection.phtml\");\n+  }\n \n-\n-      } else {\n\\ No newline at end of file\n-\n-        header(\"location:view/connection.phtml?fault=1\");\n-        exit();\n-      }\n-\n-\n-\n-\n-    }\n-\n   }\n+ \n+   \n \n-\n-\n-}\n+}\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672237543506,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,8 @@\n \n     $user = $userStatement->fetch();\n     if ($user != false) {\n      \n-      \n-\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n@@ -42,11 +40,13 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-   \n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n-      header(\"location:view/connection.phtml\");\n+  if (password_verify('password', $pass)){\n+\n+    header(\"location:view/connection)\n   }\n \n   }\n  \n"
+                },
+                {
+                    "date": 1672237555234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,16 +40,11 @@\n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+   \n \n-  if (password_verify('password', $pass)){\n-\n-    header(\"location:view/connection)\n   }\n-\n-  }\n  \n    \n \n }\n"
+                },
+                {
+                    "date": 1672237722037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,10 @@\n \n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n+\n+    \n     if ($user != false) {\n      \n       $_SESSION[\"user\"] = $user;\n \n"
+                },
+                {
+                    "date": 1672237738006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,11 +27,12 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n \n-    \n+\n     if ($user != false) {\n-     \n+       \n+      \n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237754748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,12 @@\n \n     $user = $userStatement->fetch();\n \n \n-    if ($user != false) {\n+    if ($user != false) &&{\n        \n-      \n+\n+\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237761344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     $user = $userStatement->fetch();\n \n \n-    if ($user != false) &&{\n+    if ($user != false) && {\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237767399,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     $user = $userStatement->fetch();\n \n \n-    if ($user != false) && {\n+    if ($user != false) && if{\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237774869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n \n     $user = $userStatement->fetch();\n \n \n-    if ($user != false) && if{\n+    if ($user != false) && if({\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237796288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n \n-\n-    if ($user != false) && if({\n+ \n+    if ($user != false) && if(){\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237808016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,11 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n \n- \n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+\n+    \n     if ($user != false) && if(){\n        \n \n \n"
+                },
+                {
+                    "date": 1672237815984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,11 +28,12 @@\n \n     $user = $userStatement->fetch();\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+    \n \n-    \n-    if ($user != false) && if(){\n+\n+    if ($user != false) ){\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237821872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,12 +28,13 @@\n \n     $user = $userStatement->fetch();\n \n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     \n     \n \n \n-    if ($user != false) ){\n+    if ($user != false){\n        \n \n \n       $_SESSION[\"user\"] = $user;\n"
+                },
+                {
+                    "date": 1672237847137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,13 @@\n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n \n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+   \n      \n-    \n \n \n+\n     if ($user != false){\n        \n \n \n"
+                },
+                {
+                    "date": 1672237855400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,18 +26,9 @@\n \n     $userStatement->execute();\n \n     $user = $userStatement->fetch();\n-\n-   \n-     \n-\n-\n-\n     if ($user != false){\n-       \n-\n-\n       $_SESSION[\"user\"] = $user;\n \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237861953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,13 +28,10 @@\n \n     $user = $userStatement->fetch();\n     if ($user != false){\n       $_SESSION[\"user\"] = $user;\n-\n       header(\"location:view/welcome.phtml\");\n       exit();\n-     \n-     \n     } else {\n      \n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n"
+                },
+                {
+                    "date": 1672237867779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,16 +24,14 @@\n \n     $userStatement = $db->prepare($sql);\n \n     $userStatement->execute();\n-\n     $user = $userStatement->fetch();\n     if ($user != false){\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n-     \n     header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n"
+                },
+                {
+                    "date": 1672237876693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,26 +20,23 @@\n     } catch (Exception $e) {\n     }\n \n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n-\n     $userStatement = $db->prepare($sql);\n-\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    if ($user != false){\n+    if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n-    header(\"location:view/connection.phtml?fault=1\");\n+      header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n \n-   \n \n+\n   }\n- \n-   \n\\ No newline at end of file\n \n-}\n-  \n+\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672237881906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,10 +10,8 @@\n \n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n-\n-\n     $error = \"\";\n \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1672237888144,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,14 +11,12 @@\n     $name = $_POST['name'];\n \n     $password = $_POST['password'];\n     $error = \"\";\n-\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n"
+                },
+                {
+                    "date": 1672237895724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,9 @@\n <?php\n session_start();\n-\n-\n-\n if (isset($_POST['valider'])) {\n-\n-\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n-\n     $name = $_POST['name'];\n-\n     $password = $_POST['password'];\n     $error = \"\";\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1672237901867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,6 @@\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n-\n-\n-\n   }\n-\n-\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672237933341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n-    $error = \"\";\n+    \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n"
+                },
+                {
+                    "date": 1672238115203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n+\n+    \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672238121443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,11 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+    \n \n-    \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672238178606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-    \n+    if()\n \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672238263413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-    if()\n+   \n \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672238280318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-\n-    if ($user != false) {\n+    if (p) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238287859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (p) {\n+    if (password_veri) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238310349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_veri) {\n+    if (password_verify(pass, $) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238315706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify(pass, $) {\n+    if (password_verify(, $) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238332267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify(, $) {\n+    if (password_verify($pass, $user) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238345581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify($pass, $user) {\n+    if (password_verify($pass, $user[]) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238352733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify($pass, $user[]) {\n+    if (password_verify($pass, $user['password'])) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238449650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify($pass, $user['password'])) {\n+    if (password_verify($pass, $user)) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238460085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n    \n-    if (password_verify($pass, $user)) {\n+    if (password_verify($pass, $password)) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238533115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,8 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-   \n     if (password_verify($pass, $password)) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672238548265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,11 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-    if (password_verify($pass, $password)) {\n+\n+    \n+    if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672238553453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,8 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-\n     \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672238560002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    \n+\n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n@@ -22,5 +22,6 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1672238568226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,6 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n+  \n+\n+\n }\n \n"
+                },
+                {
+                    "date": 1672238614057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-\n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  \n+  if (password_verify($pass, $password)) {\n \n-\n+     \n }\n \n"
+                },
+                {
+                    "date": 1672238624133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n-    \n+\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n@@ -24,7 +24,9 @@\n     }\n   }\n   if (password_verify($pass, $password)) {\n \n-     \n-}\n \n+  }\n+  ;\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672238650193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n       exit();\n     }\n   }\n   if (password_verify($pass, $password)) {\n+   \n \n-\n   }\n   ;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672238656027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     }\n   }\n   if (password_verify($pass, $password)) {\n    \n-\n+  \n   }\n   ;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672238685215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,13 @@\n       exit();\n     }\n   }\n   if (password_verify($pass, $password)) {\n-   \n+     \n+    $_SESSION[\"user\"] = $user;\n+\n+    header(\"location:view/welcome.phtml\");\n+    exit();\n   \n   }\n   ;\n \n"
+                },
+                {
+                    "date": 1672238731845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $password)) {\n-     \n-    $_SESSION[\"user\"] = $user;\n+  if (password_verify($pass, $password)) \n \n     header(\"location:view/welcome.phtml\");\n     exit();\n   \n"
+                },
+                {
+                    "date": 1672238739725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $password)) \n+  if (password_verify($pass, $password)) ®{}\n \n     header(\"location:view/welcome.phtml\");\n     exit();\n   \n"
+                },
+                {
+                    "date": 1672238745267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $password)) ®{}\n+  if (password_verify($pass, $password)) {\n \n     header(\"location:view/welcome.phtml\");\n     exit();\n   \n"
+                },
+                {
+                    "date": 1672238776643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n   if (password_verify($pass, $password)) {\n \n     header(\"location:view/welcome.phtml\");\n     exit();\n-  \n+\n   }\n   ;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672238782843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n       exit();\n     }\n   }\n   if (password_verify($pass, $password)) {\n-\n     header(\"location:view/welcome.phtml\");\n     exit();\n \n   }\n"
+                },
+                {
+                    "date": 1672238836738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n   }\n   if (password_verify($pass, $password)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n-\n+    \n   }\n   ;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672238851559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $password)) {\n+  if (password_verify($pass, $)) {\n+    $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672238858735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $)) {\n+  if (password_verify($pass, $_SESSION)) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238865604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_SESSION)) {\n+  if (password_verify($pass, $_SESSION['user'])) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238870931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_SESSION['user'])) {\n+  if (password_verify($pass, $_SESSION['user'][])) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238876363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_SESSION['user'][])) {\n+  if (password_verify($pass, $_SESSION['user']['password'])) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238897527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_SESSION['user']['password'])) {\n+  if (password_verify($pass, $_SESSION['user'])) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238904128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_SESSION['user'])) {\n+  if (password_verify($pass, $_)) {\n     $_SESSION[\"user\"] = $user;\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672238917083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $_)) {\n-    $_SESSION[\"user\"] = $user;\n+  if (password_verify($pass, $password)) {\n+   \n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672238928354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       exit();\n     }\n   }\n   if (password_verify($pass, $password)) {\n-   \n+\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672238947135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,8 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n-\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n@@ -22,10 +21,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if (password_verify($pass, $password)) {\n-\n+  if(password_verify($pass, $password)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672238972003,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($pass, $password)) {\n+  if(password_verify($pass, $)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672238978034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($pass, $)) {\n+  if(password_verify($pass, $_SESSION[\"user\"])) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239016738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n+\n+      \n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672239084989,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,18 +14,18 @@\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n \n-      \n+\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($pass, $_SESSION[\"user\"])) {\n+  if(password_verify($pass, $)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239090578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($pass, $)) {\n+  if(password_verify($pass, $passwor)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239097048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($pass, $passwor)) {\n+  if(password_verify($password)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239102944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($password)) {\n+  if(password_verify($password ,$)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239114717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($password ,$)) {\n+  if(password_verify($password ,$pass)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n   }\n"
+                },
+                {
+                    "date": 1672239142755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n+      if(password_verify($password ,$pass))\n \n-\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672239150225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-      if(password_verify($password ,$pass))\n+      if(password_verify($password ,$pass)){}\n \n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672239156896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-      if(password_verify($password ,$pass)){}\n+      if(password_verify($password ,$pass)){\n \n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n@@ -23,8 +23,9 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n+  \n   if(password_verify($password ,$pass)) {\n     header(\"location:view/welcome.phtml\");\n     exit();\n     \n"
+                },
+                {
+                    "date": 1672239162272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,23 +13,18 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-      if(password_verify($password ,$pass)){\n+      if (password_verify($password, $pass)) {\n \n-      $_SESSION[\"user\"] = $user;\n-      header(\"location:view/welcome.phtml\");\n-      exit();\n-    } else {\n-      header(\"location:view/connection.phtml?fault=1\");\n-      exit();\n+        $_SESSION[\"user\"] = $user;\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n+      } else {\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n+      }\n     }\n   }\n-  \n-  if(password_verify($password ,$pass)) {\n-    header(\"location:view/welcome.phtml\");\n-    exit();\n-    \n-  }\n-  ;\n+ \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672239330733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-      if (password_verify($password, $pass)) {\n-\n+    \n         $_SESSION[\"user\"] = $user;\n         header(\"location:view/welcome.phtml\");\n         exit();\n       } else {\n"
+                },
+                {
+                    "date": 1672239337772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n     \n         $_SESSION[\"user\"] = $user;\n+        if (password_verify($password, $pass)) {\n         header(\"location:view/welcome.phtml\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672239419808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-    \n+  \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n         header(\"location:view/welcome.phtml\");\n         exit();\n"
+                },
+                {
+                    "date": 1672239581129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+    \n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239614315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    \n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239804188,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+    // $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239826057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,13 +7,13 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$pass'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    // $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239831826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     \n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239845912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,13 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$pass'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-     \n+    // $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239853930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    // $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     var\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239861368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-     var\n+     var_dump($pass)\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239867222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,10 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n-     var_dump($pass)\n+    var_dump($pass);\n+    die();\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672239977526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+     $pass = password_hash($_POST[''], PASSWORD_ARGON2ID);\n     var_dump($pass);\n     die();\n     if ($user != false) {\n   \n"
+                },
+                {
+                    "date": 1672239985557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-     $pass = password_hash($_POST[''], PASSWORD_ARGON2ID);\n+     $pass = password_hash('', PASSWORD_ARGON2ID);\n     var_dump($pass);\n     die();\n     if ($user != false) {\n   \n"
+                },
+                {
+                    "date": 1672240646344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-     $pass = password_hash('', PASSWORD_ARGON2ID);\n+    \n     var_dump($pass);\n     die();\n     if ($user != false) {\n   \n"
+                },
+                {
+                    "date": 1672240775572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    \n-    var_dump($pass);\n-    die();\n+    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n   \n         $_SESSION[\"user\"] = $user;\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672240783575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,18 +13,22 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n     if ($user != false) {\n-  \n-        $_SESSION[\"user\"] = $user;\n-        if (password_verify($password, $pass)) {\n-        header(\"location:view/welcome.phtml\");\n-        exit();\n-      } else {\n-        header(\"location:view/connection.phtml?fault=1\");\n-        exit();\n-      }\n+     \n+\n+      $_SESSION[\"user\"] = $user;\n+      header(\"location:view/welcome.phtml\");\n+      exit();\n+    } else {\n+      header(\"location:view/connection.phtml?fault=1\");\n+      exit();\n     }\n   }\n- \n+  if(password_verify($password ,$pass)) {\n+    header(\"location:view/welcome.phtml\");\n+    exit();\n+    \n+  }\n+  ;\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672240799970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,32 +3,28 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n+    \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n     $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+\n     if ($user != false) {\n-     \n-\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n-  if(password_verify($password ,$pass)) {\n-    header(\"location:view/welcome.phtml\");\n-    exit();\n-    \n-  }\n-  ;\n\\ No newline at end of file\n \n-}\n+\n+  \n+}\n+\n"
+                },
+                {
+                    "date": 1672240813520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,12 @@\n     }\n   }\n \n \n+\n+\n+\n+\n   \n+  \n }\n \n"
+                },
+                {
+                    "date": 1672240857333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,14 +22,18 @@\n       header(\"location:view/connection.phtml?fault=1\");\n       exit();\n     }\n   }\n+ \n \n+  \n \n \n \n \n \n+\n+\n+\n   \n-  \n }\n \n"
+                },
+                {
+                    "date": 1672240937773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n       exit();\n     }\n   }\n  \n-\n   \n+  \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241001463,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,13 @@\n       exit();\n     }\n   }\n  \n+  try {\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+  } catch (Exception $e) {\n+  }\n   \n-  \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241006873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,11 @@\n   try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   } catch (Exception $e) {\n   }\n+\n   \n+  \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241020277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   } catch (Exception $e) {\n   }\n \n+  $name = $_POST['name'];\n   \n-  \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241029708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,10 +28,10 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   } catch (Exception $e) {\n   }\n \n-  $name = $_POST['name'];\n   \n+  $password = $_POST['password'];\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241037031,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,8 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n+  \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241048391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  \n+  recup\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241054502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  recup\n+  $recup= \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241059791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup= \n+  $recup=\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241068389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup=\n+  $recup=\"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241079959,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,9 +31,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup=\"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\"\n+  $recup=\"SELECT * FROM  user WHERE name = '$' AND  password = '$password'\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241190767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n     \n+    \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n@@ -31,9 +32,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup=\"SELECT * FROM  user WHERE name = '$' AND  password = '$password'\"\n+  $recup=\"SELECT * FROM  user WHERE  = '$pass' AND  password = '$password'\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241267261,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n+\n     \n-    \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n@@ -32,9 +32,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup=\"SELECT * FROM  user WHERE  = '$pass' AND  password = '$password'\"\n+  $recup= \"SELECT * FROM  user WHERE  = '$pass' AND  password = '$password'\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241272597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup= \"SELECT * FROM  user WHERE  = '$pass' AND  password = '$password'\"\n+  $recup= \"SELECT * FROM  user WHERE password = '$pass' AND  password = '$password'\"\n \n \n \n \n"
+                },
+                {
+                    "date": 1672241771952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n \n   \n   $password = $_POST['password'];\n \n-  $recup= \"SELECT * FROM  user WHERE password = '$pass' AND  password = '$password'\"\n+ \n \n \n \n \n"
+                },
+                {
+                    "date": 1672241938379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,8 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n-\n-    \n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n"
+                },
+                {
+                    "date": 1672242015052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,16 +22,8 @@\n       exit();\n     }\n   }\n  \n-  try {\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-  } catch (Exception $e) {\n-  }\n-\n-  \n-  $password = $_POST['password'];\n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1672242023089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name';\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n"
+                },
+                {
+                    "date": 1672242072556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,15 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name';\n+    $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n-      $_SESSION[\"user\"] = $user;\n+      \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672242084189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n-    if ($user != false) {\n+    if ($user) {\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242125772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,11 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n+\n       \n+      \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672242139837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n+      if(passw)\n       \n-      \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672242148826,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      if(passw)\n+      if(password_verify($pass))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242154866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      if(password_verify($pass))\n+      if(password_verify($password, $user))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242174327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      if(password_verify($password, $user))\n+      if(password_verify($password, $user[]))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242230808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-\n-      if(password_verify($password, $user[]))\n+        \n+      if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242236806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n+      pass\n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672242247527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      pass\n+       \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n"
+                },
+                {
+                    "date": 1672242257340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n+      $passwo\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242262813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      $passwo\n+      $passwordHash\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242268251,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      $passwordHash\n+      $passwordHash=$\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242273909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      $passwordHash=$\n+      $passwordHash=$user[]\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242300321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      $passwordHash=$user[]\n+      $passwordHash=$user['']\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242306453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n-      $passwordHash=$user['']\n+      $passwordHash=$user['password'];\n        \n       if(password_verify($password, $user['pass']))\n       \n       header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242321490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     if ($user) {\n         \n       $passwordHash=$user['password'];\n        \n-      if(password_verify($password, $user['pass']))\n+      if(password_verify($password, $user['password'])) {\n       \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242388464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,28 +13,29 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-        \n-      $passwordHash=$user['password'];\n-       \n-      if(password_verify($password, $user['password'])) {\n-      \n-      header(\"location:view/welcome.phtml\");\n-      exit();\n-    } else {\n-      header(\"location:view/connection.phtml?fault=1\");\n-      exit();\n+\n+      $passwordHash = $user['password'];\n+\n+      if (password_verify($password, $user['passwordHash'])) {\n+\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n+      } else {\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n+      }\n     }\n-  }\n- \n- \n \n \n \n \n \n \n \n-  \n-}\n \n+\n+\n+  }\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672242422717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n+      \n       $passwordHash = $user['password'];\n \n       if (password_verify($password, $user['passwordHash'])) {\n \n"
+                },
+                {
+                    "date": 1672242467857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,40 +3,44 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n+\n+\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n-    if ($user) {\n-\n-      \n-      $passwordHash = $user['password'];\n-\n-      if (password_verify($password, $user['passwordHash'])) {\n-\n-        header(\"location:view/welcome.phtml\");\n-        exit();\n-      } else {\n-        header(\"location:view/connection.phtml?fault=1\");\n-        exit();\n-      }\n+    if ($user != false) {\n+      $_SESSION[\"user\"] = $user;\n+      header(\"location:view/welcome.phtml\");\n+      exit();\n+    } else {\n+      header(\"location:view/connection.phtml?fault=1\");\n+      exit();\n     }\n+  }\n+ \n+  try {\n\\ No newline at end of file\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+  } catch (Exception $e) {\n+  }\n \n+  \n+  $password = $_POST['password'];\n \n+ \n \n \n \n \n \n \n \n+  \n+}\n \n-  }\n-\n-}\n"
+                },
+                {
+                    "date": 1672242478607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,16 +24,9 @@\n       exit();\n     }\n   }\n  \n-  try {\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-  } catch (Exception $e) {\n-  }\n-\n   \n-  $password = $_POST['password'];\n-\n  \n \n \n \n@@ -41,5 +34,6 @@\n \n \n \n   \n-}\n\\ No newline at end of file\n+}\n+\n"
+                },
+                {
+                    "date": 1672242485347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name' AND  password = '$password'\";\n+    $sql = \"SELECT * FROM  user WHERE name = '$name';\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n"
+                },
+                {
+                    "date": 1672242501650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,14 @@\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n-    $sql = \"SELECT * FROM  user WHERE name = '$name';\n+    $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n-    if ($user != false) {\n+    if ($user) {\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672242507810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-      $_SESSION[\"user\"] = $user;\n+     \n+      \n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672242522345,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,35 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-     \n       \n+      $pass = $user['password'];\n+\n+      if (password_verify($password, $user['passwordHash'])) {\n+\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n+      } else {\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n+      }\n+    }\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+\n+  }\n+\n+}\n+\n+\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672242535554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     if ($user) {\n       \n       $pass = $user['password'];\n \n-      if (password_verify($password, $user['passwordHash'])) {\n+      if (password_verify($password, $pass'])) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n       } else {\n"
+                },
+                {
+                    "date": 1672242542024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     if ($user) {\n       \n       $pass = $user['password'];\n \n-      if (password_verify($password, $pass'])) {\n+      if (password_verify($password, $pass])) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n       } else {\n"
+                },
+                {
+                    "date": 1672242550926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     if ($user) {\n       \n       $pass = $user['password'];\n \n-      if (password_verify($password, $pass])) {\n+      if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n       } else {\n"
+                },
+                {
+                    "date": 1672242559482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,24 +42,13 @@\n \n }\n \n \n-      header(\"location:view/welcome.phtml\");\n-      exit();\n-    } else {\n-      header(\"location:view/connection.phtml?fault=1\");\n-      exit();\n-    }\n-  }\n- \n-  \n- \n \n \n \n \n \n \n-\n   \n }\n \n"
+                },
+                {
+                    "date": 1672242596944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n       \n-      $pass = $user['password'];\n+      $pass = $\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n@@ -49,6 +49,6 @@\n \n \n \n   \n-}\n \n+\n"
+                },
+                {
+                    "date": 1672242603493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n       \n-      $pass = $\n+      $pass = $_S\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242609286,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n       \n-      $pass = $_S\n+      $pass = $_SESSION[user]\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242616520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n       \n-      $pass = $_SESSION[user]\n+      $pass = $_SESSION['user]\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242674846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n       \n-      $pass = $_SESSION['user]\n+      $pass = $_SESSION['user']['name']\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242684665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-      \n-      $pass = $_SESSION['user']['name']\n \n+      $pass = $_SESSION['user']['password'];\n+\n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n"
+                },
+                {
+                    "date": 1672242766140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,10 @@\n     if ($user) {\n \n       $pass = $_SESSION['user']['password'];\n \n+      var\n+\n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n"
+                },
+                {
+                    "date": 1672242772687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n     if ($user) {\n \n       $pass = $_SESSION['user']['password'];\n \n-      var\n+      var_dump($pass)\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242779098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n     if ($user) {\n \n       $pass = $_SESSION['user']['password'];\n \n-      var_dump($pass)\n+      var_dump($pass);\n+      die();\n \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672242810339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass = $_SESSION['user']['password'];\n+      $pass = $_SESSION['']['password'];\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242815522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass = $_SESSION['']['password'];\n+      $pass = $_SESSION['password'];\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242828945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass = $_SESSION['password'];\n+      $pass =;\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242835084,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass =;\n+      $pass =$_;\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242843306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass =$_;\n+      $pass =$_POST[];\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242854551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass =$_POST[];\n+      $pass =$_POST['password'];\n \n       var_dump($pass);\n       die();\n \n"
+                },
+                {
+                    "date": 1672242870917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,9 @@\n     if ($user) {\n \n       $pass =$_POST['password'];\n \n-      var_dump($pass);\n-      die();\n-\n+      \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n"
+                },
+                {
+                    "date": 1672242899861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass =$_POST['password'];\n+      $pass =\n \n       \n       if (password_verify($password, $pass)) {\n \n"
+                },
+                {
+                    "date": 1672242911059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n \n-      $pass =\n+      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n       \n       if (password_verify($password, $pass)) {\n \n"
+                },
+                {
+                    "date": 1672242949350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-\n+        \n       $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n       \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672242963069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user) {\n         \n+      \n       $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n       \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672243005114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-        \n-      \n-      $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n \n+\n       \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672243013064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,8 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n-\n-\n-      \n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n@@ -39,16 +36,5 @@\n \n \n   }\n \n-}\n-\n-\n-\n-\n-\n-\n-\n-\n-  \n-\n-\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672243067555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n-      } else {\n+      } else\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1672243073204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,19 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n+\n+      $pass = $_SESSION['password'];\n+\n+      var_dump($pass);\n+      die();\n+\n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n-      } else\n+      } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n@@ -36,5 +42,16 @@\n \n \n   }\n \n-}\n\\ No newline at end of file\n+}\n+\n+\n+\n+\n+\n+\n+\n+\n+  \n+\n+\n"
+                },
+                {
+                    "date": 1672243079372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,11 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user) {\n+      \n+      $pass = $user['password'];\n \n-      $pass = $_SESSION['password'];\n-\n-      var_dump($pass);\n-      die();\n-\n       if (password_verify($password, $pass)) {\n \n         header(\"location:view/welcome.phtml\");\n         exit();\n@@ -45,13 +42,24 @@\n \n }\n \n \n+      header(\"location:view/welcome.phtml\");\n+      exit();\n+    } else {\n+      header(\"location:view/connection.phtml?fault=1\");\n+      exit();\n+    }\n+  }\n+ \n+  \n+ \n \n \n \n \n \n \n+\n   \n+}\n \n-\n"
+                },
+                {
+                    "date": 1672243089861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,36 +14,10 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n-    if ($user) {\n-      \n-      $pass = $user['password'];\n-\n-      if (password_verify($password, $pass)) {\n-\n-        header(\"location:view/welcome.phtml\");\n-        exit();\n-      } else {\n-        header(\"location:view/connection.phtml?fault=1\");\n-        exit();\n-      }\n-    }\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-\n-  }\n-\n-}\n-\n-\n+    if ($user != false) {\n+      $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n       header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1672243095495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n+      \n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672243103689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,20 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n-      \n+       \n+    if ($user) {\n+      if (password_verify($password, $pass)) {\n+\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n+      } else {\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n+      }\n+    }\n+\n       $_SESSION[\"user\"] = $user;\n       header(\"location:view/welcome.phtml\");\n       exit();\n     } else {\n"
+                },
+                {
+                    "date": 1672243117168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,15 +28,9 @@\n       }\n     }\n \n       $_SESSION[\"user\"] = $user;\n-      header(\"location:view/welcome.phtml\");\n-      exit();\n-    } else {\n-      header(\"location:view/connection.phtml?fault=1\");\n-      exit();\n-    }\n-  }\n+     \n  \n   \n  \n \n"
+                },
+                {
+                    "date": 1672243122988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,31 +15,31 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n-       \n-    if ($user) {\n-      if (password_verify($password, $pass)) {\n \n-        header(\"location:view/welcome.phtml\");\n-        exit();\n-      } else {\n-        header(\"location:view/connection.phtml?fault=1\");\n-        exit();\n+      if ($user) {\n+        if (password_verify($password, $pass)) {\n+\n+          header(\"location:view/welcome.phtml\");\n+          exit();\n+        } else {\n+          header(\"location:view/connection.phtml?fault=1\");\n+          exit();\n+        }\n       }\n-    }\n \n       $_SESSION[\"user\"] = $user;\n-     \n- \n-  \n- \n+    }\n \n \n \n+  }\n \n \n \n \n+\n+\n   \n }\n \n"
+                },
+                {
+                    "date": 1672243139493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,9 @@\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n \n+      \n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n           header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672243165930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n+      $_SESSION[\"user\"] = $user;\n \n-      \n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n           header(\"location:view/welcome.phtml\");\n@@ -28,9 +28,9 @@\n           exit();\n         }\n       }\n \n-      $_SESSION[\"user\"] = $user;\n+     \n     }\n \n \n \n"
+                },
+                {
+                    "date": 1672243171157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,17 +30,8 @@\n       }\n \n      \n     }\n-\n-\n-\n   }\n-\n-\n-\n-\n-\n-\n   \n }\n \n"
+                },
+                {
+                    "date": 1672243182862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n-\n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n           header(\"location:view/welcome.phtml\");\n@@ -27,10 +26,8 @@\n           header(\"location:view/connection.phtml?fault=1\");\n           exit();\n         }\n       }\n-\n-     \n     }\n   }\n   \n }\n"
+                },
+                {
+                    "date": 1672243258476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n-      $_SESSION[\"user\"] = $user;\n+     \n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n           header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672243266443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n     if ($user != false) {\n-     \n+     // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n           header(\"location:view/welcome.phtml\");\n"
+                },
+                {
+                    "date": 1672243277764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n-    if ($user != false) {\n+    // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n \n"
+                },
+                {
+                    "date": 1672243286265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,6 +29,6 @@\n       }\n     }\n   }\n   \n-}\n+// }\n \n"
+                },
+                {
+                    "date": 1672243411466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-\n+    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672243419104,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    \n+    var_dump($user)\n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672243424468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,10 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    var_dump($user)\n+    var_dump($user);\n+    die();\n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672243493521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,9 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-    var_dump($user);\n-    die();\n+   \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n         if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1672243525353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        if (password_verify($password, $pass)) {\n+        if (password_verify($password, s)) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n         } else {\n"
+                },
+                {
+                    "date": 1672243547563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        if (password_verify($password, s)) {\n+        \n+        if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n         } else {\n"
+                },
+                {
+                    "date": 1672243562202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        \n+        m\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243635107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        m\n+        \n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243684626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        \n+        $\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243690088,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $\n+        $pass=\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243696209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pass=\n+        $password\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243701829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $password\n+        $passwordHash\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243708988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $passwordHash\n+        $passwordHash= \n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243714561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $passwordHash= \n+        $passwordHash= $user[]\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243719711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $passwordHash= $user[]\n+        $passwordHash= $user['p']\n         if (password_verify($password, )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243732133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $passwordHash= $user['p']\n-        if (password_verify($password, )) {\n+        $passwordHash= $user['password'];\n+        if (password_verify($password,$ha )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n         } else {\n"
+                },
+                {
+                    "date": 1672243827568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $passwordHash= $user['password'];\n-        if (password_verify($password,$ha )) {\n+        $pa= $user['password'];\n+        if (password_verify($password,$passwordHash )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n         } else {\n"
+                },
+                {
+                    "date": 1672243839009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pa= $user['password'];\n-        if (password_verify($password,$passwordHash )) {\n+        $pass= $user['password'];\n+        if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n         } else {\n"
+                },
+                {
+                    "date": 1672243880897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pass= $user['password'];\n+        $pass= $user[''];\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243887372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pass= $user[''];\n+        $pass= $user['password'];\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243908426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pass= $user['password'];\n+        $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672243949870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n      // $_SESSION[\"user\"] = $user;\n       if ($user) {\n-        $pass = password_hash($_POST['password'], PASSWORD_ARGON2ID);\n+      \n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244019553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n    \n     // if ($user != false) {\n-     // $_SESSION[\"user\"] = $user;\n+      $_SESSION[\"user\"] = $user;\n       if ($user) {\n-      \n+       \n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244054480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       \n+       $p\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244060990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       $p\n+       $passe\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244068267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       $passe\n+       $pass=$\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244085244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       $pass=$\n+       $pass=$user\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244090534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       $pass=$user\n+       $pass=$user['pa']\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244100708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n    \n     // if ($user != false) {\n       $_SESSION[\"user\"] = $user;\n       if ($user) {\n-       $pass=$user['pa']\n+       $pass=$user['password'];\n         if (password_verify($password,$pass )) {\n \n           header(\"location:view/welcome.phtml\");\n           exit();\n"
+                },
+                {
+                    "date": 1672244147838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,23 +13,22 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-   \n+\n     // if ($user != false) {\n-      $_SESSION[\"user\"] = $user;\n-      if ($user) {\n-       $pass=$user['password'];\n-        if (password_verify($password,$pass )) {\n+    $_SESSION[\"user\"] = $user;\n+    if ($user) {\n+      $pass = $user['password'];\n+      if (password_verify($password, $pass)) {\n \n-          header(\"location:view/welcome.phtml\");\n-          exit();\n-        } else {\n-          header(\"location:view/connection.phtml?fault=1\");\n-          exit();\n-        }\n+        header(\"location:view/welcome.phtml\");\n+        exit();\n+      } else {\n+        header(\"location:view/connection.phtml?fault=1\");\n+        exit();\n       }\n     }\n   }\n-  \n+}\n+\n // }\n-\n"
+                },
+                {
+                    "date": 1672244160775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n \n+    \n     // if ($user != false) {\n     $_SESSION[\"user\"] = $user;\n     if ($user) {\n       $pass = $user['password'];\n"
+                },
+                {
+                    "date": 1672244324236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,10 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-\n-    \n     // if ($user != false) {\n-    $_SESSION[\"user\"] = $user;\n+    $_SESSION[user\"] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n \n"
                 }
             ],
             "date": 1670515146503,

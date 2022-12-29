@@ -1,0 +1,34 @@
+{
+    "sourceFile": "delete.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1672308189143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672308195141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,7 @@\n <?php\n+ $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+\n+\n+\n+\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672308201472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <?php\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n+  \n \n+ \n \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672308208250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n-echo\"\n+echo\"c\n \n \n \n \n"
+                },
+                {
+                    "date": 1672309552053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$sql = \" DELETE * FROM messages WHERE message_id\"=;\n+$sql = \" DELETE * FROM messages WHERE message_id=;\n $deletstmt= $db->prepare($sql);\n $deletstmt->execute();\n $delete = $deletstmt->fetch();\n \n"
+                }
+            ],
+            "date": 1672308189143,
+            "name": "Commit-0",
+            "content": "<?php\n"
+        }
+    ]
+}

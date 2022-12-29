@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 55,
+            "activePatchIndex": 140,
             "patches": [
                 {
                     "date": 1671610451739,
@@ -228,6 +228,346 @@
                 {
                     "date": 1672045100904,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     <meta name=\"description\" content=\"\">\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n \n-    <title></title>\n+    <title>Homr<?php</title>\n \n     <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/4.0/examples/carousel/\">\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n"
+                },
+                {
+                    "date": 1672144830095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,18 +3,17 @@\n ?>\n \n <!doctype html>\n <html lang=\"en\">\n-\n <head>\n \n     <meta charset=\"utf-8\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n     <meta name=\"description\" content=\"\">\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n \n-    <title>Homr<?php</title>\n+    <title>Home</title>\n \n     <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/4.0/examples/carousel/\">\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n"
+                },
+                {
+                    "date": 1672144850024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,9 @@\n \n <!doctype html>\n <html lang=\"en\">\n <head>\n-\n-    <meta charset=\"utf-8\">\n+ <meta charset=\"utf-8\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n     <meta name=\"description\" content=\"\">\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n"
+                },
+                {
+                    "date": 1672144887378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n <?php\n include(\"nav.phtml\");\n ?>\n-\n <!doctype html>\n <html lang=\"en\">\n <head>\n  <meta charset=\"utf-8\">\n@@ -11,9 +10,8 @@\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n \n     <title>Home</title>\n-\n     <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/4.0/examples/carousel/\">\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n"
+                },
+                {
+                    "date": 1672144893509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n     <meta name=\"description\" content=\"\">\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n-\n     <title>Home</title>\n     <link rel=\"canonical\" href=\"https://getbootstrap.com/docs/4.0/examples/carousel/\">\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n@@ -21,11 +20,8 @@\n     <link href=\"carousel.css\" rel=\"stylesheet\">\n </head>\n \n <body>\n-\n-\n-\n     <main role=\"main\">\n \n         <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n             <ol class=\"carousel-indicators\">\n"
+                },
+                {
+                    "date": 1672145520202,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -188,5 +188,98 @@\n     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n \n-</html>\n\\ No newline at end of file\n+</html>\n+\n+/* GLOBAL STYLES\n+-------------------------------------------------- */\n+/* Padding below the footer and lighter body text */\n+\n+body {\n+    padding-top: 3rem;\n+    padding-bottom: 3rem;\n+    color: #5a5a5a;\n+    margin: 200px;\n+  }\n+  \n+  \n+  /* CUSTOMIZE THE CAROUSEL\n+  -------------------------------------------------- */\n+  \n+  /* Carousel base class */\n+  .carousel {\n+    margin-bottom: 7rem;\n+  }\n+  /* Since positioning the image, we need to help out the caption */\n+  .carousel-caption {\n+    bottom: 3rem;\n+    z-index: 10;\n+  }\n+  \n+  /* Declare heights because of positioning of img element */\n+  .carousel-item {\n+    height: 32rem;\n+    background-color: #777;\n+  }\n+  .carousel-item > img {\n+    position: absolute;\n+    top: 0;\n+    left: 0;\n+    min-width: 100%;\n+    height: 32rem;\n+  }\n+  \n+  \n+  /* MARKETING CONTENT\n+  -------------------------------------------------- */\n+  \n+  /* Center align the text within the three columns below the carousel */\n+  .marketing .col-lg-4 {\n+    margin-bottom: 1.5rem;\n+    text-align: center;\n+  }\n+  .marketing h2 {\n+    font-weight: 400;\n+  }\n+  .marketing .col-lg-4 p {\n+    margin-right: .75rem;\n+    margin-left: .75rem;\n+  }\n+  \n+  \n+  /* Featurettes\n+  ------------------------- */\n+  \n+  .featurette-divider {\n+    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n+  }\n+  \n+  /* Thin out the marketing headings */\n+  .featurette-heading {\n+    font-weight: 300;\n+    line-height: 1;\n+    letter-spacing: -.05rem;\n+  }\n+  \n+  \n+  /* RESPONSIVE CSS\n+  -------------------------------------------------- */\n+  \n+  @media (min-width: 40em) {\n+    /* Bump up size of carousel content */\n+    .carousel-caption p {\n+      margin-bottom: 1.25rem;\n+      font-size: 1.25rem;\n+      line-height: 1.4;\n+    }\n+  \n+    .featurette-heading {\n+      font-size: 50px;\n+    }\n+  }\n+  \n+  @media (min-width: 62em) {\n+    .featurette-heading {\n+      margin-top: 7rem;\n+    }\n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672145526219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,9 +189,9 @@\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n \n </html>\n-\n+<s\n /* GLOBAL STYLES\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n"
+                },
+                {
+                    "date": 1672145532174,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,9 +189,9 @@\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n \n </html>\n-<s\n+<style\n /* GLOBAL STYLES\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n"
+                },
+                {
+                    "date": 1672145659574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -189,9 +189,9 @@\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n \n </html>\n-<style\n+<style>\n /* GLOBAL STYLES\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n"
+                },
+                {
+                    "date": 1672145664732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -281,5 +281,6 @@\n   @media (min-width: 62em) {\n     .featurette-heading {\n       margin-top: 7rem;\n     }\n-  }\n\\ No newline at end of file\n+  }\n+  </\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672145688787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,9 +207,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 7rem;\n+    margin-bottom: 3rem;\n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672146029257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n-<?php\n-include(\"nav.phtml\");\n-?>\n+\n <!doctype html>\n <html lang=\"en\">\n <head>\n  <meta charset=\"utf-8\">\n"
+                },
+                {
+                    "date": 1672146093957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,7 @@\n-\n+<?php\n+include(\"nav.phtml\");\n+?>\n <!doctype html>\n <html lang=\"en\">\n <head>\n  <meta charset=\"utf-8\">\n"
+                },
+                {
+                    "date": 1672146210021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <link href=\"carousel.css\" rel=\"stylesheet\">\n </head>\n \n <body>\n-    <main role=\"main\">\n+    \n \n         <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n             <ol class=\"carousel-indicators\">\n                 <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n"
+                },
+                {
+                    "date": 1672146217075,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <link href=\"carousel.css\" rel=\"stylesheet\">\n </head>\n \n <body>\n-    \n+    <main role=\"main\">\n \n         <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n             <ol class=\"carousel-indicators\">\n                 <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n"
+                },
+                {
+                    "date": 1672146228210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n include(\"nav.phtml\");\n ?>\n+\n <!doctype html>\n <html lang=\"en\">\n <head>\n  <meta charset=\"utf-8\">\n"
+                },
+                {
+                    "date": 1672146252816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,9 +199,9 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-    margin: 200px;\n+    margin: px;\n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672146332604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -199,18 +199,18 @@\n body {\n     padding-top: 3rem;\n     padding-bottom: 3rem;\n     color: #5a5a5a;\n-    margin: px;\n+ \n   }\n   \n   \n   /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 3rem;\n+    margin-bottom: 3;\n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672146347861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,10 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 3;\n+    margin-bottom: 10rem;\n+    pdding\n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672146438972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,10 +208,11 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 10rem;\n-    pdding\n+    margin-bottom: 10\n+    rem;\n+    padding: 200px;\n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672215294675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,11 +208,10 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 10\n-    rem;\n-    padding: 200px;\n+    margin-bottom: 4rem;\n+   \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n     bottom: 3rem;\n"
+                },
+                {
+                    "date": 1672215304685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 4rem;\n+    margin-bottom: rem;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216056832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -195,16 +195,10 @@\n /* GLOBAL STYLES\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n-body {\n-    padding-top: 3rem;\n-    padding-bottom: 3rem;\n-    color: #5a5a5a;\n- \n-  }\n+\n   \n-  \n   /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n"
+                },
+                {
+                    "date": 1672216067369,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -195,10 +195,16 @@\n /* GLOBAL STYLES\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n-\n+body {\n+    padding-top: 3rem;\n+    padding-bottom: 3rem;\n+    color: #5a5a5a;\n+ \n+  }\n   \n+  \n   /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n"
+                },
+                {
+                    "date": 1672216073370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: rem;\n+    margin-bottom: 3rem;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216150779,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n \n     <!-- Custom styles for this template -->\n-    <link href=\"carousel.css\" rel=\"stylesheet\">\n+    \n </head>\n \n <body>\n     <main role=\"main\">\n"
+                },
+                {
+                    "date": 1672216173574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin-bottom: 3rem;\n+    \n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216192178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,10 +196,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-    padding-top: 3rem;\n-    padding-bottom: 3rem;\n+   \n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216224409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,9 +196,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-   \n+    \n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216232859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,9 +196,10 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-    \n+ \n+    padding-bottom: 3rem;\n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216242422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,9 +196,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n- \n+  \n     padding-bottom: 3rem;\n     color: #5a5a5a;\n  \n   }\n"
+                },
+                {
+                    "date": 1672216247549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -197,9 +197,9 @@\n /* Padding below the footer and lighter body text */\n \n body {\n   \n-    padding-bottom: 3rem;\n+    padding-bottom: 10rem;\n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216269114,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,10 +196,10 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-  \n-    padding-bottom: 10rem;\n+    padding-top: 3rem;\n+    padding-bottom: 3rem;\n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216277282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    \n+    margi\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216303173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margi\n+    padding: 12px;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216332243,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    padding: 12px;\n+    margin: 12px;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216338737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin: 12px;\n+    margin: 5px;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216399168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,9 +208,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    margin: 5px;\n+    \n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216415527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,10 +196,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-    padding-top: 3rem;\n-    padding-bottom: 3rem;\n+   \n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216421978,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,9 +196,9 @@\n -------------------------------------------------- */\n /* Padding below the footer and lighter body text */\n \n body {\n-   \n+    \n     color: #5a5a5a;\n  \n   }\n   \n"
+                },
+                {
+                    "date": 1672216427944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,9 +207,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    \n+    padding\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672216453072,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -207,9 +207,9 @@\n   -------------------------------------------------- */\n   \n   /* Carousel base class */\n   .carousel {\n-    padding\n+    padding: 20px;;\n    \n   }\n   /* Since positioning the image, we need to help out the caption */\n   .carousel-caption {\n"
+                },
+                {
+                    "date": 1672328215168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,11 @@\n ?>\n \n <!doctype html>\n <html lang=\"en\">\n+\n <head>\n- <meta charset=\"utf-8\">\n+    <meta charset=\"utf-8\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n     <meta name=\"description\" content=\"\">\n     <meta name=\"author\" content=\"\">\n     <link rel=\"icon\" href=\"/docs/4.0/assets/img/favicons/favicon.ico\">\n@@ -17,9 +18,9 @@\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n \n     <!-- Custom styles for this template -->\n-    \n+\n </head>\n \n <body>\n     <main role=\"main\">\n@@ -191,97 +192,104 @@\n </body>\n \n </html>\n <style>\n-/* GLOBAL STYLES\n+    /* GLOBAL STYLES\n -------------------------------------------------- */\n-/* Padding below the footer and lighter body text */\n+    /* Padding below the footer and lighter body text */\n \n-body {\n-    \n-    color: #5a5a5a;\n- \n-  }\n-  \n-  \n-  /* CUSTOMIZE THE CAROUSEL\n+    body {\n+\n+        color: #5a5a5a;\n+\n+    }\n+\n+\n+    /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n-  \n-  /* Carousel base class */\n-  .carousel {\n-    padding: 20px;;\n-   \n-  }\n-  /* Since positioning the image, we need to help out the caption */\n-  .carousel-caption {\n-    bottom: 3rem;\n-    z-index: 10;\n-  }\n-  \n-  /* Declare heights because of positioning of img element */\n-  .carousel-item {\n-    height: 32rem;\n-    background-color: #777;\n-  }\n-  .carousel-item > img {\n-    position: absolute;\n-    top: 0;\n-    left: 0;\n-    min-width: 100%;\n-    height: 32rem;\n-  }\n-  \n-  \n-  /* MARKETING CONTENT\n+\n+    /* Carousel base class */\n+    .carousel {\n+        padding: 20px;\n+\n+    }\n+\n+    /* Since positioning the image, we need to help out the caption */\n+    .carousel-caption {\n+        bottom: 3rem;\n+        z-index: 10;\n+    }\n+\n+    /* Declare heights because of positioning of img element */\n+    .carousel-item {\n+        height: 32rem;\n+        background-color: #777;\n+    }\n+\n+    .carousel-item>img {\n+        position: absolute;\n+        top: 0;\n+        left: 0;\n+        min-width: 100%;\n+        height: 32rem;\n+    }\n+\n+\n+    /* MARKETING CONTENT\n   -------------------------------------------------- */\n-  \n-  /* Center align the text within the three columns below the carousel */\n-  .marketing .col-lg-4 {\n-    margin-bottom: 1.5rem;\n-    text-align: center;\n-  }\n-  .marketing h2 {\n-    font-weight: 400;\n-  }\n-  .marketing .col-lg-4 p {\n-    margin-right: .75rem;\n-    margin-left: .75rem;\n-  }\n\\ No newline at end of file\n-  \n-  \n-  /* Featurettes\n+\n+    /* Center align the text within the three columns below the carousel */\n+    .marketing .col-lg-4 {\n+        margin-bottom: 1.5rem;\n+        text-align: center;\n+    }\n+\n+    .marketing h2 {\n+        font-weight: 400;\n+    }\n+\n+    .marketing .col-lg-4 p {\n+        margin-right: .75rem;\n+        margin-left: .75rem;\n+    }\n+\n+\n+    /* Featurettes\n   ------------------------- */\n-  \n-  .featurette-divider {\n-    margin: 5rem 0; /* Space out the Bootstrap <hr> more */\n-  }\n-  \n-  /* Thin out the marketing headings */\n-  .featurette-heading {\n-    font-weight: 300;\n-    line-height: 1;\n-    letter-spacing: -.05rem;\n-  }\n-  \n-  \n-  /* RESPONSIVE CSS\n-  -------------------------------------------------- */\n-  \n-  @media (min-width: 40em) {\n-    /* Bump up size of carousel content */\n-    .carousel-caption p {\n-      margin-bottom: 1.25rem;\n-      font-size: 1.25rem;\n-      line-height: 1.4;\n+\n+    .featurette-divider {\n+        margin: 5rem 0;\n+        /* Space out the Bootstrap <hr> more */\n     }\n-  \n+\n+    /* Thin out the marketing headings */\n     .featurette-heading {\n-      font-size: 50px;\n+        font-weight: 300;\n+        line-height: 1;\n+        letter-spacing: -.05rem;\n     }\n-  }\n-  \n-  @media (min-width: 62em) {\n-    .featurette-heading {\n-      margin-top: 7rem;\n+\n+\n+    /* RESPONSIVE CSS\n+  -------------------------------------------------- */\n+\n+    @media (min-width: 40em) {\n+\n+        /* Bump up size of carousel content */\n+        .carousel-caption p {\n+            margin-bottom: 1.25rem;\n+            font-size: 1.25rem;\n+            line-height: 1.4;\n+        }\n+\n+        .featurette-heading {\n+            font-size: 50px;\n+        }\n     }\n-  }\n-  </\n+\n+    @media (min-width: 62em) {\n+        .featurette-heading {\n+            margin-top: 7rem;\n+        }\n+    }\n+\n+    </\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672328221260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n <?php\n include(\"nav.phtml\");\n ?>\n-\n <!doctype html>\n <html lang=\"en\">\n \n <head>\n"
+                },
+                {
+                    "date": 1672328226416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,13 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-\n     <!-- Custom styles for this template -->\n-\n </head>\n \n <body>\n     <main role=\"main\">\n-\n         <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n             <ol class=\"carousel-indicators\">\n                 <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n                 <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n"
+                },
+                {
+                    "date": 1672328235553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,24 +31,21 @@\n                 <div class=\"carousel-item active\">\n                     <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style=\"width alt=\"\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n-\n                     </div>\n                 </div>\n             </div>\n             <div class=\"carousel-item\">\n                 <img class=\"second-slide\" src=\"./../images/gettyimages-1190440276-612x612.jpeg\" alt=\"Second slide\">\n                 <div class=\"container\">\n-\n                 </div>\n             </div>\n             <div class=\"carousel-item\">\n                 <img class=\"third-slide\"\n                     src=\"./../images/25988_1546874347_eb35b50b2ff4013ed1584d05fb1d4f9ee777e7dc18ac104491f6c97ea3eeb6b8_1280.jpeg\"\n                     alt=\"Third slide\">\n                 <div class=\"container\">\n-\n                 </div>\n             </div>\n         </div>\n         </div>\n"
+                },
+                {
+                    "date": 1672328240637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,14 +57,12 @@\n             <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n             <span class=\"sr-only\">Next</span>\n         </a>\n         </div>\n-\n-\n         <!-- Marketing messaging and featurettes\n       ================================================== -->\n         <!-- Wrap the rest of the page in another container to center all the content. -->\n-\n+-\n         <div class=\"container marketing\">\n \n             <!-- Three columns of text below the carousel -->\n             <div class=\"row\">\n"
+                },
+                {
+                    "date": 1672328245748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         </div>\n         <!-- Marketing messaging and featurettes\n       ================================================== -->\n         <!-- Wrap the rest of the page in another container to center all the content. -->\n--\n+\n         <div class=\"container marketing\">\n \n             <!-- Three columns of text below the carousel -->\n             <div class=\"row\">\n"
+                },
+                {
+                    "date": 1672328252705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,18 +60,15 @@\n         </div>\n         <!-- Marketing messaging and featurettes\n       ================================================== -->\n         <!-- Wrap the rest of the page in another container to center all the content. -->\n-\n         <div class=\"container marketing\">\n-\n             <!-- Three columns of text below the carousel -->\n             <div class=\"row\">\n                 <div class=\"col-lg-4\">\n                     <img src=\"./../images/4606273 (1).png\" alt=\"Generic placeholder image\" width=\"140\" height=\"140\">\n                     <h2>FIRST</h2>\n                     <p>Cette application vous permet de discuter en groupe en ligne .</p>\n-\n                 </div><!-- /.col-lg-4 -->\n                 <div class=\"col-lg-4\">\n                     <img src=\"./../images/2643350.png\" alt=\"Generic placeholder image\" width=\"140\" height=\"140\">\n                     <h2>SECOND</h2>\n"
+                },
+                {
+                    "date": 1672328260039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,8 @@\n                 </div><!-- /.col-lg-4 -->\n                 <div class=\"col-lg-4\">\n                     <img src=\"./../images/2643350.png\" alt=\"Generic placeholder image\" width=\"140\" height=\"140\">\n                     <h2>SECOND</h2>\n-\n                     <p>L’appli permet d’envoyer des messages, des images et des vidéos à des personnes du monde entier.\n                     </p>\n                 </div><!-- /.col-lg-4 -->\n                 <div class=\"col-lg-4\">\n@@ -81,10 +80,8 @@\n                     <h2>THIRD</h2>\n                     <p>Vous pouvez passer des appels vocaux ou vidéo sans avoir besoin d’une carte SIM.</p>\n                 </div><!-- /.col-lg-4 -->\n             </div><!-- /.row -->\n-\n-\n             <!-- START THE FEATURETTES -->\n \n             <hr class=\"featurette-divider\">\n \n"
+                },
+                {
+                    "date": 1672328270352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,11 +81,9 @@\n                     <p>Vous pouvez passer des appels vocaux ou vidéo sans avoir besoin d’une carte SIM.</p>\n                 </div><!-- /.col-lg-4 -->\n             </div><!-- /.row -->\n             <!-- START THE FEATURETTES -->\n-\n             <hr class=\"featurette-divider\">\n-\n             <div class=\"row featurette\">\n                 <div class=\"col-md-7\">\n                     <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">Le After augmente\n                             les ventes</span></h2>\n@@ -100,9 +98,8 @@\n                     <img class=\"featurette-image img-fluid mx-auto\" src=\"./../images/IMG_9743-removebg-preview (1).png\"\n                         alt=\"Generic placeholder image\">\n                 </div>\n             </div>\n-\n             <hr class=\"featurette-divider\">\n \n             <div class=\"row featurette\">\n                 <div class=\"col-md-7 order-md-2\">\n"
+                },
+                {
+                    "date": 1672328278789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,8 @@\n                         alt=\"Generic placeholder image\">\n                 </div>\n             </div>\n             <hr class=\"featurette-divider\">\n-\n             <div class=\"row featurette\">\n                 <div class=\"col-md-7 order-md-2\">\n                     <h2 class=\"featurette-heading\">Oh yeah, it's that good. <span class=\"text-muted\">\n                             Une compatibilité sur tous les appareils.</span></h2>\n@@ -114,11 +113,9 @@\n                     <img class=\"featurette-image img-fluid mx-auto\" src=\"./../images/images.png\"\n                         alt=\"Generic placeholder image\">\n                 </div>\n             </div>\n-\n             <hr class=\"featurette-divider\">\n-\n             <div class=\"row featurette\">\n                 <div class=\"col-md-7\">\n                     <h2 class=\"featurette-heading\">And lastly, this one. <span class=\"text-muted\">Des appels vocaux\n                             améliorés</span></h2>\n"
+                },
+                {
+                    "date": 1672328289869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,21 +124,17 @@\n                         sonnent simultanément sur un ordinateur de bureau et un appareil mobile. Il n’est donc pas\n                         nécessaire d’acheter des combinés coûteux, car vous pouvez utiliser un casque ou le système\n                         audio intégré sur votre ordinateur de bureau, votre ordinateur portable ou vos appareils\n                         mobiles.\n-\n                     </p>\n                 </div>\n                 <div class=\"col-md-5\">\n                     <img class=\"featurette-image img-fluid mx-auto\" src=\"./../images/126341.png\"\n                         alt=\"Generic placeholder image\">\n                 </div>\n             </div>\n-\n             <hr class=\"featurette-divider\">\n-\n             <!-- /END THE FEATURETTES -->\n-\n         </div><!-- /.container -->\n \n \n         <!-- FOOTER -->\n"
+                },
+                {
+                    "date": 1672328298686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -134,17 +134,14 @@\n             </div>\n             <hr class=\"featurette-divider\">\n             <!-- /END THE FEATURETTES -->\n         </div><!-- /.container -->\n-\n-\n         <!-- FOOTER -->\n         <footer class=\"container\">\n             <p class=\"float-right\"><a href=\"#\">Back to top</a></p>\n             <p>&copy; 2017-2018 Company, Inc. &middot; <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></p>\n         </footer>\n     </main>\n-\n     <!-- Bootstrap core JavaScript\n     ================================================== -->\n     <!-- Placed at the end of the document so the pages load faster -->\n     <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\"\n@@ -164,9 +161,8 @@\n         crossorigin=\"anonymous\"></script>\n     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n-\n </html>\n <style>\n     /* GLOBAL STYLES\n -------------------------------------------------- */\n"
+                },
+                {
+                    "date": 1672328303843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -168,11 +168,10 @@\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n \n     body {\n+    color: #5a5a5a;\n \n-        color: #5a5a5a;\n-\n     }\n \n \n     /* CUSTOMIZE THE CAROUSEL\n"
+                },
+                {
+                    "date": 1672328310982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -161,20 +161,19 @@\n         crossorigin=\"anonymous\"></script>\n     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n+\n </html>\n <style>\n     /* GLOBAL STYLES\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n \n     body {\n-    color: #5a5a5a;\n+        color: #5a5a5a;\n \n     }\n-\n-\n     /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n \n     /* Carousel base class */\n"
+                },
+                {
+                    "date": 1672328317884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -167,20 +167,17 @@\n <style>\n     /* GLOBAL STYLES\n -------------------------------------------------- */\n     /* Padding below the footer and lighter body text */\n-\n     body {\n         color: #5a5a5a;\n \n     }\n     /* CUSTOMIZE THE CAROUSEL\n   -------------------------------------------------- */\n-\n     /* Carousel base class */\n     .carousel {\n         padding: 20px;\n-\n     }\n \n     /* Since positioning the image, we need to help out the caption */\n     .carousel-caption {\n"
+                },
+                {
+                    "date": 1672328323146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -177,15 +177,13 @@\n     /* Carousel base class */\n     .carousel {\n         padding: 20px;\n     }\n-\n     /* Since positioning the image, we need to help out the caption */\n     .carousel-caption {\n         bottom: 3rem;\n         z-index: 10;\n     }\n-\n     /* Declare heights because of positioning of img element */\n     .carousel-item {\n         height: 32rem;\n         background-color: #777;\n"
+                },
+                {
+                    "date": 1672328330820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -187,18 +187,15 @@\n     .carousel-item {\n         height: 32rem;\n         background-color: #777;\n     }\n-\n     .carousel-item>img {\n         position: absolute;\n         top: 0;\n         left: 0;\n         min-width: 100%;\n         height: 32rem;\n     }\n-\n-\n     /* MARKETING CONTENT\n   -------------------------------------------------- */\n \n     /* Center align the text within the three columns below the carousel */\n"
+                },
+                {
+                    "date": 1672328337635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,15 +196,13 @@\n         height: 32rem;\n     }\n     /* MARKETING CONTENT\n   -------------------------------------------------- */\n-\n     /* Center align the text within the three columns below the carousel */\n     .marketing .col-lg-4 {\n         margin-bottom: 1.5rem;\n         text-align: center;\n     }\n-\n     .marketing h2 {\n         font-weight: 400;\n     }\n \n"
+                },
+                {
+                    "date": 1672328345827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -204,9 +204,8 @@\n     }\n     .marketing h2 {\n         font-weight: 400;\n     }\n-\n     .marketing .col-lg-4 p {\n         margin-right: .75rem;\n         margin-left: .75rem;\n     }\n"
+                },
+                {
+                    "date": 1672328358076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -208,10 +208,8 @@\n     .marketing .col-lg-4 p {\n         margin-right: .75rem;\n         margin-left: .75rem;\n     }\n-\n-\n     /* Featurettes\n   ------------------------- */\n \n     .featurette-divider {\n"
+                },
+                {
+                    "date": 1672328363156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -210,9 +210,8 @@\n         margin-left: .75rem;\n     }\n     /* Featurettes\n   ------------------------- */\n-\n     .featurette-divider {\n         margin: 5rem 0;\n         /* Space out the Bootstrap <hr> more */\n     }\n"
+                },
+                {
+                    "date": 1672328369671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -214,20 +214,16 @@\n     .featurette-divider {\n         margin: 5rem 0;\n         /* Space out the Bootstrap <hr> more */\n     }\n-\n     /* Thin out the marketing headings */\n     .featurette-heading {\n         font-weight: 300;\n         line-height: 1;\n         letter-spacing: -.05rem;\n     }\n-\n-\n     /* RESPONSIVE CSS\n   -------------------------------------------------- */\n-\n     @media (min-width: 40em) {\n \n         /* Bump up size of carousel content */\n         .carousel-caption p {\n"
+                },
+                {
+                    "date": 1672328374861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -223,16 +223,14 @@\n     }\n     /* RESPONSIVE CSS\n   -------------------------------------------------- */\n     @media (min-width: 40em) {\n-\n         /* Bump up size of carousel content */\n         .carousel-caption p {\n             margin-bottom: 1.25rem;\n             font-size: 1.25rem;\n             line-height: 1.4;\n         }\n-\n         .featurette-heading {\n             font-size: 50px;\n         }\n     }\n"
+                },
+                {
+                    "date": 1672328481398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -164,81 +164,6 @@\n </body>\n \n </html>\n <style>\n-    /* GLOBAL STYLES\n--------------------------------------------------- */\n-    /* Padding below the footer and lighter body text */\n-    body {\n-        color: #5a5a5a;\n-\n-    }\n-    /* CUSTOMIZE THE CAROUSEL\n-  -------------------------------------------------- */\n-    /* Carousel base class */\n-    .carousel {\n-        padding: 20px;\n-    }\n-    /* Since positioning the image, we need to help out the caption */\n-    .carousel-caption {\n-        bottom: 3rem;\n-        z-index: 10;\n-    }\n-    /* Declare heights because of positioning of img element */\n-    .carousel-item {\n-        height: 32rem;\n-        background-color: #777;\n-    }\n-    .carousel-item>img {\n-        position: absolute;\n-        top: 0;\n-        left: 0;\n-        min-width: 100%;\n-        height: 32rem;\n-    }\n-    /* MARKETING CONTENT\n-  -------------------------------------------------- */\n-    /* Center align the text within the three columns below the carousel */\n-    .marketing .col-lg-4 {\n-        margin-bottom: 1.5rem;\n-        text-align: center;\n-    }\n-    .marketing h2 {\n-        font-weight: 400;\n-    }\n-    .marketing .col-lg-4 p {\n-        margin-right: .75rem;\n-        margin-left: .75rem;\n-    }\n-    /* Featurettes\n-  ------------------------- */\n-    .featurette-divider {\n-        margin: 5rem 0;\n-        /* Space out the Bootstrap <hr> more */\n-    }\n-    /* Thin out the marketing headings */\n-    .featurette-heading {\n-        font-weight: 300;\n-        line-height: 1;\n-        letter-spacing: -.05rem;\n-    }\n-    /* RESPONSIVE CSS\n-  -------------------------------------------------- */\n-    @media (min-width: 40em) {\n-        /* Bump up size of carousel content */\n-        .carousel-caption p {\n-            margin-bottom: 1.25rem;\n-            font-size: 1.25rem;\n-            line-height: 1.4;\n-        }\n-        .featurette-heading {\n-            font-size: 50px;\n-        }\n-    }\n-\n-    @media (min-width: 62em) {\n-        .featurette-heading {\n-            margin-top: 7rem;\n-        }\n-    }\n-\n+   \n     </\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672328517564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n+    \n     <!-- Custom styles for this template -->\n </head>\n \n <body>\n@@ -163,7 +164,7 @@\n     <script src=\"../../assets/js/vendor/holder.min.js\"></script>\n </body>\n \n </html>\n-<style>\n+\n    \n\\ No newline at end of file\n-    </\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672328522810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    \n+    <link href=\"\n     <!-- Custom styles for this template -->\n </head>\n \n <body>\n"
+                },
+                {
+                    "date": 1672328530622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"\n+    <link href=\".\n     <!-- Custom styles for this template -->\n </head>\n \n <body>\n"
+                },
+                {
+                    "date": 1672328540265,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\".\n+    <link href=\"./../home\n     <!-- Custom styles for this template -->\n </head>\n \n <body>\n"
+                },
+                {
+                    "date": 1672328545378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"./../home\n+    <link href=\"./../home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n \n <body>\n"
+                },
+                {
+                    "date": 1672328605111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,8 @@\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n     <link href=\"./../home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n-\n <body>\n     <main role=\"main\">\n         <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\n             <ol class=\"carousel-indicators\">\n"
+                },
+                {
+                    "date": 1672328612898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"./../home.css\" rel=\"stylesheet\">\n+    <link href=\"../home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n"
+                },
+                {
+                    "date": 1672328620433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"../home.css\" rel=\"stylesheet\">\n+    <link href=\"traihome.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n"
+                },
+                {
+                    "date": 1672328626493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"traihome.css\" rel=\"stylesheet\">\n+    <link href=\"trainhome.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n"
+                },
+                {
+                    "date": 1672328702132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"trainhome.css\" rel=\"stylesheet\">\n+    <link href=\"train/home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style=\"width alt=\"\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style=\"width alt=\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328763703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style=\"width alt=\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" >\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328778814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" >\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style>\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328787602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style>\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width>\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328792760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width>\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px>\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328810610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px>\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px height\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328816038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px height\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px height:100px;\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672328831094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40px height:100px;\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40 height:100px;\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672329004870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=40 height:100px;\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=4% height:100%;\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672329022500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"train/home.css\" rel=\"stylesheet\">\n+    <link href=\"/home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n@@ -28,9 +28,9 @@\n                 <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n             </ol>\n             <div class=\"carousel-inner\">\n                 <div class=\"carousel-item active\">\n-                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=4% height:100%;\">\n+                    <img class=\"first-slide\" src=\"./../images/gettyimages-1264170591-612x612.jpeg\" style= \"width=300% height:100%;\">\n             <div class=\" container\">\n                     <div class=\"carousel-caption text-left\">\n                     </div>\n                 </div>\n"
+                },
+                {
+                    "date": 1672329027607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"/home.css\" rel=\"stylesheet\">\n+    <link href=\"./../home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n"
                 }
             ],
             "date": 1671610451739,

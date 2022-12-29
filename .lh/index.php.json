@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 66,
+            "activePatchIndex": 67,
             "patches": [
                 {
                     "date": 1670488641735,
@@ -272,6 +272,10 @@
                 {
                     "date": 1671458549223,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n- session_start();\n+session_start();\n \n- if(isset($_SESSION['user'])){\n-\t header('Location:view/hello.phtml');\n- } else{\n+if (isset($_SESSION['user'])) {\n+\theader('Location:view/hello.phtml');\n+} else {\n \theader('Location:view/connection.phtml');\n- }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672328103737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <?php\n session_start();\n-\n if (isset($_SESSION['user'])) {\n \theader('Location:view/hello.phtml');\n } else {\n \theader('Location:view/connection.phtml');\n"
                 }
             ],
             "date": 1670488641735,
