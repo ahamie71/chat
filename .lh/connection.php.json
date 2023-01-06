@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 425,
+            "activePatchIndex": 430,
             "patches": [
                 {
                     "date": 1670515146503,
@@ -1708,6 +1708,26 @@
                 {
                     "date": 1672244324236,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,12 +13,10 @@\n     $sql = \"SELECT * FROM  user WHERE name = '$name'\";\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n-\n-    \n     // if ($user != false) {\n-    $_SESSION[\"user\"] = $user;\n+    $_SESSION[user\"] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n \n"
+                },
+                {
+                    "date": 1672388712703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,14 +14,14 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     // if ($user != false) {\n-    $_SESSION[user\"] = $user;\n+    $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n \n-        header(\"location:view/welcome.phtml\");\n+        header(\"location:view/ch.phtml\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n"
+                },
+                {
+                    "date": 1672413924513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,8 @@\n if (isset($_POST['valider'])) {\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n-\n-\n     try {\n       $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     } catch (Exception $e) {\n     }\n@@ -19,9 +17,9 @@\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n \n-        header(\"location:view/ch.phtml\");\n+        header(\"location:view/chat.phtml\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n"
+                },
+                {
+                    "date": 1672413932489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-\n         header(\"location:view/chat.phtml\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1673011496787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-        header(\"location:view/chat.phtml\");\n+        header(\"location:view/chat.ph\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n"
+                },
+                {
+                    "date": 1673011501956,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-        header(\"location:view/chat.ph\");\n+        header(\"location:/chat.php\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n"
                 }
             ],
             "date": 1670515146503,

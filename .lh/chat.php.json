@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 58,
+            "activePatchIndex": 177,
             "patches": [
                 {
                     "date": 1671532771783,
@@ -240,6 +240,482 @@
                 {
                     "date": 1671614634957,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +0,0 @@\n-<?php \n- include(\"view/hello.phtml\");\n-\n-        try {\n-            $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-        } catch (Exception $e) {\n-        }\n-\n-$sql = \"SELECT u.name,m.content,m.createdAt,m.user_id\n-        FROM messages m \n-        JOIN user u ON m.user_id= u.id\";\n-   \n-\n-        $messageStatement = $db->prepare($sql);\n-\n-        $messageStatement->execute();\n-\n-        $messages = $messageStatement->fetchAll();\n-\n-       \n-\n-        foreach($messages as $message){\n-\n-            echo \"<tr>\";\n-            echo \"<td>\" . $message['name']. \"</td></br>\n-                   <td>\" . $message['content'] . \"</td></br>\n-                   <td>\" . $message['createdAt'] . \"</td></br>\";\n-                   \n-            echo \"</tr>\";\n-        }\n-\n-       \n-    \n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672391530377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,76 @@\n+<?php\n+session_start();\n+include(\"nav.phtml\");\n+if (!isset($_SESSION['user'])) {\n+    header('Location:view/connection.phtml');\n+}\n+?>\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <link<link href=\"style.css\" rel=\"stylesheet\">\n+        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n+            integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n+        <title>Document</title>\n+</head>\n+<body>\n+    <h1>Bienvenue\n+        <?php echo $_SESSION['user']['name'] ?>\n+    </h1>\n+    <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\"\n+        integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\"\n+        crossorigin=\"anonymous\"></script>\n+    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\"\n+        integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\"\n+        crossorigin=\"anonymous\"></script>\n+</body>\n+<?php\n+try {\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+} catch (Exception $e) {\n+}\n+$req = \"SELECT COUNT(*) AS total FROM messages \";\n+$nbmessagestmt = $db->prepare($req);\n+$nbmessagestmt->execute();\n+$result = $nbmessagestmt->fetchColumn();\n+// le nombre de message par page\n+$limit = 3;\n+//  la fonction ceil est pour arrondir \n+$nbpage = ceil($result / $limit);\n+if (isset($_GET['page'])) {\n+    $currentPage = (int) strip_tags($_GET['page']);\n+} else {\n+    $currentPage = 1;\n+}\n+if ($currentPage > $nbpage) {\n+   $currentPage = $nbpage;\n+}\n+$offset = ($currentPage - 1) * $limit;\n+$sql = \"SELECT u.name ,m.id,m.content,m.createdAt,m.user_id\n+        FROM messages m \n+        JOIN user u ON m.user_id= u.id\n+        ORDER BY m.createdAt DESC\n+        LIMIT 3 OFFSET $offset\";\n+$messageStatement = $db->prepare($sql);\n+$messageStatement->execute();\n+$messages = $messageStatement->fetchAll();\n+foreach ($messages as $message) {\n+    $string =\n+        '                 <div class=\"container m-5\">' .\n+        '    <strong><p> ' . $message['name'] . '</p></strong>' .\n+        '                     <p >' . $message['content'] . '</p>' .\n+\n+\n+        \n+        ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n+        ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n+        '</div>';\n+    echo $string;\n+}\n+\n+?>\n+\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672391544123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,10 +62,10 @@\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n \n+         if\n \n-        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391551476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n \n-         if\n+         if()\n \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n"
+                },
+                {
+                    "date": 1672391559500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,9 +62,9 @@\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n \n-         if()\n+         'if(isset)\n \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n"
+                },
+                {
+                    "date": 1672391566716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,10 +62,9 @@\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n \n-         'if(isset)\n-\n+        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391576798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,15 +61,15 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n-\n-        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n \n+\n+\n ?>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672391588295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,10 +66,11 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n+   \n+if (isset)\n \n \n-\n ?>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672391594303,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset)\n+if (isset($))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391599617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($))\n+if (isset($_SESSION))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391606438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION))\n+if (isset($_SESSION[]))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391612944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION[]))\n+if (isset($_SESSION[user']))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391620230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION[user']))\n+if (isset($_SESSION['user']))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391627211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']))\n+if (isset($_SESSION['user']['id']))\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391669008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id']))\n+if (isset($_SESSION['user']['id'])&&)\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391676546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&&)\n+if (isset($_SESSION['user']['id'])&& $_SE)\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391684080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SE)\n+if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==)\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391695017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==)\n+if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$m)\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391700168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$m)\n+if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message[])\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391732020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,15 +61,16 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n+        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message[])\n+if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id'])\n \n \n ?>\n \n"
+                },
+                {
+                    "date": 1672391740480,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n-        \n+        if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).\n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391746569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n-        if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).\n+       ''. if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).\n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391752861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n-       ''. if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).\n+       '. if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).'\n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391767562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n-       '. if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']).'\n+       \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672391804957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,8 +63,11 @@\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n+\n+\n+        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672391820977,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,13 +61,14 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>' .\n+        \n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n \n \n-        \n+\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672391828711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>' .\n-        \n+        '                     <p >' . $message['content'] . '</p>' \n+        if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id'])\n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n \n \n"
+                },
+                {
+                    "date": 1672391840883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>' \n+        '                     <p >' . $message['content'] . '</p>';\n         if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id'])\n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n \n"
+                },
+                {
+                    "date": 1672391899700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>';\n-        if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id'])\n+        \n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n \n \n"
+                },
+                {
+                    "date": 1672391921917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,10 +65,8 @@\n         \n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n \n-\n-\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672391929210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,13 +60,11 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>';\n-        \n+        '                     <p >' . $message['content'] . '</p>'\n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n-\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672391934431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>'\n+        '                     <p >' . $message['content'] . '</p>'.\n        \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n"
+                },
+                {
+                    "date": 1672392034493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,17 +61,18 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-       \n         ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id'])\n+if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n \n+    \n \n+\n ?>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672392039816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,10 +69,10 @@\n }\n    \n if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n \n-    \n+    ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n \n-\n+}\n ?>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672392046298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n }\n    \n if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n \n-    ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n+    ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n ?>\n \n"
+                },
+                {
+                    "date": 1672392112387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n+if (isset($_SESSION['user'])&& $_SESSION['user']['id']==$message['id']){\n \n     ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392208263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n }\n    \n if (isset($_SESSION['user'])&& $_SESSION['user']['id']==$message['id']){\n \n-    ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+      echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n ?>\n \n"
+                },
+                {
+                    "date": 1672392222249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user'])&& $_SESSION['user']['id']==$message['id']){\n+if (isset($_SESSION['user']['i'])&& $_SESSION['user']['id']==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392276337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['i'])&& $_SESSION['user']['id']==$message['id']){\n+if (isset($_S['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392282813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_S['user']['id'])&& $_SESSION['user']['id']==$message['id']){\n+if (isset($_S[')&& $_SESSION['user']['id']==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392298655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_S[')&& $_SESSION['user']['id']==$message['id']){\n+if (isset($user)&& $_SESSION['user']==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392308618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($user)&& $_SESSION['user']==$message['id']){\n+if (isset($user)&& ()==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392314883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($user)&& ()==$message['id']){\n+if (isset($user)&& ($user)==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392447511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($user)&& ($user)==$message['id']){\n+if (isset($_SESSION['user']['name'])&& ($user)==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392452837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n         '</div>';\n     echo $string;\n }\n    \n-if (isset($_SESSION['user']['name'])&& ($user)==$message['id']){\n+if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n }\n"
+                },
+                {
+                    "date": 1672392488069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,8 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n-   \n if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n"
+                },
+                {
+                    "date": 1672392495132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,8 @@\n }\n if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-\n }\n ?>\n \n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672392570761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,6 +71,5 @@\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n ?>\n-\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672392681528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-        ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n+       \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672392699836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,9 +61,12 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-       \n+        if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n+\n+            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+      }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672392709316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>'.\n+        '                     <p >' . $message['content'] . '</p>'\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n             echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n"
+                },
+                {
+                    "date": 1672392714738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>'\n+        '                     <p >' . $message['content'] . '</p>''\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n             echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n"
+                },
+                {
+                    "date": 1672392728118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,12 +60,12 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>''\n+        '                     <p >' . $message['content'] . '</p>'\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n-            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n       }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672392734182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,12 +60,12 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>'\n+        '                     <p >' . $message['content'] . '</p>';\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n-            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n+            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '.\n       }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672392742595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>';\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n-            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '.\n+        echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672392775765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>';\n         if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n-        echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n       }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n"
+                },
+                {
+                    "date": 1672392782590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,13 +60,13 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>';\n-        if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n+        '                     <p >' . $message['content'] . '</p>'.\n+       if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n \n-            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '\n-      }\n+      echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+}\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672393063888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,17 +61,14 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-       if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n-\n-      echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-}\n+        ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n-if (isset($_SESSION['user']['name'])&& ($_SESSION['user']['name'])==$message['id']){\n+if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['name'])==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n ?>\n"
+                },
+                {
+                    "date": 1672393122179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n-if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['name'])==$message['id']){\n+if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n ?>\n"
+                },
+                {
+                    "date": 1672393166669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,8 @@\n         '</div>';\n     echo $string;\n }\n if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n-\n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672393181148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,14 +61,15 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-        ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ' .\n+       \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n     echo $string;\n }\n if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n+\n       echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672393197935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,8 +64,10 @@\n         '                     <p >' . $message['content'] . '</p>'.\n        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n+\n+        \n     echo $string;\n }\n if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672393206017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,14 @@\n        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n \n-        \n+\n+        f (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n+\n+            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+      }\n+\n     echo $string;\n }\n if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672393215791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,17 +66,14 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n \n \n-        f (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n+       if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n             echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n-if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-      echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-}\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672393233254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,10 +64,8 @@\n         '                     <p >' . $message['content'] . '</p>'.\n        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n-\n-\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n             echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n"
+                },
+                {
+                    "date": 1672393559157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-            echo ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+            ech ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672393565171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -66,9 +66,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-            ech ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+             ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672393798510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,10 @@\n         integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\"\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n+\n+' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672393804264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+   ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672393809770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+   $verif' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672393815134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   $verif' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+   $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672393822939,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-             ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+             echo \n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672393837505,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-             echo \n+        echo $veriffy;\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672393845772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \n         echo $veriffy;\n       }\n \n-    echo $string;\n+    \n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672393880402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+   \n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672393890171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \n         echo $veriffy;\n       }\n \n-    \n+      $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672393907218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,8 +71,10 @@\n \n         echo $veriffy;\n       }\n \n+\n+      \n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n \n ?>\n"
+                },
+                {
+                    "date": 1672393914024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,11 +70,12 @@\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n         echo $veriffy;\n       }\n+      \n+      echo $strig\n \n \n-      \n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n \n ?>\n"
+                },
+                {
+                    "date": 1672393927128,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,13 +69,13 @@\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n         echo $veriffy;\n-      }\n-      \n-      echo $strig\n+      }else\n \n+    echo $string;\n \n+\n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n \n ?>\n"
+                },
+                {
+                    "date": 1672393932305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,13 +69,13 @@\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n         echo $veriffy;\n-      }else\n+    } else {\n \n-    echo $string;\n+        echo $string;\n+    }\n \n-\n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n }\n \n ?>\n"
+                },
+                {
+                    "date": 1672394103611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-        echo $veriffy;\n+        \n     } else {\n \n         echo $string;\n     }\n"
+                },
+                {
+                    "date": 1672394108872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n-\n+echo\n         \n     } else {\n \n         echo $string;\n"
+                },
+                {
+                    "date": 1672394114749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,10 @@\n        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n-echo\n+\n+        $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n         \n     } else {\n \n         echo $string;\n"
+                },
+                {
+                    "date": 1672394120893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-        $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+         $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n         \n     } else {\n \n         echo $string;\n"
+                },
+                {
+                    "date": 1672394128600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n         \n-    } else {\n+    \n \n         echo $string;\n     }\n \n"
+                },
+                {
+                    "date": 1672394134520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-        \n+       }\n     \n \n         echo $string;\n     }\n"
+                },
+                {
+                    "date": 1672394140366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,14 +70,13 @@\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n-    \n \n-        echo $string;\n+\n     }\n \n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-}\n \n+\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394148055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,11 +71,10 @@\n \n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n-\n     }\n-\n+        echo\n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394160742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,10 +72,10 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo\n-      $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+        echo $string;\n+     \n \n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394221062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo $string;\n+        echo $string ;\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394226456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo $string ;\n+        echo $string+ ;\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394234756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo $string+ ;\n+        echo $string+ '.$veriffy';\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394240608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo $string+ '.$veriffy';\n+        echo $string + .$veriffy;\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394245886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo $string + .$veriffy;\n+        echo '$string' + ''.$veriffy;\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394252015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo '$string' + ''.$veriffy;\n+        echo '.$string' + '.$veriffy';\n      \n \n \n ?>\n"
+                },
+                {
+                    "date": 1672394263615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,10 +72,9 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-        echo '.$string' + '.$veriffy';\n-     \n+       \n \n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394270122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,10 @@\n          $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n        }\n \n     }\n-       \n+        echo\n+      $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394282102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,14 +68,12 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-         $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-       }\n+        echo $veriffy;\n+      }\n \n-    }\n-        echo\n       $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+}\n \n-\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394287872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   \n+   $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n@@ -71,9 +71,9 @@\n \n         echo $veriffy;\n       }\n \n-      $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+    \n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394296922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,12 +68,12 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-        echo $veriffy;\n+             ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n-    \n+    echo $string;\n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394317719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   $veriffy='<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+   $veriffy=' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n"
+                },
+                {
+                    "date": 1672394418821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n         crossorigin=\"anonymous\"></script>\n </body>\n <?php\n \n-   $veriffy=' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+\n try {\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n } catch (Exception $e) {\n }\n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-             ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+             <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394425550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-             <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+           echo  <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ;\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394433987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ;\n+           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ;\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394439589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ;\n+           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '';'\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394445060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> '';'\n+           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394452326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+           echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394494594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \n            echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n-    echo $string;\n+\n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394500940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n \n            echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n-\n+    echo $string;\n }\n \n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394523982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-       \n+        \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672394530566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>'.\n-        \n+        ''\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672394538835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,10 +62,13 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>'.\n-        ''\n+        '                     <p >' . $message['content'] . '</p>';\n+        'if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n+\n+            echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+       }'\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672394543930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,12 +63,12 @@\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n         '                     <p >' . $message['content'] . '</p>';\n-        'if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n+        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n             echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-       }'\n+       }\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n"
+                },
+                {
+                    "date": 1672394562668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -62,18 +62,15 @@\n foreach ($messages as $message) {\n     $string =\n         '                 <div class=\"container m-5\">' .\n         '    <strong><p> ' . $message['name'] . '</p></strong>' .\n-        '                     <p >' . $message['content'] . '</p>';\n-        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n-\n-            echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n-       }\n+        '                     <p >' . $message['content'] . '</p>'.\n+       \n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  ' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394611273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  '' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+           echo  \n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672394632299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,12 +68,12 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  \n+           echo  $\n       }\n \n     echo $string;\n }\n-\n+$verif\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394638454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,7 +73,7 @@\n       }\n \n     echo $string;\n }\n-$verif\n+$verify=<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394643657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,7 +73,7 @@\n       }\n \n     echo $string;\n }\n-$verify=<a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+$verify=' <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n ?>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672394649329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,9 +68,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>' .\n         '</div>';\n        if (isset($_SESSION['user']['id'])&& ($_SESSION['user']['id'])==$message['id']){\n \n-           echo  $veri\n+           echo  $verif\n       }\n \n     echo $string;\n }\n"
+                },
+                {
+                    "date": 1672396280910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n         ' <span class=\"time-right\">' . $message['createdAt'] . '</span>';\n        \n     if (isset($_SESSION['user']['id']) && ($_SESSION['user']['id']) == $message['id']) {\n \n-         <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n+        ec <a href=\"./../delete.php?id=' . $message['id'] . '\">x</a> ';\n \n     } \n     \n     echo $string;\n"
                 }
             ],
             "date": 1671532771783,

@@ -1,0 +1,406 @@
+{
+    "sourceFile": "edit.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 97,
+            "patches": [
+                {
+                    "date": 1672929285130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1672929290297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-?php\n+<?php\n session_start();\n //on veut supprimer un message du coup un user pourra supprimerson message mais pas celui des autres users\n //mais l'utlilisateur pourra etre malin en rentrant dans l'url l'id d'un messsage d'un autre user et pourra le supprimer \n // pour cela nous allons interdire cet user de le faire \n"
+                },
+                {
+                    "date": 1672929299404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,7 @@\n <?php\n session_start();\n-//on veut supprimer un message du coup un user pourra supprimerson message mais pas celui des autres users\n-//mais l'utlilisateur pourra etre malin en rentrant dans l'url l'id d'un messsage d'un autre user et pourra le supprimer \n-// pour cela nous allons interdire cet user de le faire \n-// on doit verifier l'id du l'author de message si il 'est different de user connecté \n-// dans le cas ou  l'id de l'author du message est <> que celui de la personne connecté l'utilisateur ne pourra pas le supprimer , \n-// dans un autre cas si l'id de l'author du message =id personne connecté donc on valide la suppression de son propre messsage\n-// donc pour recuperer l'id du message \n-// on a recuper avec la \"\"\"\"\"variable superbeglobale\"\"\"\"\" GET qui permet de recuper le paramètre rentré dans l'url , pour cela on veut l'id du message alors \n-// declare dans l'url messageid= $.message[id] \n+/\n if (isset($_GET[\"messageid\"]) && (isset($_SESSION['user']))) {\n     $userid = $_SESSION['user'];\n     $messageid = $_GET[\"messageid\"];\n     // donc la on a recupérer l'id du message, il nous reste a recupere l'author du message  pour les comparer .\n"
+                },
+                {
+                    "date": 1672929305995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,36 +0,0 @@\n-<?php\n-session_start();\n-/\n-if (isset($_GET[\"messageid\"]) && (isset($_SESSION['user']))) {\n-    $userid = $_SESSION['user'];\n-    $messageid = $_GET[\"messageid\"];\n-    // donc la on a recupérer l'id du message, il nous reste a recupere l'author du message  pour les comparer .\n-// nous allons se connecter a la base de donnés , en executant un requête qui va selectionner l'attribut  \n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sel = \"SELECT * FROM messages WHERE id = $messageid\";\n-    $selectstmt = $db->prepare($sel);\n-    $selectstmt->execute();\n-    $message = $selectstmt->fetch();\n-    $userId = $message['user_id'];\n-    ;\n-} else {\n-\n-    header('location:view/connection.phtml');\n-    exit();\n-}\n-\n-if ($userId == $_SESSION['user']['id']) {\n-\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sql = \" DELETE FROM messages WHERE id = \" . $messageid;\n-    $deletstmt = $db->prepare($sql);\n-    $deletstmt->execute();\n-\n-    if ($deletstmt) {\n-        header(\"Location:view/chat.phtml\");\n-        exit();\n-    }\n-} else {\n-\n-    header('location:view/chat.phtml?default=1');\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929389021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,3 @@\n+<?php\n+\n+if(isset)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929401477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset)\n\\ No newline at end of file\n+if(isset())\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929408079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset())\n\\ No newline at end of file\n+if(isset($))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929414933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset($))\n\\ No newline at end of file\n+if(isset($_))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929420028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset($_))\n\\ No newline at end of file\n+if(isset($_GET[]))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929428191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset($_GET[]))\n\\ No newline at end of file\n+if(isset($_GET['mess']))\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929438764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-if(isset($_GET['mess']))\n\\ No newline at end of file\n+if(isset($_GET['message'])\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929446267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,6 @@\n <?php\n \n-if(isset($_GET['message'])\n\\ No newline at end of file\n+if(isset($_GET['message']){\n+    \n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929549979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n \n-if(isset($_GET['message']){\n+if(isset($_GET['messageId']){\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929555986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-\n+ \n if(isset($_GET['messageId']){\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929561575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n- \n+sess\n if(isset($_GET['messageId']){\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929567106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-sess\n+session_start();\n if(isset($_GET['messageId']){\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929572893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']){\n+if(isset($_GET['messageId']) {\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929580815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']) {\n+if(isset($_GET['messageId']) && isset({\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929588321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']) && isset({\n+if(isset($_GET['messageId']) && isset($_SESSION{\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929599439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']) && isset($_SESSION{\n+if(isset($_GET['messageId']) && isset($_SESSION['user{\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929610200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']) && isset($_SESSION['user{\n+if(isset($_GET['messageId']) && isset($_SESSION['user'][])){\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929616980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n session_start();\n-if(isset($_GET['messageId']) && isset($_SESSION['user'][])){\n+if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929625313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n+\n     \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929631365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n+    $\n     \n-    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929637421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n-    $\n+    $message\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929643715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n-    $message\n+    $message= \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929651223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n-    $message= \n+    $message= $\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929657637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n-    $message= $\n+    $message= $_GET\n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929663287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n-    $message= $_GET\n+    $message= $_GET['messageId'];\n     \n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929670517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n     $message= $_GET['messageId'];\n+    $modif\n     \n-    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929679189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n \n     $message= $_GET['messageId'];\n-    $modif\n     \n+    \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929708494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+    $message= $_GET['messageId'];\n \n-    $message= $_GET['messageId'];\n     \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929714761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n <?php\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n+    \n+    $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $message= $_GET['messageId'];\n+    \n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929721595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    \n+    $mo\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929733304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $mo\n+    $modifstmt\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929739019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $modifstmt\n+    $modifstmt->\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929745208,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $modifstmt->\n+    $modifstmt->$db->prepa\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929752937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,10 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $modifstmt->$db->prepa\n+    $modifstmt->$db->prepare($message);\n+    \n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929761604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n-    \n+    $\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929767550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n-    $\n+    $modifstmt->\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929773358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n-    $modifstmt->\n+    $modifstmt->excute()\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929780098,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n-    $modifstmt->excute()\n+    $modifstmt->excute();\n+    $\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929786930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n-    $\n+    $msg= $\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929792951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n-    $msg= $\n+    $msg= $modif\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929798774,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n-    $msg= $modif\n+    $msg= $modifstmt-\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929806134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n-    $msg= $modifstmt-\n+    $msg= $modifstmt->fetchAll();\n \n     \n     \n \n"
+                },
+                {
+                    "date": 1672929845733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,8 @@\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n     \n+     \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672929874893,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n-\n+   $\n     \n      \n     \n \n"
+                },
+                {
+                    "date": 1672929879943,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,10 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n-   $\n+     \n+    var_\n     \n      \n     \n \n"
+                },
+                {
+                    "date": 1672929885445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n      \n-    var_\n+    var_dump($msg)\n     \n      \n     \n \n"
+                },
+                {
+                    "date": 1672930023620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,13 +3,14 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+    \n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n-     \n-    var_dump($msg)\n+\n+    var_dump($msg);\n     \n      \n     \n \n"
+                },
+                {
+                    "date": 1672930028975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    \n+    $sql=\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n"
+                },
+                {
+                    "date": 1672930034749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sql=\n+    $sql= \"\"\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n"
+                },
+                {
+                    "date": 1672930043268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sql= \"\"\n+    $sql= \"SELECT *\"\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n"
+                },
+                {
+                    "date": 1672930064854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sql= \"SELECT *\"\n+    $sel = \"SELECT * FROM messages WHERE id = $messageid\";\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n"
+                },
+                {
+                    "date": 1672930070498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sel = \"SELECT * FROM messages WHERE id = $messageid\";\n+    $sel = \"SELECT * FROM messages WHERE id = $message\";\n     $modifstmt->$db->prepare($message);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n"
+                },
+                {
+                    "date": 1672930079546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $sel = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt->$db->prepare($message);\n+    $modifstmt->$db->prepare($);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n     var_dump($msg);\n"
+                },
+                {
+                    "date": 1672930084990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $sel = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt->$db->prepare($);\n+    $modifstmt->$db->prepare($m);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n     var_dump($msg);\n"
+                },
+                {
+                    "date": 1672930090768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $sel = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt->$db->prepare($m);\n+    $ = \"SELECT * FROM messages WHERE id = $message\";\n+    $modifstmt->$db->prepare($mod);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n     var_dump($msg);\n"
+                },
+                {
+                    "date": 1672930110588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $ = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt->$db->prepare($mod);\n+    $mod = \"SELECT * FROM messages WHERE id = $message\";\n+    $modifstmt=$db->prepare($mod);\n     $modifstmt->excute();\n     $msg= $modifstmt->fetchAll();\n \n     var_dump($msg);\n"
+                },
+                {
+                    "date": 1672930144616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n     \n     $message= $_GET['messageId'];\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $mod = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt=$db->prepare($mod);\n-    $modifstmt->excute();\n+    $modifstmt= $db->prepare($mod);\n+    $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n     var_dump($msg);\n     \n"
+                },
+                {
+                    "date": 1672930152814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n     $mod = \"SELECT * FROM messages WHERE id = $message\";\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n+    \n \n     var_dump($msg);\n     \n      \n"
+                },
+                {
+                    "date": 1672930183605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,8 @@\n     $mod = \"SELECT * FROM messages WHERE id = $message\";\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n-    \n \n     var_dump($msg);\n     \n      \n"
+                },
+                {
+                    "date": 1672930191472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n-    var_dump($msg);\n+\n     \n      \n     \n \n"
+                },
+                {
+                    "date": 1672930364906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,6 @@\n <?php\n-session_start();\n-if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n-    $message= $_GET['messageId'];\n-    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    $mod = \"SELECT * FROM messages WHERE id = $message\";\n-    $modifstmt= $db->prepare($mod);\n-    $modifstmt->execute();\n-    $msg= $modifstmt->fetchAll();\n-\n-\n-    \n      \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672930375925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <?php\n     \n      \n-    \n+   echo' \n \n\\ No newline at end of file\n-}\n"
+                },
+                {
+                    "date": 1672930381375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n <?php\n-    \n-     \n-   echo' \n+\n+\n+echo 'hello'; \n+\n"
+                },
+                {
+                    "date": 1672930857268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,4 @@\n <?php\n \n \n-echo 'hello'; \n \n"
+                },
+                {
+                    "date": 1672931281477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,17 @@\n <?php\n+session_start();\n+if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n+    \n+    $message= $_GET['messageId'];\n+    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+    $mod = \"SELECT * FROM messages WHERE id = $message\";\n+    $modifstmt= $db->prepare($mod);\n+    $modifstmt->execute();\n+    $msg= $modifstmt->fetchAll();\n \n \n+    \n+     \n+    \n \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672931464985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n \n-    \n+       \n      \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672931530496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n-\n-       \n+    \n+       var\n      \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672931539751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n     \n-       var\n+       var_dump($\n      \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672931560464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,10 @@\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll();\n \n-    \n-       var_dump($\n+\n+   \n      \n     \n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1672931574047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,8 @@\n     $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     $mod = \"SELECT * FROM messages WHERE id = $message\";\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n-    $msg= $modifstmt->fetchAll();\n-\n-\n-   \n-     \n+    $msg= $modifstmt->fetchAll(); \n     \n \n\\ No newline at end of file\n-}\n+}\n"
+                },
+                {
+                    "date": 1672931603930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,8 @@\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll(); \n     \n+   \n+    \n\\ No newline at end of file\n+}\n \n-}\n"
+                },
+                {
+                    "date": 1672931609775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,9 @@\n     $modifstmt->execute();\n     $msg= $modifstmt->fetchAll(); \n     \n    \n-    \n-}\n\\ No newline at end of file\n+\n+\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1672931618415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,6 +12,6 @@\n    \n \n \n }\n+html\n \n-\n"
+                },
+                {
+                    "date": 1672931625242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php\n+use function CommonMark\\Render\\HTML;\n session_start();\n if(isset($_GET['messageId']) && isset($_SESSION['user']['id'])){\n     \n     $message= $_GET['messageId'];\n@@ -12,6 +13,6 @@\n    \n \n \n }\n-html\n \n+\n"
+                },
+                {
+                    "date": 1672931632269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,6 +13,18 @@\n    \n \n \n }\n+?>\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Document</title>\n+</head>\n+<body>\n+    \n+</body>\n+</html>\n \n-\n"
+                },
+                {
+                    "date": 1672931643389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <title>Document</title>\n+    <title>modfier mon message </title>\n </head>\n <body>\n     \n </body>\n"
+                },
+                {
+                    "date": 1672931854292,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,10 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>modfier mon message </title>\n </head>\n <body>\n-    \n+label for=\"inputEmail\" class=\"form-label\">Adresse email</label>\n+<input type=\"email\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\">\n+<div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672931866946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>modfier mon message </title>\n </head>\n <body>\n-label for=\"inputEmail\" class=\"form-label\">Adresse email</label>\n+<label for=\"nam\" class=\"form-label\">Adresse email</label>\n <input type=\"email\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\">\n <div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672931872553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>modfier mon message </title>\n </head>\n <body>\n-<label for=\"nam\" class=\"form-label\">Adresse email</label>\n+<label for=\"content\" class=\"form-l\">Adresse email</label>\n <input type=\"email\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\">\n <div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672931880179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>modfier mon message </title>\n </head>\n <body>\n-<label for=\"content\" class=\"form-l\">Adresse email</label>\n+<label for=\"content\" class=\"form-label\">content</label>\n <input type=\"email\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\">\n <div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672931889751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n-<input type=\"email\" class=\"form-control\" id=\"inputEmail\" aria-describedby=\"emailHelp\">\n+<input type=\"text\" class=\"form-control\" id=\"imp\" aria-describedby=\"emailHelp\">\n <div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672931904718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n-<input type=\"text\" class=\"form-control\" id=\"imp\" aria-describedby=\"emailHelp\">\n-<div id=\"emailHelp\" class=\"form-text\">Votre e-mail ne sera pas diffusé.</div>\n+<input type=\"text\" class=\"form-control\"  aria-describedby=\"emailHelp\">\n+\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672931916351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,8 +25,9 @@\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n <input type=\"text\" class=\"form-control\"  aria-describedby=\"emailHelp\">\n+<button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n \n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672931949689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    \n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n"
+                },
+                {
+                    "date": 1672931958514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    \n+    <https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css>\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n"
+                },
+                {
+                    "date": 1672931975729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css>\n+    \n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n"
+                },
+                {
+                    "date": 1672931988724,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    \n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n"
+                },
+                {
+                    "date": 1672931998828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n <input type=\"text\" class=\"form-control\"  aria-describedby=\"emailHelp\">\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n-\n+<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672932030033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n-<input type=\"text\" class=\"form-control\"  aria-describedby=\"emailHelp\">\n+<input type=\"text\" class=\"form-control\" \">\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672932037023,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,10 @@\n     <title>modfier mon message </title>\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n-<input type=\"text\" class=\"form-control\" \">\n+<input type=\"text\" class=\"form-control\" >\n+<div\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672932043518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n <input type=\"text\" class=\"form-control\" >\n-<div\n+<div class\"envoyer\"\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672932048972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n </head>\n <body>\n <label for=\"content\" class=\"form-label\">content</label>\n <input type=\"text\" class=\"form-control\" >\n-<div class\"envoyer\"\n+<div class=\"envoyer\"></div>\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1672932056415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n <label for=\"content\" class=\"form-label\">content</label>\n <input type=\"text\" class=\"form-control\" >\n <div class=\"envoyer\">\n <button type=\"submit\" class=\"btn btn-primary\">Envoyer</button>\n-\n+<\n <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD\" crossorigin=\"anonymous\">\n </body>\n </html>\n \n"
+                },
+                {
+                    "date": 1672933020513,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     $modifstmt= $db->prepare($mod);\n     $modifstmt->execute();\n     $msg= $modifstmt->fetch();\n     \n-    $content = $msg['cont'];\n+    $content = $msg['conte'];\n \n    \n \n \n"
+                }
+            ],
+            "date": 1672929285130,
+            "name": "Commit-0",
+            "content": "?php\nsession_start();\n//on veut supprimer un message du coup un user pourra supprimerson message mais pas celui des autres users\n//mais l'utlilisateur pourra etre malin en rentrant dans l'url l'id d'un messsage d'un autre user et pourra le supprimer \n// pour cela nous allons interdire cet user de le faire \n// on doit verifier l'id du l'author de message si il 'est different de user connecté \n// dans le cas ou  l'id de l'author du message est <> que celui de la personne connecté l'utilisateur ne pourra pas le supprimer , \n// dans un autre cas si l'id de l'author du message =id personne connecté donc on valide la suppression de son propre messsage\n// donc pour recuperer l'id du message \n// on a recuper avec la \"\"\"\"\"variable superbeglobale\"\"\"\"\" GET qui permet de recuper le paramètre rentré dans l'url , pour cela on veut l'id du message alors \n// declare dans l'url messageid= $.message[id] \nif (isset($_GET[\"messageid\"]) && (isset($_SESSION['user']))) {\n    $userid = $_SESSION['user'];\n    $messageid = $_GET[\"messageid\"];\n    // donc la on a recupérer l'id du message, il nous reste a recupere l'author du message  pour les comparer .\n// nous allons se connecter a la base de donnés , en executant un requête qui va selectionner l'attribut  \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n    $sel = \"SELECT * FROM messages WHERE id = $messageid\";\n    $selectstmt = $db->prepare($sel);\n    $selectstmt->execute();\n    $message = $selectstmt->fetch();\n    $userId = $message['user_id'];\n    ;\n} else {\n\n    header('location:view/connection.phtml');\n    exit();\n}\n\nif ($userId == $_SESSION['user']['id']) {\n\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n    $sql = \" DELETE FROM messages WHERE id = \" . $messageid;\n    $deletstmt = $db->prepare($sql);\n    $deletstmt->execute();\n\n    if ($deletstmt) {\n        header(\"Location:view/chat.phtml\");\n        exit();\n    }\n} else {\n\n    header('location:view/chat.phtml?default=1');\n}"
+        }
+    ]
+}

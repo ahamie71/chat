@@ -1,0 +1,27 @@
+<?php
+session_start();
+
+$message= $_GET['user_id'];
+
+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');
+$rq = " DELETE FROM messages WHERE id = " . $messqge;
+$userid = $db->prepare($rq);
+$userid->execute();
+
+// si l'id du l'utilisateur qui a ecrit le message est different du user alors degage
+if(isset($message) && ($message) <> $_SESSION['user']['id']){
+
+}
+var_dump($message);
+die();
+
+
+
+$id = $_GET["id"];
+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');
+$sql = " DELETE FROM messages WHERE id = " . $id;
+$deletstmt = $db->prepare($sql);
+$deletstmt->execute();
+if ($deletstmt) {
+    header("Location:view/chat.phtml");
+}
