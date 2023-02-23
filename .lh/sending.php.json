@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 14,
+            "activePatchIndex": 15,
             "patches": [
                 {
                     "date": 1671705789180,
@@ -64,6 +64,10 @@
                 {
                     "date": 1673020272114,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n $user_id = $_SESSION['user']['id'];\n $content = $_POST['content'];\n \n $req = $db->prepare(\"INSERT INTO messages (content,user_id,createdAt) VALUES (:content,:user_id,:createdAt)\");\n-$req->execute(s\n+$req->execute(\n     array(\n         ':content' => $content,\n         ':user_id' => $_SESSION['user']['id'],\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n@@ -26,5 +26,5 @@\n         )\n );\n header('location:view/chat.phtml');\n \n-?>\n\\ No newline at end of file\n+?>\n"
+                },
+                {
+                    "date": 1674123150547,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n         ':createdAt' => $createdAt->format('Y-m-d H:i:s'),\n \n         )\n );\n-header('location:view/chat.phtml');\n+header('location:view/chat.php');\n \n ?>\n"
                 }
             ],
             "date": 1671705789180,

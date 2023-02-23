@@ -1,0 +1,274 @@
+{
+    "sourceFile": "view/profile.phtml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 64,
+            "patches": [
+                {
+                    "date": 1673513580352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673513599310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,12 @@\n-html\n\\ No newline at end of file\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Document</title>\n+</head>\n+<body>\n+    hello \n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673514273512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    hello \n+   \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515545093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,7 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-   \n+    \n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515553293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,23 @@\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>Document</title>\n </head>\n <body>\n-    \n+<html lang=\"fr\">\n+  <head>\n+    <meta charset=\"utf-8\">\n+   <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+﻿    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+    <title>Mon profil</title>\n+﻿  <head>\n+﻿  <body>\n+  ﻿  <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n+﻿    <div>Quelques informations sur vous : </div>\n+    ﻿<ul>\n+    ﻿  <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n+      <﻿li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n+      ﻿<li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>\n+    </ul>\n+  ﻿</body>\n+</html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515559338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n <html lang=\"fr\">\n   <head>\n     <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n-﻿    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n-﻿  <head>\n-﻿  <body>\n+ <head>\n+  <body>\n   ﻿  <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n ﻿    <div>Quelques informations sur vous : </div>\n     ﻿<ul>\n     ﻿  <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n"
+                },
+                {
+                    "date": 1673515565177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-  ﻿  <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n-﻿    <div>Quelques informations sur vous : </div>\n-    ﻿<ul>\n-    ﻿  <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n+   <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n+    <div>Quelques informations sur vous : </div>\n+    <ul>\n+      <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n       <﻿li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n       ﻿<li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>\n     </ul>\n   ﻿</body>\n"
+                },
+                {
+                    "date": 1673515571422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n    <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n-      <﻿li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n-      ﻿<li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>\n+      <li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n+      <li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>\n     </ul>\n   ﻿</body>\n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515577874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,8 @@\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n       <li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n-      <li>Votre compte a été crée le : <?= $afficher_profil['date_creation_compte'] ?></li>\n-    </ul>\n-  ﻿</body>\n+   \n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515587099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,13 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?= $afficher_profil['nom'] . $afficher_profil['prenom']; ?></h2>\n+   <h2>Voici le profil de <?= $afficher_profil['Name'] . $afficher_profil['prenom']; ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n-      <li>Votre mail est : <?= $afficher_profil['mail'] ?></li>\n+      \n    \n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515593373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?= $afficher_profil['Name'] . $afficher_profil['prenom']; ?></h2>\n+   <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n       \n"
+                },
+                {
+                    "date": 1673515604919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n    <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n+<li>Votre id est : <?= $afficher_profil['id'] ?></li>\n       \n    \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515611693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n    <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n-<li>Votre id est : <?= $afficher_profil['id'] ?></li>\n+<li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n       \n    \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515616853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n    <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n-<li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n+     <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n       \n    \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515622543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n    <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n-     <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n+      <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n       \n    \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515672035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?= $afficher_profil['Name'] ?></h2>\n+   <h2>Voici le profil de <?= $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n       <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673515679037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n   <body>\n    <h2>Voici le profil de <?= $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?= $afficher_profil['id'] ?></li>\n+      <li>Votre id est : <?= $profiel['id'] ?></li>\n       <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n       \n    \n </html>\n"
+                },
+                {
+                    "date": 1673515685171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n   <body>\n    <h2>Voici le profil de <?= $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?= $profiel['id'] ?></li>\n-      <li>Votre nom est : <?= $afficher_profil['name'] ?></li>\n+      <li>Votre id est : <?= $profil['id'] ?></li>\n+      <li>Votre nom est : <?= $['name'] ?></li>\n       \n    \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673515726012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n    <h2>Voici le profil de <?= $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $profil['id'] ?></li>\n-      <li>Votre nom est : <?= $['name'] ?></li>\n+      <li>Votre nom est : <?= $profil['name'] ?></li>\n       \n-   \n+     \n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673515732282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673515737429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-\n+<?p\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673515745412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n-<?p\n+<?php\n+\n+\n+?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673515750915,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n+ \n \n-\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1673515762954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n- \n+ include('t')\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673515771538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n- include('t')\n+ include('train/prof')\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673515778935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n- include('train/prof')\n+ include('train/profile.php\n+ ')\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673515788333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n <?php\n- include('train/profile.php\n- ')\n+ include('/profile.php')\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673515814233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n-<?php\n- include('/profile.php')\n+<\n \n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673516019062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n <\n-\n-?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516024237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<\n+<?php\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516033279,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php\n+ses\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516039022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-ses\n+session-\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516047385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n-session-\n+session-start()\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516056908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n-session-start()\n-\n+sesion_start()\n+?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516081426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,13 @@\n <?php\n-sesion_start()\n+\n+session_start();\n+include(\"nav.phtml\");\n+if (!isset($_SESSION['user'])) {\n+  header('Location:view/connection.phtml');\n+}\n ?>\n+?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516101011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,11 @@\n <?php\n \n session_start();\n include(\"nav.phtml\");\n-if (!isset($_SESSION['user'])) {\n-  header('Location:view/connection.phtml');\n-}\n+\n+\n ?>\n-?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673516121951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?= $profil['Name'] ?></h2>\n+   <h2>Voici le profil de < $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $profil['id'] ?></li>\n       <li>Votre nom est : <?= $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516127823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de < $profil['Name'] ?></h2>\n+   <h2>Voici le profil de <?php $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?= $profil['id'] ?></li>\n       <li>Votre nom est : <?= $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516133444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   <body>\n    <h2>Voici le profil de <?php $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?= $profil['id'] ?></li>\n+      <li>Votre id est : <= $profil['id'] ?></li>\n       <li>Votre nom est : <?= $profil['name'] ?></li>\n       \n      \n </html>\n"
+                },
+                {
+                    "date": 1673516139637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n   <body>\n    <h2>Voici le profil de <?php $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <= $profil['id'] ?></li>\n-      <li>Votre nom est : <?= $profil['name'] ?></li>\n+      <li>Votre id est : <?php= $profil['id'] ?></li>\n+      <li>Votre nom est : <?php $profil['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516150080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   <body>\n    <h2>Voici le profil de <?php $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?php= $profil['id'] ?></li>\n+      <li>Votre id est : <?php  $profil['id'] ?></li>\n       <li>Votre nom est : <?php $profil['name'] ?></li>\n       \n      \n </html>\n"
+                },
+                {
+                    "date": 1673516158142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php $profil['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php  $profil['id'] ?></li>\n       <li>Votre nom est : <?php $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516165960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,10 @@\n   <body>\n    <h2>Voici le profil de <?php  echo $profil['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?php  $profil['id'] ?></li>\n-      <li>Votre nom est : <?php $profil['name'] ?></li>\n+      <li>Votre id est : <?php echo  $profil['id'] ?></li>\n+      <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516201832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $profil['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $p['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516224686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $p['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $_['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516230901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $_['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $_SESSION[['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516236818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $_SESSION[['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $_SESSION['user']['Name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516253974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $_SESSION['user']['Name'] ?></h2>\n+   <h2>Voici le profil de <?php  echo $_SESSION['user']['ame'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516268299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici le profil de <?php  echo $_SESSION['user']['ame'] ?></h2>\n+   <h2>Voici Votre  <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516275390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n     <title>Mon profil</title>\n  <head>\n   <body>\n-   <h2>Voici Votre  <?php  echo $_SESSION['user']['name'] ?></h2>\n+   <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       <li>Votre id est : <?php echo  $profil['id'] ?></li>\n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n"
+                },
+                {
+                    "date": 1673516295723,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   <body>\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n-      <li>Votre id est : <?php echo  $profil['id'] ?></li>\n+      \n       <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n       \n      \n </html>\n"
+                },
+                {
+                    "date": 1673516303722,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $profil['name'] ?></li>\n+      <li>Votre nom est : <?php  echo $['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516309298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $['name'] ?></li>\n+      <li>Votre nom est : <?php  echo $_SESSION['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516318776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $_SESSION['name'] ?></li>\n+      <li>Votre nom est : <?php  echo $_SESSION[['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516326546,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $_SESSION[['name'] ?></li>\n+      <li>Votre nom est : <?php  echo $_SESSION['user['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516409590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n     <title>Document</title>\n </head>\n <body>\n <html lang=\"fr\">\n@@ -25,9 +26,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $_SESSION['user['name'] ?></li>\n+      <li>Votre nom est : <?php  echo $_SESSION['user']['name'] ?></li>\n       \n      \n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673516430374,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,7 @@\n       <li>Votre nom est : <?php  echo $_SESSION['user']['name'] ?></li>\n       \n      \n </html>\n+\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673516436242,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,8 @@\n       \n       <li>Votre nom est : <?php  echo $_SESSION['user']['name'] ?></li>\n       \n      \n-</html>\n \n+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673516667185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-      <li>Votre nom est : <?php  echo $_SESSION['user']['name'] ?></li>\n+    >\n       \n      \n \n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673516674818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,16 @@\n    <h2>Voici Votre Profile <?php  echo $_SESSION['user']['name'] ?></h2>\n     <div>Quelques informations sur vous : </div>\n     <ul>\n       \n-    >\n+<div class=\"container\">\n+            <label for=\"name\" class=\"form-label\">content</label>\n+            <input type=\"text\" class=\"form-control\" name=\"content\" value=\"<?= $msg['content'] ?>\" ;>\n+            <div class=\"envoyer\">\n+                <button type=\"submit\" class=\"btn btn-primary\" name=\"edit\">Modifier</button>\n+            </div>\n+    </form>\n+    </div>\n       \n      \n \n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673516681201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     <ul>\n       \n <div class=\"container\">\n             <label for=\"name\" class=\"form-label\">content</label>\n-            <input type=\"text\" class=\"form-control\" name=\"content\" value=\"<?= $msg['content'] ?>\" ;>\n+            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $g['content'] ?>\" ;>\n             <div class=\"envoyer\">\n                 <button type=\"submit\" class=\"btn btn-primary\" name=\"edit\">Modifier</button>\n             </div>\n     </form>\n"
+                },
+                {
+                    "date": 1673516692653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     <ul>\n       \n <div class=\"container\">\n             <label for=\"name\" class=\"form-label\">content</label>\n-            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $g['content'] ?>\" ;>\n+            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $[['content'] ?>\" ;>\n             <div class=\"envoyer\">\n                 <button type=\"submit\" class=\"btn btn-primary\" name=\"edit\">Modifier</button>\n             </div>\n     </form>\n"
+                },
+                {
+                    "date": 1673516698632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     <ul>\n       \n <div class=\"container\">\n             <label for=\"name\" class=\"form-label\">content</label>\n-            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $[['content'] ?>\" ;>\n+            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $['user']['content'] ?>\" ;>\n             <div class=\"envoyer\">\n                 <button type=\"submit\" class=\"btn btn-primary\" name=\"edit\">Modifier</button>\n             </div>\n     </form>\n"
+                },
+                {
+                    "date": 1673516706919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     <ul>\n       \n <div class=\"container\">\n             <label for=\"name\" class=\"form-label\">content</label>\n-            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $_SESIO['user']['name'] ?>\" ;>\n+            <input type=\"text\" class=\"form-control\" name=\"name\" value=\"<?= $_SESI['user']['name'] ?>\" ;>\n             <div class=\"envoyer\">\n                 <button type=\"submit\" class=\"btn btn-primary\" name=\"edit\">Modifier</button>\n             </div>\n     </form>\n"
+                },
+                {
+                    "date": 1673519289997,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n                 if (isset($_POST['modifiermonprenom'])) {\n                     if (isset($_SESSION['user']['name'])) {\n                         $name = $_SESSION['user']['name'];\n                         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-                        $sql = \"UPDATE user SET name= WHERE id = \".$_SESSION['user']['id'].\"\";\n+                        $sql = \"UPDATE user SET name=? WHERE id = \".$_SESSION['user']['id'].\"\";\n                         $stmt= $db->prepare($sql);\n                         $stmt->execute([$name]);\n                     }\n                     var_dump($stmt);\n"
+                }
+            ],
+            "date": 1673513580352,
+            "name": "Commit-0",
+            "content": "html"
+        }
+    ]
+}

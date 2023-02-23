@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 430,
+            "activePatchIndex": 498,
             "patches": [
                 {
                     "date": 1670515146503,
@@ -1728,6 +1728,278 @@
                 {
                     "date": 1673011501956,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-        header(\"location:view/chat.ph\");\n+        header(\"location:/chat.php\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n"
+                },
+                {
+                    "date": 1674120018061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     $_SESSION['user'] = $user;\n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-        header(\"location:/chat.php\");\n+        header(\"location:chat.php\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n@@ -26,5 +26,5 @@\n     }\n   }\n }\n \n-// }\n+\n"
+                },
+                {
+                    "date": 1674120033353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,4 +27,7 @@\n   }\n }\n \n \n+\n+\n+\n"
+                },
+                {
+                    "date": 1674120040021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,8 @@\n     }\n   }\n }\n \n+ \n \n \n \n-\n"
+                },
+                {
+                    "date": 1674120166606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,10 @@\n     }\n   }\n }\n \n+\n+\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674120882639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n     }\n   }\n }\n \n+if\n \n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674120958541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,8 @@\n     }\n   }\n }\n \n-if\n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674121171342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,11 @@\n     }\n   }\n }\n \n+\n+\n+\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674121189388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n session_start();\n if (isset($_POST['valider'])) {\n+\n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n     try {\n@@ -24,8 +25,12 @@\n         exit();\n       }\n     }\n   }\n+\n+\n+\n+  \n }\n \n \n \n"
+                },
+                {
+                    "date": 1674121196810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   }\n \n \n \n-  \n+  $conn\n }\n \n \n \n"
+                },
+                {
+                    "date": 1674121211497,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   }\n \n \n \n-  $conn\n+\n }\n \n \n \n"
+                },
+                {
+                    "date": 1674121484981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,10 +27,10 @@\n     }\n   }\n \n \n+   \n \n-\n }\n \n \n \n"
+                },
+                {
+                    "date": 1674121676511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       }\n     }\n   }\n \n-\n+$conn= $\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121684006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n       }\n     }\n   }\n \n-$conn= $\n+$conn= $_SESSION\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121692022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,11 @@\n       }\n     }\n   }\n \n-$conn= $_SESSION\n+$conn= $_SESSION['user'];\n+\n+if \n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121710199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   }\n \n $conn= $_SESSION['user'];\n \n-if \n+if ($conn\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121718903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n   }\n \n $conn= $_SESSION['user'];\n \n-if ($conn\n+if ($conn==\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121724121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,11 @@\n   }\n \n $conn= $_SESSION['user'];\n \n-if ($conn==\n+if ($conn==false) {\n+\n+  \n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121729795,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n $conn= $_SESSION['user'];\n \n if ($conn==false) {\n \n-  \n+  $conn=\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121736434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n $conn= $_SESSION['user'];\n \n if ($conn==false) {\n \n-  $conn=\n+  $conn= ++;\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121745543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n $conn= $_SESSION['user'];\n \n if ($conn==false) {\n \n-  $conn= ++;\n+  $conn ;\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121751035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n $conn= $_SESSION['user'];\n \n if ($conn==false) {\n \n-  $conn ;\n+  $conn = ;\n    \n \n }\n \n"
+                },
+                {
+                    "date": 1674121950105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,20 +26,11 @@\n       }\n     }\n   }\n \n-$conn= $_SESSION['user'];\n \n-if ($conn==false) {\n \n-  $conn = ;\n-   \n \n-}\n-\n-\n-\n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674122072359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,11 +26,12 @@\n       }\n     }\n   }\n \n+  \n+}\n \n \n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1674122738112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     $userStatement = $db->prepare($sql);\n     $userStatement->execute();\n     $user = $userStatement->fetch();\n     // if ($user != false) {\n-    $_SESSION['user'] = $user;\n+   \n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n         header(\"location:chat.php\");\n@@ -26,9 +26,9 @@\n       }\n     }\n   }\n \n-  \n+\n }\n \n \n  \n"
+                },
+                {
+                    "date": 1674122745271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n    \n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n+        \n         header(\"location:chat.php\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n"
+                },
+                {
+                    "date": 1674122751954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,8 @@\n    \n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n-        \n         header(\"location:chat.php\");\n         exit();\n       } else {\n         header(\"location:view/connection.phtml?fault=1\");\n@@ -27,9 +26,9 @@\n       }\n     }\n   }\n \n-\n+  \n }\n \n \n  \n"
+                },
+                {
+                    "date": 1674122774549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,11 +17,13 @@\n    \n     if ($user) {\n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n+        $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n+        \n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122782573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        \n+        // incrementer \n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122789119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        // incrementer \n+        // incrementer ma varibale \n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122795452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        // incrementer ma varibale \n+        // incrementer ma varibale loginATTEMP\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122801881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        // incrementer ma varibale loginATTEMP\n+        // incrementer ma varibale loginA\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122820401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        // incrementer ma varibale loginA\n+        \n+        // incrementer ma varibale loginAttempts\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n"
+                },
+                {
+                    "date": 1674122827138,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n+\n         // incrementer ma varibale loginAttempts\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n"
+                },
+                {
+                    "date": 1674122861161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       } else {\n         \n \n         // incrementer ma varibale loginAttempts\n-        header(\"location:view/connection.phtml?fault=1\");\n+        header(\"location:view/connection.ph?fault=1\");\n         exit();\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1674122890973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       } else {\n         \n \n         // incrementer ma varibale loginAttempts\n-        header(\"location:view/connection.ph?fault=1\");\n+        header(\"location:connection.php?fault=1\");\n         exit();\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1674122951308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       } else {\n         \n \n         // incrementer ma varibale loginAttempts\n-        header(\"location:connection.php?fault=1\");\n+        header(\"location:view/connection.php?fault=1\");\n         exit();\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1674123374115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,14 @@\n         exit();\n       } else {\n         \n \n+\n+\n+        \n+\n         // incrementer ma varibale loginAttempts\n-        header(\"location:view/connection.php?fault=1\");\n+        header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n     }\n   }\n"
+                },
+                {
+                    "date": 1674123643210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,15 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n+        \n \n \n \n-        \n \n+\n+\n         // incrementer ma varibale loginAttempts\n         header(\"location:view/connection.phtml?fault=1\");\n         exit();\n       }\n"
+                },
+                {
+                    "date": 1674123652307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        \n+        $\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123658931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $\n+        $_\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123665499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_\n+        $_SESSION\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123672702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION\n+        $_SESSION['user'][] = false;\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123680394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION['user'][] = false;\n+        $_SESSION['user']['LoginA'] = false;\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123687701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,11 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION['user']['LoginA'] = false;\n+        $_SESSION['user']['LoginAttempts'] = \n+        \n+        ;\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123696166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,11 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION['user']['LoginAttempts'] = \n+        $_SESSION['user']['LoginAttempts'] = ++\n         \n-        ;\n+        \n \n \n \n \n"
+                },
+                {
+                    "date": 1674123709312,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION['user']['LoginAttempts'] = ++\n+        $_SESSION['user']['LoginAttempts'] = ;\n         \n         \n \n \n"
+                },
+                {
+                    "date": 1674123718937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,10 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n         \n-        $_SESSION['user']['LoginAttempts'] = ;\n+\n+      \n         \n         \n \n \n"
+                },
+                {
+                    "date": 1674123732218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-        \n+         \n+       $logatt $_SESSION['user']['LoginAttempts'] = ;\n \n       \n         \n         \n"
+                },
+                {
+                    "date": 1674123738667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n          \n-       $logatt $_SESSION['user']['LoginAttempts'] = ;\n+       $login $_SESSION['user']['LoginAttempts'] = ;\n \n       \n         \n         \n"
+                },
+                {
+                    "date": 1674123744627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         header(\"location:chat.php\");\n         exit();\n       } else {\n          \n-       $login $_SESSION['user']['LoginAttempts'] = ;\n+       $loginAttempts=  $_SESSION['user']['LoginAttempts'] = ;\n \n       \n         \n         \n"
+                },
+                {
+                    "date": 1674123751561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,12 @@\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n       } else {\n-         \n-       $loginAttempts=  $_SESSION['user']['LoginAttempts'] = ;\n \n+        $loginAttempts = $_SESSION['user']['LoginAttempts'];\n+        \n+\n       \n         \n         \n \n"
+                },
+                {
+                    "date": 1674123757409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,11 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-        \n \n+        $\n+\n       \n         \n         \n \n"
+                },
+                {
+                    "date": 1674123762619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n \n-        $\n+        $login\n \n       \n         \n         \n"
+                },
+                {
+                    "date": 1674123774610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,10 +24,12 @@\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n \n-        $login\n+        $loginAttempts = 1;\n \n+        \n+\n       \n         \n         \n \n"
+                },
+                {
+                    "date": 1674123781043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,13 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-\n         $loginAttempts = 1;\n-\n         \n \n+\n+\n       \n         \n         \n \n"
+                },
+                {
+                    "date": 1674123792562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,13 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-        $loginAttempts = 1;\n-        \n+        var\n \n \n \n+\n       \n         \n         \n \n"
+                },
+                {
+                    "date": 1674123803548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,10 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-        var\n+        var_dump($loginAttempts);\n+        exit()\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123816913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n         var_dump($loginAttempts);\n-        exit()\n+        die()\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123907702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-        var_dump($loginAttempts);\n-        die()\n+        \n+        die();\n \n \n \n \n"
+                },
+                {
+                    "date": 1674123913839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n         exit();\n       } else {\n \n         $loginAttempts = $_SESSION['user']['LoginAttempts'];\n-        \n+        var_dump($loginAttempts);\n         die();\n \n \n \n"
+                },
+                {
+                    "date": 1674123932510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n session_start();\n if (isset($_POST['valider'])) {\n+  \n \n   if (isset($_POST['name']) && isset($_POST['password'])) {\n     $name = $_POST['name'];\n     $password = $_POST['password'];\n"
+                },
+                {
+                    "date": 1674123954655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,8 +16,10 @@\n     $user = $userStatement->fetch();\n     // if ($user != false) {\n    \n     if ($user) {\n+\n+      \n       $pass = $user['password'];\n       if (password_verify($password, $pass)) {\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n"
+                },
+                {
+                    "date": 1674123962038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,13 @@\n     if ($user) {\n \n       \n       $pass = $user['password'];\n+\n+      $loginAttempts = $_SESSION['user']['LoginAttempts'];\n+      var_dump($loginAttempts);\n+      die();\n+\n       if (password_verify($password, $pass)) {\n         $_SESSION['user'] = $user;\n         header(\"location:chat.php\");\n         exit();\n"
+                },
+                {
+                    "date": 1674124023849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n       \n       $pass = $user['password'];\n \n-      $loginAttempts = $_SESSION['user']['LoginAttempts'];\n+      $loginAttempts = $\n       var_dump($loginAttempts);\n       die();\n \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1674124030339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n       \n       $pass = $user['password'];\n \n-      $loginAttempts = $\n+      $loginAttempts = $user\n       var_dump($loginAttempts);\n       die();\n \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1674124037641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n       \n       $pass = $user['password'];\n \n-      $loginAttempts = $user\n+      $loginAttempts = $user['loginAttempts'];\n       var_dump($loginAttempts);\n       die();\n \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1674124079483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n \n       \n       $pass = $user['password'];\n \n-      $loginAttempts = $user[''];\n+      $loginAttempts = $user['LoginAttempts'];\n       var_dump($loginAttempts);\n       die();\n \n       if (password_verify($password, $pass)) {\n"
+                },
+                {
+                    "date": 1674124492516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         exit();\n       } else {\n \n         $loginAttempts = 1;\n-$log = $id_question + 1;\n+$loginAttempts = $id_question + 1;\n         \n         \n \n \n"
                 }
             ],
             "date": 1670515146503,

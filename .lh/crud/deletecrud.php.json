@@ -1,0 +1,106 @@
+{
+    "sourceFile": "crud/deletecrud.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 22,
+            "patches": [
+                {
+                    "date": 1674053932953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1674053938038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,9 @@\n-<?php`\n\\ No newline at end of file\n+<?php\n+\n+\n+session_start();\n+\n+if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n+    header('location:connection.phtml');\n+    exit; // important\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674053967591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,7 @@\n \n if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n     header('location:connection.phtml');\n     exit; // important\n-}\n\\ No newline at end of file\n+}\n+\n+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n"
+                },
+                {
+                    "date": 1674053975620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,7 @@\n     header('location:connection.phtml');\n     exit; // important\n }\n \n+\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+\n"
+                },
+                {
+                    "date": 1674053991529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,7 @@\n     header('location:connection.phtml');\n     exit; // important\n }\n \n-\n+$id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n"
+                },
+                {
+                    "date": 1674053999543,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,6 @@\n }\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+$sql = \"DELETE FROM `liste` WHERE `id`=:id;\";\n \n"
+                },
+                {
+                    "date": 1674054005843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,6 @@\n }\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$sql = \"DELETE FROM `liste` WHERE `id`=:id;\";\n+$sql = \"DELETE FROM `liste` WHERE `id`= $id\";\n \n"
+                },
+                {
+                    "date": 1674054019197,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,6 +9,7 @@\n }\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$sql = \"DELETE FROM `liste` WHERE `id`= $id\";\n+$sql = \"DELETE FROM user WHERE `id`= $id\";\n \n+\n"
+                },
+                {
+                    "date": 1674054026077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,7 @@\n }\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$sql = \"DELETE FROM user WHERE `id`= $id\";\n+$sql = \"DELETE FROM user WHERE id= $id \";\n \n \n"
+                },
+                {
+                    "date": 1674054031306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,6 +10,7 @@\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n+$\n \n \n"
+                },
+                {
+                    "date": 1674054036540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n-$\n+$deletstmt\n \n \n"
+                },
+                {
+                    "date": 1674054043803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n-$deletstmt\n+$deletstmt=$db\n \n \n"
+                },
+                {
+                    "date": 1674054050293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n-$deletstmt=$db\n+$deletstmt=$db->prepare()\n \n \n"
+                },
+                {
+                    "date": 1674054059579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,8 @@\n \n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n-$deletstmt=$db->prepare()\n+$deletstmt=$db->prepare($sql);\n+$dele\n \n \n"
+                },
+                {
+                    "date": 1674054070848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,8 @@\n $id = $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n-$dele\n+$deletstmt->execute();\n \n \n+\n"
+                },
+                {
+                    "date": 1674054076578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n+$result->\n \n \n-\n"
+                },
+                {
+                    "date": 1674054082016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n-$result->\n+$result=$\n \n \n"
+                },
+                {
+                    "date": 1674054088674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,7 +12,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n-$result=$\n+$result=$deletstmt->fetch();\n \n \n"
+                },
+                {
+                    "date": 1674054128350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,4 +15,5 @@\n $deletstmt->execute();\n $result=$deletstmt->fetch();\n \n \n+\n"
+                },
+                {
+                    "date": 1674054137842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,12 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n-$result=$deletstmt->fetch();\n \n+if ($deletstmt) {\n+    header(\"Location:view/.phtml\");\n+    exit();\n+}\n \n \n+\n"
+                },
+                {
+                    "date": 1674054158475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n \n if ($deletstmt) {\n-    header(\"Location:view/.phtml\");\n+    header('location:./../view/admin.phtml');\n     exit();\n }\n \n \n"
+                },
+                {
+                    "date": 1674055270796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,5 @@\n <?php\n-\n-\n session_start();\n \n if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n     header('location:connection.phtml');\n"
+                },
+                {
+                    "date": 1674057772881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n $sql = \"DELETE FROM user WHERE id= $id \";\n $deletstmt=$db->prepare($sql);\n $deletstmt->execute();\n \n+\n if ($deletstmt) {\n     header('location:./../view/admin.phtml');\n     exit();\n }\n"
+                }
+            ],
+            "date": 1674053932953,
+            "name": "Commit-0",
+            "content": "<?php`"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 18,
+            "activePatchIndex": 22,
             "patches": [
                 {
                     "date": 1671457546270,
@@ -80,6 +80,22 @@
                 {
                     "date": 1671613108940,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,7 @@\n <?php\n- session_start();\n-\n+session_start();\n session_destroy();\n-header('location:./view/connection.phtml');\n+header('location:./view/home.phtml');\n exit();\n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673624969195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n session_destroy();\n-header('location:./view/home.phtml');\n+header('location:home.phtml');\n exit();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673624983391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n session_destroy();\n-header('location:home.phtml');\n+header('location:./view/home.phtml');\n exit();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674123294624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n session_destroy();\n-header('location:./view/home.phtml');\n+header('location:./../view/home.phtml');\n exit();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1674123309755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n session_start();\n session_destroy();\n-header('location:./../view/home.phtml');\n+header('location:./view/home.phtml');\n exit();\n \n ?>\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1671457546270,

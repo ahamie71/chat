@@ -1,0 +1,426 @@
+{
+    "sourceFile": "crud/modifiercrud.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 102,
+            "patches": [
+                {
+                    "date": 1673605431145,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673605455044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,16 @@\n      header('Location: view/connection.phtml'); \n      exit; \n    }\n     \n-   \n \n+\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n  \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-\n-   \n      var_dump($edit);\n die();\n     \n \n"
+                },
+                {
+                    "date": 1673605464307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n      exit; \n    }\n     \n \n-\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n  \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673605539220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,17 +5,16 @@\n      header('Location: view/connection.phtml'); \n      exit; \n    }\n     \n-\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n  \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n      var_dump($edit);\n-die();\n+die();    \n     \n \n \n \n"
+                },
+                {
+                    "date": 1673605576520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n    session_start(); \n-\n+   \n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n@@ -12,9 +12,9 @@\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n      var_dump($edit);\n-die();    \n+    die();    \n     \n \n \n \n"
+                },
+                {
+                    "date": 1673606273994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n+\n    session_start(); \n-   \n+\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n@@ -15,10 +16,5 @@\n      var_dump($edit);\n     die();    \n     \n \n-\n-\n-\n-\n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673606279822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,6 @@\n      var_dump($edit);\n     die();    \n     \n \n-?>\n\\ No newline at end of file\n+?>\n+\n"
+                },
+                {
+                    "date": 1673606287097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,6 +16,4 @@\n      var_dump($edit);\n     die();    \n     \n \n-?>\n-\n"
+                },
+                {
+                    "date": 1673606292889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,4 +16,6 @@\n      var_dump($edit);\n     die();    \n     \n \n+?>\n+\n"
+                },
+                {
+                    "date": 1673606300527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,4 +18,7 @@\n     \n \n ?>\n \n+<?php\n+\n+?<\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673606305700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,5 +20,10 @@\n ?>\n \n <?php\n \n-?<\n\\ No newline at end of file\n+\n+\n+\n+\n+\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673606311864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n ?>\n \n <?php\n \n+ \n \n \n \n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673606697667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n ?>\n \n <?php\n \n+\n  \n \n \n \n"
+                },
+                {
+                    "date": 1673606957804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-     var_dump($edit);\n+    $id;\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673606964129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    $id;\n+    $id=$edit;\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673606988391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    $id=$edit;\n+    $id=$edit['user'];\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673606993825,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    $id=$edit['user'];\n+    $id=$edit['user']['id'];\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607000083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    $id=$edit['user']['id'];\n+    $id= $edit['user']['id'];\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607010498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    $id= $edit['user']['id'];\n+     var_dump($edit);\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607058304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-     var_dump($edit);\n+   ar_dump($edit);  v\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607101760,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-   ar_dump($edit);  v\n+    var_dump($edit);\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607116037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n      exit; \n    }\n     \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- \n+    \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n"
+                },
+                {
+                    "date": 1673607489953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n      exit; \n    }\n     \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    \n+    id\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n"
+                },
+                {
+                    "date": 1673607495038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,11 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n+    id\n+   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n-   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-    id\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n"
+                },
+                {
+                    "date": 1673607500585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-    id\n+    \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673607507306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    var_dump($edit);\n+    var_dump($_SESSION);\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607516268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    var_dump($_SESSION);\n+    var_dump($_SESSION['user']['id']);\n     die();    \n     \n \n ?>\n"
+                },
+                {
+                    "date": 1673607610069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-    \n+     `\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673607616074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-     `\n+     id =$\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673607622293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-     id =$\n+     id =$_GET['id'];\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673607627602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-     id =$_GET['id'];\n+     id = $_GET['id'];\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673607636616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-     id = $_GET['id'];\n+     $id = $_GET['id'];\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673608034327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n    if(!isset($_SESSION['user']['id'])){ \n      header('Location: view/connection.phtml'); \n      exit; \n    }\n-     $id = $_GET['id'];\n+    \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n     \n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n"
+                },
+                {
+                    "date": 1673608081735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,9 @@\n     $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n     $userstmt= $db->prepare($sql);\n     $userstmt->execute();\n     $edit = $userstmt->fetchAll();\n-    var_dump($_SESSION['user']['id']);\n-    die();    \n+        \n     \n \n ?>\n \n"
+                },
+                {
+                    "date": 1673608212090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,15 +7,10 @@\n      exit; \n    }\n     \n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+   \n     \n-    $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n-    $userstmt= $db->prepare($sql);\n-    $userstmt->execute();\n-    $edit = $userstmt->fetchAll();\n-        \n-    \n \n ?>\n \n <?php\n"
+                },
+                {
+                    "date": 1673608281364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,75 @@\n <?php\n+ session_start();\n+ include(\"nav.phtml\");\n+ if (!isset($_SESSION['user'])) {\n+     header('Location:view/connection.phtml');\n+ }\n+ ?>\n+ <!DOCTYPE html>\n+ <html lang=\"en\">\n+ \n+ <head>\n+     <meta charset=\"UTF-8\">\n+     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n+         integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n+     <title>Document</title>\n+ </head>\n+ \n+ <body>\n+     <html lang=\"fr\">\n+ \n+     <head>\n+         <meta charset=\"utf-8\">\n+         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+         <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n+         <title>Mon profil</title>\n+         <head>\n+         <body>\n+             <h2 class =\"text-center m-3\">  Mon Profile </h2>\n+           \n+             \n+               <form action=\"\" method=\"post\">\n+                 <div class=\"container\">\n+                     \n+                         <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n+                         <input type=\"text\" class=\"form-control\" name=\"name\"\n+                             value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n+                         <div class=\"envoyer mt-3\">\n+                             <button type=\"submit\" class=\"btn btn-success\" name=\"modifiermonprenom\">Modifier mon\n+                                 prenom</button>\n+                         </div>\n+                     </form>\n+                 </div>\n+                 <?php\n+                 if (isset($_POST['modifiermonprenom'])) {\n+                     if (isset($_SESSION['user']['name'])) {\n+                         \n+                         $name = $_POST['name'];\n+                         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+                         $change = $db->prepare(\" UPDATE  user SET name = :name WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+                         $change->execute(\n+                             array(\n+                                 ':name' => $name,\n+                             )\n+                         );\n+                     }\n+                     session_destroy();\n+                     header('location:./view/connection.phtml');\n+                     exit();\n+ \n+                 }\n+                 ?>\n+                 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js\"\n+                     integrity=\"sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM\"\n+                     crossorigin=\"anonymous\"></script>\n+         </body>\n+ \n+     </html>\n \n-   session_start(); \n \n-   if(!isset($_SESSION['user']['id'])){ \n-     header('Location: view/connection.phtml'); \n-     exit; \n-   }\n-    \n-   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-   \n-    \n-\n-?>\n-\n-<?php\n-\n-\n  \n \n \n \n"
+                },
+                {
+                    "date": 1673608296165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n      <head>\n          <meta charset=\"utf-8\">\n          <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n-         <title>Mon profil</title>\n+        \n          <head>\n          <body>\n              <h2 class =\"text-center m-3\">  Mon Profile </h2>\n            \n"
+                },
+                {
+                    "date": 1673608303409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n         \n          <head>\n          <body>\n-             <h2 class =\"text-center m-3\">  Mon Profile </h2>\n+             <h2 class =\"text-center m-3\">  Modic </h2>\n            \n              \n                <form action=\"\" method=\"post\">\n                  <div class=\"container\">\n"
+                },
+                {
+                    "date": 1673608308904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n         \n          <head>\n          <body>\n-             <h2 class =\"text-center m-3\">  Modic </h2>\n+             <h2 class =\"text-center m-3\">  Modification </h2>\n            \n              \n                <form action=\"\" method=\"post\">\n                  <div class=\"container\">\n"
+                },
+                {
+                    "date": 1673608328333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,12 @@\n                      \n                          <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n+\n+                             <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n+                         <input type=\"text\" class=\"form-control\" name=\"name\"\n+                             value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n                          <div class=\"envoyer mt-3\">\n                              <button type=\"submit\" class=\"btn btn-success\" name=\"modifiermonprenom\">Modifier mon\n                                  prenom</button>\n                          </div>\n"
+                },
+                {
+                    "date": 1673608347717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,8 +36,12 @@\n                          <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n \n+                             <label for=\"role\" class=\"form-label\"><strong>Name</strong></label>\n+                         <input type=\"text\" class=\"form-control\" name=\"name\"\n+                             value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n+\n                              <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n                          <div class=\"envoyer mt-3\">\n"
+                },
+                {
+                    "date": 1673608354224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n                          <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n \n-                             <label for=\"role\" class=\"form-label\"><strong>Name</strong></label>\n+                             <label for=\"role\" class=\"form-label\"><strong>Rôle</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n \n                              <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n"
+                },
+                {
+                    "date": 1673608361603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n \n                              <label for=\"role\" class=\"form-label\"><strong>Rôle</strong></label>\n-                         <input type=\"text\" class=\"form-control\" name=\"name\"\n-                             value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n+                         <input type=\"text\" class=\"form-control\" name=\"role\"\n+                             value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n                              <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"name\"\n                              value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n"
+                },
+                {
+                    "date": 1673608377442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,11 +40,9 @@\n                              <label for=\"role\" class=\"form-label\"><strong>Rôle</strong></label>\n                          <input type=\"text\" class=\"form-control\" name=\"role\"\n                              value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n-                             <label for=\"name\" class=\"form-label\"><strong>Name</strong></label>\n-                         <input type=\"text\" class=\"form-control\" name=\"name\"\n-                             value=\"<?php echo $_SESSION['user']['name'] ?>\" ;>\n+                             \n                          <div class=\"envoyer mt-3\">\n                              <button type=\"submit\" class=\"btn btn-success\" name=\"modifiermonprenom\">Modifier mon\n                                  prenom</button>\n                          </div>\n"
+                },
+                {
+                    "date": 1673608384855,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                              value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n                              \n                          <div class=\"envoyer mt-3\">\n-                             <button type=\"submit\" class=\"btn btn-success\" name=\"modifiermonprenom\">Modifier mon\n+                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier mon\n                                  prenom</button>\n                          </div>\n                      </form>\n                  </div>\n"
+                },
+                {
+                    "date": 1673608392338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                              value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n                              \n                          <div class=\"envoyer mt-3\">\n-                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier mon\n+                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier \n                                  prenom</button>\n                          </div>\n                      </form>\n                  </div>\n"
+                },
+                {
+                    "date": 1673608397558,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,10 @@\n                              value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n                              \n                          <div class=\"envoyer mt-3\">\n-                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier \n-                                 prenom</button>\n+                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier\n+                                 </button>\n                          </div>\n                      </form>\n                  </div>\n                  <?php\n"
+                },
+                {
+                    "date": 1673608417275,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,9 +42,9 @@\n                              value=\"<?php echo $_SESSION['user']['role'] ?>\" ;>\n \n                              \n                          <div class=\"envoyer mt-3\">\n-                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Modifier\n+                             <button type=\"submit\" class=\"btn btn-success\" name=\"mofification\">Enregistrer les modification\n                                  </button>\n                          </div>\n                      </form>\n                  </div>\n"
+                },
+                {
+                    "date": 1673608446679,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                      if (isset($_SESSION['user']['name'])) {\n                          \n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-                         $change = $db->prepare(\" UPDATE  user SET name = :name WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+                         $change = $db->prepare(\" UPDATE  user SET name = :name, WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n                              )\n"
+                },
+                {
+                    "date": 1673608456873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                      if (isset($_SESSION['user']['name'])) {\n                          \n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-                         $change = $db->prepare(\" UPDATE  user SET name = :name, WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+                         $change = $db->prepare(\" UPDATE  user SET name = :name,role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n                              )\n"
+                },
+                {
+                    "date": 1673608463460,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n                      if (isset($_SESSION['user']['name'])) {\n                          \n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-                         $change = $db->prepare(\" UPDATE  user SET name = :name,role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+                         $change = $db->prepare(\" UPDATE  user SET name = :name,role= WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n                              )\n"
+                },
+                {
+                    "date": 1673608485420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,12 +50,12 @@\n                  </div>\n                  <?php\n                  if (isset($_POST['modifiermonprenom'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         \n+                         $\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-                         $change = $db->prepare(\" UPDATE  user SET name = :name,role= WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+                         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n                              )\n"
+                },
+                {
+                    "date": 1673608493406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,11 +48,11 @@\n                          </div>\n                      </form>\n                  </div>\n                  <?php\n-                 if (isset($_POST['modifiermonprenom'])) {\n+                 if (isset($_POST['modification'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         $\n+                         $role\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n"
+                },
+                {
+                    "date": 1673608499434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n                  </div>\n                  <?php\n                  if (isset($_POST['modification'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         $role\n+                         $role=\"\"\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n"
+                },
+                {
+                    "date": 1673608506651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n                  </div>\n                  <?php\n                  if (isset($_POST['modification'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         $role=\"\"\n+                         $role=$_POS\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n"
+                },
+                {
+                    "date": 1673608512585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n                  </div>\n                  <?php\n                  if (isset($_POST['modification'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         $role=$_POS\n+                         $role=$_POST[]\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n"
+                },
+                {
+                    "date": 1673608520862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,15 +50,16 @@\n                  </div>\n                  <?php\n                  if (isset($_POST['modification'])) {\n                      if (isset($_SESSION['user']['name'])) {\n-                         $role=$_POST[]\n+                         $role=$_POST['role'];\n                          $name = $_POST['name'];\n                          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n+                                 'role'\n                              )\n                          );\n                      }\n                      session_destroy();\n"
+                },
+                {
+                    "date": 1673608539430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n                          $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n                          $change->execute(\n                              array(\n                                  ':name' => $name,\n-                                 'role'\n+                                 'role' => $role,\n                              )\n                          );\n                      }\n                      session_destroy();\n@@ -80,5 +80,4 @@\n \n \n \n \n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673608548117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n  session_start();\n- include(\"nav.phtml\");\n+ include(\"/nav.phtml\");\n  if (!isset($_SESSION['user'])) {\n      header('Location:view/connection.phtml');\n  }\n  ?>\n"
+                },
+                {
+                    "date": 1673608585167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,7 @@\n <?php\n  session_start();\n- include(\"/nav.phtml\");\n- if (!isset($_SESSION['user'])) {\n-     header('Location:view/connection.phtml');\n- }\n+ \n  ?>\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  \n"
+                },
+                {
+                    "date": 1673608722856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,10 @@\n <?php\n  session_start();\n- \n+ include(\"view/nav.phtml\");\n+ if (!isset($_SESSION['user'])) {\n+     header('Location:view/connection.phtml');\n+ }\n  ?>\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  \n"
+                },
+                {
+                    "date": 1673608727999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n  session_start();\n- include(\"view/nav.phtml\");\n+ \n  if (!isset($_SESSION['user'])) {\n      header('Location:view/connection.phtml');\n  }\n  ?>\n"
+                },
+                {
+                    "date": 1673608776684,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,10 @@\n  \n  if (!isset($_SESSION['user'])) {\n      header('Location:view/connection.phtml');\n  }\n+\n+ \n  ?>\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  \n"
+                },
+                {
+                    "date": 1673608782076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,30 @@\n  if (!isset($_SESSION['user'])) {\n      header('Location:view/connection.phtml');\n  }\n \n- \n+\n+\n+ if (isset($_POST['modification'])) {\n+     if (isset($_SESSION['user']['name'])) {\n+         $role=$_POST['role'];\n+         $name = $_POST['name'];\n+         $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+         $change->execute(\n+             array(\n+                 ':name' => $name,\n+                 'role' => $role,\n+             )\n+         );\n+     }\n+     session_destroy();\n+     header('location:./view/connection.phtml');\n+     exit();\n+\n+ }\n  ?>\n+ ?>\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  \n  <head>\n"
+                },
+                {
+                    "date": 1673608812287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php\n+\n  session_start();\n  \n  if (!isset($_SESSION['user'])) {\n      header('Location:view/connection.phtml');\n@@ -25,9 +26,9 @@\n      exit();\n \n  }\n  ?>\n- ?>\n+ \n  <!DOCTYPE html>\n  <html lang=\"en\">\n  \n  <head>\n"
+                },
+                {
+                    "date": 1673608819166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,10 @@\n  }\n \n \n \n+ $id=\n+\n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673608824553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  }\n \n \n \n- $id=\n+ $id= $_GET\n \n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n"
+                },
+                {
+                    "date": 1673608831170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,16 @@\n  }\n \n \n \n- $id= $_GET\n+ $id= $_GET['id'];\n \n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']['id'] . \"\");\n+         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']s\"\");\n          $change->execute(\n              array(\n                  ':name' => $name,\n                  'role' => $role,\n"
+                },
+                {
+                    "date": 1673608842648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . $_SESSION['user']s\"\");\n+         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . \"\");\n          $change->execute(\n              array(\n                  ':name' => $name,\n                  'role' => $role,\n"
+                },
+                {
+                    "date": 1673608853191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = \" . \"\");\n+         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = :$id\");\n          $change->execute(\n              array(\n                  ':name' => $name,\n                  'role' => $role,\n"
+                },
+                {
+                    "date": 1673608887178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,14 +9,17 @@\n \n \n  $id= $_GET['id'];\n \n+\n+ \n+\n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n          $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = :$id\");\n+         $change = $db->prepare(\" UPDATE  user SET name = :name,role=:role WHERE id = $id\");\n          $change->execute(\n              array(\n                  ':name' => $name,\n                  'role' => $role,\n"
+                },
+                {
+                    "date": 1673608897770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,11 @@\n \n \n  $id= $_GET['id'];\n \n-\n  \n \n+\n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673608907366,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n \n \n \n  $id= $_GET['id'];\n+ $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n  \n \n \n"
+                },
+                {
+                    "date": 1673608913881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+ $sql=\n \n  \n \n \n"
+                },
+                {
+                    "date": 1673608924605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\n+ $sql=')'\n \n  \n \n \n"
+                },
+                {
+                    "date": 1673608929937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=')'\n-\n+ $sql=\"INSERT INTO train\"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608939214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"INSERT INTO train\"\n+ $sql=\"SELECT INTO \"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608948021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"SELECT INTO \"\n+ $sql=\"SELECT FROM user WHERE\"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608953172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"SELECT FROM user WHERE\"\n+ $sql=\"SELECT FROM user WHERE id\"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608959103,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"SELECT FROM user WHERE id\"\n+ $sql=\"SELECT*FROM user WHERE id=\"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608965264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"SELECT*FROM user WHERE id=\"\n+ $sql=\"SELECT*FROM user WHERE id= $id\"\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608971577,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n \n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n- $sql=\"SELECT*FROM user WHERE id= $id\"\n+$sql = \"SELECT*FROM user WHERE id= $id\";\n+$\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608978329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n-$\n+$user\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608984738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n-$user\n+$userid=$d\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608993237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n \n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n-$userid=$d\n+$userid=$db->prepare($sql);\n+\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673608999219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n-\n+$useri\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609007249,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n-$useri\n+$userid->excute()\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609013719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,10 @@\n  $id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n-$userid->excute()\n+$userid->excute();\n+$user\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609022700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,14 @@\n  }\n \n \n \n- $id= $_GET['id'];\n+$id= $_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n-$user\n+$user=\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609032620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,13 +8,13 @@\n \n \n \n $id= $_GET['id'];\n- $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n-$user=\n+$user= \n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609039878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n-$user= \n+$user= $user->user\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609048171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n-$user= $user->user\n+$user= $userod->fetc\n  \n \n \n  if (isset($_POST['modification'])) {\n"
+                },
+                {
+                    "date": 1673609055645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,10 +12,10 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n-$user= $userod->fetc\n- \n+$user= $userod->fetchAll();\n+   \n \n \n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n"
+                },
+                {
+                    "date": 1673609062861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,12 @@\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->excute();\n $user= $userod->fetchAll();\n-   \n \n \n+\n+\n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673609069298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n $userid=$db->prepare($sql);\n $userid->excute();\n $user= $userod->fetchAll();\n \n+var_dump()\n \n \n-\n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n          $role=$_POST['role'];\n          $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673609075137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n $userid=$db->prepare($sql);\n $userid->excute();\n $user= $userod->fetchAll();\n \n-var_dump()\n+var_dump($user);\n \n \n  if (isset($_POST['modification'])) {\n      if (isset($_SESSION['user']['name'])) {\n"
+                },
+                {
+                    "date": 1673609087462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n $id= $_GET['id'];\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n-$userid->excute();\n+$userid->execute();\n $user= $userod->fetchAll();\n \n var_dump($user);\n \n"
+                },
+                {
+                    "date": 1673609101206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  }\n \n \n \n-$id= $_GET['id'];\n+$id= \n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->execute();\n"
+                },
+                {
+                    "date": 1673609109654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  }\n \n \n \n-$id= \n+$id= $_SESSION\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->execute();\n"
+                },
+                {
+                    "date": 1673609115034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  }\n \n \n \n-$id= $_SESSION\n+$id= $_SESSION['user']\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->execute();\n"
+                },
+                {
+                    "date": 1673609120122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n  }\n \n \n \n-$id= $_SESSION['user']\n+$id= $_SESSION['user'][]\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->execute();\n"
+                },
+                {
+                    "date": 1673609130913,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $sql = \"SELECT*FROM user WHERE id= $id\";\n $userid=$db->prepare($sql);\n $userid->execute();\n-$user= $userd->fetchAll();\n+$user= $userid->fetchAll();\n \n var_dump($user);\n \n \n"
+                },
+                {
+                    "date": 1673614211649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n  $id=$_GET['id'];\n  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n  $sql=\"SELECT * FROM user WHERE id = $id\";\n  $sqlstmt = $db->prepare($sql);\n- $sqlstmt\n+ $sqlstmt=\n  \n  \n \n \n"
+                }
+            ],
+            "date": 1673605431145,
+            "name": "Commit-0",
+            "content": "<?php\n   session_start(); \n\n   if(!isset($_SESSION['user']['id'])){ \n     header('Location: view/connection.phtml'); \n     exit; \n   }\n    \n   \n\n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n    $sql = \"SELECT * FROM  user WHERE id = \".$_SESSION['user']['id'].\"\";\n    $userstmt= $db->prepare($sql);\n    $userstmt->execute();\n    $edit = $userstmt->fetchAll();\n\n   \n     var_dump($edit);\ndie();\n    \n\n\n\n\n\n\n?>"
+        }
+    ]
+}

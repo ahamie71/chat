@@ -1,0 +1,53 @@
+<?php
+
+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');
+$req = "SELECT * FROM user ";
+$recupererstmt=$db->prepare($req);
+$recupererstmt->execute();
+$user=$recupererstmt->fetchAll();
+
+var_dump($result);
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+</head>
+<body>  
+<body>
+
+<h1>Liste des produits</h1>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>password</th>
+        <th>role</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+    <?php
+        foreach($result as $produit){
+    ?>
+            <tr>
+                <td><?= $produit['id'] ?></td>
+                <td><?= $produit['produit'] ?></td>
+                <td><?= $produit['prix'] ?></td>
+                <td><?= $produit['nombre'] ?></td>
+                <td><a href="details.php?id=<?= $produit['id'] ?>">Voir</a>  <a href="edit.php?id=<?= $produit['id'] ?>">Modifier</a>  <a href="delete.php?id=<?= $produit['id'] ?>">Supprimer</a></td>
+            </tr>
+    <?php
+        }
+    ?>
+    </tbody>
+</table>
+<a href="add.php">Ajouter</a>
+</body>
+</html>
+</body>
+</html>

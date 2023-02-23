@@ -1,0 +1,178 @@
+{
+    "sourceFile": "crud/ajoutercrud.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 40,
+            "patches": [
+                {
+                    "date": 1673599253489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673599261682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,6 @@\n-<?\n\\ No newline at end of file\n+<?php\n+  \n+  \n+\n+\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600374875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,10 @@\n <?php\n-  \n-  \n+  f (isset($_POST['register'])) {\n \n+    if (isset($_POST['name']) && isset($_POST['password'])) {\n+        $name = $_POST['name'];\n+        $password = $_POST['password'];\n \n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600384038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <?php\n-  f (isset($_POST['register'])) {\n+  if (isset($_POST['register'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n \n+    }\n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600393870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n+        \n \n-    }\n+    \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600400283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        \n+        $role= \n \n     \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600407319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        $role= \n+        $role= $_POST\n \n     \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600413164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \n     if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        $role= $_POST\n+        $role= $_POST['role'];\n \n     \n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600439584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n   if (isset($_POST['register'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password'])) {\n+    if (isset($_POST['name']) && isset($_POST['password']) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role'];\n \n"
+                },
+                {
+                    "date": 1673600446204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n   if (isset($_POST['register'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password']) {\n+    if (isset($_POST['name']) && isset($_POST['password'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role'];\n \n"
+                },
+                {
+                    "date": 1673600454714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,8 @@\n <?php\n   if (isset($_POST['register'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password'])) {\n+    if (isset($_POST['name']) && isset($_POST['password'])){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role'];\n-\n-    \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600461025,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n-  if (isset($_POST['register'])) {\n+  if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password'])){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n"
+                },
+                {
+                    "date": 1673600473061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,6 +3,5 @@\n \n     if (isset($_POST['name']) && isset($_POST['password'])){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        $role= $_POST['role'];\n-?>\n\\ No newline at end of file\n+        $role= $_POST['role']\n"
+                },
+                {
+                    "date": 1673600483821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   if (isset($_POST['submit'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password'])){\n+    if (isset($_POST['name']) && isset($_POST['password']) && ){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role']\n"
+                },
+                {
+                    "date": 1673600489520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   if (isset($_POST['submit'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password']) && ){\n+    if (isset($_POST['name']) && isset($_POST['password']) && isset){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role']\n"
+                },
+                {
+                    "date": 1673600495642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   if (isset($_POST['submit'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password']) && isset){\n+    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role)){\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role']\n"
+                },
+                {
+                    "date": 1673600502996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   if (isset($_POST['submit'])) {\n \n-    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role)){\n+    if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role= $_POST['role']\n"
+                },
+                {
+                    "date": 1673600511324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <?php\n-  if (isset($_POST['submit'])) {\n+  if(isset($_POST['submit'])) {\n \n     if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        $role= $_POST['role']\n+        $role= $_POST['role'];\n+    }\n+    \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600516372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n <?php\n-  if(isset($_POST['submit'])) {\n+if (isset($_POST['submit'])) {\n \n-    if(isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n+    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n-        $role= $_POST['role'];\n\\ No newline at end of file\n+        $role = $_POST['role'];\n+\n+\n+        \n     }\n-    \n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600571093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,7 @@\n         $role = $_POST['role'];\n \n \n         \n+\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600579910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,24 @@\n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n         $password = $_POST['password'];\n         $role = $_POST['role'];\n+        \n+        $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+            $req = $db->prepare(\"INSERT INTO user (name,password,role) VALUES (:name,:password,:role)\");\n+            $req->execute(\n+                array(\n+                    ':name' => $name,\n+                    ':password' => $pass,\n+                    ':role' => $role\n+                )\n+            );\n+            header('location:view/inscription.phtml?success=1');\n+            exit();\n+        } else {\n+            header(\"Location:view/inscription.phtml?error=3\");\n+            \n \n \n-        \n \n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673600590713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,9 @@\n                     ':password' => $pass,\n                     ':role' => $role\n                 )\n             );\n-            header('location:view/inscription.phtml?success=1');\n-            exit();\n-        } else {\n-            header(\"Location:view/inscription.phtml?error=3\");\n-            \n+           \n \n \n \n     }\n"
+                },
+                {
+                    "date": 1673600896122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,9 @@\n+\n+\n+\n+\n+\n <?php\n if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n@@ -14,9 +19,8 @@\n                     ':password' => $pass,\n                     ':role' => $role\n                 )\n             );\n-           \n \n \n \n     }\n"
+                },
+                {
+                    "date": 1673600979533,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,96 @@\n \n+<!-- Button trigger modal -->\n+<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n+  Ajouter un user\n+</button>\n \n+<!-- Modal -->\n+<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog modal-lg\">\n+    <div class=\"modal-content\">\n+      <div class=\"modal-header\">\n+        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n+      </div>\n+      <div class=\"modal-body\">\n+     \n+  \n+    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n+      <div class=\"col-lg-12 col-xl-11\">\n+        <div class=\"card text-black\">\n+          <div class=\"card-body p-md-5\">\n+            <div class=\"row justify-content-center\">\n+              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n+                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n+                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n \n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n+                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n+                    </div>\n+                  </div>\n+\n+                  \n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n+                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n+                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n+                    </div>\n+                  </div>\n+\n+                  \n+\n+                 \n+                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n+                  </div>\n+\n+                </form>\n+\n+              </div>\n+              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n+\n+                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n+                  class=\"img-fluid\" alt=\"Sample image\">\n+\n+              </div>\n+            </div>\n+          </div>\n+        </div>\n+      </div>\n+    </div>\n+  </div>\n+</section>\n+      </div>\n+      <div class=\"modal-footer\">\n+        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n+         \n+      </div>\n+    </div>\n+  </div>\n+</div>\n+<script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+\n+\n+\n+\n+\n <?php\n if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n"
+                },
+                {
+                    "date": 1673600987146,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,8 @@\n+html\n \n+\n+\n <!-- Button trigger modal -->\n <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n   Ajouter un user\n </button>\n"
+                },
+                {
+                    "date": 1673600995232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,14 @@\n-html\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Document</title>\n+</head>\n+<body>\n+ \n \n \n \n <!-- Button trigger modal -->\n"
+                },
+                {
+                    "date": 1673601023502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,12 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">\n     <title>Document</title>\n </head>\n <body>\n- \n-\n-\n-\n <!-- Button trigger modal -->\n <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n   Ajouter un user\n </button>\n"
+                },
+                {
+                    "date": 1673601557034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673601634991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -95,11 +95,8 @@\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n \n \n-\n-\n-\n <?php\n if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n"
+                },
+                {
+                    "date": 1673601640455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,11 +93,10 @@\n </div>\n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+<?php\n \n-\n-<?php\n if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673601677403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,7 @@\n+\n+\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673601683234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,29 @@\n+<?php\n \n+if (isset($_POST['submit'])) {\n \n+    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n+        $name = $_POST['name'];\n+        $password = $_POST['password'];\n+        $role = $_POST['role'];\n+        \n+        $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+            $req = $db->prepare(\"INSERT INTO user (name,password,role) VALUES (:name,:password,:role)\");\n+            $req->execute(\n+                array(\n+                    ':name' => $name,\n+                    ':password' => $pass,\n+                    ':role' => $role\n+                )\n+            );\n \n+\n+\n+    }\n+}\n+?>\n+\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673601717561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <?php\n-\n if (isset($_POST['submit'])) {\n \n     if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n         $name = $_POST['name'];\n"
+                },
+                {
+                    "date": 1673601759759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -119,25 +119,4 @@\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n <?php\n \n-if (isset($_POST['submit'])) {\n-\n-    if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['role'])) {\n-        $name = $_POST['name'];\n-        $password = $_POST['password'];\n-        $role = $_POST['role'];\n-        \n-        $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-            $req = $db->prepare(\"INSERT INTO user (name,password,role) VALUES (:name,:password,:role)\");\n-            $req->execute(\n-                array(\n-                    ':name' => $name,\n-                    ':password' => $pass,\n-                    ':role' => $role\n-                )\n-            );\n-\n-\n-\n-    }\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673601765273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -117,6 +117,6 @@\n </div>\n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n-<?php\n \n+\n"
+                },
+                {
+                    "date": 1673602398081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,104 +19,5 @@\n \n \n     }\n }\n-?>\n-\n-<!DOCTYPE html>\n-<html lang=\"en\">\n-<head>\n-    <meta charset=\"UTF-8\">\n-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">\n-    <title>Document</title>\n-</head>\n-<body>\n-<!-- Button trigger modal -->\n-<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n-  Ajouter un user\n-</button>\n-\n-<!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog modal-lg\">\n-    <div class=\"modal-content\">\n-      <div class=\"modal-header\">\n-        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n-      </div>\n-      <div class=\"modal-body\">\n-     \n-  \n-    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n-      <div class=\"col-lg-12 col-xl-11\">\n-        <div class=\"card text-black\">\n-          <div class=\"card-body p-md-5\">\n-            <div class=\"row justify-content-center\">\n-              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n-\n-                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n-\n-                <form class=\"mx-1 mx-md-4\" action=\"\" method=\"post\">\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n-                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n-                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n-                    </div>\n-                  </div>\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n-                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-\n-                 \n-                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n-                  </div>\n-\n-                </form>\n-\n-              </div>\n-              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n-\n-                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n-                  class=\"img-fluid\" alt=\"Sample image\">\n-\n-              </div>\n-            </div>\n-          </div>\n-        </div>\n-      </div>\n-    </div>\n-  </div>\n-</section>\n-      </div>\n-      <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-         \n-      </div>\n-    </div>\n-  </div>\n-</div>\n-<script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n-<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n-\n-\n+?\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673602482006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,7 @@\n \n \n \n     }\n+\n+    \n\\ No newline at end of file\n }\n-?\n"
+                },
+                {
+                    "date": 1673602614141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,15 @@\n             );\n \n \n \n-    }\n-\n-    \n-}\n\\ No newline at end of file\n+    } \n+}\n+<form method=\"post\">\n+    <label for=\"produit\">Produit</label>\n+    <input type=\"text\" name=\"produit\" id=\"produit\">\n+    <label for=\"prix\">Prix</label>\n+    <input type=\"text\" name=\"prix\" id=\"prix\">\n+    <label for=\"nombre\">Nombre</label>\n+    <input type=\"number\" name=\"nombre\" id=\"nombre\">\n+    <button>Enregistrer</button>\n+</form>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673602620291,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \n \n     } \n }\n+htm\n <form method=\"post\">\n     <label for=\"produit\">Produit</label>\n     <input type=\"text\" name=\"produit\" id=\"produit\">\n     <label for=\"prix\">Prix</label>\n"
+                },
+                {
+                    "date": 1673602625867,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,20 @@\n \n     } \n }\n ?>\n-ht\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>Document</title>\n+</head>\n+<body>\n+    \n+</body>\n+</html>\n <form method=\"post\">\n     <label for=\"produit\">Produit</label>\n     <input type=\"text\" name=\"produit\" id=\"produit\">\n     <label for=\"prix\">Prix</label>\n"
+                },
+                {
+                    "date": 1674039091373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n    \n   </div>\n   <div class=\"form-group\">\n     <label for=\"role\">Rôle</label>\n-    <select type=\"select\" class=\"form-select\" multiple aria-label=\"multi\" id=\"exampleInputPassword1\" placeholder=\"admin or user\" name='role'>\n+    <select type=\"select\" class=\"form-select\" multiple aria-label=\"multip\" id=\"exampleInputPassword1\" placeholder=\"admin or user\" name='role'>\n   </div>\n \n   <div class=\"form-group\">\n     <label for=\"password\">Password</label>\n"
+                }
+            ],
+            "date": 1673599253489,
+            "name": "Commit-0",
+            "content": "<?"
+        }
+    ]
+}

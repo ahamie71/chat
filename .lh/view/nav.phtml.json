@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 49,
+            "activePatchIndex": 50,
             "patches": [
                 {
                     "date": 1671442526316,
@@ -204,6 +204,10 @@
                 {
                     "date": 1672045324899,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n       </button>\n       <div class=\"collapse navbar-collapse\" id=\"navbarNavDropdown\">\n         <ul class=\"navbar-nav\">\n           <li class=\"nav-item\">\n-            <a class=\"nav-link active\" aria-current=\"page\" href=\"vizhome.phtml\">Home</a>\n+            <a class=\"nav-link active\" aria-current=\"page\" href=\"vihome.phtml\">Home</a>\n           </li>\n           <div class=\"navbar-nav\">\n             <?php\n             if (!isset($_SESSION['user'])) {\n"
+                },
+                {
+                    "date": 1673512925806,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n             <?php\n             } else {\n               ?>\n               <a class=\"nav-link\" href=\"./../deconnection.php\">Deconnection</a>\n-              <a class=\"nav-link\" href=\"./..profile.phtml\">Profile</a>\n+              <a class=\"nav-link\" href=\"./../profile.phtml\">Profile</a>\n             <?php\n \n             }\n \n"
                 }
             ],
             "date": 1671442526316,

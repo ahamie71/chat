@@ -1,0 +1,958 @@
+{
+    "sourceFile": "view/admin.phtml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 235,
+            "patches": [
+                {
+                    "date": 1673533002886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673533011576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n <?php\n \n-hello\n\\ No newline at end of file\n+echo \"hello\"\n"
+                },
+                {
+                    "date": 1673534632063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n <?php\n \n-echo \"hello\"\n+\n+?>\n"
+                },
+                {
+                    "date": 1673534718201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n+  \n \n-\n ?>\n"
+                },
+                {
+                    "date": 1673534724673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n-  \n+  $\n \n ?>\n"
+                },
+                {
+                    "date": 1673534750675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n-  $\n+   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n ?>\n"
+                },
+                {
+                    "date": 1673534760932,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-\n+   $req\n ?>\n"
+                },
+                {
+                    "date": 1673534766492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-   $req\n+   $req=\n ?>\n"
+                },
+                {
+                    "date": 1673534775755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n    $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-   $req=\n+   $req='SELECT * '\n ?>\n"
+                },
+                {
+                    "date": 1673534785777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n <?php\n-   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-   $req='SELECT * '\n-?>\n+$db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n+$req = 'SELECT * FROM train';\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534795539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n+$\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534813071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$\n+$recupererstmt\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534818474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt\n+$recupererstmt->db\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534824339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt->db\n+$recupererstmt->$\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534830336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt->$\n+$recupererstmt->$db->preapre()\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534836624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt->$db->preapre()\n+$recupererstmt->$db->preapre($req)\n+$re\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534843574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n $recupererstmt->$db->preapre($req)\n-$re\n+$recupererstmt->excute\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534849664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt->$db->preapre($req)\n-$recupererstmt->excute\n+$recupererstmt->$db->preapre($req);\n+$recupererstmt->excute()\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534860735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n $recupererstmt->$db->preapre($req);\n-$recupererstmt->excute()\n+$recupererstmt->excute();\n+$\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534866071,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n $recupererstmt->$db->preapre($req);\n $recupererstmt->excute();\n-$\n+$result\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534872791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n $recupererstmt->$db->preapre($req);\n $recupererstmt->excute();\n-$result\n+$result->$recupererstmt-\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534903110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n $recupererstmt->$db->preapre($req);\n-$recupererstmt->excute();\n-$result->$recupererstmt-\n+$recupererstmt->excut();\n+$result->$recupererstmt->fetch();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534918789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt->$db->preapre($req);\n-$recupererstmt->excut();\n+$recupererstmt$db->preapre($req);\n+$recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534928749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = 'SELECT * FROM train';\n-$recupererstmt$db->preapre($req);\n+$recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673534944641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = 'SELECT * FROM train';\n+$req = \"SELECT * FROM train';\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673534953874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM train';\n+$req = \"SELECT * FROM train \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535056654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM train \";\n+$req = \"SELECT * FROM  train \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535073308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM  train \";\n+$req = \"SELECT * FROM  'train'\";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535078587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM  'train'\";\n+$req = \"SELECT * FROM train\";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535099081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n <?php\n+\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM train\";\n+$req = \"SELECT * FROM train \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535113710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <?php\n \n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-$req = \"SELECT * FROM train \";\n+$req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result->$recupererstmt->fetch();\n \n"
+                },
+                {
+                    "date": 1673535127919,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$result->$recupererstmt->fetch();\n+$result$recupererstmt->fetch();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535139676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,7 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$result$recupererstmt->fetch();\n+$result=$recupererstmt->fetch();\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535144751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,5 +5,7 @@\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result=$recupererstmt->fetch();\n \n+\n+\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535152482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$result=$recupererstmt->fetch();\n+$result=$recupererstmt->fetchAll();\n \n+var\n \n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535157673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result=$recupererstmt->fetchAll();\n \n-var\n+var_dump($result)\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535170605,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$result=$recupererstmt->fetchAll();\n+$=$recupererstmt->fetchAll();\n \n-var_dump($result)\n+var_dump($result);\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535176083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$=$recupererstmt->fetchAll();\n+$user=$recupererstmt->fetchAll();\n \n var_dump($result);\n \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535206040,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,5 @@\n $recupererstmt->execute();\n $user=$recupererstmt->fetchAll();\n \n var_dump($result);\n-\n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535211149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,7 @@\n $recupererstmt->execute();\n $user=$recupererstmt->fetchAll();\n \n var_dump($result);\n-?>\n\\ No newline at end of file\n+\n+?>\n+\n"
+                },
+                {
+                    "date": 1673535218854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,16 @@\n var_dump($result);\n \n ?>\n \n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+    <meta charset=\"UTF-8\">\n+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <title>crud</title>\n+</head>\n+<body>\n+    \n+</body>\n+</html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535256810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,37 @@\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n     <title>crud</title>\n </head>\n+<body>  \n <body>\n-    \n+\n+<h1>Liste des produits</h1>\n+<table>\n+    <thead>\n+        <th>ID</th>\n+        <th>Nom</th>\n+        <th>Prix</th>\n+        <th>Stock</th>\n+        <th>Actions</th>\n+    </thead>\n+    <tbody>\n+    <?php\n+        foreach($result as $produit){\n+    ?>\n+            <tr>\n+                <td><?= $produit['id'] ?></td>\n+                <td><?= $produit['produit'] ?></td>\n+                <td><?= $produit['prix'] ?></td>\n+                <td><?= $produit['nombre'] ?></td>\n+                <td><a href=\"details.php?id=<?= $produit['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+            </tr>\n+    <?php\n+        }\n+    ?>\n+    </tbody>\n+</table>\n+<a href=\"add.php\">Ajouter</a>\n </body>\n+</html>\n+</body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535263019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n <table>\n     <thead>\n         <th>ID</th>\n         <th>Nom</th>\n-        <th>Prix</th>\n+        <th>password</th>\n         <th>Stock</th>\n         <th>Actions</th>\n     </thead>\n     <tbody>\n"
+                },
+                {
+                    "date": 1673535269384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n     <thead>\n         <th>ID</th>\n         <th>Nom</th>\n         <th>password</th>\n-        <th>Stock</th>\n-        <th>Actions</th>\n+        <th>role</th>\n+       \n     </thead>\n     <tbody>\n     <?php\n         foreach($result as $produit){\n"
+                },
+                {
+                    "date": 1673535278045,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n         foreach($result as $produit){\n     ?>\n             <tr>\n                 <td><?= $produit['id'] ?></td>\n-                <td><?= $produit['produit'] ?></td>\n-                <td><?= $produit['prix'] ?></td>\n+                <td><?= $produit['name'] ?></td>\n+                <td><?= $produit['password'] ?></td>\n                 <td><?= $produit['nombre'] ?></td>\n                 <td><a href=\"details.php?id=<?= $produit['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n             </tr>\n     <?php\n"
+                },
+                {
+                    "date": 1673535303224,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$user=$recupererstmt->fetchAll();\n+$=$recupererstmt->fetchAll();\n \n var_dump($result);\n \n ?>\n@@ -37,9 +37,9 @@\n             <tr>\n                 <td><?= $produit['id'] ?></td>\n                 <td><?= $produit['name'] ?></td>\n                 <td><?= $produit['password'] ?></td>\n-                <td><?= $produit['nombre'] ?></td>\n+                <td><?= $produit['role'] ?></td>\n                 <td><a href=\"details.php?id=<?= $produit['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n             </tr>\n     <?php\n         }\n"
+                },
+                {
+                    "date": 1673535312768,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$=$recupererstmt->fetchAll();\n+$result=$recupererstmt->fetchAll();\n \n var_dump($result);\n \n ?>\n@@ -31,9 +31,9 @@\n        \n     </thead>\n     <tbody>\n     <?php\n-        foreach($result as $produit){\n+        foreach($result as $){\n     ?>\n             <tr>\n                 <td><?= $produit['id'] ?></td>\n                 <td><?= $produit['name'] ?></td>\n"
+                },
+                {
+                    "date": 1673535348273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,16 +31,16 @@\n        \n     </thead>\n     <tbody>\n     <?php\n-        foreach($result as $){\n+        foreach($result as $user){\n     ?>\n             <tr>\n                 <td><?= $produit['id'] ?></td>\n                 <td><?= $produit['name'] ?></td>\n                 <td><?= $produit['password'] ?></td>\n                 <td><?= $produit['role'] ?></td>\n-                <td><a href=\"details.php?id=<?= $produit['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                \n             </tr>\n     <?php\n         }\n     ?>\n"
+                },
+                {
+                    "date": 1673535364039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,10 +5,10 @@\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result=$recupererstmt->fetchAll();\n \n-var_dump($result);\n \n+\n ?>\n \n <!DOCTYPE html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1673535374288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n     <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <td><?= $produit['id'] ?></td>\n+                <td><?= $['id'] ?></td>\n                 <td><?= $produit['name'] ?></td>\n                 <td><?= $produit['password'] ?></td>\n                 <td><?= $produit['role'] ?></td>\n                 \n"
+                },
+                {
+                    "date": 1673535381263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,11 @@\n     <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <td><?= $['id'] ?></td>\n-                <td><?= $produit['name'] ?></td>\n-                <td><?= $produit['password'] ?></td>\n+                <td><?= $user['id'] ?></td>\n+                <td><?= $user['name'] ?></td>\n+                <td><?= $user['password'] ?></td>\n                 <td><?= $produit['role'] ?></td>\n                 \n             </tr>\n     <?php\n"
+                },
+                {
+                    "date": 1673535391803,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n </head>\n <body>  \n <body>\n \n-<h1>Liste des produits</h1>\n+<h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n         <th>Nom</th>\n@@ -37,9 +37,9 @@\n             <tr>\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n-                <td><?= $produit['role'] ?></td>\n+                <td><?= $user['role'] ?></td>\n                 \n             </tr>\n     <?php\n         }\n"
+                },
+                {
+                    "date": 1673535438014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n     <title>crud</title>\n </head>\n <body>  \n <body>\n"
+                },
+                {
+                    "date": 1673535457617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         }\n     ?>\n     </tbody>\n </table>\n-<a href=\"add.php\">Ajouter</a>\n+<a href=\"add.php\" class>Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535466509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-\n+  \n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n@@ -46,9 +46,9 @@\n         }\n     ?>\n     </tbody>\n </table>\n-<a href=\"add.php\" class>Ajouter</a>\n+<a href=\"add.php\" class=\">Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535473140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-  \n+  <div class=\"container\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n"
+                },
+                {
+                    "date": 1673535487378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-  <div class=\"container\n+  <div class=\"container\"></div>\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n@@ -46,9 +46,9 @@\n         }\n     ?>\n     </tbody>\n </table>\n-<a href=\"add.php\" class=\">Ajouter</a>\n+<a href=\"add.php\" class=\"btn tn>Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535494020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,9 @@\n         }\n     ?>\n     </tbody>\n </table>\n-<a href=\"add.php\" class=\"btn tn>Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-success>Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535505843,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,9 +46,10 @@\n         }\n     ?>\n     </tbody>\n </table>\n-<a href=\"add.php\" class=\"btn btn-success>Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535511331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     ?>\n     </tbody>\n </table>\n <a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n-<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-danger\">Ajouter</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535517319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n     ?>\n     </tbody>\n </table>\n <a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n-<a href=\"add.php\" class=\"btn btn-danger\">Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n </body>\n </html>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535528493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n+    \n   <div class=\"container\"></div>\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n"
+                },
+                {
+                    "date": 1673535534214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-    \n+    <table\n   <div class=\"container\"></div>\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n"
+                },
+                {
+                    "date": 1673535546450,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-    <table\n+    <table>\n   <div class=\"container\"></div>\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n@@ -42,8 +42,9 @@\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n             </tr>\n+            </\n     <?php\n         }\n     ?>\n     </tbody>\n"
+                },
+                {
+                    "date": 1673535560907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n </head>\n <body>  \n <body>\n     <table>\n-  <div class=\"container\"></div>\n+  \n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n@@ -42,9 +42,9 @@\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n             </tr>\n-            </\n+        </table>\n     <?php\n         }\n     ?>\n     </tbody>\n"
+                },
+                {
+                    "date": 1673535577166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-    <table>\n-  \n+  <div class=\"container\"></div>\n <h1>Liste des utlisateurs</h1>\n <table>\n     <thead>\n         <th>ID</th>\n@@ -42,9 +41,8 @@\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n             </tr>\n-        </table>\n     <?php\n         }\n     ?>\n     </tbody>\n"
+                },
+                {
+                    "date": 1673535779078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,5 +51,37 @@\n <a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n </body>\n </html>\n </body>\n-</html>\n\\ No newline at end of file\n+</html>\n+\n+<table class=\"table caption-top\">\n+  <caption>List of users</caption>\n+  <thead>\n+    <tr>\n+      <th scope=\"col\">#</th>\n+      <th scope=\"col\">First</th>\n+      <th scope=\"col\">Last</th>\n+      <th scope=\"col\">Handle</th>\n+    </tr>\n+  </thead>\n+  <tbody>\n+    <tr>\n+      <th scope=\"row\">1</th>\n+      <td>Mark</td>\n+      <td>Otto</td>\n+      <td>@mdo</td>\n+    </tr>\n+    <tr>\n+      <th scope=\"row\">2</th>\n+      <td>Jacob</td>\n+      <td>Thornton</td>\n+      <td>@fat</td>\n+    </tr>\n+    <tr>\n+      <th scope=\"row\">3</th>\n+      <td>Larry</td>\n+      <td>the Bird</td>\n+      <td>@twitter</td>\n+    </tr>\n+  </tbody>\n+</table>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535797603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n <table class=\"table caption-top\">\n   <caption>List of users</caption>\n   <thead>\n     <tr>\n-      <th scope=\"col\">#</th>\n+      <th scope=\"col\"></th>\n       <th scope=\"col\">First</th>\n       <th scope=\"col\">Last</th>\n       <th scope=\"col\">Handle</th>\n     </tr>\n"
+                },
+                {
+                    "date": 1673535802717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,10 +57,10 @@\n <table class=\"table caption-top\">\n   <caption>List of users</caption>\n   <thead>\n     <tr>\n+      <th scope=\"col\">ID</th>\n       <th scope=\"col\"></th>\n-      <th scope=\"col\">First</th>\n       <th scope=\"col\">Last</th>\n       <th scope=\"col\">Handle</th>\n     </tr>\n   </thead>\n"
+                },
+                {
+                    "date": 1673535816124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -58,9 +58,9 @@\n   <caption>List of users</caption>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n-      <th scope=\"col\"></th>\n+      <th scope=\"col\">Name</th>\n       <th scope=\"col\">Last</th>\n       <th scope=\"col\">Handle</th>\n     </tr>\n   </thead>\n"
+                },
+                {
+                    "date": 1673535823481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,10 @@\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n-      <th scope=\"col\">Last</th>\n-      <th scope=\"col\">Handle</th>\n+      <th scope=\"col\">Password</th>\n+      <th scope=\"col\">Role</th>\n     </tr>\n   </thead>\n   <tbody>\n     <tr>\n"
+                },
+                {
+                    "date": 1673535846563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,17 +71,8 @@\n       <td>Otto</td>\n       <td>@mdo</td>\n     </tr>\n     <tr>\n-      <th scope=\"row\">2</th>\n-      <td>Jacob</td>\n-      <td>Thornton</td>\n-      <td>@fat</td>\n+     \n     </tr>\n-    <tr>\n-      <th scope=\"row\">3</th>\n-      <td>Larry</td>\n-      <td>the Bird</td>\n-      <td>@twitter</td>\n-    </tr>\n   </tbody>\n </table>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535873064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,15 +64,20 @@\n       <th scope=\"col\">Role</th>\n     </tr>\n   </thead>\n   <tbody>\n-    <tr>\n-      <th scope=\"row\">1</th>\n-      <td>Mark</td>\n-      <td>Otto</td>\n-      <td>@mdo</td>\n-    </tr>\n-    <tr>\n-     \n-    </tr>\n+  <?php\n+        foreach($result as $user){\n+    ?>\n+            <tr>\n+                <td><?= $user['id'] ?></td>\n+                <td><?= $user['name'] ?></td>\n+                <td><?= $user['password'] ?></td>\n+                <td><?= $user['role'] ?></td>\n+                \n+            </tr>\n+    <?php\n+        }\n+    ?>\n+    </tbody>\n   </tbody>\n </table>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535885784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,10 @@\n   <tbody>\n   <?php\n         foreach($result as $user){\n     ?>\n-            <tr>\n+            <tr\n+            >\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n"
+                },
+                {
+                    "date": 1673535892677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,11 +67,10 @@\n   <tbody>\n   <?php\n         foreach($result as $user){\n     ?>\n-            <tr\n-            >\n-                <td><?= $user['id'] ?></td>\n+            <th>\n+                <th><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n"
+                },
+                {
+                    "date": 1673535900717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   <tbody>\n   <?php\n         foreach($result as $user){\n     ?>\n-            <th>\n+            <tr>\n                 <th><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n"
+                },
+                {
+                    "date": 1673535907006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,11 +68,11 @@\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <th><?= $user['id'] ?></td>\n-                <td><?= $user['name'] ?></td>\n-                <td><?= $user['password'] ?></td>\n+                <tr><?= $user['id'] ?></td>\n+                <tr></tr><?= $user['name'] ?></td>\n+                <tr><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n             </tr>\n     <?php\n"
+                },
+                {
+                    "date": 1673535914504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -68,12 +68,12 @@\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <tr><?= $user['id'] ?></td>\n-                <tr></tr><?= $user['name'] ?></td>\n+                <tr><?= $user['id'] ?></tr>\n+                <tr></tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></td>\n-                <td><?= $user['role'] ?></td>\n+                <tr><?= $user['role'] ?></td>\n                 \n             </tr>\n     <?php\n         }\n"
+                },
+                {
+                    "date": 1673535919614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,12 +70,12 @@\n     ?>\n             <tr>\n                 <tr><?= $user['id'] ?></tr>\n                 <tr></tr><?= $user['name'] ?></tr>\n-                <tr><?= $user['password'] ?></td>\n-                <tr><?= $user['role'] ?></td>\n+                <tr><?= $user['password'] ?></tr>\n+                <tr><?= $user['role'] ?></tr>\n                 \n-            </tr>\n+            </t>\n     <?php\n         }\n     ?>\n     </tbody>\n"
+                },
+                {
+                    "date": 1673535945650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,34 +20,9 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n-  <div class=\"container\"></div>\n-<h1>Liste des utlisateurs</h1>\n-<table>\n-    <thead>\n-        <th>ID</th>\n-        <th>Nom</th>\n-        <th>password</th>\n-        <th>role</th>\n-       \n-    </thead>\n-    <tbody>\n-    <?php\n-        foreach($result as $user){\n-    ?>\n-            <tr>\n-                <td><?= $user['id'] ?></td>\n-                <td><?= $user['name'] ?></td>\n-                <td><?= $user['password'] ?></td>\n-                <td><?= $user['role'] ?></td>\n-                \n-            </tr>\n-    <?php\n-        }\n-    ?>\n-    </tbody>\n-</table>\n+ \n <a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n <a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n </body>\n </html>\n@@ -73,9 +48,9 @@\n                 <tr></tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n                 \n-            </t>\n+            </th>\n     <?php\n         }\n     ?>\n     </tbody>\n"
+                },
+                {
+                    "date": 1673535975715,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,15 +21,8 @@\n </head>\n <body>  \n <body>\n  \n-<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n-<a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n-</body>\n-</html>\n-</body>\n-</html>\n-\n <table class=\"table caption-top\">\n   <caption>List of users</caption>\n   <thead>\n     <tr>\n@@ -54,5 +47,13 @@\n         }\n     ?>\n     </tbody>\n   </tbody>\n-</table>\n\\ No newline at end of file\n+</table>\n+<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n+<a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n+</body>\n+</html>\n+</body>\n+</html>\n+\n+<\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673535990659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         foreach($result as $user){\n     ?>\n             <tr>\n                 <tr><?= $user['id'] ?></tr>\n-                <tr></tr><?= $user['name'] ?></tr>\n+                <tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n                 \n             </th>\n@@ -55,5 +55,4 @@\n </html>\n </body>\n </html>\n \n-<\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673536034404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n     </tbody>\n   </tbody>\n </table>\n <a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n-<a href=\"add.php\" class=\"btn btn-danger\">supprimer</a>\n+\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673536049493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,8 @@\n     <title>crud</title>\n </head>\n <body>  \n <body>\n- \n <table class=\"table caption-top\">\n   <caption>List of users</caption>\n   <thead>\n     <tr>\n"
+                },
+                {
+                    "date": 1673536074262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n       <th scope=\"col\">Name</th>\n       <th scope=\"col\">Password</th>\n       <th scope=\"col\">Role</th>\n     </tr>\n-  </thead>\n+\n   <tbody>\n   <?php\n         foreach($result as $user){\n     ?>\n"
+                },
+                {
+                    "date": 1673536089344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,8 @@\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result=$recupererstmt->fetchAll();\n-\n-\n-\n ?>\n \n <!DOCTYPE html>\n <html lang=\"en\">\n@@ -30,9 +27,9 @@\n       <th scope=\"col\">Password</th>\n       <th scope=\"col\">Role</th>\n     </tr>\n \n-  <tbody>\n+\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n"
+                },
+                {
+                    "date": 1673536115486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,8 @@\n       <th scope=\"col\">Name</th>\n       <th scope=\"col\">Password</th>\n       <th scope=\"col\">Role</th>\n     </tr>\n-\n-\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n"
+                },
+                {
+                    "date": 1673536124364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,8 @@\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n $result=$recupererstmt->fetchAll();\n ?>\n-\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n     <meta charset=\"UTF-8\">\n"
+                },
+                {
+                    "date": 1673536171583,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     </tr>\n   <?php\n         foreach($result as $user){\n     ?>\n-            <tr>\n+            <t>\n                 <tr><?= $user['id'] ?></tr>\n                 <tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n"
+                },
+                {
+                    "date": 1673536211431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n     </tr>\n   <?php\n         foreach($result as $user){\n     ?>\n-            <t>\n+            <tr>\n                 <tr><?= $user['id'] ?></tr>\n                 <tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n"
+                },
+                {
+                    "date": 1673536218442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <tr><?= $user['id'] ?></tr>\n+                <t><?= $user['id'] ?></tr>\n                 <tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n                 \n"
+                },
+                {
+                    "date": 1673536231165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <t><?= $user['id'] ?></tr>\n+                <td><?= $user['id'] ?></tr>\n                 <tr><?= $user['name'] ?></tr>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n                 \n"
+                },
+                {
+                    "date": 1673536236364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,10 +29,10 @@\n   <?php\n         foreach($result as $user){\n     ?>\n             <tr>\n-                <td><?= $user['id'] ?></tr>\n-                <tr><?= $user['name'] ?></tr>\n+                <td><?= $user['id'] ?></td>\n+                <tr><?= $user['name'] ?></td>\n                 <tr><?= $user['password'] ?></tr>\n                 <tr><?= $user['role'] ?></tr>\n                 \n             </th>\n"
+                },
+                {
+                    "date": 1673536243289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,10 +31,10 @@\n     ?>\n             <tr>\n                 <td><?= $user['id'] ?></td>\n                 <tr><?= $user['name'] ?></td>\n-                <tr><?= $user['password'] ?></tr>\n-                <tr><?= $user['role'] ?></tr>\n+                <tr><?= $user['password'] ?></td>\n+                <td><?= $user['role'] ?></td>\n                 \n             </th>\n     <?php\n         }\n"
+                },
+                {
+                    "date": 1673536270922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n </head>\n <body>  \n <body>\n <table class=\"table caption-top\">\n-  <caption>List of users</caption>\n+  <H1>List of users</caption>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n@@ -30,10 +30,10 @@\n         foreach($result as $user){\n     ?>\n             <tr>\n                 <td><?= $user['id'] ?></td>\n-                <tr><?= $user['name'] ?></td>\n-                <tr><?= $user['password'] ?></td>\n+                <td></td><?= $user['name'] ?></td>\n+                <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536283432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n </head>\n <body>  \n <body>\n <table class=\"table caption-top\">\n-  <H1>List of users</caption>\n+  <h1 class=>List of users</H1>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n"
+                },
+                {
+                    "date": 1673536289767,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n </head>\n <body>  \n <body>\n <table class=\"table caption-top\">\n-  <h1 class=>List of users</H1>\n+  <h1 class=\"text-center>List of users</H1>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n"
+                },
+                {
+                    "date": 1673536309599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,5 @@\n <?php\n-\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n@@ -17,9 +16,9 @@\n </head>\n <body>  \n <body>\n <table class=\"table caption-top\">\n-  <h1 class=\"text-center>List of users</H1>\n+  <h1 class=\"text-center\">List of users</H1>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n"
+                },
+                {
+                    "date": 1673536342346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,8 +33,9 @@\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 \n+                \n             </th>\n     <?php\n         }\n     ?>\n"
+                },
+                {
+                    "date": 1673536348141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,10 +32,11 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n+                <td><a href=\"details.php?id=<?= $['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                </tr>\n                 \n-                \n             </th>\n     <?php\n         }\n     ?>\n"
+                },
+                {
+                    "date": 1673536358355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a href=\"details.php?id=<?= $['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536364438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=\"edit.php?id=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536373685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=<?= $produit['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536399096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a href=\"=<?= $user['id'] ?>\">Voir</a>  <a href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $produit['id'] ?>\">Supprimer</a></td>\n+                <td <a href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536435882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td <a href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btnhref=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536441942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btnhref=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536449271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\"href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536502781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n </head>\n <body>  \n <body>\n <table class=\"table caption-top\">\n-  <h1 class=\"text-center\">List of users</H1>\n+  <h1 class=\"text-center\">List of users</h1>\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\"href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536530334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536539359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\"btn btn-danger href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536551818,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n     <title>crud</title>\n </head>\n <body>  \n-<body>\n+\n <table class=\"table caption-top\">\n   <h1 class=\"text-center\">List of users</h1>\n   <thead>\n     <tr>\n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td></td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\"btn btn-danger href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536570126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n     <title>crud</title>\n </head>\n <body>  \n-\n+<div\n <table class=\"table caption-top\">\n   <h1 class=\"text-center\">List of users</h1>\n   <thead>\n     <tr>\n"
+                },
+                {
+                    "date": 1673536576085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n     <title>crud</title>\n </head>\n <body>  \n-<div\n+<div class=\"container\">\n <table class=\"table caption-top\">\n   <h1 class=\"text-center\">List of users</h1>\n   <thead>\n     <tr>\n"
+                },
+                {
+                    "date": 1673536649390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-$result=$recupererstmt->fetchAll();\n+\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1673536657462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n $req = \"SELECT * FROM user \";\n $recupererstmt=$db->prepare($req);\n $recupererstmt->execute();\n-\n+$result=$recupererstmt->fetchAll();\n ?>\n <!DOCTYPE html>\n <html lang=\"en\">\n <head>\n"
+                },
+                {
+                    "date": 1673536667805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,9 +29,9 @@\n         foreach($result as $user){\n     ?>\n             <tr>\n                 <td><?= $user['id'] ?></td>\n-                <td></td><?= $user['name'] ?></td>\n+                <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n                 <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n"
+                },
+                {
+                    "date": 1673536876563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a>  <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536897993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\">Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>>Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536907474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>>Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\"Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673536920996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n                 <td><?= $user['password'] ?></td>\n                 <td><?= $user['role'] ?></td>\n-                <td><a  class=\"btn btn-success\" href=\"<?= $user['id'] ?>\"Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n+                <td><a  class=\"btn btn-success\" href=\"\"<?= $user['id'] ?>\">Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n             </th>\n     <?php\n"
+                },
+                {
+                    "date": 1673537036295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n     ?>\n             <tr>\n                 <td><?= $user['id'] ?></td>\n                 <td><?= $user['name'] ?></td>\n-                <td><?= $user['password'] ?></td>\n+                \n                 <td><?= $user['role'] ?></td>\n                 <td><a  class=\"btn btn-success\" href=\"\"<?= $user['id'] ?>\">Modifier</a> <a class=\"btn btn-danger\" href=\"delete.php?id=<?= $user['id'] ?>\">Supprimer</a></td>\n                 </tr>\n                 \n"
+                },
+                {
+                    "date": 1673537044433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n   <thead>\n     <tr>\n       <th scope=\"col\">ID</th>\n       <th scope=\"col\">Name</th>\n-      <th scope=\"col\">Password</th>\n+   \n       <th scope=\"col\">Role</th>\n     </tr>\n   <?php\n         foreach($result as $user){\n"
+                },
+                {
+                    "date": 1673598165093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -42,10 +42,10 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-<a href=\"add.php\" class=\"btn btn-success\">Ajouter</a>\n \n+\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673598266467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-\n+  \n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673598279097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,8 +43,32 @@\n     </tbody>\n   </tbody>\n </table>\n \n+<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+  Launch demo modal\n+</button>\n+\n+<!-- Modal -->\n+<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n+    <div class=\"modal-content\">\n+      <div class=\"modal-header\">\n+        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n+        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n+          <span aria-hidden=\"true\">&times;</span>\n+        </button>\n+      </div>\n+      <div class=\"modal-body\">\n+        ...\n+      </div>\n+      <div class=\"modal-footer\">\n+        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n+        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n+      </div>\n+    </div>\n+  </div>\n+</div>\n   \n </body>\n </html>\n </body>\n"
+                },
+                {
+                    "date": 1673598287211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   </tbody>\n </table>\n \n <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Launch demo modal\n+  \n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598293175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   </tbody>\n </table>\n \n <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  \n+  Ajouter user\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598299845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   </tbody>\n </table>\n \n <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Ajouter user\n+  Ajouter user \n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598304909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   </tbody>\n </table>\n \n <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Ajouter user \n+  Ajouter user\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598310518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n   </tbody>\n </table>\n \n <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Ajouter user\n+  Ajouter user>\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598331548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,10 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Ajouter user>\n+<button type=\"button\" class=\"btn btn-\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+  Ajouter user\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n"
+                },
+                {
+                    "date": 1673598360584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"<i class=\"fa-light fa-user\"></i>\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598369340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"<i class=\"fa-light fa-user\"></i>\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"\"fa-light fa-user\"></i>\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598379331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"\"fa-light fa-user\"></i>\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"fa-light fa-user\"></\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598384836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"fa-light fa-user\"></\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"fa-light fa-user\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598395325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"fa-light fa-user\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\"  class=\"fa-light fa-user\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598402706,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\"  class=\"fa-light fa-user\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598422360,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\"></i> data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598432522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\"></i> data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598441588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" </button>i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598447432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" </button>i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598454891,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" <i class=\"fa-light fa-user\"></i>< data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598468180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" <i class=\"fa-light fa-user\"></i>< data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" <</i> data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598476870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" <</i> data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\" </button>i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673598715967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,28 +43,41 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\" </button>i class=\"fa-light fa-user\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n-  Ajouter user\n-</button>\n-\n-<!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n+<!-- Add New -->\n+<div class=\"modal fade\" id=\"addnew\" tabindex=\"-1\" aria-labelledby=\"ModalLabel\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n-        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n-        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n-          <span aria-hidden=\"true\">&times;</span>\n-        </button>\n+        <h5 class=\"modal-title\" id=\"ModalLabel\">Add New</h5>\n+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n-        ...\n+        <form method=\"POST\" action=\"add.php\">\n+            <div class=\"mb-3 row\">\n+                <label class=\"col-sm-2 col-form-label\">Firstname</label>\n+                <div class=\"col-sm-10\">\n+                    <input type=\"text\" class=\"form-control\" name=\"firstname\">\n+                </div>\n+            </div>\n+            <div class=\"mb-3 row\">\n+                <label class=\"col-sm-2 col-form-label\">Lastname</label>\n+                <div class=\"col-sm-10\">\n+                    <input type=\"text\" class=\"form-control\" name=\"lastname\">\n+                </div>\n+            </div>\n+            <div class=\"mb-3 row\">\n+                <label class=\"col-sm-2 col-form-label\">Address</label>\n+                <div class=\"col-sm-10\">\n+                    <input type=\"text\" class=\"form-control\" name=\"address\">\n+                </div>\n+            </div>\n       </div>\n       <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n-        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n+        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n+        <button type=\"submit\" name=\"add\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-floppy-disk\"></span> Save</a>\n+        </form>\n       </div>\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1673598764429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,41 +43,28 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<!-- Add New -->\n-<div class=\"modal fade\" id=\"addnew\" tabindex=\"-1\" aria-labelledby=\"ModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog\">\n+<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+  Ajouter user\n+</button>\n+\n+<!-- Modal -->\n+<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n-        <h5 class=\"modal-title\" id=\"ModalLabel\">Add New</h5>\n-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n+        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n+        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n+          <span aria-hidden=\"true\">&times;</span>\n+        </button>\n       </div>\n       <div class=\"modal-body\">\n-        <form method=\"POST\" action=\"add.php\">\n-            <div class=\"mb-3 row\">\n-                <label class=\"col-sm-2 col-form-label\">Firstname</label>\n-                <div class=\"col-sm-10\">\n-                    <input type=\"text\" class=\"form-control\" name=\"firstname\">\n-                </div>\n-            </div>\n-            <div class=\"mb-3 row\">\n-                <label class=\"col-sm-2 col-form-label\">Lastname</label>\n-                <div class=\"col-sm-10\">\n-                    <input type=\"text\" class=\"form-control\" name=\"lastname\">\n-                </div>\n-            </div>\n-            <div class=\"mb-3 row\">\n-                <label class=\"col-sm-2 col-form-label\">Address</label>\n-                <div class=\"col-sm-10\">\n-                    <input type=\"text\" class=\"form-control\" name=\"address\">\n-                </div>\n-            </div>\n+        ...\n       </div>\n       <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-        <button type=\"submit\" name=\"add\" class=\"btn btn-primary\"><span class=\"glyphicon glyphicon-floppy-disk\"></span> Save</a>\n-        </form>\n+        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n+        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n       </div>\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1673598921830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,10 @@\n       </div>\n     </div>\n   </div>\n </div>\n-  \n+<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673598975975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,10 @@\n <head>\n     <meta charset=\"UTF-8\">\n     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n-    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC\" crossorigin=\"anonymous\">\n+    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65\" crossorigin=\"anonymous\">\n+  </head>\n     <title>crud</title>\n </head>\n <body>  \n <div class=\"container\">\n"
+                },
+                {
+                    "date": 1673599002847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n   Ajouter user\n </button>\n \n <!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n+<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n   <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n         <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n"
+                },
+                {
+                    "date": 1673599014585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,14 +44,14 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"#exampleModalCenter\">\n+<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n+<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n   <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n         <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n"
+                },
+                {
+                    "date": 1673599021020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"\">\n+<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"exampleModale\">\n   Ajouter user\n </button>\n \n <!-- Modal -->\n"
+                },
+                {
+                    "date": 1673599101216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,31 +44,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n-<button type=\"button\" class=\"btn btn-primary\"  data-toggle=\"modal\" data-target=\"exampleModale\">\n-  Ajouter user\n-</button>\n \n-<!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModal1\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog modal-dialog-centered\" role=\"document\">\n-    <div class=\"modal-content\">\n-      <div class=\"modal-header\">\n-        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Modal title</h5>\n-        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n-          <span aria-hidden=\"true\">&times;</span>\n-        </button>\n-      </div>\n-      <div class=\"modal-body\">\n-        ...\n-      </div>\n-      <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n-        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n-      </div>\n-    </div>\n-  </div>\n </div>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n"
+                },
+                {
+                    "date": 1673599122119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,8 +45,30 @@\n   </tbody>\n </table>\n \n \n+<!-- Button trigger modal -->\n+<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n+  Ajouter un \n+</button>\n+\n+<!-- Modal -->\n+<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog\">\n+    <div class=\"modal-content\">\n+      <div class=\"modal-header\">\n+        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n+      </div>\n+      <div class=\"modal-body\">\n+        ...\n+      </div>\n+      <div class=\"modal-footer\">\n+        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n+        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n+      </div>\n+    </div>\n+  </div>\n </div>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n"
+                },
+                {
+                    "date": 1673599157035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n \n <!-- Button trigger modal -->\n <button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n-  Ajouter un \n+  Ajouter un user\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n@@ -59,9 +59,9 @@\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n-        ...\n+        \n       </div>\n       <div class=\"modal-footer\">\n         <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n         <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n"
+                },
+                {
+                    "date": 1673599335093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n         \n       </div>\n       <div class=\"modal-footer\">\n         <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-        <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\n+       \n       </div>\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1673599354938,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n         \n       </div>\n       <div class=\"modal-footer\">\n         <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-       \n+         \n       </div>\n     </div>\n   </div>\n </div>\n"
+                },
+                {
+                    "date": 1673599680568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,10 +59,81 @@\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n-        \n+      <section class=\"vh-100\" style=\"background-color: #eee;\">\n+  <div class=\"container h-100\">\n+    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n+      <div class=\"col-lg-12 col-xl-11\">\n+        <div class=\"card text-black\" style=\"border-radius: 25px;\">\n+          <div class=\"card-body p-md-5\">\n+            <div class=\"row justify-content-center\">\n+              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n+\n+                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n+\n+                <form class=\"mx-1 mx-md-4\">\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"form3Example1c\" class=\"form-control\" />\n+                      <label class=\"form-label\" for=\"form3Example1c\">Your Name</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-envelope fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"email\" id=\"form3Example3c\" class=\"form-control\" />\n+                      <label class=\"form-label\" for=\"form3Example3c\">Your Email</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" />\n+                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-key fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"password\" id=\"form3Example4cd\" class=\"form-control\" />\n+                      <label class=\"form-label\" for=\"form3Example4cd\">Repeat your password</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"form-check d-flex justify-content-center mb-5\">\n+                    <input class=\"form-check-input me-2\" type=\"checkbox\" value=\"\" id=\"form2Example3c\" />\n+                    <label class=\"form-check-label\" for=\"form2Example3\">\n+                      I agree all statements in <a href=\"#!\">Terms of service</a>\n+                    </label>\n+                  </div>\n+\n+                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\">Register</button>\n+                  </div>\n+\n+                </form>\n+\n+              </div>\n+              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n+\n+                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n+                  class=\"img-fluid\" alt=\"Sample image\">\n+\n+              </div>\n+            </div>\n+          </div>\n+        </div>\n       </div>\n+    </div>\n+  </div>\n+</section>\n+      </div>\n       <div class=\"modal-footer\">\n         <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n          \n       </div>\n"
+                },
+                {
+                    "date": 1673599696097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog\">\n+  <div class=\"modal-dialog m\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n"
+                },
+                {
+                    "date": 1673599721696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,9 +52,9 @@\n </button>\n \n <!-- Modal -->\n <div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog m\">\n+  <div class=\"modal-dialog modal-lg\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n@@ -80,15 +80,9 @@\n                       <label class=\"form-label\" for=\"form3Example1c\">Your Name</label>\n                     </div>\n                   </div>\n \n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-envelope fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"email\" id=\"form3Example3c\" class=\"form-control\" />\n-                      <label class=\"form-label\" for=\"form3Example3c\">Your Email</label>\n-                    </div>\n-                  </div>\n+                  \n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673599749903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -98,15 +98,9 @@\n                       <label class=\"form-label\" for=\"form3Example4cd\">Repeat your password</label>\n                     </div>\n                   </div>\n \n-                  <div class=\"form-check d-flex justify-content-center mb-5\">\n-                    <input class=\"form-check-input me-2\" type=\"checkbox\" value=\"\" id=\"form2Example3c\" />\n-                    <label class=\"form-check-label\" for=\"form2Example3\">\n-                      I agree all statements in <a href=\"#!\">Terms of service</a>\n-                    </label>\n-                  </div>\n-\n+                 \n                   <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n                     <button type=\"button\" class=\"btn btn-primary btn-lg\">Register</button>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673599766273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -93,9 +93,9 @@\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-key fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4cd\" class=\"form-control\" />\n+                      <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Repeat your password</label>\n                     </div>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673599781844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,9 +75,9 @@\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"form3Example1c\" class=\"form-control\" />\n+                      <input type=\"text\" id=\"name\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example1c\">Your Name</label>\n                     </div>\n                   </div>\n \n@@ -94,9 +94,9 @@\n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-key fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n-                      <label class=\"form-label\" for=\"form3Example4cd\">Repeat your password</label>\n+                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n                   </div>\n \n                  \n"
+                },
+                {
+                    "date": 1673599803695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n-      <section class=\"vh-100\" style=\"background-color: #eee;\">\n+      <section class=\"vh-100\" style=\"\">\n   <div class=\"container h-100\">\n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-lg-12 col-xl-11\">\n         <div class=\"card text-black\" style=\"border-radius: 25px;\">\n"
+                },
+                {
+                    "date": 1673599812809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n       <section class=\"vh-100\" style=\"\">\n-  <div class=\"container h-100\">\n+  \n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-lg-12 col-xl-11\">\n         <div class=\"card text-black\" style=\"border-radius: 25px;\">\n           <div class=\"card-body p-md-5\">\n"
+                },
+                {
+                    "date": 1673599829046,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n         <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n         <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n       </div>\n       <div class=\"modal-body\">\n-      <section class=\"vh-100\" style=\"\">\n+     \n   \n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-lg-12 col-xl-11\">\n         <div class=\"card text-black\" style=\"border-radius: 25px;\">\n"
+                },
+                {
+                    "date": 1673599995673,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,8 +127,9 @@\n       </div>\n     </div>\n   </div>\n </div>\n+\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673600034432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n                     </div>\n                   </div>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-key fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fas fa- fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n@@ -127,9 +127,9 @@\n       </div>\n     </div>\n   </div>\n </div>\n-\n+<script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673600043869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,9 +91,9 @@\n                     </div>\n                   </div>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa- fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fas fa-role fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n"
+                },
+                {
+                    "date": 1673600056730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,8 +81,15 @@\n                     </div>\n                   </div>\n \n                   \n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-role fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"role\" class=\"form-control\" />\n+                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n+                    </div>\n+                  </div>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600130712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-role fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fafa-role fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n@@ -97,15 +97,9 @@\n                       <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n                     </div>\n                   </div>\n \n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-role fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"role\" class=\"form-control\" />\n-                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n-                    </div>\n-                  </div>\n+                  \n \n                  \n                   <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n                     <button type=\"button\" class=\"btn btn-primary btn-lg\">Register</button>\n"
+                },
+                {
+                    "date": 1673600136166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fafa-role fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fa-regularfa-role fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n"
+                },
+                {
+                    "date": 1673600144247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fa-regularfa-role fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fa-regular fa-person fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n"
+                },
+                {
+                    "date": 1673600154693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fa-regular fa-person fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fafa-role fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n"
+                },
+                {
+                    "date": 1673600161406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,9 +82,9 @@\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fafa-role fa-lg me-3 fa-fw\"></i>\n+                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"role\" class=\"form-control\" />\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n"
+                },
+                {
+                    "date": 1673600177769,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,9 +76,9 @@\n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n                       <input type=\"text\" id=\"name\" class=\"form-control\" />\n-                      <label class=\"form-label\" for=\"form3Example1c\">Your Name</label>\n+                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n                     </div>\n                   </div>\n \n                   \n"
+                },
+                {
+                    "date": 1673600241720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n      \n   \n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-lg-12 col-xl-11\">\n-        <div class=\"card text-black\" style=\"border-radius: 25px;\">\n+        <div class=\"card text-black\" styl\">\n           <div class=\"card-body p-md-5\">\n             <div class=\"row justify-content-center\">\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n"
+                },
+                {
+                    "date": 1673600247949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n      \n   \n     <div class=\"row d-flex justify-content-center align-items-center h-100\">\n       <div class=\"col-lg-12 col-xl-11\">\n-        <div class=\"card text-black\" styl\">\n+        <div class=\"card text-black\">\n           <div class=\"card-body p-md-5\">\n             <div class=\"row justify-content-center\">\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n"
+                },
+                {
+                    "date": 1673600291232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                   \n \n                  \n                   <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\">Register</button>\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name>Register</button>\n                   </div>\n \n                 </form>\n \n"
+                },
+                {
+                    "date": 1673600297835,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -101,9 +101,9 @@\n                   \n \n                  \n                   <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name>Register</button>\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit>Register</button>\n                   </div>\n \n                 </form>\n \n"
+                },
+                {
+                    "date": 1673600675914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\">\n+                <form class=\"mx-1 mx-md-4\" >\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n@@ -101,9 +101,9 @@\n                   \n \n                  \n                   <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit>Register</button>\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n                   </div>\n \n                 </form>\n \n"
+                },
+                {
+                    "date": 1673600684764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" >\n+                <form class=\"mx-1 mx-md-4\" action=\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600695850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\">\n+                <form class=\"mx-1 mx-md-4\" action=\"ajouter>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600703349,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"ajouter>\n+                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600709788,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php>\n+                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method>\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600763617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method>\n+                <form class=\"mx-1 mx-md-4\" action=\"train/crudajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673600807747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,14 +70,14 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"train/crudajoutercrud.php\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"train/crud/ajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"name\" class=\"form-control\" />\n+                      <input type=\"text\" id=\"name\" class=\"form-control\" name />\n                       <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n                     </div>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673600828680,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,18 +75,18 @@\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"name\" class=\"form-control\" name />\n+                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n                       <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n                     </div>\n                   </div>\n \n                   \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"role\" class=\"form-control\" />\n+                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n                       <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n                     </div>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673600836766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -92,9 +92,9 @@\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" />\n+                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"p/>\n                       <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n                     </div>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673600936910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,9 +70,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"train/crud/ajoutercrud.php\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n@@ -92,9 +92,9 @@\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"p/>\n+                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n                       <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n                     </div>\n                   </div>\n \n"
+                },
+                {
+                    "date": 1673600969817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,94 +45,9 @@\n   </tbody>\n </table>\n \n \n-<!-- Button trigger modal -->\n-<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n-  Ajouter un user\n-</button>\n \n-<!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog modal-lg\">\n-    <div class=\"modal-content\">\n-      <div class=\"modal-header\">\n-        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n-      </div>\n-      <div class=\"modal-body\">\n-     \n-  \n-    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n-      <div class=\"col-lg-12 col-xl-11\">\n-        <div class=\"card text-black\">\n-          <div class=\"card-body p-md-5\">\n-            <div class=\"row justify-content-center\">\n-              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n-\n-                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n-\n-                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n-                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n-                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n-                    </div>\n-                  </div>\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n-                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-\n-                 \n-                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n-                  </div>\n-\n-                </form>\n-\n-              </div>\n-              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n-\n-                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n-                  class=\"img-fluid\" alt=\"Sample image\">\n-\n-              </div>\n-            </div>\n-          </div>\n-        </div>\n-      </div>\n-    </div>\n-  </div>\n-</section>\n-      </div>\n-      <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-         \n-      </div>\n-    </div>\n-  </div>\n-</div>\n-<script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n-<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n-<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601077402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,11 +43,11 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n+  <bu\n \n \n-\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601085213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <bu\n+  <button class=></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601090313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class=></button>\n+  <button class= \"btn btn></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601096541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn></button>\n+  <button class= \"btn btn-primary\"></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601103992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\"></button>\n+  <button class= \"btn btn-primary\" href=\"></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601118136,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"></button>\n+  <button class= \"btn btn-primary\" href=\"ajouter></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601123694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"ajouter></button>\n+  <button class= \"btn btn-primary\" href=\"ajoutercrud.php></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601136690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"ajoutercrud.php></button>\n+  <button class= \"btn btn-primary\" href=\"./ajoutercrud.php\"></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601150309,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./ajoutercrud.php\"></button>\n+  <button class= \"btn btn-primary\" href=\"./../ajoutercrud.php\"></button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601163213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./../ajoutercrud.php\"></button>\n+  <button class= \"btn btn-primary\" href=\"ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601170621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"train/crdu/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601177693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"train/crdu/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"/crdu/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601183566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"/crdu/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\".//ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601192615,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\".//ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601204077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601214247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./../crudajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601235800,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./../crudajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./../..crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601249677,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./../..crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601266833,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./..crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601285484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./..crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./../rrcrud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601338811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./../rrcrud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"../../train/crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601344720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"../../train/crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"../../crud/ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601362276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"../../crud/ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"../..//ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601371922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"../..//ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\" href=\"./../../ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601412260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\" href=\"./../../ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\"  a href=\"./../../ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601421735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\"  a href=\"./../../ajoutercrud.php\">ajouter</button>\n+  <button class= \"btn btn-primary\"  a href=\"ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601435502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button class= \"btn btn-primary\"  a href=\"ajoutercrud.php\">ajouter</button>\n+  < a href=\"ajoutercrud.php\">ajouter</button>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601442901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  < a href=\"ajoutercrud.php\">ajouter</button>\n+  <a href=\"ajoutercrud.php\">ajouter</a>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601467385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <a href=\"ajoutercrud.php\">ajouter</a>\n+  <a href=\"crudajoutercrud.php\">ajouter</a>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601484713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <a href=\"crudajoutercrud.php\">ajouter</a>\n+  <a href=\"./../crud/ajoutercrud.php\">ajouter</a>\n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601797907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <a href=\"./../crud/ajoutercrud.php\">ajouter</a>\n+ \n \n \n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601916009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,11 +43,96 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n- \n+<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n+  Ajouter un user\n+</button>\n \n+<!-- Modal -->\n+<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n+  <div class=\"modal-dialog modal-lg\">\n+    <div class=\"modal-content\">\n+      <div class=\"modal-header\">\n+        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n+      </div>\n+      <div class=\"modal-body\">\n+     \n+  \n+    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n+      <div class=\"col-lg-12 col-xl-11\">\n+        <div class=\"card text-black\">\n+          <div class=\"card-body p-md-5\">\n+            <div class=\"row justify-content-center\">\n+              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n+                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n+\n+                <form class=\"mx-1 mx-md-4\" action=\".\" method=\"post\">\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n+                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n+                    </div>\n+                  </div>\n+\n+                  \n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n+                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n+                    </div>\n+                  </div>\n+\n+                  <div class=\"d-flex flex-row align-items-center mb-4\">\n+                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n+                    <div class=\"form-outline flex-fill mb-0\">\n+                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n+                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n+                    </div>\n+                  </div>\n+\n+                  \n+\n+                 \n+                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n+                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n+                  </div>\n+\n+                </form>\n+\n+              </div>\n+              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n+\n+                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n+                  class=\"img-fluid\" alt=\"Sample image\">\n+\n+              </div>\n+            </div>\n+          </div>\n+        </div>\n+      </div>\n+    </div>\n+  </div>\n+</section>\n+      </div>\n+      <div class=\"modal-footer\">\n+        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n+         \n+      </div>\n+    </div>\n+  </div>\n+</div>\n+<script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n+\n+\n+\n </body>\n </html>\n </body>\n </html>\n"
+                },
+                {
+                    "date": 1673601921375,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\".\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"./../../\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673601932534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"./../../\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"./../../ajouter\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673601994498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"./../../ajouter\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"./../crud/ajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673602052792,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\"./../crud/ajoutercrud.php\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\".//ajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673602108649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n               <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n \n                 <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n \n-                <form class=\"mx-1 mx-md-4\" action=\".//ajoutercrud.php\" method=\"post\">\n+                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n \n                   <div class=\"d-flex flex-row align-items-center mb-4\">\n                     <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n                     <div class=\"form-outline flex-fill mb-0\">\n"
+                },
+                {
+                    "date": 1673602374665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,90 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-<button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\">\n-  Ajouter un user\n-</button>\n \n-<!-- Modal -->\n-<div class=\"modal fade\" id=\"exampleModal\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n-  <div class=\"modal-dialog modal-lg\">\n-    <div class=\"modal-content\">\n-      <div class=\"modal-header\">\n-        <h1 class=\"modal-title fs-5\" id=\"exampleModalLabel\">Modal title</h1>\n-        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n-      </div>\n-      <div class=\"modal-body\">\n-     \n-  \n-    <div class=\"row d-flex justify-content-center align-items-center h-100\">\n-      <div class=\"col-lg-12 col-xl-11\">\n-        <div class=\"card text-black\">\n-          <div class=\"card-body p-md-5\">\n-            <div class=\"row justify-content-center\">\n-              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\n-\n-                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\n-\n-                <form class=\"mx-1 mx-md-4\" action=\"ajoutercrud.php\" method=\"post\">\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-user fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"name\" class=\"form-control\" name=\"name\" />\n-                      <label class=\"form-label\" for=\"form3Example1c\"> Name</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fa fa-person fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"text\" id=\"role\" class=\"form-control\" name=\"role\"/>\n-                      <label class=\"form-label\" for=\"form3Example4cd\">Role</label>\n-                    </div>\n-                  </div>\n-\n-                  <div class=\"d-flex flex-row align-items-center mb-4\">\n-                    <i class=\"fas fa-lock fa-lg me-3 fa-fw\"></i>\n-                    <div class=\"form-outline flex-fill mb-0\">\n-                      <input type=\"password\" id=\"form3Example4c\" class=\"form-control\" name=\"password\"/>\n-                      <label class=\"form-label\" for=\"form3Example4c\">Password</label>\n-                    </div>\n-                  </div>\n-\n-                  \n-\n-                 \n-                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\n-                    <button type=\"button\" class=\"btn btn-primary btn-lg\" name=\"submit\">Register</button>\n-                  </div>\n-\n-                </form>\n-\n-              </div>\n-              <div class=\"col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2\">\n-\n-                <img src=\"https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp\"\n-                  class=\"img-fluid\" alt=\"Sample image\">\n-\n-              </div>\n-            </div>\n-          </div>\n-        </div>\n-      </div>\n-    </div>\n-  </div>\n-</section>\n-      </div>\n-      <div class=\"modal-footer\">\n-        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n-         \n-      </div>\n-    </div>\n-  </div>\n-</div>\n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n \n"
+                },
+                {
+                    "date": 1673602412456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,8 +44,9 @@\n     </tbody>\n   </tbody>\n </table>\n \n+\n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n \n"
+                },
+                {
+                    "date": 1673602419479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,10 +43,10 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n+  \n \n-\n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n \n"
+                },
+                {
+                    "date": 1673602427102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  \n+  <button type=\"button\" class=\"btn btn-primary\" href\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673602435099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button type=\"button\" class=\"btn btn-primary\" href\n+  <button type=\"button\" class=\"btn btn-primary\" href=\"ajout\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673602447378,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button type=\"button\" class=\"btn btn-primary\" href=\"ajout\n+  <button type=\"button\" class=\"btn btn-primary\" href=\"crud\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673602455521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button type=\"button\" class=\"btn btn-primary\" href=\"crud\n+  <button type=\"button\" class=\"btn btn-primary\" href=\"ajoutercrud.php\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673602461973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button type=\"button\" class=\"btn btn-primary\" href=\"ajoutercrud.php\">Cancel</button>\n+  <button type=\"button\" class=\"btn btn-primary\" href=\"ajoutercrud.php\"></button>\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                },
+                {
+                    "date": 1673602991941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     ?>\n     </tbody>\n   </tbody>\n </table>\n-  <button type=\"button\" class=\"btn btn-primary\" href=\"/ajoutercrud.php\">Ajouter un user</button>\n+  <button type=\"button\" class=\"btn btn-primary\" href=\"ajoutercrud.php\">Ajouter un user</button>\n \n <script src=\"https://kit.fontawesome.com/31149d48b0.js\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js\" integrity=\"sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p\" crossorigin=\"anonymous\"></script>\n <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js\" integrity=\"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF\" crossorigin=\"anonymous\"></script>\n"
+                }
+            ],
+            "date": 1673533002886,
+            "name": "Commit-0",
+            "content": "<?php\n\nhello"
+        }
+    ]
+}

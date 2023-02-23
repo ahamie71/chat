@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 140,
+            "activePatchIndex": 144,
             "patches": [
                 {
                     "date": 1671610451739,
@@ -568,6 +568,22 @@
                 {
                     "date": 1672329027607,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\"\n         integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\n     <!-- Bootstrap core CSS -->\n     <link href=\"../../dist/css/bootstrap.min.css\" rel=\"stylesheet\">\n-    <link href=\"/home.css\" rel=\"stylesheet\">\n+    <link href=\"./../home.css\" rel=\"stylesheet\">\n     <!-- Custom styles for this template -->\n </head>\n <body>\n     <main role=\"main\">\n"
+                },
+                {
+                    "date": 1674055342429,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,12 @@\n <?php\n+\n+<?php\n+session_start();\n+\n+if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n+    header('location:connection.phtml');\n+    exit; // important\n include(\"nav.phtml\");\n ?>\n <!doctype html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1674055363306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,12 @@\n <?php\n \n-<?php\n+\n session_start();\n \n if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n     header('location:connection.phtml');\n-    exit; // important\n+    exit; /}/ important\n include(\"nav.phtml\");\n ?>\n <!doctype html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1674055371166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n session_start();\n \n if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n     header('location:connection.phtml');\n-    exit; /}/ important\n+    exit;\n+    \n include(\"nav.phtml\");\n ?>\n <!doctype html>\n <html lang=\"en\">\n"
+                },
+                {
+                    "date": 1674055432910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,6 @@\n <?php\n \n-\n-session_start();\n-\n-if (isset($_SESSION[\"user\"]['id']) && isset($_SESSION[\"user\"]['role']) && $_SESSION[\"user\"]['role'] != 'admin') {\n-    header('location:connection.phtml');\n-    exit;\n-    \n include(\"nav.phtml\");\n ?>\n <!doctype html>\n <html lang=\"en\">\n"
                 }
             ],
             "date": 1671610451739,

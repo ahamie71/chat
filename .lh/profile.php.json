@@ -1,0 +1,78 @@
+{
+    "sourceFile": "profile.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1673513473293,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1673513479648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-<php\n\\ No newline at end of file\n+<\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673513492352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-<\n\\ No newline at end of file\n+<?php\n+echo \"hello\"\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673513499258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n <?php\n-echo \"hello\"\n\\ No newline at end of file\n+echo \"hello\";\n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673513513080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +0,0 @@\n-<?php\n-echo \"hello\";\n-?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673514393418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+<?php\n+  session_start(); \n+  include('bd/connexionDB.php'); \n+  // S'il n'y a pas de session alors on ne va pas sur cette page\n+  if(!isset($_SESSION['id'])){ \n+    header('Location: index.php'); \n+    exit; \n+  }\n+  // On récupère les informations de l'utilisateur connecté\n+  $afficher_profil = $DB->query(\"SELECT * \n+    FROM utilisateur \n+    WHERE id = ?\", \n+  array($_SESSION['id']));\n+  \n+  $afficher_profil = $afficher_profil->fetch(); \n+?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673514398733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   session_start(); \n-  include('bd/connexionDB.php'); \n+   \n   // S'il n'y a pas de session alors on ne va pas sur cette page\n   if(!isset($_SESSION['id'])){ \n     header('Location: index.php'); \n     exit; \n"
+                },
+                {
+                    "date": 1673514419567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <?php\n   session_start(); \n-   \n+  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n   if(!isset($_SESSION['id'])){ \n     header('Location: index.php'); \n     exit; \n"
+                },
+                {
+                    "date": 1673514442610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n   session_start(); \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n-  if(!isset($_SESSION['id'])){ \n+  if(!isset($_SESSION['user'])){ \n     header('Location: index.php'); \n     exit; \n   }\n   // On récupère les informations de l'utilisateur connecté\n"
+                },
+                {
+                    "date": 1673514450009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <?php\n   session_start(); \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n-  if(!isset($_SESSION['user'])){ \n+  if(!isset($_SESSION['user']['id'])){ \n     header('Location: index.php'); \n     exit; \n   }\n   // On récupère les informations de l'utilisateur connecté\n"
+                },
+                {
+                    "date": 1673514458404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   session_start(); \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n   if(!isset($_SESSION['user']['id'])){ \n-    header('Location: index.php'); \n+    header('Location: connection.php'); \n     exit; \n   }\n   // On récupère les informations de l'utilisateur connecté\n   $afficher_profil = $DB->query(\"SELECT * \n"
+                },
+                {
+                    "date": 1673514463466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   session_start(); \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n   if(!isset($_SESSION['user']['id'])){ \n-    header('Location: connection.php'); \n+    header('Location: connection.phtml'); \n     exit; \n   }\n   // On récupère les informations de l'utilisateur connecté\n   $afficher_profil = $DB->query(\"SELECT * \n"
+                },
+                {
+                    "date": 1673514485522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,15 +2,10 @@\n   session_start(); \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n   // S'il n'y a pas de session alors on ne va pas sur cette page\n   if(!isset($_SESSION['user']['id'])){ \n-    header('Location: connection.phtml'); \n+    header('Location: view/connection.phtml'); \n     exit; \n   }\n   // On récupère les informations de l'utilisateur connecté\n-  $afficher_profil = $DB->query(\"SELECT * \n-    FROM utilisateur \n-    WHERE id = ?\", \n-  array($_SESSION['id']));\n   \n-  $afficher_profil = $afficher_profil->fetch(); \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673514494858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,7 +5,7 @@\n   if(!isset($_SESSION['user']['id'])){ \n     header('Location: view/connection.phtml'); \n     exit; \n   }\n-  // On récupère les informations de l'utilisateur connecté\n+\n   \n ?>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1673514507006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n <?php\n   session_start(); \n-  $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n-  // S'il n'y a pas de session alors on ne va pas sur cette page\n+\n   if(!isset($_SESSION['user']['id'])){ \n     header('Location: view/connection.phtml'); \n     exit; \n   }\n"
+                },
+                {
+                    "date": 1673514532324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,6 +7,6 @@\n   }\n \n   $db = new PDO('mysql:host=localhost;dbname=train;charset=utf8', 'root', 'root');\n \n-   \n+\n ?>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1673513473293,
+            "name": "Commit-0",
+            "content": "<php"
+        }
+    ]
+}
